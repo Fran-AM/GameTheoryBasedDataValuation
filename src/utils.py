@@ -42,4 +42,4 @@ def equilibrate_clases(df: pd.DataFrame) -> pd.DataFrame:
         for class_label in target_counts.index
     ], axis=0)
     
-    return balanced 
+    return balanced
