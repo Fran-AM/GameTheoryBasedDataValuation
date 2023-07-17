@@ -1,0 +1,893 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{shapleyValue}{article}{}
+      \name{author}{1}{}{%
+        {{hash=aa2b96ffd25f090ad898c0022f7efa12}{%
+           family={Shapley},
+           familyi={S\bibinitperiod},
+           given={Lloyd\bibnamedelima S},
+           giveni={L\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=9ed32c5059c74c243ab6d851d2010faf}{%
+           family={Kuhn},
+           familyi={K\bibinitperiod},
+           given={Harold\bibnamedelima W.},
+           giveni={H\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=eb783da6c0083c34057b552f033ca807}{%
+           family={Tucker},
+           familyi={T\bibinitperiod},
+           given={Albert\bibnamedelima W.},
+           giveni={A\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Princeton}%
+      }
+      \list{publisher}{1}{%
+        {Princeton University Press}%
+      }
+      \strng{namehash}{aa2b96ffd25f090ad898c0022f7efa12}
+      \strng{fullhash}{aa2b96ffd25f090ad898c0022f7efa12}
+      \strng{bibnamehash}{aa2b96ffd25f090ad898c0022f7efa12}
+      \strng{authorbibnamehash}{aa2b96ffd25f090ad898c0022f7efa12}
+      \strng{authornamehash}{aa2b96ffd25f090ad898c0022f7efa12}
+      \strng{authorfullhash}{aa2b96ffd25f090ad898c0022f7efa12}
+      \strng{editorbibnamehash}{c29e91e8b1f722b7e90beb853cd7a118}
+      \strng{editornamehash}{c29e91e8b1f722b7e90beb853cd7a118}
+      \strng{editorfullhash}{c29e91e8b1f722b7e90beb853cd7a118}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Contributions to the Theory of Games II}
+      \field{title}{A Value for n-Person Games}
+      \field{year}{1953}
+      \field{pages}{307\bibrangedash 317}
+      \range{pages}{11}
+    \endentry
+    \entry{libroShapley}{book}{}
+      \name{author}{1}{}{%
+        {{hash=320ab47af0997a7a69af46760b320783}{%
+           family={Roth},
+           familyi={R\bibinitperiod},
+           given={Alvin\bibnamedelima E},
+           giveni={A\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{320ab47af0997a7a69af46760b320783}
+      \strng{fullhash}{320ab47af0997a7a69af46760b320783}
+      \strng{bibnamehash}{320ab47af0997a7a69af46760b320783}
+      \strng{authorbibnamehash}{320ab47af0997a7a69af46760b320783}
+      \strng{authornamehash}{320ab47af0997a7a69af46760b320783}
+      \strng{authorfullhash}{320ab47af0997a7a69af46760b320783}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Shapley value: essays in honor of Lloyd S. Shapley}
+      \field{year}{1988}
+    \endentry
+    \entry{fatima}{article}{}
+      \name{author}{3}{}{%
+        {{hash=9408f9f788ca2d96db7db7d46ec7ee11}{%
+           family={Fatima},
+           familyi={F\bibinitperiod},
+           given={Shaheen\bibnamedelima S.},
+           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=1dbead6bb535576afc14adfe5a5c42bb}{%
+           family={Wooldridge},
+           familyi={W\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1fb1b859fa7fe89eeae563907c07b4e4}{%
+           family={Jennings},
+           familyi={J\bibinitperiod},
+           given={Nicholas\bibnamedelima R.},
+           giveni={N\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{24d236dde3d806602d81e3385313e104}
+      \strng{fullhash}{24d236dde3d806602d81e3385313e104}
+      \strng{bibnamehash}{24d236dde3d806602d81e3385313e104}
+      \strng{authorbibnamehash}{24d236dde3d806602d81e3385313e104}
+      \strng{authornamehash}{24d236dde3d806602d81e3385313e104}
+      \strng{authorfullhash}{24d236dde3d806602d81e3385313e104}
+      \field{sortinit}{3}
+      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0004-3702}
+      \field{journaltitle}{Artificial Intelligence}
+      \field{number}{14}
+      \field{title}{A linear approximation method for the Shapley value}
+      \field{volume}{172}
+      \field{year}{2008}
+      \field{pages}{1673\bibrangedash 1699}
+      \range{pages}{27}
+      \keyw{Coalitional game theory,Shapley value,Approximation method}
+    \endentry
+    \entry{genes}{article}{}
+      \name{author}{4}{}{%
+        {{hash=e239d43295747c418c0ae7d3fe560665}{%
+           family={Moretti},
+           familyi={M\bibinitperiod},
+           given={Stefano},
+           giveni={S\bibinitperiod}}}%
+        {{hash=9eba32d1890d8aed6924b849672fba78}{%
+           family={Fragnelli},
+           familyi={F\bibinitperiod},
+           given={Vito},
+           giveni={V\bibinitperiod}}}%
+        {{hash=b18e48b009da7b046e2632e0a21f4b43}{%
+           family={Patrone},
+           familyi={P\bibinitperiod},
+           given={Fioravante},
+           giveni={F\bibinitperiod}}}%
+        {{hash=7f80059c9c5b90295811d3c07e365b0c}{%
+           family={Bonassi},
+           familyi={B\bibinitperiod},
+           given={Stefano},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{49e9097b64d9daa79cfd45c714d4917b}
+      \strng{fullhash}{a20eb98fcfbaf6256ca32d8ec1491fee}
+      \strng{bibnamehash}{a20eb98fcfbaf6256ca32d8ec1491fee}
+      \strng{authorbibnamehash}{a20eb98fcfbaf6256ca32d8ec1491fee}
+      \strng{authornamehash}{49e9097b64d9daa79cfd45c714d4917b}
+      \strng{authorfullhash}{a20eb98fcfbaf6256ca32d8ec1491fee}
+      \field{sortinit}{4}
+      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Bioinformatics (Oxford, England)}
+      \field{month}{11}
+      \field{title}{Using coalitional games on biological networks to measure centrality and power of genes}
+      \field{volume}{26}
+      \field{year}{2010}
+      \field{pages}{2721\bibrangedash 30}
+      \range{pages}{11}
+    \endentry
+    \entry{Dubey}{report}{}
+      \name{author}{2}{}{%
+        {{hash=03a0853de82447c9c2c5f85d01c7e5b5}{%
+           family={Dubey},
+           familyi={D\bibinitperiod},
+           given={Pradeep},
+           giveni={P\bibinitperiod}}}%
+        {{hash=415529543766d403c8f68281ec85fe0d}{%
+           family={Weber},
+           familyi={W\bibinitperiod},
+           given={Robert\bibnamedelima J.},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Cowles Foundation for Research in Economics, Yale University}%
+      }
+      \strng{namehash}{7d47bda800faa45b0d07f5af293649c0}
+      \strng{fullhash}{7d47bda800faa45b0d07f5af293649c0}
+      \strng{bibnamehash}{7d47bda800faa45b0d07f5af293649c0}
+      \strng{authorbibnamehash}{7d47bda800faa45b0d07f5af293649c0}
+      \strng{authornamehash}{7d47bda800faa45b0d07f5af293649c0}
+      \strng{authorfullhash}{7d47bda800faa45b0d07f5af293649c0}
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{No abstract is available for this item.}
+      \field{number}{471}
+      \field{title}{Probabilistic Values for Games}
+      \field{type}{Cowles Foundation Discussion Papers}
+      \field{year}{1977}
+    \endentry
+    \entry{Dubey2}{article}{}
+      \name{author}{3}{}{%
+        {{hash=03a0853de82447c9c2c5f85d01c7e5b5}{%
+           family={Dubey},
+           familyi={D\bibinitperiod},
+           given={Pradeep},
+           giveni={P\bibinitperiod}}}%
+        {{hash=f402cc2ec9b00e8598254dd5334386fa}{%
+           family={Neyman},
+           familyi={N\bibinitperiod},
+           given={Abraham},
+           giveni={A\bibinitperiod}}}%
+        {{hash=e20c9369bdda8b984346abfc06be0ac6}{%
+           family={Weber},
+           familyi={W\bibinitperiod},
+           given={Robert\bibnamedelima James},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {INFORMS}%
+      }
+      \strng{namehash}{a598233fe69af3db9653c1cc6ed0e013}
+      \strng{fullhash}{a598233fe69af3db9653c1cc6ed0e013}
+      \strng{bibnamehash}{a598233fe69af3db9653c1cc6ed0e013}
+      \strng{authorbibnamehash}{a598233fe69af3db9653c1cc6ed0e013}
+      \strng{authornamehash}{a598233fe69af3db9653c1cc6ed0e013}
+      \strng{authorfullhash}{a598233fe69af3db9653c1cc6ed0e013}
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A semivalue is a symmetric positive linear operator on a space of games, which leaves the additive games fixed. Such an operator satisfies all of the axioms defining the Shapley value, with the possible exception of the efficiency axiom. The class of semivalues is completely characterized for the space of finite-player games, and for the space pNA of nonatomic games.}
+      \field{issn}{0364765X, 15265471}
+      \field{journaltitle}{Mathematics of Operations Research}
+      \field{number}{1}
+      \field{title}{Value Theory without Efficiency}
+      \field{urlday}{28}
+      \field{urlmonth}{6}
+      \field{urlyear}{2023}
+      \field{volume}{6}
+      \field{year}{1981}
+      \field{urldateera}{ce}
+      \field{pages}{122\bibrangedash 128}
+      \range{pages}{7}
+    \endentry
+    \entry{banzhaf}{article}{}
+      \name{author}{1}{}{%
+        {{hash=a0c6464320a9fc455f24821dc24b8b50}{%
+           family={Banzhaf},
+           familyi={B\bibinitperiod},
+           given={J.F.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{a0c6464320a9fc455f24821dc24b8b50}
+      \strng{fullhash}{a0c6464320a9fc455f24821dc24b8b50}
+      \strng{bibnamehash}{a0c6464320a9fc455f24821dc24b8b50}
+      \strng{authorbibnamehash}{a0c6464320a9fc455f24821dc24b8b50}
+      \strng{authornamehash}{a0c6464320a9fc455f24821dc24b8b50}
+      \strng{authorfullhash}{a0c6464320a9fc455f24821dc24b8b50}
+      \field{sortinit}{6}
+      \field{sortinithash}{7851c86048328b027313775d8fbd2131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Rutgers Law Review}
+      \field{number}{2}
+      \field{title}{Weighted voting doesn't work: {A} mathematical analysis}
+      \field{volume}{19}
+      \field{year}{1965}
+      \field{pages}{317\bibrangedash 343}
+      \range{pages}{27}
+    \endentry
+    \entry{permutationSampling}{article}{}
+      \name{author}{2}{}{%
+        {{hash=6e45ce69f3824c9e2540888a465ea676}{%
+           family={Mann},
+           familyi={M\bibinitperiod},
+           given={Irwin},
+           giveni={I\bibinitperiod}}}%
+        {{hash=aa2b96ffd25f090ad898c0022f7efa12}{%
+           family={Shapley},
+           familyi={S\bibinitperiod},
+           given={Lloyd\bibnamedelima S.},
+           giveni={L\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {RAND Corporation}%
+      }
+      \strng{namehash}{11226ca1bd0fbf3c452329bcef8f2500}
+      \strng{fullhash}{11226ca1bd0fbf3c452329bcef8f2500}
+      \strng{bibnamehash}{11226ca1bd0fbf3c452329bcef8f2500}
+      \strng{authorbibnamehash}{11226ca1bd0fbf3c452329bcef8f2500}
+      \strng{authornamehash}{11226ca1bd0fbf3c452329bcef8f2500}
+      \strng{authorfullhash}{11226ca1bd0fbf3c452329bcef8f2500}
+      \field{sortinit}{7}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Values of Large Games, IV: Evaluating the Electoral College by Montecarlo Techniques}
+      \field{year}{1960}
+    \endentry
+    \entry{maleki}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=a19895953a126cbbd312cacfc56cb8bf}{%
+           family={Maleki},
+           familyi={M\bibinitperiod},
+           given={Sasan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {University of Southampton}%
+      }
+      \strng{namehash}{a19895953a126cbbd312cacfc56cb8bf}
+      \strng{fullhash}{a19895953a126cbbd312cacfc56cb8bf}
+      \strng{bibnamehash}{a19895953a126cbbd312cacfc56cb8bf}
+      \strng{authorbibnamehash}{a19895953a126cbbd312cacfc56cb8bf}
+      \strng{authornamehash}{a19895953a126cbbd312cacfc56cb8bf}
+      \strng{authorfullhash}{a19895953a126cbbd312cacfc56cb8bf}
+      \field{sortinit}{8}
+      \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{title}{Addressing the computational issues of the Shapley value with applications in the smart grid}
+      \field{type}{phdthesis}
+      \field{year}{2015}
+    \endentry
+    \entry{covert}{article}{}
+      \name{author}{3}{}{%
+        {{hash=f15de9ac4f1cb35bf79a03ae3f13d8a1}{%
+           family={Covert},
+           familyi={C\bibinitperiod},
+           given={Ian\bibnamedelima C},
+           giveni={I\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=2a1075150e1e1dad8127b019f7ca9031}{%
+           family={Lundberg},
+           familyi={L\bibinitperiod},
+           given={Scott\bibnamedelima M},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=ee964079d93879aaef2382a5fff343d3}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Su-In},
+           giveni={S\bibinithyphendelim I\bibinitperiod}}}%
+      }
+      \strng{namehash}{8b586292c9e36a69e9278e8368863e15}
+      \strng{fullhash}{8b586292c9e36a69e9278e8368863e15}
+      \strng{bibnamehash}{8b586292c9e36a69e9278e8368863e15}
+      \strng{authorbibnamehash}{8b586292c9e36a69e9278e8368863e15}
+      \strng{authornamehash}{8b586292c9e36a69e9278e8368863e15}
+      \strng{authorfullhash}{8b586292c9e36a69e9278e8368863e15}
+      \field{sortinit}{9}
+      \field{sortinithash}{54047ffb55bdefa0694bbd554c1b11a0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Information Theory}
+      \field{title}{Shapley feature utility}
+      \field{year}{2019}
+    \endentry
+    \entry{Tejada}{article}{}
+      \name{author}{3}{}{%
+        {{hash=4454192d83ece305da9add6649b350c6}{%
+           family={Castro},
+           familyi={C\bibinitperiod},
+           given={Javier},
+           giveni={J\bibinitperiod}}}%
+        {{hash=95400883c3ab6e94f79d8e739d4b4ec5}{%
+           family={Gómez},
+           familyi={G\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=9c66c37a81dd4d3884674db3bf0afb20}{%
+           family={Tejada},
+           familyi={T\bibinitperiod},
+           given={Juan},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{4e7114ae999bb102432d0c982c3659a7}
+      \strng{fullhash}{4e7114ae999bb102432d0c982c3659a7}
+      \strng{bibnamehash}{4e7114ae999bb102432d0c982c3659a7}
+      \strng{authorbibnamehash}{4e7114ae999bb102432d0c982c3659a7}
+      \strng{authornamehash}{4e7114ae999bb102432d0c982c3659a7}
+      \strng{authorfullhash}{4e7114ae999bb102432d0c982c3659a7}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this paper we develop a polynomial method based on sampling theory that can be used to estimate the Shapley value (or any semivalue) for cooperative games. Besides analyzing the complexity problem, we examine some desirable statistical properties of the proposed approach and provide some computational results.}
+      \field{issn}{0305-0548}
+      \field{journaltitle}{Computers \& Operations Research}
+      \field{note}{Selected papers presented at the Tenth International Symposium on Locational Decisions (ISOLDE X)}
+      \field{number}{5}
+      \field{title}{Polynomial calculation of the Shapley value based on sampling}
+      \field{volume}{36}
+      \field{year}{2009}
+      \field{pages}{1726\bibrangedash 1730}
+      \range{pages}{5}
+      \keyw{Game theory,Shapley value,Sampling algorithm}
+    \endentry
+    \entry{featureSelection}{article}{}
+      \name{author}{3}{}{%
+        {{hash=179724ae026d702221537dcaa99978db}{%
+           family={Cohen},
+           familyi={C\bibinitperiod},
+           given={Shay},
+           giveni={S\bibinitperiod}}}%
+        {{hash=1b53b5f21cdfcffa4afebd72c43a079c}{%
+           family={Ruppin},
+           familyi={R\bibinitperiod},
+           given={Eytan},
+           giveni={E\bibinitperiod}}}%
+        {{hash=42ba9855f3dff3fa4c63bb5d96db8dd1}{%
+           family={Dror},
+           familyi={D\bibinitperiod},
+           given={Gideon},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{278b5bbb55a345bc8c43dca313cb7d96}
+      \strng{fullhash}{278b5bbb55a345bc8c43dca313cb7d96}
+      \strng{bibnamehash}{278b5bbb55a345bc8c43dca313cb7d96}
+      \strng{authorbibnamehash}{278b5bbb55a345bc8c43dca313cb7d96}
+      \strng{authornamehash}{278b5bbb55a345bc8c43dca313cb7d96}
+      \strng{authorfullhash}{278b5bbb55a345bc8c43dca313cb7d96}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{other words}
+      \field{number}{98Eqr}
+      \field{title}{Feature selection based on the shapley value}
+      \field{volume}{1}
+      \field{year}{2005}
+      \field{pages}{155}
+      \range{pages}{1}
+    \endentry
+    \entry{featureImportance}{article}{}
+      \name{author}{2}{}{%
+        {{hash=b659ebc88023a12a732b4db9afdede3d}{%
+           family={Lundberg},
+           familyi={L\bibinitperiod},
+           given={Scott},
+           giveni={S\bibinitperiod}}}%
+        {{hash=ee964079d93879aaef2382a5fff343d3}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Su-In},
+           giveni={S\bibinithyphendelim I\bibinitperiod}}}%
+      }
+      \strng{namehash}{92d799a71ca7ae2c3ebec3ec87e85189}
+      \strng{fullhash}{92d799a71ca7ae2c3ebec3ec87e85189}
+      \strng{bibnamehash}{92d799a71ca7ae2c3ebec3ec87e85189}
+      \strng{authorbibnamehash}{92d799a71ca7ae2c3ebec3ec87e85189}
+      \strng{authornamehash}{92d799a71ca7ae2c3ebec3ec87e85189}
+      \strng{authorfullhash}{92d799a71ca7ae2c3ebec3ec87e85189}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{A Unified Approach to Interpreting Model Predictions}
+      \field{year}{2017}
+      \verb{eprint}
+      \verb arXiv:1705.07874
+      \endverb
+    \endentry
+    \entry{dataShapley}{article}{}
+      \name{author}{2}{}{%
+        {{hash=cf68b41fe76ef1ef5ab23a6f667bbacd}{%
+           family={Ghorbani},
+           familyi={G\bibinitperiod},
+           given={Amirata},
+           giveni={A\bibinitperiod}}}%
+        {{hash=1b868d50048a635fa27ffa744323fa41}{%
+           family={Zou},
+           familyi={Z\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{9d9028d9e1d6439936cddd961a2a2e95}
+      \strng{fullhash}{9d9028d9e1d6439936cddd961a2a2e95}
+      \strng{bibnamehash}{9d9028d9e1d6439936cddd961a2a2e95}
+      \strng{authorbibnamehash}{9d9028d9e1d6439936cddd961a2a2e95}
+      \strng{authornamehash}{9d9028d9e1d6439936cddd961a2a2e95}
+      \strng{authorfullhash}{9d9028d9e1d6439936cddd961a2a2e95}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Data Shapley: Equitable Valuation of Data for Machine Learning}
+      \field{year}{2019}
+      \verb{eprint}
+      \verb arXiv:1904.02868
+      \endverb
+    \endentry
+    \entry{looFuck}{article}{}
+      \name{author}{9}{}{%
+        {{hash=047fd30cb23973caae3e3b6d51c4e51a}{%
+           family={Jia},
+           familyi={J\bibinitperiod},
+           given={Ruoxi},
+           giveni={R\bibinitperiod}}}%
+        {{hash=86756d7b8cb7311613b1c58712b999b3}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Fan},
+           giveni={F\bibinitperiod}}}%
+        {{hash=7b6b1c6dbefbd93a827ac05154afa714}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Xuehui},
+           giveni={X\bibinitperiod}}}%
+        {{hash=337dc289b8a119a703862d197a49f138}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Jiacen},
+           giveni={J\bibinitperiod}}}%
+        {{hash=d05b76ed92cbd2b7259af6cf73d87a5d}{%
+           family={Dao},
+           familyi={D\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=7a55594bf70724dc4ff9c89939ef5744}{%
+           family={Kailkhura},
+           familyi={K\bibinitperiod},
+           given={Bhavya},
+           giveni={B\bibinitperiod}}}%
+        {{hash=848d4d50fbfa41d0cacc5c3d3315ac3c}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Ce},
+           giveni={C\bibinitperiod}}}%
+        {{hash=a9c8728e355996d027a7e56b60820a18}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Bo},
+           giveni={B\bibinitperiod}}}%
+        {{hash=d458d5f9b64652055bd81d57e4777b22}{%
+           family={Song},
+           familyi={S\bibinitperiod},
+           given={Dawn},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{015a30a563c15a13af04360da4f997f9}
+      \strng{fullhash}{35895975d0cae83e439f85dffd7a6643}
+      \strng{bibnamehash}{015a30a563c15a13af04360da4f997f9}
+      \strng{authorbibnamehash}{015a30a563c15a13af04360da4f997f9}
+      \strng{authornamehash}{015a30a563c15a13af04360da4f997f9}
+      \strng{authorfullhash}{35895975d0cae83e439f85dffd7a6643}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Scalability vs. Utility: Do We Have to Sacrifice One for the Other in Data Importance Quantification?}
+      \field{year}{2019}
+    \endentry
+    \entry{knn}{article}{}
+      \name{author}{9}{}{%
+        {{hash=047fd30cb23973caae3e3b6d51c4e51a}{%
+           family={Jia},
+           familyi={J\bibinitperiod},
+           given={Ruoxi},
+           giveni={R\bibinitperiod}}}%
+        {{hash=d05b76ed92cbd2b7259af6cf73d87a5d}{%
+           family={Dao},
+           familyi={D\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=fd845565e2b84550fb7832698c46ea3e}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Boxin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=9f21a69e9495bf2ccd2911a61b067e48}{%
+           family={Hubis},
+           familyi={H\bibinitperiod},
+           given={Frances\bibnamedelima Ann},
+           giveni={F\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=8b8543a55cdb995b623c0706e41d1a15}{%
+           family={Gurel},
+           familyi={G\bibinitperiod},
+           given={Nezihe\bibnamedelima Merve},
+           giveni={N\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=a9c8728e355996d027a7e56b60820a18}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Bo},
+           giveni={B\bibinitperiod}}}%
+        {{hash=848d4d50fbfa41d0cacc5c3d3315ac3c}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Ce},
+           giveni={C\bibinitperiod}}}%
+        {{hash=4b32bad3d3b9b241d8d56bcf9f84b44f}{%
+           family={Spanos},
+           familyi={S\bibinitperiod},
+           given={Costas},
+           giveni={C\bibinitperiod}}}%
+        {{hash=d458d5f9b64652055bd81d57e4777b22}{%
+           family={Song},
+           familyi={S\bibinitperiod},
+           given={Dawn},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {VLDB Endowment}%
+      }
+      \strng{namehash}{015a30a563c15a13af04360da4f997f9}
+      \strng{fullhash}{b850d46eec9b50c23c9e8cbc9f15ed10}
+      \strng{bibnamehash}{015a30a563c15a13af04360da4f997f9}
+      \strng{authorbibnamehash}{015a30a563c15a13af04360da4f997f9}
+      \strng{authornamehash}{015a30a563c15a13af04360da4f997f9}
+      \strng{authorfullhash}{b850d46eec9b50c23c9e8cbc9f15ed10}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Given a data set D containing millions of data points and a data consumer who is willing to pay for $X to train a machine learning (ML) model over D, how should we distribute this $X to each data point to reflect its "value"? In this paper, we define the "relative value of data" via the Shapley value, as it uniquely possesses properties with appealing real-world interpretations, such as fairness, rationality and decentralizability. For general, bounded utility functions, the Shapley value is known to be challenging to compute: to get Shapley values for all N data points, it requires O(2N) model evaluations for exact computation and O(N log N) for (ϵ, δ)-approximation.In this paper, we focus on one popular family of ML models relying on K-nearest neighbors (KNN). The most surprising result is that for unweighted KNN classifiers and regressors, the Shapley value of all N data points can be computed, exactly, in O(N log N) time - an exponential improvement on computational complexity! Moreover, for (ϵ, δ)-approximation, we are able to develop an algorithm based on Locality Sensitive Hashing (LSH) with only sublinear complexity O(Nh(ϵ, K) log N) when ϵ is not too small and K is not too large. We empirically evaluate our algorithms on up to 10 million data points and even our exact algorithm is up to three orders of magnitude faster than the baseline approximation algorithm. The LSH-based approximation algorithm can accelerate the value calculation process even further.We then extend our algorithm to other scenarios such as (1) weighed KNN classifiers, (2) different data points are clustered by different data curators, and (3) there are data analysts providing computation who also requires proper valuation. Some of these extensions, although also being improved exponentially, are less practical for exact computation (e.g., O(NK) complexity for weigthed KNN). We thus propose an Monte Carlo approximation algorithm, which is O(N(log N)2/(log K)2) times more efficient than the baseline approximation algorithm.}
+      \field{issn}{2150-8097}
+      \field{journaltitle}{Proc. VLDB Endow.}
+      \field{number}{11}
+      \field{title}{Efficient Task-Specific Data Valuation for Nearest Neighbor Algorithms}
+      \field{volume}{12}
+      \field{year}{2019}
+      \field{pages}{1610\bibrangedash 1623}
+      \range{pages}{14}
+    \endentry
+    \entry{betaShapley}{article}{}
+      \name{author}{2}{}{%
+        {{hash=b7ae8df1d905e40aae3282e8da04f99c}{%
+           family={Kwon},
+           familyi={K\bibinitperiod},
+           given={Yongchan},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=1b868d50048a635fa27ffa744323fa41}{%
+           family={Zou},
+           familyi={Z\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{b9b48616663db73a5fc2a8c062267187}
+      \strng{fullhash}{b9b48616663db73a5fc2a8c062267187}
+      \strng{bibnamehash}{b9b48616663db73a5fc2a8c062267187}
+      \strng{authorbibnamehash}{b9b48616663db73a5fc2a8c062267187}
+      \strng{authornamehash}{b9b48616663db73a5fc2a8c062267187}
+      \strng{authorfullhash}{b9b48616663db73a5fc2a8c062267187}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Beta Shapley: a Unified and Noise-reduced Data Valuation Framework for Machine Learning}
+      \field{year}{2021}
+      \verb{eprint}
+      \verb arXiv:2110.14049
+      \endverb
+    \endentry
+    \entry{dataBanzhaf}{article}{}
+      \name{author}{2}{}{%
+        {{hash=e769a876b005fabe92dcd7819bc6611e}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Jiachen\bibnamedelima T.},
+           giveni={J\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=047fd30cb23973caae3e3b6d51c4e51a}{%
+           family={Jia},
+           familyi={J\bibinitperiod},
+           given={Ruoxi},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{b3eaffda94c913c66fdfec46182391bc}
+      \strng{fullhash}{b3eaffda94c913c66fdfec46182391bc}
+      \strng{bibnamehash}{b3eaffda94c913c66fdfec46182391bc}
+      \strng{authorbibnamehash}{b3eaffda94c913c66fdfec46182391bc}
+      \strng{authornamehash}{b3eaffda94c913c66fdfec46182391bc}
+      \strng{authorfullhash}{b3eaffda94c913c66fdfec46182391bc}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Data Banzhaf: A Robust Data Valuation Framework for Machine Learning}
+      \field{year}{2022}
+      \verb{eprint}
+      \verb arXiv:2205.15466
+      \endverb
+    \endentry
+    \entry{tay}{article}{}
+      \name{author}{4}{}{%
+        {{hash=1de428a9cab2f977cba09ac420d0b0be}{%
+           family={Tay},
+           familyi={T\bibinitperiod},
+           given={Sebastian\bibnamedelima Shenghong},
+           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=a5c1da4c30d45b59c4b1ae3784550044}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Xinyi},
+           giveni={X\bibinitperiod}}}%
+        {{hash=96c6ee316e91dc18130c0fc8758346bc}{%
+           family={Foo},
+           familyi={F\bibinitperiod},
+           given={Chuan\bibnamedelima Sheng},
+           giveni={C\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=422652fa48550653755cf6d5c17bde30}{%
+           family={Low},
+           familyi={L\bibinitperiod},
+           given={Bryan\bibnamedelimb Kian\bibnamedelima Hsiang},
+           giveni={B\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{f441ac82a506c1251d3901277f4a233f}
+      \strng{fullhash}{74829fc76c82dd1bc543fa07dac7e746}
+      \strng{bibnamehash}{74829fc76c82dd1bc543fa07dac7e746}
+      \strng{authorbibnamehash}{74829fc76c82dd1bc543fa07dac7e746}
+      \strng{authornamehash}{f441ac82a506c1251d3901277f4a233f}
+      \strng{authorfullhash}{74829fc76c82dd1bc543fa07dac7e746}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.LG}
+      \field{eprinttype}{arXiv}
+      \field{title}{Incentivizing Collaboration in Machine Learning via Synthetic Data Rewards}
+      \field{year}{2021}
+      \verb{eprint}
+      \verb 2112.09327
+      \endverb
+    \endentry
+    \entry{xu}{article}{}
+      \name{author}{4}{}{%
+        {{hash=a5c1da4c30d45b59c4b1ae3784550044}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Xinyi},
+           giveni={X\bibinitperiod}}}%
+        {{hash=bc12e3769706f0586936b4f2f3408063}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Zhaoxuan},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=96c6ee316e91dc18130c0fc8758346bc}{%
+           family={Foo},
+           familyi={F\bibinitperiod},
+           given={Chuan\bibnamedelima Sheng},
+           giveni={C\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=422652fa48550653755cf6d5c17bde30}{%
+           family={Low},
+           familyi={L\bibinitperiod},
+           given={Bryan\bibnamedelimb Kian\bibnamedelima Hsiang},
+           giveni={B\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \name{editor}{5}{}{%
+        {{hash=6cb5af0e649387de5bbfdb150cc7a786}{%
+           family={Ranzato},
+           familyi={R\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=02854da982edf66ffa27f4fc1c738779}{%
+           family={Beygelzimer},
+           familyi={B\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5e4dc483044b6dbd4496a818b8b6c67a}{%
+           family={Dauphin},
+           familyi={D\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=12f9558e0c25864defe6eaed94a9011b}{%
+           family={Liang},
+           familyi={L\bibinitperiod},
+           given={P.S.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=3d379bd6370f69ebc79dc5337ed96d13}{%
+           family={Vaughan},
+           familyi={V\bibinitperiod},
+           given={J.\bibnamedelimi Wortman},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Curran Associates, Inc.}%
+      }
+      \strng{namehash}{08b872edd24acbfcd19894136bf9af09}
+      \strng{fullhash}{2b4607b140b11aec04ed136412790254}
+      \strng{bibnamehash}{2b4607b140b11aec04ed136412790254}
+      \strng{authorbibnamehash}{2b4607b140b11aec04ed136412790254}
+      \strng{authornamehash}{08b872edd24acbfcd19894136bf9af09}
+      \strng{authorfullhash}{2b4607b140b11aec04ed136412790254}
+      \strng{editorbibnamehash}{ad1ea98aa644fe4cbc55fbe24d1f78a9}
+      \strng{editornamehash}{6013a44c5dec47e5e51fdd72b3f8b5eb}
+      \strng{editorfullhash}{ad1ea98aa644fe4cbc55fbe24d1f78a9}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Advances in Neural Information Processing Systems}
+      \field{title}{Validation Free and Replication Robust Volume-based Data Valuation}
+      \field{volume}{34}
+      \field{year}{2021}
+      \field{pages}{10837\bibrangedash 10848}
+      \range{pages}{12}
+    \endentry
+    \entry{amiri}{article}{}
+      \name{author}{3}{}{%
+        {{hash=6495553cad46ebd10f8966f7fae57d89}{%
+           family={Amiri},
+           familyi={A\bibinitperiod},
+           given={Mohammad\bibnamedelima Mohammadi},
+           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=cb8ebf6ac3f1a7262afce5e4befe88b7}{%
+           family={Berdoz},
+           familyi={B\bibinitperiod},
+           given={Frederic},
+           giveni={F\bibinitperiod}}}%
+        {{hash=8843732e3271ea6b1e5a66e24f6c6a43}{%
+           family={Raskar},
+           familyi={R\bibinitperiod},
+           given={Ramesh},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{93a1f29ec12184451a7b6ec2f3e3caeb}
+      \strng{fullhash}{93a1f29ec12184451a7b6ec2f3e3caeb}
+      \strng{bibnamehash}{93a1f29ec12184451a7b6ec2f3e3caeb}
+      \strng{authorbibnamehash}{93a1f29ec12184451a7b6ec2f3e3caeb}
+      \strng{authornamehash}{93a1f29ec12184451a7b6ec2f3e3caeb}
+      \strng{authorfullhash}{93a1f29ec12184451a7b6ec2f3e3caeb}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.LG}
+      \field{eprinttype}{arXiv}
+      \field{title}{Fundamentals of Task-Agnostic Data Valuation}
+      \field{year}{2022}
+      \verb{eprint}
+      \verb 2208.12354
+      \endverb
+    \endentry
+    \entry{reinforcement}{article}{}
+      \name{author}{3}{}{%
+        {{hash=7b5738a87e11e248e9c5a24b5b0f0769}{%
+           family={Yoon},
+           familyi={Y\bibinitperiod},
+           given={Jinsung},
+           giveni={J\bibinitperiod}}}%
+        {{hash=22c5e08fb31874790e8bed0aa6207bc4}{%
+           family={Arik},
+           familyi={A\bibinitperiod},
+           given={Sercan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=f769e681ea0c0a3a6ba5a36ddd18c253}{%
+           family={Pfister},
+           familyi={P\bibinitperiod},
+           given={Tomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=2d366eea8a8bd912dc8499cb3200ebd2}{%
+           family={III},
+           familyi={I\bibinitperiod},
+           given={Hal\bibnamedelima Daumé},
+           giveni={H\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=d77c73a14b0f048484c1d34aba3071d4}{%
+           family={Singh},
+           familyi={S\bibinitperiod},
+           given={Aarti},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {PMLR}%
+      }
+      \strng{namehash}{9d6d8ab4730dbc932eb83b3a666112d8}
+      \strng{fullhash}{9d6d8ab4730dbc932eb83b3a666112d8}
+      \strng{bibnamehash}{9d6d8ab4730dbc932eb83b3a666112d8}
+      \strng{authorbibnamehash}{9d6d8ab4730dbc932eb83b3a666112d8}
+      \strng{authornamehash}{9d6d8ab4730dbc932eb83b3a666112d8}
+      \strng{authorfullhash}{9d6d8ab4730dbc932eb83b3a666112d8}
+      \strng{editorbibnamehash}{6a2c7e018f72565d1676eee4dc69f8f4}
+      \strng{editornamehash}{6a2c7e018f72565d1676eee4dc69f8f4}
+      \strng{editorfullhash}{6a2c7e018f72565d1676eee4dc69f8f4}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 37th International Conference on Machine Learning}
+      \field{series}{Proceedings of Machine Learning Research}
+      \field{title}{Data Valuation using Reinforcement Learning}
+      \field{volume}{119}
+      \field{year}{2020}
+      \field{pages}{10842\bibrangedash 10851}
+      \range{pages}{10}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

@@ -1,0 +1,227 @@
+@article{shapleyValue,
+  title = {A Value for n-Person Games},
+  author = {Shapley, Lloyd S},
+  booktitle = {Contributions to the Theory of Games II},
+  editor = {Kuhn, Harold W. and Tucker, Albert W.},
+  pages = {307--317},
+  year = {1953},
+  publisher = {Princeton University Press},
+  address = {Princeton}
+}
+
+@article{dataShapley,
+Author = {Amirata Ghorbani and James Zou},
+Title = {Data Shapley: Equitable Valuation of Data for Machine Learning},
+Year = {2019},
+Eprint = {arXiv:1904.02868},
+}
+
+@article{betaShapley,
+Author = {Yongchan Kwon and James Zou},
+Title = {Beta Shapley: a Unified and Noise-reduced Data Valuation Framework for Machine Learning},
+Year = {2021},
+Eprint = {arXiv:2110.14049},
+}
+
+@article{dataBanzhaf,
+Author = {Jiachen T. Wang and Ruoxi Jia},
+Title = {Data Banzhaf: A Robust Data Valuation Framework for Machine Learning},
+Year = {2022},
+Eprint = {arXiv:2205.15466},
+}
+
+@article{uniqueShapley,
+  doi = {10.1007/bf01780630},
+  url = {https://doi.org/10.1007/bf01780630},
+  year = {1975},
+  publisher = {Springer Science and Business Media {LLC}},
+  volume = {4},
+  number = {3},
+  pages = {131--139},
+  author = {P. Dubey},
+  title = {On the uniqueness of the Shapley value},
+  journal = {International Journal of Game Theory}
+}
+
+@article{looFuck,
+Author = {Ruoxi Jia and Fan Wu and Xuehui Sun and Jiacen Xu and David Dao and Bhavya Kailkhura and Ce Zhang and Bo Li and Dawn Song},
+Title = {Scalability vs. Utility: Do We Have to Sacrifice One for the Other in Data Importance Quantification?},
+Year = {2019},
+}
+
+@article{Tejada,
+title = {Polynomial calculation of the Shapley value based on sampling},
+journal = {Computers \& Operations Research},
+volume = {36},
+number = {5},
+pages = {1726-1730},
+year = {2009},
+note = {Selected papers presented at the Tenth International Symposium on Locational Decisions (ISOLDE X)},
+issn = {0305-0548},
+author = {Javier Castro and Daniel Gómez and Juan Tejada},
+keywords = {Game theory, Shapley value, Sampling algorithm},
+abstract = {In this paper we develop a polynomial method based on sampling theory that can be used to estimate the Shapley value (or any semivalue) for cooperative games. Besides analyzing the complexity problem, we examine some desirable statistical properties of the proposed approach and provide some computational results.}
+}
+
+@article{knn,
+author = {Jia, Ruoxi and Dao, David and Wang, Boxin and Hubis, Frances Ann and Gurel, Nezihe Merve and Li, Bo and Zhang, Ce and Spanos, Costas and Song, Dawn},
+title = {Efficient Task-Specific Data Valuation for Nearest Neighbor Algorithms},
+year = {2019},
+issue_date = {July 2019},
+publisher = {VLDB Endowment},
+volume = {12},
+number = {11},
+issn = {2150-8097},
+abstract = {Given a data set D containing millions of data points and a data consumer who is willing to pay for $X to train a machine learning (ML) model over D, how should we distribute this $X to each data point to reflect its "value"? In this paper, we define the "relative value of data" via the Shapley value, as it uniquely possesses properties with appealing real-world interpretations, such as fairness, rationality and decentralizability. For general, bounded utility functions, the Shapley value is known to be challenging to compute: to get Shapley values for all N data points, it requires O(2N) model evaluations for exact computation and O(N log N) for (ϵ, δ)-approximation.In this paper, we focus on one popular family of ML models relying on K-nearest neighbors (KNN). The most surprising result is that for unweighted KNN classifiers and regressors, the Shapley value of all N data points can be computed, exactly, in O(N log N) time - an exponential improvement on computational complexity! Moreover, for (ϵ, δ)-approximation, we are able to develop an algorithm based on Locality Sensitive Hashing (LSH) with only sublinear complexity O(Nh(ϵ, K) log N) when ϵ is not too small and K is not too large. We empirically evaluate our algorithms on up to 10 million data points and even our exact algorithm is up to three orders of magnitude faster than the baseline approximation algorithm. The LSH-based approximation algorithm can accelerate the value calculation process even further.We then extend our algorithm to other scenarios such as (1) weighed KNN classifiers, (2) different data points are clustered by different data curators, and (3) there are data analysts providing computation who also requires proper valuation. Some of these extensions, although also being improved exponentially, are less practical for exact computation (e.g., O(NK) complexity for weigthed KNN). We thus propose an Monte Carlo approximation algorithm, which is O(N(log N)2/(log K)2) times more efficient than the baseline approximation algorithm.},
+journal = {Proc. VLDB Endow.},
+pages = {1610–1623},
+numpages = {14}
+}
+
+@article{featureSelection,
+  title={Feature selection based on the shapley value},
+  author={Cohen, Shay and Ruppin, Eytan and Dror, Gideon},
+  journal={other words},
+  volume={1},
+  number={98Eqr},
+  pages={155},
+  year={2005}
+}
+
+@article{banzhaf,
+  author = {Banzhaf, J.F.},
+  journal = {Rutgers Law Review},
+  number = {2},
+  pages = {317-343},
+  title = {Weighted voting doesn't work: {A} mathematical analysis},
+  volume = {19},
+  year = {1965},
+  title_with_no_special_chars = {Weighted voting doesnt work A mathematical analysis}
+}
+
+@TechReport{Dubey,
+  author={Pradeep Dubey and Robert J. Weber},
+  title={Probabilistic Values for Games},
+  year={1977},
+  institution={Cowles Foundation for Research in Economics, Yale University},
+  type={Cowles Foundation Discussion Papers},
+  number={471},
+  abstract={No abstract is available for this item.}
+}
+
+@article{Dubey2,
+ ISSN = {0364765X, 15265471},
+ abstract = {A semivalue is a symmetric positive linear operator on a space of games, which leaves the additive games fixed. Such an operator satisfies all of the axioms defining the Shapley value, with the possible exception of the efficiency axiom. The class of semivalues is completely characterized for the space of finite-player games, and for the space pNA of nonatomic games.},
+ author = {Pradeep Dubey and Abraham Neyman and Robert James Weber},
+ journal = {Mathematics of Operations Research},
+ number = {1},
+ pages = {122--128},
+ publisher = {INFORMS},
+ title = {Value Theory without Efficiency},
+ urldate = {2023-06-28},
+ volume = {6},
+ year = {1981}
+}
+
+@article{featureImportance,
+Author = {Scott Lundberg and Su-In Lee},
+Title = {A Unified Approach to Interpreting Model Predictions},
+Year = {2017},
+Eprint = {arXiv:1705.07874},
+}
+
+@article{genes,
+author = {Moretti, Stefano and Fragnelli, Vito and Patrone, Fioravante and Bonassi, Stefano},
+year = {2010},
+month = {11},
+pages = {2721-30},
+title = {Using coalitional games on biological networks to measure centrality and power of genes},
+volume = {26},
+journal = {Bioinformatics (Oxford, England)}
+}
+
+@article{fatima,
+title = {A linear approximation method for the Shapley value},
+journal = {Artificial Intelligence},
+volume = {172},
+number = {14},
+pages = {1673-1699},
+year = {2008},
+issn = {0004-3702},
+author = {Shaheen S. Fatima and Michael Wooldridge and Nicholas R. Jennings},
+keywords = {Coalitional game theory, Shapley value, Approximation method}
+}
+
+@book{libroShapley,
+  title={The Shapley value: essays in honor of Lloyd S. Shapley},
+  author={Roth, Alvin E},
+  year={1988},
+  publisher={Cambridge University Press}
+}
+
+@article{reinforcement,
+  title = 	 {Data Valuation using Reinforcement Learning},
+  author =       {Yoon, Jinsung and Arik, Sercan and Pfister, Tomas},
+  booktitle = 	 {Proceedings of the 37th International Conference on Machine Learning},
+  pages = 	 {10842--10851},
+  year = 	 {2020},
+  editor = 	 {III, Hal Daumé and Singh, Aarti},
+  volume = 	 {119},
+  series = 	 {Proceedings of Machine Learning Research},
+  publisher =    {PMLR}
+}
+
+@article{permutationSampling,
+author = {Mann, Irwin and Lloyd S. Shapley},
+title = {Values of Large Games, IV: Evaluating the Electoral College by Montecarlo Techniques},
+year = {1960},
+publisher = {RAND Corporation}
+}
+
+@phdthesis{maleki,
+           month = {August},
+           title = {Addressing the computational issues of the Shapley value with applications in the smart grid},
+          school = {University of Southampton},
+          author = {Sasan Maleki},
+            year = {2015}
+}
+
+@article{covert,
+  title = {Shapley feature utility},
+  author = {Covert, Ian C and Lundberg, Scott M and Lee, Su-In},
+  journal = {IEEE Transactions on Information Theory},
+  year = {2019}
+}
+
+@article{tay,
+      title={Incentivizing Collaboration in Machine Learning via Synthetic Data Rewards}, 
+      author={Sebastian Shenghong Tay and Xinyi Xu and Chuan Sheng Foo and Bryan Kian Hsiang Low},
+      year={2021},
+      Eprint ={2112.09327},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
+
+@article{amiri,
+      title={Fundamentals of Task-Agnostic Data Valuation}, 
+      author={Mohammad Mohammadi Amiri and Frederic Berdoz and Ramesh Raskar},
+      year={2022},
+      eprint={2208.12354},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
+
+@article{xu,
+ author = {Xu, Xinyi and Wu, Zhaoxuan and Foo, Chuan Sheng and Low, Bryan Kian Hsiang},
+ booktitle = {Advances in Neural Information Processing Systems},
+ editor = {M. Ranzato and A. Beygelzimer and Y. Dauphin and P.S. Liang and J. Wortman Vaughan},
+ pages = {10837--10848},
+ publisher = {Curran Associates, Inc.},
+ title = {Validation Free and Replication Robust Volume-based Data Valuation},
+ volume = {34},
+ year = {2021}
+}
+
+
+
+

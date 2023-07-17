@@ -1,0 +1,93 @@
+\chapter{Metodología}
+\justifying
+
+Como se menciona en distintas fuentes, el aprendizaje computacional
+supervisado presenta tres partes primordiales\cite{dataShapley,betaShapley}.
+\begin{enumerate}
+  \item  Llamaremos $D$ al \textbf{conjunto prefijado de datos de
+  entrenamiento}. Tenemos que $D = \{ (x_i, y_i) \}_1^n$. Dónde $x_i$ hace
+  referencia a las características del dato $i$-ésimo e $y_i$ a su
+  categoría para problemas de clasificación o valor para problemas de
+  regresión.
+  
+  \item El \textbf{algoritmo de aprendizaje}  A . Este será visto como
+  una caja negra que toma un conjunto de entrenamiento $D$ y construye un
+  predictor $f$.
+  
+  \item La \textbf{función de utilidad} $U$ será una aplicación
+  que asocia a cada subconjunto de $D$ un a un valor indicando lo útil que
+  es este subconjunto. En problemas de clasificación la opción
+  habitual para $U$ es la precisión en validación del modelo entrenado
+  con el subconjunto de entrada, es decir $U (S) = acc (\mathcal{A}
+  (S)) .$ Sin pérdida de generalidad asumiremos a lo largo del documento
+  que $U (S) \in [0, 1]$ para todo $S \subseteq D$.
+\end{enumerate}
+Para una notación más fluida, siempre y cuando no haya confusión
+denotaremos:
+\begin{itemize}
+  \item $D = \{ 1, \ldots, n \}$. Revisar!!!!!!
+  
+  \item $S \cup i := S \cup \{ i \}$.
+  
+  \item $S \setminus i := S \setminus \{ i \}$.
+\end{itemize}
+El objetivo de la valoración de datos es asignar una puntuación a cada
+dato del conjunto $D$ que refleje su contribución al entrenamiento del
+modelo. Cada uno de estos valores dependerá de $D, \mathcal{A}$ y $U$, sin
+embargo, por simpleza lo escribiremos como $\phi (i ; U)$. Estas puntuaciones
+reciben el nombre de \textit{data values}.
+
+Pasamos a tratar las nociones principales en cuanto a valoración de datos.
+
+\section{LOO Error}
+
+El método más sencillo de valoración de datos consiste en medir la
+contribución de un punto al resto del conjunto de train:
+\[ \phi_{{loo}} (i ; U) = U (D) - U (D \setminus i) . \]
+Este método se conoce como \textit{leave-one-out} (LOO). Calcular el
+valor exacto de los valores LOO para un conjunto de train de tamaño $N$
+requeriría reentrenar el modelo $N$ veces, lo que lo convierte en un
+enfoque inviable cuando el tama{\~n}o del conjunto de datos es grande como
+podemos ver en estudios como los llevados a cabo en {\cite{looFuck}}.
+
+\section{Data Shapley}
+
+\
+
+En {\cite{shapleyValue}} definen los métodos de valuación equitativa
+como sigue.
+
+\begin{definition}
+  Un método de evaluación será equitativo si cumple las siguientes
+  condiciones:
+  \begin{enumerate}
+    
+    
+    \item Linealidad: Dadas métricas de error $V$ y $W$, constantes
+    
+    \item Jugador nulo: Si $\forall S \subseteq D \setminus \{ i \}$, $V (S)
+    = V (S \cup \{ i \})$ entonces $\phi_i = 0$.
+    
+    \item Simetría: Fijados $i, j \in D$, si para todo $S \subseteq D
+    \setminus \{ i, j \}$, se tiene que $V (S \cup \{ i \}) = V (S \cup j)$
+    entonces $\phi_i = \phi_j$.
+    
+    \item Esta hay que escribirla bien.
+  \end{enumerate}
+\end{definition}
+
+La siguiente proposición es la que da nombre a ...
+
+\begin{proposition}
+  Cualquier $\phi (D, \mathcal{A}, V)$ que satisfaga las condiciones
+  anteriores será de la forma
+  \[ \phi_i = C \sum_{S \subseteq D \setminus \{ i \}} \frac{V (S \cup \{ i
+     \}) - V (S)}{\binom{n - 1}{| S |}} . \]
+  Dónde el sumatorio contempla todos los subconjuntos de $D$ que no
+  contienen a $i$ y $C$ es una constante arbitraria. Llamaremos a $\phi_i$ el
+  Valor de Shapley asociado al dato $i$.
+\end{proposition}
+
+\begin{proof}
+  Se puede consultar en {\cite{shapleyValue}}.
+\end{proof}

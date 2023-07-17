@@ -1,0 +1,59 @@
+\usepackage[
+backend=biber,
+style=numeric,
+sorting=none,
+sortlocale=es_ES,
+natbib=true,
+doi=true,
+isbn=false,
+url=false,
+minbibnames=1,
+maxbibnames=8,
+]{biblatex}
+\addbibresource{bib/references.bib}
+
+
+
+\AtEveryBibitem{%
+  \ifentrytype{book}
+    {\clearfield{pagetotal}}
+    {}%
+}
+
+\AtEveryBibitem{%
+  \ifentrytype{article}
+    {\clearfield{day}\clearfield{month}}
+    {}%
+}
+
+\renewbibmacro*{issue+date}{%
+  \setunit{\addcomma\space}% NEW
+%  \printtext[parens]{% DELETED
+    \iffieldundef{issue}
+      {\usebibmacro{date}}
+      {\printfield{issue}%
+      \setunit*{\addspace}%
+%       \usebibmacro{date}}}% DELETED
+      \usebibmacro{date}}% NEW
+\newunit}
+
+% let "publisher" and "location" change place
+\renewbibmacro*{publisher+location+date}{%
+  \printlist{publisher}%
+  \iflistundef{location}
+    {\setunit*{\addcomma\space}}
+    {\setunit*{\addcomma\space}}%
+  \printlist{location}%
+  \setunit*{\addcomma\space}%
+  \usebibmacro{date}%
+  \newunit}
+
+% Esto es para quitar el En: de los artículos. 
+\renewbibmacro{in:}{}
+\DefineBibliographyStrings{spanish}{%
+  andothers = {et\addabbrvspace al\adddot}
+}
+
+%%% --- The following two lines are what needs to be added --- %%%
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}

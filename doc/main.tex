@@ -1,0 +1,175 @@
+\documentclass[
+12pt,
+spanish, 
+singlespacing, 
+headsepline,
+twoside]{Thesis}
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc} 
+\usepackage{mathpazo} 
+\usepackage[autostyle=true]{csquotes} 
+\usepackage{makeidx}
+\usepackage{amsmath,amsthm}
+\usepackage{thmtools}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{cancel}
+\usepackage{imakeidx}
+\usepackage{ragged2e}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{subcaption}
+\usepackage{afterpage}
+\usepackage{bm}
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \newpage}
+\usepackage{tikz}
+\usetikzlibrary{calc} 
+\definecolor{titlepage}{RGB}{121, 11, 21} % rojo
+
+%Estilos
+\usepackage{sty/bib}
+
+%Título del los capítulos
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+{\bfseries\Large} 
+{\filleft\MakeUppercase{\chaptertitlename} \Huge\thechapter} {4ex}
+{\titlerule
+\vspace{2ex}%
+\filright} [\vspace{2ex}%
+\titlerule]
+
+%% Alphabetic index
+\makeindex
+\stdpunctuation                         % fix bug
+\DeclareFieldFormat[book]
+{title}{\emph{\mkbibquote{#1}}}         % change title format
+\renewcommand{\newunitpunct}{\space}    % change separation unit between the title and the other fields
+\DeclareFieldFormat{url}{
+\textcolor{blue}{\\\href{#1}{#1}}
+}                                       % change url field
+
+
+%% Margin settings %%
+\geometry{
+	paper=a4paper, % Change to letterpaper for US letter
+	inner=2.9cm, % Inner margin
+	outer=2.5cm, % Outer margin
+	bindingoffset=0.5cm, % Binding offset
+	top=1.7cm, % Top margin
+	bottom=1.7cm, % Bottom margin
+	%showframe, % Uncomment to show how the type block is set on the page
+}
+
+
+%%	Thesis info %%
+\thesistitle{Data valuation}
+\supervisor{Miguel} 
+\degree{Masther's degree} 
+\author{Francisco Aguilar Martínez} 
+
+\subject{Análisis de datos} 
+\university{Universidad complutense de Madrid y Universidad politécnica de Madrid}
+%\department{\href{https://www.um.es/web/ditec/}{Departamento de Ingeniería y Tecnología de Computadores}}
+\faculty{\href{https://www.um.es/web/informatica/}{Facultad de Informática}} 
+
+\AtBeginDocument{
+\hypersetup{pdftitle=\ttitle}
+\hypersetup{pdfauthor=\authorname} 
+}
+
+%% Theorem style
+\usepackage{thmtools}
+\declaretheorem[name=Teorema, style=plain, numberwithin=section, refname={teorema,teoremas},
+Refname={Teorema,Teoremas}]{theorem}
+
+% \declaretheorem[name=Corolario, style=plain, sibling=teo, refname={corolario,corolarios},
+% Refname={Corolario,Corolarios}]{corolario}
+
+\declaretheorem[name=Proposición, style=plain,
+sibling=theorem, refname={proposición,proposiciones},
+Refname={Proposición,Proposiciones}]{proposition}
+
+\declaretheorem[name=Lema, style=plain, sibling=theorem, refname={lema,lemas},
+Refname={Lema,Lemas}]{lema}
+
+% \declaretheorem[name=Ejemplo, style=definition, sibling=teo, refname={ejemplo,ejemplos},
+% Refname={Ejemplo,Ejemplos}]{example}
+
+\declaretheorem[name=Definición, style=definition, sibling=theorem, refname={definición,definiciones},
+Refname={Definición,Definiciones}]{definition}
+
+\begin{document}
+% Redefs %
+\renewcommand{\figurename}{Figura}
+\renewcommand{\listfigurename}{Índice de figuras}
+\renewcommand{\tablename}{Tabla}
+%\renewcommand{\listtablename}{Índice de tablas}
+
+\frontmatter % Use roman page numbering style for the pre-content pages
+\pagenumbering{arabic}
+\pagestyle{empty} % Default to the plain heading style until the thesis style is called for the body content
+
+%%	Coloured title page %%
+\include{src/cubierta}
+\afterpage{\blankpage}
+%%	Title page %%
+\include{src/portada}
+\afterpage{\blankpage}
+
+%%	Declaration page %%
+\setcounter{page}{4}
+%\include{src/declaracion}
+
+%% Agradecimientos %%
+% \include{src/acknowledgements}
+
+\pagestyle{plain}
+
+%%	Lists of contents/figures/tables %%
+\tableofcontents
+%\listoffigures
+%\listoftables
+
+%% Resumen page %%
+%\include{src/resumen}
+
+%% Abreviaciones %%
+%\include{src/abreviations}
+
+%% Dedicación %%
+% \dedicatory{Dedicado a \dots} 
+
+\mainmatter % Begin numeric page numbering
+
+\pagestyle{thesis} % Return the page headers back to the "thesis" style
+
+
+%% Chapters %%
+% TODO mirar lo de las páginas
+\setcounter{page}{6}
+% \include{src/introduccion}
+% \afterpage{\blankpage}
+%\include{src/objetivosYMetodología}
+\include{src/estadoDelArte}
+%\afterpage{\blankpage}
+% \include{src/metodologia}
+% \afterpage{\blankpage}
+% \include{src/resultados}
+% \include{src/conclusiones}
+
+
+%% Alphabetic index
+% \printindex
+
+\afterpage{\blankpage}
+%%	Bibliography %%
+\printbibliography[
+heading=bibintoc,
+title={Bibliografía.}
+]
+
+\end{document}  

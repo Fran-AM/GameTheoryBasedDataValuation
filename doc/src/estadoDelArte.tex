@@ -1,0 +1,140 @@
+\chapter{Estado del arte}
+\justifying
+Desde la aparición del valor de Shapley como un método de reparto
+justo de recompensas en juegos cooperativos \cite{shapleyValue},
+este concepto se ha utilizado en diversos campos como la
+economía \cite{libroShapley}, estudio de sistemas multiagente
+\cite{fatima} e incluso en áreas en las que su aplicación
+puede resultar menos evidente como la genética
+\cite{genes}. Esta versatilidad se debe, en parte, a su 
+sólida base matemática y a sus intuitivas interpretaciónes,
+entre las que podemos resaltar:
+
+\begin{itemize}
+  \item Pago justo: El valor de Shapley de un jugador es la cantidad
+  que este debería recibir si las recompensas se distribuyesen de
+  manera que los jugadores fueran recompensados en función de su
+  contribución a la recompensa total.
+
+  \item Poder de negociación: El valor de Shapley puede
+  interpretarse como una medida del poder de negociación de un jugador.
+  Un jugador tiene más poder de negociación si su ausencia causa
+  una mayor disminución en la recompensa total que se puede obtener.
+\end{itemize}
+
+El valor de Shapley se basa en una serie de axiomas fundamentales,
+que garantizan propiedades como su equidad, eficiencia y simetría.
+En economía relajar estos axiomas, con el objetivo de dar lugar
+a nuevas formas de reparto de recomenpensa, ha sido uno de
+los principales temas de estudio. Ejemplos de esto serían el
+concepto de semivalor, el cual se obtiene al eliminar el
+axioma de eficiencia \cite{Dubey, Dubey2}.
+Este axioma asegura que la suma de los valores de
+todos los jugadores sea igual a la recompensa total disponible.
+Por tanto, al suprimirlo, los semivalores permiten cierta
+flexibilidad en este aspecto, lo que puede ser útil en
+situaciones en las que no todos los beneficios se pueden distribuir.
+Del mismo modo, eliminar el axioma de simetría, que
+establece que dos jugadores con igual contribución deben recibir
+igual recompensa, lleva al valor de Banzhaf \cite{banzhaf},
+que proporciona una medida de poder de un jugador basada
+en cuánto puede cambiar el resultado de un juego al unirse o
+abandonar una coalición. Cabe destacar que tanto el valor de
+Shapley como el valor de Banzhaf pueden obtenerse como
+particularizaciones del concepto de semivalor.
+
+\
+
+Debido a la naturaleza combinatoria del valor de Shapley, el cálculo
+de este es altamente costoso a nivel computacional y resulta en una
+tarea cuya complejidad crece exponencialmente al aumentar el
+número de jugadores. Es por esto que surgen métodos de estimación del
+mismo, la mayoría de estos métodos se basan en técnias de Montecarlo.
+En 1960, Irwin Mann y el propio Shapley mencionan las estimaciones
+basada en muestreo de permutaciones \cite{permutationSampling}. Pero
+no es hasta 2015 que se lleva a cabo un análisis de la complejidad
+a la hora de muestrear usando dicha técnica \cite{maleki}.
+Tras esto, en 2019, Covert propone un nuevo método de estimación basado
+en la técnica de muestreo por importancia que mejora los actuales
+\cite{covert}. Cabe destacar el \textit{ApproShapley} propuesto en
+{\cite{Tejada}}  desarrollado por los profesores J.Castro,
+D.Gómez y J.Tejada de la UCM.
+
+\
+
+Una de las primeras apariciones del valor de Shapley en el campo
+del aprendizaje computacional data del año 2005 como un método de
+selección de variables \cite{featureSelection}. Más tarde, en
+2017, se utiliza en el diseño del marco SHAP \cite{featureImportance},
+enfocado en la evaluación de la importancia de variables en modelos de
+predicción. Sin embargo, no es asta el año 2019 en el que se introduce
+como una alternativa a los métodos de valoración de datos del
+momento \cite{dataShapley}, acuñándose así el concepto 
+\textit{Data Shapley}.
+
+\
+
+% Este párrafo a lo mejor lo quitamos.
+Al igual que el cálculo del valor de Shapley, el cálculo de
+\textit{Data Shapley} es altamente costoso a nivel computacional,
+por lo que surgen también varios métodos de aproximación, entre
+los que podemos destacar \textit{Group Testing} \cite{looFuck},
+métodos de aproximación y cálculo exacto para problemas en los
+que se aplican métodos como KNN o derivados de este \cite{knn} y
+diversas técnicas basadas en métodos de Montecarlo como las vistas
+en \cite{dataShapley}.
+
+Cuando se prueba la eficacia de \textit{Data Shapley} en problemas de
+aprendizaje computacional como la detección de outliers o datos corruptos
+{\cite{dataShapley}}, la investigación sigue el mismo camino que años
+antes en teoría de juegos y se empiezan a reciclar conceptos como los
+semivalores o el valor de Banzhaf. Es en la línea de los semivalores que
+en 2022 surge \textit{Beta Shapley} {\cite{betaShapley}}, una
+generalización de \textit{data Shapley} que supera los
+resultados de los métodos más actuales de valoración de datos
+en varias tareas como son detección de muestras mal etiquetadas
+y selección de puntos problemáticos a la hora de entrenar un modelo.
+
+\
+
+En 2023, aparece \textit{data BanzHaf} \cite{dataBanzhaf},
+un nuevo método de valoración de datos derivado del valor de Banzhaf.
+Este nuevo método surge como una solución a la falta de robustez
+de las herramientas de valoración de datos existentes, falta de
+robustez causada en parte por factores difíciles de controlar como
+la aleatoriedad del método del descenso del gradiente
+estocástico, el cual es ampliamente usado hoy en día.
+Para solventar esta falta de robustez se apoya en el
+concepto de \textit{Safety Margin}, y demuestra que el valor de
+Banzhaf es el semivalor con mayor \textit{Safety Margin}. 
+\textit{Data Banzhaf} supera a los existentes métodos de valoración
+basados en semivalores en varias tareas de aprendizaje automático.
+
+\
+
+Aunque en este trabajo nos centramos en
+métodos de valoración de datos que se derivan directamente de
+conceptos de la teoría de juegos, existen otros métodos
+que, aún utilizando teoría de juegos, siguen enfoques relativamente
+distintos. Podemos destacar algunas obras como \cite{tay} en la que
+sugieren un método de valoración de datos para modelos
+generativos que utiliza la discrepancia media máxima (MMD) entre
+la fuente de datos y la distribución real de datos. En \cite{xu}
+proponen una medida de diversidad, llamada volumen robusto (RV),
+para valorar las fuentes de datos. La robustez de RV se discute
+en términos de la estabilidad frente a la replicación de datos.
+Finalmente en \cite{amiri} utilizan diferencias estadísticas
+entre los datos de origen y un conjunto de datos de referencia
+como la métrica de valoración. Estas diferencias estadísticas
+se miden mediante el uso de los conceptos de diversidad y
+relevancia de los datos previamente comentados.
+
+\
+
+Como algo casi anecdótico hay literatura en la que se lleva a
+cabo valoración de datos mediante aprendizaje por refuerzo
+\cite{reinforcement}. En dicho trabajo, se utiliza una red
+neuronal profunda para obtener un estimador de la propabiliadad
+de cada dato de ser usado en el entrenamiendo del modelo
+de predicción. Este estimador se obtiene mediante aprendizaje
+por refuerzo.

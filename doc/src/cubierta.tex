@@ -1,0 +1,43 @@
+\pagecolor{titlepage}
+\begin{titlepage}
+    \begin{center}
+    \color{white}
+     
+    % Upper part of the page
+    \vfill
+    
+    \includegraphics[height=0.5\textwidth]{img/escudo_ucm.png}\\[1cm]
+     
+    % Title
+    \HRule \\[0.4cm]
+    { \huge \bfseries \ttitle}\\[0.4cm]
+    \HRule \\[1.5cm]
+    
+    \textsc{\LARGE Universidad Complutense de Madrid}\\[0.5cm]
+    \textsc{\LARGE Universidad Politécnica de Madrid}\\[0.5cm]
+    \textsc{\Large Trabajo Final de Máster}\\[0.5cm]
+    
+    {\large \today}
+     
+    \vfill
+    \begin{tikzpicture}[overlay, remember picture, inner sep=0pt, outer sep=0pt]
+	  \fill [black] (current page.south west) rectangle (\paperwidth,\paperheight-26.4cm);
+	\node[anchor=south west,inner sep=0pt] at ($(current page.south west)+(9.6cm,4.5cm)$)
+	{% Author and supervisor
+    %   \flushright
+    
+        \begin{tabular}{lr}
+            \emph{Autor:}    & Francisco \textsc{Aguilar Martínez}\\
+            \emph{Tutores:}  & Carlos \textsc{Gregorio Rodríguez}\\
+                            & Miguel \textsc{De Benito Delgado}\\
+            \end{tabular}
+    };
+	\end{tikzpicture}
+    
+     
+    % Bottom of the page
+    \vspace{1cm}
+     
+    \end{center}
+\end{titlepage}
+\pagecolor{white}
