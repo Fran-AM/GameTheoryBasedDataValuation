@@ -112,29 +112,21 @@ def equilibrate_clases(df: pd.DataFrame) -> pd.DataFrame:
     return balanced
 
 
-def _powerset(iterable: Iterable) -> Iterable:
-    s = list(iterable)
-    return chain.from_iterable(combinations(s, r) for r in range(len(s)+1))
+def make_balance_sample(data, target):
+    """
+    Funcion del chino, hay que verla bien
+    """
+    p = np.mean(target)
+    if p < 0.5:
+        minor_class=1
+    else:
+        minor_class=0
+    
+    index_minor_class = np.where(target == minor_class)[0]
+    n_minor_class=len(index_minor_class)
+    n_major_class=len(target)-n_minor_class
+    new_minor=np.random.choice(index_minor_class, size=n_major_class-n_minor_class, replace=True)
 
-def _utility(X: pd.DataFrame, y: np.ndarray, subset: List) -> float:
-    clf = LogisticRegression(solver='sag')
-    # Puede que haya que añadir parametro validation_fraction.
-    if len(np.unique(y[subset])) < 2:
-        return 0
-    clf.fit(X.iloc[subset], y[subset])
-    # Usamos todo el dataset para calcular el score.
-    return clf.score(X, y)
-
-def exact_banzhaf(X: pd.DataFrame, y: np.ndarray) -> np.ndarray:
-    n = len(X)
-    banzhaf_values = np.zeros(n)
-    for i in range(n):
-        subsets = list(_powerset([j for j in range(n) if j != i]))
-        for subset in subsets:
-            S_i = list(subset) + [i]
-            banzhaf_values[i] += (_utility(X, y, S_i) - _utility(X, y, list(subset)))
-        banzhaf_values[i] /= (2 ** (n - 1))
-    return banzhaf_values
-
-# Hay que hacer algún test para ver que funciona bien.
-
+    data=np.concatenate([data, data[new_minor]])
+    target=np.concatenate([target, target[new_minor]])
+    return data, target
