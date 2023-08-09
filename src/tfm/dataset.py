@@ -1,5 +1,5 @@
 from pydvl.utils.dataset import Dataset
-from utils import build_pyDVL_dataset
+from utils.utils import build_pyDVL_dataset, make_balance_sample
 
 import torchvision.datasets as datasets
 import torchvision
@@ -7,7 +7,6 @@ import torchvision
 import numpy as np
 import sys
 import pickle
-
 
 def create_mnist() -> Dataset:
     """
@@ -17,7 +16,7 @@ def create_mnist() -> Dataset:
         Dataset (pyDVL.Dataset): The MNIST dataset.
     """
     trainset = datasets.MNIST(
-        root='.',
+        root='../../data',
         train=True,
         download=True
     )
@@ -43,7 +42,7 @@ def create_fmnist() -> Dataset:
         Dataset (pyDVL.Dataset): The Fashion MNIST dataset.
     """
     trainset = datasets.FashionMNIST(
-        root='.',
+        root='../../data',
         train=True,
         download=True
     )
@@ -62,7 +61,6 @@ def create_fmnist() -> Dataset:
     )
 
 
-# TODO: El tipo de retorno del CIFAR10?
 def create_cifar() -> Dataset:
     """
     Create the CIFAR10 dataset.
@@ -71,7 +69,7 @@ def create_cifar() -> Dataset:
         Dataset (pyDVL.Dataset): The CIFAR10 dataset.
     """
     trainset = torchvision.datasets.CIFAR10(
-        root='.',
+        root='../../data',
         train=True,
         download=True
     ) 
@@ -96,6 +94,10 @@ def create_dogcat() -> Dataset:
     Returns:
         Dataset (pyDVL.Dataset): The CIFAR10 dataset with
         only dog and cat images.
+    """
+
+    """
+    Esta hay que revisarla.
     """
     trainset = torchvision.datasets.CIFAR10(
         root='.',
@@ -130,29 +132,12 @@ def create_dogcat() -> Dataset:
         y_test=testset
     )
 
-
-def make_balance_sample(data, target):
-    p = np.mean(target)
-    if p < 0.5:
-        minor_class=1
-    else:
-        minor_class=0
-    
-    index_minor_class = np.where(target == minor_class)[0]
-    n_minor_class=len(index_minor_class)
-    n_major_class=len(target)-n_minor_class
-    new_minor=np.random.choice(index_minor_class, size=n_major_class-n_minor_class, replace=True)
-
-    data=np.concatenate([data, data[new_minor]])
-    target=np.concatenate([target, target[new_minor]])
-    return data, target
-
 def get_minidata(dataset):
     """Función del chino pero mejorada, hay que ver el tema de lo
     que retorna"""
 
     # TODO: Esta direccion está mal
-    open_ml_path = 'OpenML_datasets/'
+    open_ml_path = '../data/openML/'
 
     np.random.seed(999)
 

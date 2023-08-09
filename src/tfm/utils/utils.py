@@ -16,7 +16,7 @@ __all__ = [
     "set_random_seed",
     "setup_logger",
     "equilibrate_clases",
-    "exact_banzhaf",
+    "make_balance_sample",
 ]
 
 # TODO: Set seed for cuda
@@ -49,6 +49,28 @@ def setup_logger():
     )
     return logger
 
+def _reshape_data(data: np.ndarray) -> np.ndarray:
+    """
+    Auxiliary function to reshape the data for pyDVL compatibility.
+
+    Args:
+        data (np.ndarray): The data to reshape.
+
+    Returns:
+        np.ndarray: The reshaped data.
+    """
+    shape = data.shape
+    # If 4D array (batch_size, width, height, depth/channels)
+    if len(shape) == 4:
+        batch_size, w, h, p = shape
+        return data.reshape(batch_size, w * h * p)
+    # If 3D array (batch_size, width, height)
+    elif len(shape) == 3:
+        batch_size, w, h = shape
+        return data.reshape(batch_size, w * h)
+    else:
+        raise ValueError("Something is wrong with dimensions")
+
 def build_pyDVL_dataset(
         X_train: np.ndarray,
         y_train: np.ndarray,
@@ -68,17 +90,8 @@ def build_pyDVL_dataset(
     Returns:
         Dataset: The pyDVL dataset.
     """
-    shape = X_train.shape
-    # If 4D array (batch_size, width, height, depth/channels)
-    if len(shape) == 4:
-        batch_size, w, h, p = shape
-        X_train = X_train.reshape(batch_size, w * h * p)
-    # If 3D array (batch_size, width, height)
-    elif len(shape) == 3:
-        batch_size, w, h = shape
-        X_train = X_train.reshape(batch_size, w * h)
-    else:
-        raise ValueError("Something is wrong with dimensions")
+    X_train = _reshape_data(X_train)
+    X_test = _reshape_data(X_test)
 
     X_train = X_train / 255.0
     X_test = X_test / 255.0
@@ -90,43 +103,41 @@ def build_pyDVL_dataset(
         y_test=y_test.numpy(),
     )
 
-def equilibrate_clases(df: pd.DataFrame) -> pd.DataFrame:
+def oversamp_equilibration(
+        data: np.ndarray,
+        target: np.ndarray
+    )->(np.ndarray, np.ndarray):
     """
     Equilibrate the classes of a dataset with
-    two classes in the target variable.
+    two classes in the target variable,
+    using oversampling.
 
     Args:
-        df (pd.DataFrame): The dataset.
+        data (np.ndarray): The data.
+        target (np.ndarray): The target.
 
     Returns:
-        pd.DataFrame: The balanced dataset.
+        (np.ndarray, np.ndarray): The balanced data and target.
     """
-    target_counts = df['target'].value_counts()
-    min_count = target_counts.min()
-    
-    balanced = pd.concat([
-        df[df['target'] == class_label].sample(min_count)
-        for class_label in target_counts.index
-    ], axis=0)
-    
-    return balanced
-
-
-def make_balance_sample(data, target):
-    """
-    Funcion del chino, hay que verla bien
-    """
-    p = np.mean(target)
-    if p < 0.5:
-        minor_class=1
+    # Identify the minority class
+    if np.mean(target) < 0.5:
+        minor_class, major_class = 1, 0
     else:
-        minor_class=0
-    
-    index_minor_class = np.where(target == minor_class)[0]
-    n_minor_class=len(index_minor_class)
-    n_major_class=len(target)-n_minor_class
-    new_minor=np.random.choice(index_minor_class, size=n_major_class-n_minor_class, replace=True)
+        minor_class, major_class = 0, 1
 
-    data=np.concatenate([data, data[new_minor]])
-    target=np.concatenate([target, target[new_minor]])
+    # Find the indices of the minority and majority classes
+    index_minor_class = np.where(target == minor_class)[0]
+    index_major_class = np.where(target == major_class)[0]
+
+    # Calculate the oversampling size
+    oversampling_size = len(index_major_class) - len(index_minor_class)
+    
+    if oversampling_size > 0:
+        # Oversample the minority class
+        new_minor = np.random.choice(index_minor_class,
+                                     size=oversampling_size,
+                                     replace=True)
+        data = np.concatenate((data, data[new_minor]))
+        target = np.concatenate((target, target[new_minor]))
+
     return data, target

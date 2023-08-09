@@ -1,18 +1,16 @@
+import os
 import dataset
-from utils import setup_logger
+import pickle
+import numpy as np
+from utils.utils import setup_logger, oversamp_equilibration
 
 logger = setup_logger()
 
 def run():
     logger.info("Cargamos el fminst")
-    trainset, testset = dataset.create_fmnist()
-
-    logger.info("Comprobamos tamaño de trainset")
-    print(trainset.data.shape)
-
-    logger.info("Comprobamos tamaño de testset")
-    print(len(testset.data.shape))
+    mnist = dataset.create_fmnist()
 
     
+
 if __name__ == "__main__":
     run()
