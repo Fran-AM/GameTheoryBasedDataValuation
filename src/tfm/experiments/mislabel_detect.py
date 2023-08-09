@@ -41,7 +41,13 @@ def run(dataset_name: str, budget: int):
         all_values = []
         all_scores = []
 
-        
+        # Hay que construir las utilidades (Dataset, Modelo, Métrica)
+
+            # Cogemos cada uno de los dataset (Los tenemos en los parámetros)
+            
+            # De
+
+
 
     logger.info("Finished mislabel detection experiment")
 

@@ -1,2 +1,6 @@
 Notebooks-pyDVL
 /data/*
+/src/tfm/cifar-10-batches-py
+/src/tfm/cifar-10-python.tar.gz
+/src/tfm/FashionMNIST
+/src/tfm/MNIST

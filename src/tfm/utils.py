@@ -3,6 +3,7 @@ import os
 import random
 import logging
 from typing import Iterable, List
+from pydvl.utils.dataset import Dataset
 
 
 import numpy as np
@@ -35,12 +36,59 @@ def set_random_seed(seed: int) -> None:
     os.environ['PYTHONHASHSEED'] = str(seed)
 
 def setup_logger():
+    """
+    Setup the logger for the project.
+
+    Returns:
+        logging.Logger: The logger.
+    """
     logger = logging.getLogger(__name__)
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s | %(name)s | %(levelname)s | %(message)s",
     )
     return logger
+
+def build_pyDVL_dataset(
+        X_train: np.ndarray,
+        y_train: np.ndarray,
+        X_test: np.ndarray,
+        y_test: np.ndarray,
+    ) -> Dataset:
+    """
+    Build a pyDVL dataset from numpy arrays.
+    Flatts the images for pyDVL compatibility.
+
+    Args:
+        X_train (np.ndarray): The training data.
+        y_train (np.ndarray): The training labels.
+        X_test (np.ndarray): The test data.
+        y_test (np.ndarray): The test labels.
+    
+    Returns:
+        Dataset: The pyDVL dataset.
+    """
+    shape = X_train.shape
+    # If 4D array (batch_size, width, height, depth/channels)
+    if len(shape) == 4:
+        batch_size, w, h, p = shape
+        X_train = X_train.reshape(batch_size, w * h * p)
+    # If 3D array (batch_size, width, height)
+    elif len(shape) == 3:
+        batch_size, w, h = shape
+        X_train = X_train.reshape(batch_size, w * h)
+    else:
+        raise ValueError("Something is wrong with dimensions")
+
+    X_train = X_train / 255.0
+    X_test = X_test / 255.0
+
+    return Dataset(
+        x_train=X_train.numpy(),
+        y_train=y_train.numpy(),
+        x_test=X_test.numpy(),
+        y_test=y_test.numpy(),
+    )
 
 def equilibrate_clases(df: pd.DataFrame) -> pd.DataFrame:
     """

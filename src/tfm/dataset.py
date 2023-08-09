@@ -1,130 +1,117 @@
 from pydvl.utils.dataset import Dataset
+from utils import build_pyDVL_dataset
 
 import torchvision.datasets as datasets
 import torchvision
-import torchvision.transforms as transforms
 
 import numpy as np
 import sys
 import pickle
 
+
 def create_mnist() -> Dataset:
-    transform_train = transforms.Compose([transforms.ToTensor(),])
-    transform_test = transforms.Compose([transforms.ToTensor(),])
+    """
+    Create the MNIST dataset.
+
+    Returns:
+        Dataset (pyDVL.Dataset): The MNIST dataset.
+    """
     trainset = datasets.MNIST(
         root='.',
         train=True,
-        download=True,
-        transform=transform_train
+        download=True
     )
     testset = datasets.MNIST(
         root='.',
         train=False,
-        download=True,
-        transform=transform_test
+        download=True
     )
 
-    (x_train, y_train), (x_test, y_test) = (trainset.data, trainset.targets), (testset.data, testset.targets)
-
-    x_train = x_train.reshape((x_train.shape[0], 28, 28, 1))
-    x_test = x_test.reshape((x_test.shape[0], 28, 28, 1))
-    x_train = x_train / 255.0
-    x_test = x_test / 255.0
-
-    x_train = x_train.numpy()
-    y_train = y_train.numpy()
-    x_test = x_test.numpy()
-    y_test = y_test.numpy()
-
-    mnist = Dataset(
-        x_train=x_train,
-        y_train=y_train,
-        x_test=x_test,
-        y_test=y_test,
+    # Nota para el reshaping, estas imagenes son de 28x28
+    return build_pyDVL_dataset(
+        X_train=trainset.data,
+        y_train=trainset.targets,
+        X_test=testset.data,
+        y_test=testset.targets
     )
-    return mnist
 
 def create_fmnist() -> Dataset:
-    transform_train = transforms.Compose([transforms.ToTensor(),])
-    transform_test = transforms.Compose([transforms.ToTensor(),])
+    """
+    Create the Fashion MNIST dataset.
+
+    Returns:
+        Dataset (pyDVL.Dataset): The Fashion MNIST dataset.
+    """
     trainset = datasets.FashionMNIST(
         root='.',
         train=True,
-        download=True,
-        transform=transform_train
+        download=True
     )
     testset = datasets.FashionMNIST(
         root='.',
         train=False,
-        download=True,
-        transform=transform_test
+        download=True
     )
 
-    (x_train, y_train), (x_test, y_test) = (trainset.data, trainset.targets), (testset.data, testset.targets)
-
-    x_train = x_train.reshape((x_train.shape[0], 28, 28, 1))
-    x_test = x_test.reshape((x_test.shape[0], 28, 28, 1))
-    # Redundant
-    x_train = x_train / 255.0
-    x_test = x_test / 255.0
-
-    x_train = x_train.numpy()
-    y_train = y_train.numpy()
-    x_test = x_test.numpy()
-    y_test = y_test.numpy()
-
-    fmnist = Dataset(
-        x_train=x_train,
-        y_train=y_train,
-        x_test=x_test,
-        y_test=y_test,
+    # Nota para el reshaping, estas imagenes son de 28x28
+    return build_pyDVL_dataset(
+        X_train=trainset.data,
+        y_train=trainset.targets,
+        X_test=testset.data,
+        y_test=testset.targets
     )
 
-    return fmnist
 
-
+# TODO: El tipo de retorno del CIFAR10?
 def create_cifar() -> Dataset:
-    transform_train = transforms.Compose(
-        [transforms.ToTensor(),
-         transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)), ]
-    )
-    transform_test = transforms.Compose(
-        [transforms.ToTensor(),
-         transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)), ]
-    )
+    """
+    Create the CIFAR10 dataset.
+
+    Returns:
+        Dataset (pyDVL.Dataset): The CIFAR10 dataset.
+    """
     trainset = torchvision.datasets.CIFAR10(
         root='.',
         train=True,
-        download=True,
-        transform=transform_train
+        download=True
     ) 
     testset = torchvision.datasets.CIFAR10(
         root='.',
         train=False,
-        download=True,
-        transform=transform_test
+        download=True
+    )
+    # Nota para el reshaping, estas imagenes son de 32x32x3
+    return build_pyDVL_dataset(
+        X_train=trainset.data,
+        y_train=trainset.targets,
+        X_test=testset,
+        y_test=testset
     )
 
-    (x_train, y_train), (x_test, y_test) = (trainset.data, trainset.targets), (testset.data, testset.targets)
 
-    y_train = np.array(y_train)
-    y_test = np.array(y_test)
-    
-    x_train = x_train / 255.0
-    x_test = x_test / 255.0
+def create_dogcat() -> Dataset:
+    """
+    Extract dog and cat images from CIFAR10 dataset.
 
-    cifar = Dataset(
-        x_train=x_train,
-        y_train=y_train,
-        x_test=x_test,
-        y_test=y_test,
+    Returns:
+        Dataset (pyDVL.Dataset): The CIFAR10 dataset with
+        only dog and cat images.
+    """
+    trainset = torchvision.datasets.CIFAR10(
+        root='.',
+        train=True,
+        download=True
+    ) 
+    testset = torchvision.datasets.CIFAR10(
+        root='.',
+        train=False,
+        download=True
     )
-    return cifar
 
-
-def create_dogcat():
-
-    x_train, y_train, x_test, y_test = create_cifar()
+    x_train = np.array(trainset.data)/255.0
+    x_test = np.array(testset.data)/255.0
+    y_train = np.array(trainset.targets)
+    y_test = np.array(testset.targets)
 
     dogcat_ind = np.where(np.logical_or(y_train==3, y_train==5))[0]
     x_train, y_train = x_train[dogcat_ind], y_train[dogcat_ind]
@@ -136,7 +123,12 @@ def create_dogcat():
     y_test[y_test==3] = 0
     y_test[y_test==5] = 1
 
-    return x_train, y_train, x_test, y_test
+    return build_pyDVL_dataset(
+        X_train=x_train,
+        y_train=trainset.targets,
+        X_test=testset,
+        y_test=testset
+    )
 
 
 def make_balance_sample(data, target):

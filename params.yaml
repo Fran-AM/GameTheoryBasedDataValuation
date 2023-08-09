@@ -1,54 +1,37 @@
 mislabel_detection:
-  dataset:
-  - fraud
-  - apsfail
-  - click
-  - phoneme
-  - wind
-  - pol
-  - creditcard
-  - cpu
-  - vehicle
-  - 2dplanes
-  n_data: 500
-  n_val: 2000
-  n_repeat: 5
-  flip_ratio: 0
-  batch_size: 8
-  lr: 1e-3
-  alpha: 1
-  beta: 1
-  sigma: 0
-  debug: store_true
-    n_repetitions: 3
-    removal_percentages:
-    - 0.0
-    - 0.05
-    - 0.1
-    - 0.2
-    - 0.3
-    - 0.4
-    method_names:
-    - Random
-    - Leave One Out
-    - Least Core
-    - TMC Shapley
-    - Group Testing Shapley
-  synthetic:
-    n_features: 50
-    n_train_samples: 200
-    n_test_samples: 1000
-    scorer: accuracy
-    score_range:
-    - 0.0
-    - 1.0
-    model: LogisticRegression
-  diabetes:
-    train_size: 0.8
-    scorer: r2
-    score_range:
-    - -1.0
-    - 1.0
-    model: GradientBoostingRegressor
-common:
-  n_jobs: 8
+  MNIST:
+    model: LeNet
+    batch_size: 128
+    learning_rate: 0.001
+    optimizer: Adam
+    data_points: 2000
+  FMNIST:
+    model: LeNet
+    batch_size: 128
+    learning_rate: 0.001
+    optimizer: Adam
+    data_points: 2000
+  CIFAR10:
+    model: TwoLayerMLP
+    hidden_neurons: 256
+    activation_function: ReLU
+    batch_size: 128
+    learning_rate: 0.001
+    optimizer: Adam
+    data_points: 2000
+  default:
+    model: TwoLayerMLP
+    hidden_neurons: 100
+    activation_function: ReLU
+    learning_rate: 0.01
+    optimizer: Adam
+    batch_size: 32
+    data_points: 200
+  specific_batch_size:
+    Creditcard: 128
+    Apsfail: 128
+    Click: 128
+    CPU: 128
+  specific_data_points:
+    Click: 1000
+    Phoneme: 500
