@@ -6,7 +6,7 @@ from dvc.repo import Repo
 from pydvl.reporting.scores import compute_removal_score
 from pydvl.utils import Utility
 
-from tfm.utils import setup_logger
+from utils.utils import setup_logger
 
 logger = setup_logger()
 

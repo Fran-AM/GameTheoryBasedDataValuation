@@ -93,6 +93,7 @@ def build_pyDVL_dataset(
     X_train = _reshape_data(X_train)
     X_test = _reshape_data(X_test)
 
+    # Esto puede que no sea lo mejor tenerlo aquí
     X_train = X_train / 255.0
     X_test = X_test / 255.0
 

@@ -21,7 +21,7 @@ def create_mnist() -> Dataset:
         download=True
     )
     testset = datasets.MNIST(
-        root='.',
+        root='../../data',
         train=False,
         download=True
     )
@@ -47,7 +47,7 @@ def create_fmnist() -> Dataset:
         download=True
     )
     testset = datasets.FashionMNIST(
-        root='.',
+        root='../../data',
         train=False,
         download=True
     )
@@ -74,7 +74,7 @@ def create_cifar() -> Dataset:
         download=True
     ) 
     testset = torchvision.datasets.CIFAR10(
-        root='.',
+        root='../../data',
         train=False,
         download=True
     )
@@ -132,12 +132,12 @@ def create_dogcat() -> Dataset:
         y_test=testset
     )
 
-def get_minidata(dataset):
+def get_openML_data(dataset):
     """Función del chino pero mejorada, hay que ver el tema de lo
     que retorna"""
 
     # TODO: Esta direccion está mal
-    open_ml_path = '../data/openML/'
+    openML_path = '../../data/openML/'
 
     np.random.seed(999)
 
@@ -156,7 +156,7 @@ def get_minidata(dataset):
     }
 
     if dataset in dataset_mapping:
-        data_dict = pickle.load(open(open_ml_path + dataset_mapping[dataset], 'rb'))
+        data_dict = pickle.load(open(openML_path + dataset_mapping[dataset], 'rb'))
         data, target = data_dict['X_num'], data_dict['y']
         target = (target == 1).astype(np.int32)
         data, target = make_balance_sample(data, target)
@@ -167,4 +167,19 @@ def get_minidata(dataset):
     else:
         print('No such dataset!')
         sys.exit(1)
+
+
+# Vamos a reescribir la funcion get_minidata(dataset)
+
+
+# Parte que se lleva a cabo en get_processed_data
+# if dataset in config.OpenML_dataset:
+#     X, y, _, _ = get_data(dataset)
+#     x_train, y_train = X[:n_data], y[:n_data]
+#     x_val, y_val = X[n_data:n_data+n_val], y[n_data:n_data+n_val]
+
+#     X_mean, X_std= np.mean(x_train, 0), np.std(x_train, 0)
+#     normalizer_fn = lambda x: (x - X_mean) / np.clip(X_std, 1e-12, None)
+#     x_train, x_val = normalizer_fn(x_train), normalizer_fn(x_val)
+
 

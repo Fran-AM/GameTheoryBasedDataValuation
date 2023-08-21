@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.7.4)  14 JUL 2023 12:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.7.4)  21 AUG 2023 17:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1095,7 +1095,7 @@ Package csquotes Info: ... found 'babel' package.
  (/home/franaguilar/Escritorio/TFM/doc/main.aux (/home/franaguilar/Escritorio/TFM/doc/src/cubierta.aux)
 LaTeX Info: Redefining \. on input line 28.
 LaTeX Info: Redefining \% on input line 28.
- (/home/franaguilar/Escritorio/TFM/doc/src/portada.aux) (/home/franaguilar/Escritorio/TFM/doc/src/estadoDelArte.aux))
+ (/home/franaguilar/Escritorio/TFM/doc/src/portada.aux) (/home/franaguilar/Escritorio/TFM/doc/src/estadoDelArte.aux) (/home/franaguilar/Escritorio/TFM/doc/src/marcoTeorico.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 105.
@@ -1290,7 +1290,7 @@ File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 
  (/home/franaguilar/Escritorio/TFM/doc/src/cubierta.tex
 \GPT@outputbox=\box124
-<img/escudo_ucm.png, id=15, 350.30875pt x 401.5pt>
+<img/escudo_ucm.png, id=55, 350.30875pt x 401.5pt>
 File: img/escudo_ucm.png Graphic file (type png)
 <use img/escudo_ucm.png>
 Package pdftex.def Info: img/escudo_ucm.png  used on input line 9.
@@ -1307,7 +1307,7 @@ Package pdftex.def Info: img/escudo_ucm.png  used on input line 9.
 \openout2 = `src/portada.aux'.
 
  (/home/franaguilar/Escritorio/TFM/doc/src/portada.tex
-<img/escudo_ucm_byn.jpg, id=30, 284.5029pt x 262.0992pt>
+<img/escudo_ucm_byn.jpg, id=70, 284.5029pt x 262.0992pt>
 File: img/escudo_ucm_byn.jpg Graphic file (type jpg)
 <use img/escudo_ucm_byn.jpg>
 Package pdftex.def Info: img/escudo_ucm_byn.jpg  used on input line 8.
@@ -1341,14 +1341,59 @@ Cap\'{\i }tulo 1.
 
 
 ]
-LaTeX Info: Redefining \. on input line 131.
-LaTeX Info: Redefining \% on input line 131.
-Package cleveref Info: loaded `spanish' language definitions on input line 131.
+LaTeX Info: Redefining \. on input line 132.
+LaTeX Info: Redefining \% on input line 132.
+Package cleveref Info: loaded `spanish' language definitions on input line 132.
  [7])
 LaTeX Info: Redefining \. on input line 157.
 LaTeX Info: Redefining \% on input line 157.
 Package cleveref Info: loaded `spanish' language definitions on input line 157.
- [8] [9
+ [8]
+\openout2 = `src/marcoTeorico.aux'.
+
+ (/home/franaguilar/Escritorio/TFM/doc/src/marcoTeorico.tex
+Cap\'{\i }tulo 2.
+Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 18.
+1: section
+[9
+
+
+
+]
+LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 72.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ufplmbb.fd
+File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
+)
+LaTeX Info: Redefining \. on input line 121.
+LaTeX Info: Redefining \% on input line 121.
+Package cleveref Info: loaded `spanish' language definitions on input line 121.
+ [10]
+Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 121.
+Package hyperref Info: bookmark level for unknown proposition defaults to 0 on input line 135.
+LaTeX Info: Redefining \. on input line 190.
+LaTeX Info: Redefining \% on input line 190.
+Package cleveref Info: loaded `spanish' language definitions on input line 190.
+ [11]
+LaTeX Info: Redefining \. on input line 249.
+LaTeX Info: Redefining \% on input line 249.
+Package cleveref Info: loaded `spanish' language definitions on input line 249.
+ [12]
+LaTeX Info: Redefining \. on input line 330.
+LaTeX Info: Redefining \% on input line 330.
+Package cleveref Info: loaded `spanish' language definitions on input line 330.
+ [13]
+LaTeX Info: Redefining \. on input line 396.
+LaTeX Info: Redefining \% on input line 396.
+Package cleveref Info: loaded `spanish' language definitions on input line 396.
+ [14]
+LaTeX Info: Redefining \. on input line 465.
+LaTeX Info: Redefining \% on input line 465.
+Package cleveref Info: loaded `spanish' language definitions on input line 465.
+ [15])
+LaTeX Info: Redefining \. on input line 159.
+LaTeX Info: Redefining \% on input line 159.
+Package cleveref Info: loaded `spanish' language definitions on input line 159.
+ [16] [17
 
 
 ]
@@ -1361,7 +1406,7 @@ LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 17
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 1: section
-[10]
+[18]
 Overfull \hbox (3.62833pt too wide) in paragraph at lines 173--173
 \T1/ppl/m/n/12 Da-ta Va-lua-tion Fra-me-work for Ma-chi-ne Lear-ning^^T, 2021 eprint: [][]$\T1/cmtt/m/n/12 a r X i v  : 2110 .
  []
@@ -1374,35 +1419,35 @@ Overfull \hbox (10.81372pt too wide) in paragraph at lines 173--173
 LaTeX Info: Redefining \. on input line 175.
 LaTeX Info: Redefining \% on input line 175.
 Package cleveref Info: loaded `spanish' language definitions on input line 175.
-[11]
+[19]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 175.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 175.
  (/home/franaguilar/Escritorio/TFM/doc/main.aux (/home/franaguilar/Escritorio/TFM/doc/src/cubierta.aux)
 LaTeX Info: Redefining \. on input line 28.
 LaTeX Info: Redefining \% on input line 28.
 Package cleveref Info: loaded `spanish' language definitions on input line 28.
- (/home/franaguilar/Escritorio/TFM/doc/src/portada.aux) (/home/franaguilar/Escritorio/TFM/doc/src/estadoDelArte.aux))
+ (/home/franaguilar/Escritorio/TFM/doc/src/portada.aux) (/home/franaguilar/Escritorio/TFM/doc/src/estadoDelArte.aux) (/home/franaguilar/Escritorio/TFM/doc/src/marcoTeorico.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 175.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 175.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: E1E882A83227DDBFDC0760BEB78CECF1;236.
+(rerunfilecheck)             Checksum: 078BA9AD5AFDFD67EE4096331F502D94;1715.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 41789 strings out of 481239
- 863519 string characters out of 5920378
- 1469372 words of memory out of 5000000
- 56343 multiletter control sequences out of 15000+600000
- 565330 words of font info for 83 fonts, out of 8000000 for 9000
+ 41969 strings out of 481239
+ 866119 string characters out of 5920378
+ 1472999 words of memory out of 5000000
+ 56432 multiletter control sequences out of 15000+600000
+ 592780 words of font info for 151 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,19n,81p,2173b,2478s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on /home/franaguilar/Escritorio/TFM/doc/main.pdf (11 pages, 526912 bytes).
+ 65i,20n,87p,2173b,2598s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on /home/franaguilar/Escritorio/TFM/doc/main.pdf (19 pages, 604426 bytes).
 PDF statistics:
- 160 PDF objects out of 1000 (max. 8388607)
- 137 compressed objects within 2 object streams
- 38 named destinations out of 1000 (max. 500000)
- 39 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 329 PDF objects out of 1000 (max. 8388607)
+ 290 compressed objects within 3 object streams
+ 90 named destinations out of 1000 (max. 500000)
+ 119 words of extra memory for PDF output out of 10000 (max. 10000000)
 

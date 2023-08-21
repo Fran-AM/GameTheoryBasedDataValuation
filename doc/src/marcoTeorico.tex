@@ -1,0 +1,484 @@
+\chapter{Marco teórico}
+\justifying
+
+\section*{Introducción}
+
+aaa
+
+\section{Teoría de juegos}
+\subsection*{Definición y conceptos básicos}
+
+La \emph{teoría de juegos} puede ser entendida como la rama de las
+matemáticas que analiza situaciones en las que el resultado para
+cada jugador o participante depende no solo de sus propias
+decisiones, sino también de las tomadas por otros
+jugadores. Estas situaciones se conocen como \emph{juegos}.
+
+\begin{definition}
+  Un \emph{juego} es una interacción entre jugadores
+  racionales\footnote{Entendemos la racionalidad como el
+  hecho de que cada jugador intenta maximizar su propio
+  beneficio.}, mutuamente conscientes, en la que las
+  decisiones de un jugador impactan en las ganancias de
+  otros. Un juego se define por:
+  \begin{itemize}
+    \item Los jugadores que intervienen. Cada \emph{jugador}
+      es un agente que tiene a su disposición diversas
+      estrategias basadas en las posibles recompensas que
+      podría recibir.
+
+    \item Las estrategias disponibles para cada jugador.
+      Una \emph{estrategia} es un plan de acción que un jugador
+      puede adoptar dentro de un juego. Esta estrategia dicta las
+      acciones que tomará en cada situación posible que se presente
+      en el juego.
+
+    \item Las ganancias de cada jugador en función de los
+      resultados. Las \emph{ganancias} son representaciones de
+      las motivaciones de los jugadores, pudiendo representar
+      beneficios, cantidades, o simplemente reflejar la conveniencia
+      de los diferentes desenlaces.
+  \end{itemize}
+\end{definition}
+
+En el contexto de teoría de juegos aplicada a la valoración de datos,
+nos centraremos en juegos cooperativos.
+
+\begin{definition}
+  % Ojito con esta definición.
+  Un \emph{juego cooperativo} es aquel en el que los jugadores
+  pueden comunicarse y negociar con el fin de establecer acuerdos
+  vinculantes.
+\end{definition}
+
+Los acuerdos mencionados se denominan \emph{coaliciones}.
+Se trata de grupos de jugadores que eligen actuar juntos para
+lograr un objetivo común. Las coaliciones pueden
+variar desde la compuesta por todos los jugadores hasta la que
+incluye a un único jugador.
+
+
+Un juego cooperativo queda completamente definido por el conjunto
+de sus jugadores $N$ y por su función característica. Esta función
+es el nexo entre la formación de coaliciones y los beneficios
+obtenidos por los jugadores, ya que asigna a cada coalición posible
+un beneficio que puede lograr.
+
+\begin{definition}
+  Una \emph{función característica} $v$ es una función
+  \begin{align*}
+    v&:2^N \longrightarrow \mathbb{R}\\
+    S&\longmapsto v(S).
+  \end{align*}
+  Asignando a cada posible coalición la máxima
+  utilidad que los jugadores de $S$ pueden obtener,
+  independientemente de lo que haga el resto de
+  jugadores.
+\end{definition}
+
+
+Una vez formadas las coaliciones y determinadas las ganancias,
+surge la pregunta: ¿cómo se dividen las ganancias entre los
+miembros de la coalición? Varias respuestas a esta pregunta
+han surgido en la literatura, pero el valor de
+Shapley es uno de los conceptos más prominentes.
+
+\subsection{El valor de Shapley}
+
+El \emph{Valor de Shapley} es un concepto de teoría de juegos
+que asigna de manera equitativa las ganancias
+entre los miembros de una coalición. Propuesto
+por Lloyd Shapley en 1952 \cite{shapleyValue},y 
+se fundamenta en los siguientes axiomas:
+
+\begin{itemize}
+  \item Simetría. Si dos jugadores son simétricos, es decir,
+  si su contribución a cualquier coalición es la misma,
+  entonces presentan el mismo valor.
+  $$\text{Si } \forall S \subseteq N \setminus \{i, j\},\ 
+  v(S \cup \{i\}) = v(S \cup \{j\}) \implies \phi(i;v) =
+  \phi(j;v).$$
+
+  \item Eficiencia. El valor total producido por la coalición
+  conformada por todos los jugadores se distribuye entre los
+  jugadores. Es decir $v(N)=\sum_{i\in N}\phi(i;v)$.
+
+  \item Linealidad. Dados dos juegos $v$ y $w$, el valor del
+  juego $v+w$ es la suma de los valores de cada juego. Es decir,
+  $\phi(i;v+w)=\phi(i;v)+\phi(i;w)$.
+
+  \item Jugador nulo. Los jugadores que no aportan a ninguna
+  coalición tendrán valor nulo. Es decir,
+  $$\text{Si } \forall S \subseteq N \setminus \{i\},\ 
+  v(S \cup \{i\}) = v(S) \implies \phi(i;v) = 0.$$
+\end{itemize}
+
+El siguiente teorema, extraído de \cite{shapleyValue} prueba
+que se trata del único método de valoración de datos satisfaciendo
+estos axiomas.
+
+\begin{theorem}
+  Existe una única función $\phi$ satisfaciendo los axiomas
+  de simetría, eficiencia, linealidad y jugador nulo, y viene
+  dada por la fórmula:
+  $$
+  \phi(i;v)=\sum_{S\subseteq N}
+  \frac{|S|-1!(|N|-|S|)!}{|N|!}(v(S)-v(S \setminus \{i\}))
+  $$
+\end{theorem}
+
+\begin{proof}
+  La demostración detallada se encuentra en \cite{shapleyValue}.
+\end{proof}
+
+\begin{proposition}
+  El valor de Shapley puede ser expresado como:
+  $$
+    \phi(i;v)=\frac{1}{n}\sum_{k=1}^n \binom{n-1}{k-1}^{-1} 
+    \sum_{S \subseteq N \setminus \{i \},||S||=k-1}(v(S\cup\{i\})-v(S))
+  $$
+\end{proposition}
+
+\begin{proof}
+  Pendiente.
+\end{proof}
+
+Como observación final, es importante señalar que se toman en cuenta
+todas las coaliciones que no incluyen al jugador en cuestión.
+Para cada una de esas coaliciones, se determina la
+\emph{contribución marginal} del jugador, la cual
+representa la diferencia entre la ganancia de la coalición
+con y sin el jugador.
+El Valor de Shapley, en última instancia, se calcula como
+el promedio de todas estas contribuciones marginales.
+
+
+\subsection{Semivalores}
+
+Los semivalores son una generalización del valor de Shapley,
+que surgen al relajar el axioma de eficiencia. Mientras que
+el Valor de Shapley garantiza que la suma de los valores
+individuales de los jugadores sea igual a la utilidad total
+generada por la coalición total, los semivalores no imponen
+esta restricción. Así, permiten una variedad más amplia de
+métodos de valoración en el estudio de juegos cooperativos,
+siendo especialmente útiles en escenarios donde no es necesario
+o deseado que la totalidad de la recompensa sea distribuida.
+
+La clave de los semivalores es que asignan pesos a las
+coaliciones basándose en el tamaño de estas. Estos pesos
+son utilizados para calcular la contribución marginal promedio
+de cada jugador.
+
+A diferencia del valor de Shapley, que es único dada su
+definición basada en axiomas \cite{shapleyValue}, hay múltiples
+semivalores posibles, dependiendo de cómo se determinen
+los pesos. Esta variabilidad en los semivalores queda
+formalizada en el siguiente teorema:
+
+\begin{theorem}{Representación de semivalores \cite{Dubey2}.}
+  
+  Una función $\phi$ es un semivalor, si y solo
+  si, existe una función peso $w:[n] \rightarrow
+  \mathbb{R}$ tal que
+  $$\sum_{k=1}^n \binom{n-1}{k-1}w(k) = n$$,
+  que permite representar $\phi$ mediante la expresión:
+  $$
+  \phi(i;v) = \sum_{k=1}^n \frac{w(k)}{n}
+  \sum_{S \subseteq N \setminus \{i \},||S||=k-1}
+  (v(S\cup \{i\} - v(S)))
+  $$
+\end{theorem}
+
+Es relevante notar que el valor de Shapley es un caso
+particular de semivalor, donde los pesos son determinados
+por la fórmula: ($w_{Shapley} = \binom{n-1}{k-1}^{-1}$).
+
+
+\subsection{El valor de Banzhaf}
+
+El \emph{Valor de Banzhaf}, también denominado índice de poder
+de Banzhaf\cite{banzhaf}, es una métrica en la teoría de juegos
+cooperativos que busca cuantificar el poder e influencia de un
+jugador dentro de una coalición.
+Este índice fue introducido por John F. Banzhaf III en 1965,
+con la finalidad de ofrecer una herramienta analítica que
+pudiese determinar el poder de influencia de un jugador,
+especialmente en escenarios de votación ponderada.
+
+Para comprender mejor la esencia y la utilidad del valor de
+Banzhaf, es fundamental familiarizarse con ciertos conceptos
+relacionados:
+
+\begin{itemize}
+  \item \emph{Sistema de votación ponderado}: Es un sistema de
+  votación en el que cada jugador tiene un peso o poder de voto
+  particular. Para que una propuesta sea aprobada, la suma de los
+  pesos de los jugadores que votan a favor debe superar un
+  umbral o cuota establecida.
+
+  \item \emph{Jugador pivote}: Se considera que un jugador actúa
+  como pivote si, al modificar su voto de negativo a positivo,
+  la propuesta es aprobada. Sin embargo, si se abstuviera o
+  mantuviera su voto en contra, la propuesta sería rechazada.
+
+  \item \emph{Índice de poder de Banzhaf} Este índice mide la
+  frecuencia con la que un jugador se convierte en pivote.
+  Es importante destacar que el poder de un jugador no siempre
+  es directamente proporcional a su peso en la votación.
+\end{itemize}
+
+A pesar de sus similitudes con el valor de Shapley, el índice
+de Banzhaf se diferencia en su enfoque y en la forma de asignar
+poder a los jugadores.
+Mientras que el valor de Shapley se basa en contribuciones
+marginales promediadas, el índice de Banzhaf se enfoca en la
+capacidad de un jugador de influir en el resultado final de
+una votación. Específicamente, es un semivalor
+con un peso asociado dado por $w_{Banzhaf} = \frac{1}{2^{n-1}}$.
+
+
+% A lo mejor está bien añadirlo
+% En escenarios prácticos, el valor de Banzhaf ha demostrado ser una herramienta
+% esencial para analizar sistemas de votación, especialmente en estructuras como
+% los sistemas electorales y las decisiones corporativas. Al permitir una
+% comprensión más profunda del poder real que cada jugador posee,
+% independientemente de su peso nominal, las partes interesadas pueden tomar
+% decisiones más informadas y equitativas.
+
+\newpage
+\section{Valoración de datos}
+
+Hoy en día, el dato representa uno de los recursos más
+valiosos en el mundo para negocios, gobiernos y particulares.
+La toma de decisiones basada en datos está presente en
+casi todos los ámbitos de la sociedad, desde la medicina
+predictiva hasta la publicidad personalizada. Debido a
+esto, la habilidad para determinar el valor de un dato
+se ha vuelto indispensable. Es aquí donde entra
+en juego la valoración de datos.
+
+\
+
+Cuando nos referimos al valor de un dato, es esencial
+comprender que dicho valor no es unidimensional. Un dato
+puede ser valorado desde diferentes perspectivas y
+categorizado basado en diversas cualidades:
+
+\begin{enumerate}
+  \item \textbf{Valor Intrínsico vs. Extrínseco}:
+  \begin{itemize}
+    \item \textbf{Valor intrínseco}: Se refiere al valor
+    inherente al propio dato, basado en su precisión y calidad.
+    Este valor es independiente del uso que se le dé al dato.
+
+    \item \textbf{Valor extrínseco}: Se corresponde al valor
+    que se le atribuye al dato en función de su uso.
+    Depende, pues, del contexto en el que se use el dato.
+  \end{itemize}
+
+  \item \textbf{Valor Directo vs. Indirecto}:
+  \begin{itemize}
+    \item \textbf{Valor directo}: Alude al beneficio
+    inmediato que se obtiene de un dato, como podría ser
+    al venderlo.
+
+    \item \textbf{Valor indirecto}: Se refiere al
+    beneficio derivado del uso estratégico del dato.
+  \end{itemize}
+\end{enumerate}
+
+En este trabajo nos centraremos en estudiar el valor extrínseco
+e indirecto de los datos. Esta investigación nos permitirá,
+posteriormente, discernir el valor directo de los datos y
+detectar posibles problemas en su valor intrínseco.
+
+A pesar de que la valoración de datos es un concepto
+multifacético que depende de varios factores, nos
+ajustaremos al enfoque propuesto por diversas
+fuentes\cite{dataShapley,betaShapley}, el cual se compone
+de tres elementos esenciales:
+
+\begin{enumerate}
+  \item  Denominaremos $N$ al \textbf{conjunto prefijado de datos
+  de entrenamiento}, siendo $N = \{ (x_i, y_i) \}_1^n$.
+  Aquí, $x_i$ hace referencia a las características del dato
+  $i$-ésimo, e $y_i$ a su categoría en problemas de
+  clasificación o su valor en problemas de regresión.
+  
+  \item El \textbf{algoritmo de aprendizaje}  $\mathcal{A}$,
+  será tratado como una caja negra que toma un conjunto de
+  entrenamiento $N$ y genera un predictor $f$.
+  
+  \item La \textbf{función de utilidad} $v$ es una aplicación
+  que asigna a cada subconjunto de $N$ un valor, reflejando
+  la utilidad de ese subconjunto. Para problemas de clasificación,
+  la opción común para $v$ es la precisión del modelo
+  entrenado con el subconjunto dado, es decir
+  $v(S) = acc (\mathcal{A} (S))$. Sin pérdida de generalidad
+  asumiremos a lo largo del documento que $v (S) \in [0, 1]$
+  para cualquier $S \subseteq N$.
+\end{enumerate}
+
+Por lo tanto, podemos concebir la valoración de datos como el
+proceso de asignar un valor a cada dato del conjunto $N$,
+reflejando su contribución en el entrenamiento del modelo.
+Cada uno de estos valores estará determinado por $N,
+\mathcal{A}$ y $v$, pero por simplicidad, lo expresaremos
+como $\phi(i ; v)$. A estas puntuaciones se les denomina
+\textit{data values}.
+
+Pasamos a tratar las nociones principales en cuanto a valoración
+de datos.
+
+\subsection{Métricas de valoración de datos}
+
+\subsubsection{LOO Error}
+
+El método más sencillo de valoración de datos consiste en medir la
+contribución de un punto al resto del conjunto de train:
+\[ \phi_{{loo}} (i ; v) = v (N) - v (N \setminus i) . \]
+Este método se conoce como \textit{leave-one-out} (LOO). Calcular el
+valor exacto de los valores LOO para un conjunto de train de tamaño $N$
+requeriría reentrenar el modelo $N$ veces, lo que lo convierte en un
+enfoque inviable cuando el tamaño del conjunto de datos es grande como
+podemos ver en estudios como los llevados a cabo en {\cite{looFuck}}.
+
+\subsubsection{Data Shapley}
+
+En {\cite{shapleyValue}} definen los métodos de valuación equitativa
+como sigue.
+
+\begin{definition}
+  Un método de evaluación será equitativo si cumple las siguientes
+  condiciones:
+  \begin{enumerate}
+    \item Linealidad: Dadas métricas de error $V$ y $W$, constantes
+    
+    \item Jugador nulo: Si $\forall S \subseteq N \setminus
+    \{ i \}$, $V (S) = V (S \cup \{ i \})$ entonces $\phi_i = 0$.
+    
+    \item Simetría: Fijados $i, j \in N$, si para todo $S \subseteq N
+    \setminus \{ i, j \}$, se tiene que $V (S \cup \{ i \}) = V (S \cup j)$
+    entonces $\phi_i = \phi_j$.
+    
+    \item Esta hay que escribirla bien.
+  \end{enumerate}
+\end{definition}
+
+La siguiente proposición es la que da nombre a ...
+
+\begin{proposition}
+  Cualquier $\phi (N, \mathcal{A}, V)$ que satisfaga las condiciones
+  anteriores será de la forma
+  \[
+  \phi_i = C \sum_{S \subseteq N \setminus \{ i \}}
+  \frac{V (S \cup \{ i\}) - V (S)}{\binom{n - 1}{| S |}} .
+  \]
+  Dónde el sumatorio contempla todos los subconjuntos de $N$ que no
+  contienen a $i$ y $C$ es una constante arbitraria. Llamaremos a $\phi_i$ el
+  Valor de Shapley asociado al dato $i$.
+\end{proposition}
+
+\begin{proof}
+  Se puede consultar en {\cite{shapleyValue}}.
+\end{proof}
+
+
+\subsection{Midiendo la robustez}
+
+En diversas situaciones, como la selección de datos, el orden
+de los \textit{data values} es lo que aporta valor\cite{betaShapley}.
+Un ejemplo podría ser el filtrado de datos de baja calidad.
+El escenario ideal, sería aquel en el que incluso
+estando perturbada la función de utilidad, se preserva
+el mismo orden de \textit{data values}.
+
+En este contexto, la robustez alude a la resistencia
+de los métodos de valoración de datos ante perturbaciones
+o ruido. Del mismo modo que un modelo de aprendizaje robusto
+debería resistir entradas ruidosas, un método de valoración de
+datos robusto debería conservar el orden de los \textit{data values} a pesar
+del ruido intrínseco de los algoritmos
+de aprendizaje automático.
+
+\
+
+Ahora, vamos a establecer los conceptos requeridos para
+formalizar y medir la robustez. Recordemos que un semivalor
+está determinado por su función de peso $w$. Así, definimos
+la diferencia escalada como:
+
+
+\begin{definition}
+  Sean $i$ y $j$ puntos de $N$. La diferencia
+  entre los semivalores $\phi(i;v)$ y $\phi(j;v)$
+  se define como:
+  \begin{align}
+    D_{i,j}(v,w)&:= n(\phi_w(i;v)-\phi_w(j;v))\\
+    &=\sum_{k=1}^{n-1} (w(k)+w(k+1)) \binom{n-2}{k-1}
+    \Delta_{i,j}^k(v).
+  \end{align}
+  Donde $\Delta_{i,j}^k(v):=\binom{n-2}{k-1}^-1 \sum_{|S|=k-1,
+  S\subseteq N \setminus \{i,j\}} (v(S \cup i)-v(S \cup j))$,
+  representa la distinguibilidad promedio entre $i$ y $j$ en
+  subconjuntos de tamaño $k$ usando una función de utilidad
+  sin ruido $v$.
+\end{definition}
+
+Consideremos $\hat{v}$ un estimador de $v$. Sabemos que
+$\hat{v}$ y $v$ generarán diferentes \textit{data values}
+para un par de puntos $i$ y $j$ si, y solo si,
+$D_{i,j}(v,w)D_{i,j}(\hat{v},w) \leq 0$.
+
+Se podría pensar inicialmente en definir
+la robustez de un semivalor como la menor cantidad de ruido
+$||\hat{v}-v||$ que alteraría el orden de los
+\textit{data values}. Sin embargo, una definición
+así dependería de la función de utilidad original $v$.
+Si la función original $v$ no es capaz de diferenciar
+dos puntos $i$ y $j$ ($\Lambda_{i,j}^{(k)}(v)\simeq 0$, para
+todo $k=1,\dots,n-1$), entonces $D_{i,j}(v,w)$ será
+casi 0, y cualquier mínima perturbación podría 
+modificar el orden entre $\phi(i;v)$ y $\phi(j;v)$. 
+
+Por ello, para definir de formar razonable la
+robustez de un semivalor, debemos considerar solo las
+funciones de utilidad que sean capaces de distinguir
+entre $i$ y $j$.
+
+\begin{definition}{Distinguibilidad}
+  Diremos que un par de puntos $(i,j)$ son $\tau$-distinguibles por
+  la función de utilidad $v$ si, y solo si, $\Lambda_{i,j}^{(k)}(v) \geq \tau$
+  para todo $k \in \{1,\dots,n-1\}$.
+\end{definition}
+
+Sea ahora $\mathcal{V}_{i,j}^{(k)}$ el conjunto de todas las funciones
+de utilidad $v$ que son capaces de $\tau$-distinguir $(i,j)$. 
+Usando la definción anterior, podemos caracterizar la robustez de
+un semivalor mediante su \textit{safety margin}, que representa la
+menor cantidad de ruido $||\hat{v} - v||$ que, al añadirse,
+invertiría el orden de los \textit{data values} de al menos un
+par de puntos $(i,j)$, para al menos una función de utilidad $v \in
+\mathcal{V}_{i,j}^{(k)}$.
+
+\begin{definition}{Safety margin}
+  Dado $\tau > 0$, definimos el \textit{safety margin} de un
+  semivalor para un par de puntos $(i,j)$ como:
+  \begin{equation*}
+    \text{Safe}_{i,j}^{(k)}(\tau;w):=\min_{v \in \mathcal{V}_{i,j}^{(\tau)}}
+    \min_{\hat{v} \in \{\hat{v}:D_{i,j}(v;w)D_{i,j}(\hat{v};w)\leq 0\}}
+    ||\hat{v} - v||.
+  \end{equation*}
+  El \textit{safety margin} de un semivalor es:
+  \begin{equation*}
+    \text{Safe}(\tau;w):=\min_{i,j \in N, i \neq j} \text{Safe}_{i,j}(\tau;w).
+  \end{equation*}
+\end{definition}
+
+La intuición detrás del \textit{safety margin} es que muestra
+la máxima cantidad de ruido que puede ser añadida a un semivalor sin que
+se altere el orden de los \textit{data values} de ningún par de
+puntos que fuera distinguible por la función de utilidad original.
+
+% TODO: Meter el último párrafo aquí.
