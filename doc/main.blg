@@ -1,18 +1,18 @@
 [0] Config.pm:304> INFO - This is Biber 2.14 (beta)
 [0] Config.pm:307> INFO - Logfile is 'main.blg'
-[94] biber:322> INFO - === lun ago 21, 2023, 17:00:35
-[112] Biber.pm:415> INFO - Reading 'main.bcf'
-[188] Biber.pm:943> INFO - Found 22 citekeys in bib section 0
-[204] Biber.pm:4256> INFO - Processing section 0
-[205] Utils.pm:75> INFO - Globbing data source 'bib/references.bib'
-[205] Utils.pm:91> INFO - Globbed data source 'bib/references.bib' to bib/references.bib
-[215] Biber.pm:4455> INFO - Looking for bibtex format file 'bib/references.bib' for section 0
-[217] bibtex.pm:1653> INFO - LaTeX decoding ...
-[255] bibtex.pm:1471> INFO - Found BibTeX data source 'bib/references.bib'
-[326] Utils.pm:293> WARN - month field 'August' in entry 'maleki' is not an integer - this will probably not sort properly.
-[465] UCollate.pm:68> INFO - Overriding locale 'es_ES' defaults 'variable = shifted' with 'variable = non-ignorable'
-[465] UCollate.pm:68> INFO - Overriding locale 'es_ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[465] Biber.pm:4084> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'es_ES'
-[483] bbl.pm:652> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[502] bbl.pm:755> INFO - Output to main.bbl
-[502] Biber.pm:128> INFO - WARNINGS: 1
+[90] biber:322> INFO - === mar ago 22, 2023, 18:04:58
+[106] Biber.pm:415> INFO - Reading 'main.bcf'
+[186] Biber.pm:943> INFO - Found 22 citekeys in bib section 0
+[201] Biber.pm:4256> INFO - Processing section 0
+[202] Utils.pm:75> INFO - Globbing data source 'bib/references.bib'
+[202] Utils.pm:91> INFO - Globbed data source 'bib/references.bib' to bib/references.bib
+[213] Biber.pm:4455> INFO - Looking for bibtex format file 'bib/references.bib' for section 0
+[215] bibtex.pm:1653> INFO - LaTeX decoding ...
+[249] bibtex.pm:1471> INFO - Found BibTeX data source 'bib/references.bib'
+[318] Utils.pm:293> WARN - month field 'August' in entry 'maleki' is not an integer - this will probably not sort properly.
+[470] UCollate.pm:68> INFO - Overriding locale 'es_ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[471] UCollate.pm:68> INFO - Overriding locale 'es_ES' defaults 'variable = shifted' with 'variable = non-ignorable'
+[471] Biber.pm:4084> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'es_ES'
+[489] bbl.pm:652> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[508] bbl.pm:755> INFO - Output to main.bbl
+[508] Biber.pm:128> INFO - WARNINGS: 1

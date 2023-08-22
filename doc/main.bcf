@@ -2218,6 +2218,13 @@
     <bcf:citekey order="32">shapleyValue</bcf:citekey>
     <bcf:citekey order="33">shapleyValue</bcf:citekey>
     <bcf:citekey order="34">betaShapley</bcf:citekey>
+    <bcf:citekey order="35">betaShapley</bcf:citekey>
+    <bcf:citekey order="36">dataBanzhaf</bcf:citekey>
+    <bcf:citekey order="37">dataBanzhaf</bcf:citekey>
+    <bcf:citekey order="38">dataBanzhaf</bcf:citekey>
+    <bcf:citekey order="39">dataBanzhaf</bcf:citekey>
+    <bcf:citekey order="40">dataBanzhaf</bcf:citekey>
+    <bcf:citekey order="41">dataBanzhaf</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
