@@ -1,9 +1,9 @@
 \chapter{Marco teórico}
 \justifying
 
-\section*{Introducción}
+% \section*{Introducción}
 
-aaa
+% aaa
 
 \section{Teoría de juegos}
 \subsection*{Definición y conceptos básicos}
@@ -22,30 +22,29 @@ jugadores. Estas situaciones se conocen como \emph{juegos}.
   decisiones de un jugador impactan en las ganancias de
   otros. Un juego se define por:
   \begin{itemize}
-    \item Los jugadores que intervienen. Cada \emph{jugador}
+    \item \textbf{Los jugadores que intervienen.} Cada \emph{jugador}
       es un agente que tiene a su disposición diversas
       estrategias basadas en las posibles recompensas que
       podría recibir.
 
-    \item Las estrategias disponibles para cada jugador.
+    \item \textbf{Las estrategias disponibles para cada jugador.}
       Una \emph{estrategia} es un plan de acción que un jugador
       puede adoptar dentro de un juego. Esta estrategia dicta las
       acciones que tomará en cada situación posible que se presente
       en el juego.
 
-    \item Las ganancias de cada jugador en función de los
-      resultados. Las \emph{ganancias} son representaciones de
+    \item \textbf{Las ganancias de cada jugador en función de los
+      resultados.} Las \emph{ganancias} son representaciones de
       las motivaciones de los jugadores, pudiendo representar
       beneficios, cantidades, o simplemente reflejar la conveniencia
       de los diferentes desenlaces.
   \end{itemize}
 \end{definition}
 
-En el contexto de teoría de juegos aplicada a la valoración de datos,
-nos centraremos en juegos cooperativos.
+A lo largo de este trabajo nos centraremos en el estudio de juegos
+cooperativos.
 
 \begin{definition}
-  % Ojito con esta definición.
   Un \emph{juego cooperativo} es aquel en el que los jugadores
   pueden comunicarse y negociar con el fin de establecer acuerdos
   vinculantes.
@@ -57,60 +56,80 @@ lograr un objetivo común. Las coaliciones pueden
 variar desde la compuesta por todos los jugadores hasta la que
 incluye a un único jugador.
 
+\
 
-Un juego cooperativo queda completamente definido por el conjunto
-de sus jugadores $N$ y por su función característica. Esta función
-es el nexo entre la formación de coaliciones y los beneficios
-obtenidos por los jugadores, ya que asigna a cada coalición posible
-un beneficio que puede lograr.
+Un juego cooperativo se define completamente a través de su
+conjunto de jugadores $N$ y de su función característica.
+Esta función establece la relación entre la formación de
+coaliciones y los beneficios que obtienen los jugadores,
+asignando a cada posible coalición (es decir, a cada
+subconjunto del conjunto potencia de $N$, denotado $2^N$)
+un beneficio específico que pueden alcanzar.
 
 \begin{definition}
   Una \emph{función característica} $v$ es una función
-  \begin{align*}
-    v&:2^N \longrightarrow \mathbb{R}\\
-    S&\longmapsto v(S).
-  \end{align*}
+  \begin{equation*}
+    \begin{split}
+      v&:2^N \longrightarrow \mathbb{R}\\
+      S&\longmapsto v(S)
+    \end{split}\ .
+  \end{equation*}
   Asignando a cada posible coalición la máxima
   utilidad que los jugadores de $S$ pueden obtener,
   independientemente de lo que haga el resto de
   jugadores.
 \end{definition}
 
-
-Una vez formadas las coaliciones y determinadas las ganancias,
-surge la pregunta: ¿cómo se dividen las ganancias entre los
-miembros de la coalición? Varias respuestas a esta pregunta
-han surgido en la literatura, pero el valor de
-Shapley es uno de los conceptos más prominentes.
+Un interrogante esencial emerge tras establecer coaliciones
+y ganancias: ¿cómo se reparten los beneficios entre los
+miembros de la coalición? Esta pregunta nos
+conduce directamente al valor de Shapley.
 
 \subsection{El valor de Shapley}
+\label{sec:valorShapley}
+
+A partir de ahora, consideraremos la situación de un
+juego cooperativo. Supondremos un conjunto de $N$ jugadores e
+identificaremos dicho juego mediante su función
+característica $v$.
+
+\
 
 El \emph{Valor de Shapley} es un concepto de teoría de juegos
 que asigna de manera equitativa las ganancias
 entre los miembros de una coalición. Propuesto
-por Lloyd Shapley en 1952 \cite{shapleyValue},y 
+por Lloyd Shapley en 1952 \cite{shapleyValue},
 se fundamenta en los siguientes axiomas:
 
 \begin{itemize}
-  \item Simetría. Si dos jugadores son simétricos, es decir,
+  \item \textbf{Simetría}. Si dos jugadores son simétricos, es decir,
   si su contribución a cualquier coalición es la misma,
   entonces presentan el mismo valor.
-  $$\text{Si } \forall S \subseteq N \setminus \{i, j\},\ 
-  v(S \cup \{i\}) = v(S \cup \{j\}) \implies \phi(i;v) =
-  \phi(j;v).$$
+  $$
+  \text{Si } \forall S \subseteq N \setminus \{i, j\},\ 
+  v(S \cup \{i\}) = v(S \cup \{j\}) \implies \phi_{Shapley}(i;v) =
+  \phi_{Shapley}(j;v).
+  $$
 
-  \item Eficiencia. El valor total producido por la coalición
+  \item \textbf{Eficiencia}. El valor total producido por la coalición
   conformada por todos los jugadores se distribuye entre los
-  jugadores. Es decir $v(N)=\sum_{i\in N}\phi(i;v)$.
+  jugadores. Es decir,
+  $$
+  v(N)=\sum_{i\in N}\phi_{Shapley}(i;v).
+  $$
 
-  \item Linealidad. Dados dos juegos $v$ y $w$, el valor del
-  juego $v+w$ es la suma de los valores de cada juego. Es decir,
-  $\phi(i;v+w)=\phi(i;v)+\phi(i;w)$.
+  \item \textbf{Linealidad}. Dados dos juegos $u$ y $v$, el valor del
+  juego $u+v$ es la suma de los valores de cada juego. Es decir,
+  $$
+  \phi_{Shapley}(i;u+v)=\phi_{Shapley}(i;u)+\phi_{Shapley}(i;v).
+  $$
 
-  \item Jugador nulo. Los jugadores que no aportan a ninguna
+  \item \textbf{Jugador nulo}. Los jugadores que no aportan a ninguna
   coalición tendrán valor nulo. Es decir,
-  $$\text{Si } \forall S \subseteq N \setminus \{i\},\ 
-  v(S \cup \{i\}) = v(S) \implies \phi(i;v) = 0.$$
+  $$
+  \text{Si } \forall S \subseteq N \setminus \{i\},\ 
+  v(S \cup \{i\}) = v(S) \implies \phi_{Shapley}(i;v) = 0.
+  $$
 \end{itemize}
 
 El siguiente teorema, extraído de \cite{shapleyValue} prueba
@@ -118,62 +137,79 @@ que se trata del único método de valoración de datos satisfaciendo
 estos axiomas.
 
 \begin{theorem}
-  Existe una única función $\phi$ satisfaciendo los axiomas
+  Existe una única función $\phi_{Shapley}$ satisfaciendo los axiomas
   de simetría, eficiencia, linealidad y jugador nulo, y viene
   dada por la fórmula:
-  $$
-  \phi(i;v)=\sum_{S\subseteq N}
-  \frac{|S|-1!(|N|-|S|)!}{|N|!}(v(S)-v(S \setminus \{i\}))
-  $$
+  \begin{align*}
+    \phi_{Shapley}(i;v)&=\sum_{S\subseteq N}
+    \frac{(|S|-1)!(|N|-|S|)!}{|N|!}(v(S)-v(S \setminus \{i\}))\\
+    &= \sum_{S\subseteq N \setminus \{i\}} \frac{|S|!(|N|-|S|-1)!}
+    {|N|!}(v(S\cup \{i\})-v(S)).
+  \end{align*}
+  
 \end{theorem}
 
 \begin{proof}
-  La demostración detallada se encuentra en \cite{shapleyValue}.
+  La demostración detallada se encuentra en la sección 3
+  de \cite{shapleyValue}.
 \end{proof}
+
+Más adelante nos será útil expresar el valor de Shapley de
+una forma alternativa, que nos permitirá relacionarlo mejor
+con otros conceptos.
 
 \begin{proposition}
   El valor de Shapley puede ser expresado como:
-  $$
-    \phi(i;v)=\frac{1}{n}\sum_{k=1}^n \binom{n-1}{k-1}^{-1} 
-    \sum_{S \subseteq N \setminus \{i \},||S||=k-1}(v(S\cup\{i\})-v(S))
-  $$
+  \begin{equation}
+    \label{shapleyFormula}
+    \phi_{Shapley}(i;v)=\frac{1}{n}\sum_{k=1}^n \binom{n-1}{k-1}^{-1} 
+    \sum_{\substack{S \subseteq N \setminus \{i\} \\ ||S||=k-1}}(v(S\cup\{i\})-v(S)).
+  \end{equation}
 \end{proposition}
 
 \begin{proof}
-  Pendiente.
+  Teniendo en cuenta que
+  \[
+  \binom{n-1}{k-1}^{-1} = \frac{(k-1)!(n-k)!}{(n-1)!},
+  \]
+  podemos reescribir la ecuación \ref{shapleyFormula} como:
+  \begin{align*}
+    \phi_{Shapley}(i,v) &= \frac{1}{n} \sum_{k=1}^{n} \frac{(k-1)!(n-k)!}{(n-1)!}
+    \sum_{\substack{S \subseteq N \setminus \{i\} \\ ||S||=k-1}}(v(S\cup\{i\})-v(S))\\
+    &= \sum_{k=1}^{n} \frac{(k-1)!(n-k)!}{n!}
+    \sum_{\substack{S \subseteq N \setminus \{i\} \\ ||S||=k-1}}(v(S\cup\{i\})-v(S))\\
+    & = \sum_{S\subseteq N \setminus \{i\}} \frac{|S|!(|N|-|S|-1)!}
+    {|N|!}(v(S\cup \{i\})-v(S)).
+  \end{align*}
+
 \end{proof}
 
-Como observación final, es importante señalar que se toman en cuenta
-todas las coaliciones que no incluyen al jugador en cuestión.
-Para cada una de esas coaliciones, se determina la
-\emph{contribución marginal} del jugador, la cual
-representa la diferencia entre la ganancia de la coalición
-con y sin el jugador.
-El Valor de Shapley, en última instancia, se calcula como
-el promedio de todas estas contribuciones marginales.
+% Como observación final, es importante señalar que se toman en cuenta
+% todas las coaliciones que no incluyen al jugador en cuestión.
+% Para cada una de esas coaliciones, se determina la
+% \emph{contribución marginal} del jugador, la cual
+% representa la diferencia entre la ganancia de la coalición
+% con y sin el jugador.
+% El Valor de Shapley, en última instancia, se calcula como
+% el promedio de todas estas contribuciones marginales.
 
 
 \subsection{Semivalores}
 
 Los semivalores son una generalización del valor de Shapley,
-que surgen al relajar el axioma de eficiencia. Mientras que
-el Valor de Shapley garantiza que la suma de los valores
-individuales de los jugadores sea igual a la utilidad total
-generada por la coalición total, los semivalores no imponen
-esta restricción. Así, permiten una variedad más amplia de
-métodos de valoración en el estudio de juegos cooperativos,
-siendo especialmente útiles en escenarios donde no es necesario
-o deseado que la totalidad de la recompensa sea distribuida.
+que surgen al relajar el axioma de eficiencia. Así, permiten
+una variedad más amplia de métodos de valoración en el estudio
+de juegos cooperativos, siendo especialmente útiles en escenarios
+donde no es necesario o deseado que la totalidad de la recompensa
+sea distribuida.
 
 La clave de los semivalores es que asignan pesos a las
 coaliciones basándose en el tamaño de estas. Estos pesos
 son utilizados para calcular la contribución marginal promedio
-de cada jugador.
-
-A diferencia del valor de Shapley, que es único dada su
-definición basada en axiomas \cite{shapleyValue}, hay múltiples
-semivalores posibles, dependiendo de cómo se determinen
-los pesos. Esta variabilidad en los semivalores queda
+de cada jugador. A diferencia del valor de Shapley, que es
+único dada su definición basada en axiomas \cite{shapleyValue},
+hay múltiples semivalores posibles, dependiendo de cómo se
+determinen los pesos. Esta variabilidad en los semivalores queda
 formalizada en el siguiente teorema:
 
 \begin{theorem}{Representación de semivalores \cite{Dubey2}.}
@@ -181,40 +217,41 @@ formalizada en el siguiente teorema:
   Una función $\phi$ es un semivalor, si y solo
   si, existe una función peso $w:[n] \rightarrow
   \mathbb{R}$ tal que
-  $$\sum_{k=1}^n \binom{n-1}{k-1}w(k) = n$$,
+  $$\sum_{k=1}^n \binom{n-1}{k-1}w(k) = n,$$
   que permite representar $\phi$ mediante la expresión:
   $$
   \phi(i;v) = \sum_{k=1}^n \frac{w(k)}{n}
-  \sum_{S \subseteq N \setminus \{i \},||S||=k-1}
-  (v(S\cup \{i\} - v(S)))
+  \sum_{\substack{S \subseteq N \setminus \{i\} \\ ||S||=k-1}}
+  (v(S\cup \{i\} - v(S))).
   $$
 \end{theorem}
 
-Es relevante notar que el valor de Shapley es un caso
-particular de semivalor, donde los pesos son determinados
-por la fórmula: ($w_{Shapley} = \binom{n-1}{k-1}^{-1}$).
+\begin{proof}
+  Se puede consultar en \cite{Dubey2}.
+\end{proof}
+
+Este teorema establece una biyección entre semivalores y
+funciones de peso. Esta correspondencia uno a uno
+nos permite identificar y estudiar semivalores a través
+de sus funciones de peso. Además de esto, proporciona
+una fórmula general para representar cualquier semivalor
+en términos de su función de peso.
+
+Finalmente, es importante destacar que el valor de Shapley
+es un caso particular de semivalor. En este caso la función
+de peso será $w_{Shapley} = \binom{n-1}{k-1}^{-1}$.
 
 
 \subsection{El valor de Banzhaf}
 
-El \emph{Valor de Banzhaf}, también denominado índice de poder
-de Banzhaf\cite{banzhaf}, es una métrica en la teoría de juegos
+El \emph{valor de Banzhaf}, también denominado índice de poder
+de Banzhaf\cite{banzhaf}, es una métrica de teoría de juegos
 cooperativos que busca cuantificar el poder e influencia de un
 jugador dentro de una coalición.
 Este índice fue introducido por John F. Banzhaf III en 1965,
 con la finalidad de ofrecer una herramienta analítica que
 pudiese determinar el poder de influencia de un jugador,
 especialmente en escenarios de votación ponderada.
-
-\begin{definition}
-  El \emph{valor de Banzhaf} de un jugador $i$ en un juego
-  cooperativo $v$ viene dado por la expresión:
-  \begin{equation}
-    \label{banzhafFormula}
-    \phi_{Banzhaf}(i;v) = \frac{1}{2^{n-1}} \sum_{S
-    \subseteq N \setminus \{i\}} [v(S \cup \{i\}) - v(S)]
-  \end{equation}
-\end{definition}
 
 Para comprender mejor la esencia y la utilidad del valor de
 Banzhaf, es fundamental familiarizarse con ciertos conceptos
@@ -238,6 +275,16 @@ relacionados:
   es directamente proporcional a su peso en la votación.
 \end{itemize}
 
+\begin{definition}
+  El \emph{valor de Banzhaf} de un jugador $i$ en un juego
+  cooperativo $v$ viene dado por la expresión:
+  \begin{equation}
+    \label{ec:banzhafFormula}
+    \phi_{Banzhaf}(i;v) = \frac{1}{2^{n-1}} \sum_{S
+    \subseteq N \setminus \{i\}} [v(S \cup \{i\}) - v(S)].
+  \end{equation}
+\end{definition}
+
 A pesar de sus similitudes con el valor de Shapley, el índice
 de Banzhaf se diferencia en su enfoque y en la forma de asignar
 poder a los jugadores.
@@ -246,15 +293,6 @@ marginales promediadas, el índice de Banzhaf se enfoca en la
 capacidad de un jugador de influir en el resultado final de
 una votación. Específicamente, es un semivalor
 con un peso asociado dado por $w_{Banzhaf} = \frac{1}{2^{n-1}}$.
-
-
-% A lo mejor está bien añadirlo
-% En escenarios prácticos, el valor de Banzhaf ha demostrado ser una herramienta
-% esencial para analizar sistemas de votación, especialmente en estructuras como
-% los sistemas electorales y las decisiones corporativas. Al permitir una
-% comprensión más profunda del poder real que cada jugador posee,
-% independientemente de su peso nominal, las partes interesadas pueden tomar
-% decisiones más informadas y equitativas.
 
 \newpage
 \section{Valoración de datos}
@@ -278,22 +316,22 @@ categorizado basado en diversas cualidades:
 \begin{enumerate}
   \item \textbf{Valor Intrínsico vs. Extrínseco}:
   \begin{itemize}
-    \item \textbf{Valor intrínseco}: Se refiere al valor
+    \item \emph{Valor intrínseco}: Se refiere al valor
     inherente al propio dato, basado en su precisión y calidad.
     Este valor es independiente del uso que se le dé al dato.
 
-    \item \textbf{Valor extrínseco}: Se corresponde al valor
+    \item \emph{Valor extrínseco}: Se corresponde al valor
     que se le atribuye al dato en función de su uso.
     Depende, pues, del contexto en el que se use el dato.
   \end{itemize}
 
   \item \textbf{Valor Directo vs. Indirecto}:
   \begin{itemize}
-    \item \textbf{Valor directo}: Alude al beneficio
+    \item \emph{Valor directo}: Alude al beneficio
     inmediato que se obtiene de un dato, como podría ser
     al venderlo.
 
-    \item \textbf{Valor indirecto}: Se refiere al
+    \item \emph{Valor indirecto}: Se refiere al
     beneficio derivado del uso estratégico del dato.
   \end{itemize}
 \end{enumerate}
@@ -303,24 +341,25 @@ e indirecto de los datos. Esta investigación nos permitirá,
 posteriormente, discernir el valor directo de los datos y
 detectar posibles problemas en su valor intrínseco.
 
+\
+
 A pesar de que la valoración de datos es un concepto
 multifacético que depende de varios factores, nos
-ajustaremos al enfoque propuesto por diversas
-fuentes\cite{dataShapley,betaShapley}, el cual se compone
-de tres elementos esenciales:
+ajustaremos al enfoque propuesto en \cite{dataShapley,betaShapley},
+el cual se compone de tres elementos esenciales:
 
 \begin{enumerate}
-  \item  Denominaremos $N$ al \textbf{conjunto prefijado de datos
+  \item  Denominaremos $N$ al \emph{conjunto prefijado de datos
   de entrenamiento}, siendo $N = \{ (x_i, y_i) \}_1^n$.
   Aquí, $x_i$ hace referencia a las características del dato
   $i$-ésimo, e $y_i$ a su categoría en problemas de
   clasificación o su valor en problemas de regresión.
   
-  \item El \textbf{algoritmo de aprendizaje}  $\mathcal{A}$,
+  \item El \emph{algoritmo de aprendizaje}  $\mathcal{A}$,
   será tratado como una caja negra que toma un conjunto de
   entrenamiento $N$ y genera un predictor $f$.
   
-  \item La \textbf{función de utilidad} $v$ es una aplicación
+  \item La \emph{función de utilidad} $v$ es una aplicación
   que asigna a cada subconjunto de $N$ un valor, reflejando
   la utilidad de ese subconjunto. Para problemas de clasificación,
   la opción común para $v$ es la precisión del modelo
@@ -338,100 +377,111 @@ Cada uno de estos valores estará determinado por $N,
 como $\phi(i ; v)$. A estas puntuaciones se les denomina
 \textit{data values}.
 
-Pasamos a tratar las nociones principales en cuanto a valoración
-de datos.
+Los distintos enfoques que seguiremos para calcular estos
+\textit{data values} son los siguientes:
 
-\subsection{Métricas de valoración de datos}
-
-\subsubsection{LOO Error}
+\subsection*{LOO Error}
 
 El método más sencillo para valorar datos consiste en medir la
 contribución de un punto individual al desempeño global del
 conjunto de entrenamiento:
 \[
-  \phi_{{loo}} (i ; v) = v (N) - v (N \setminus i).
+  \phi_{{loo}} (i ; v) = v (N) - v (N \setminus \{i\}).
 \]
 Este método es conocido como \textit{leave-one-out}(LOO).
 Para calcular el valor exacto de los valores LOO para
 un conjunto de entrenamiento de tamaño $N$, sería
 necesario reentrenar el modelo $N$ veces. Este procedimiento
 resulta poco práctica cuando el tamaño del conjunto de datos
-es considerablemente grande, como se puede observar en estudios
-tales como \cite{looFuck}
+es considerablemente grande \cite{looFuck}.
 
-\subsubsection{Data Shapley}
-En la sección citarseccióndelvalorDeShapley se introdujo 
+\subsection*{Data Shapley}
+En la sección \ref{sec:valorShapley}, se presentó
+el valor de Shapley. En \cite{shapleyValue}, se propone
+desarrollar un método para lograr una valoración equitativa.
+Resulta que las condiciones de métodos equitativos coinciden
+con los axiomas del valor de Shapley, es así que surge
+el concepto de \emph{data Shapley}.
+La fórmula de data Shapley es la misma que la vista
+en la ecuación \ref{shapleyFormula}
 
-En {\cite{shapleyValue}} definen los métodos de valuación equitativa
-como sigue.
+% La siguiente proposición es la que da nombre a ...
 
-\begin{definition}
-  Un método de evaluación será equitativo si cumple las siguientes
-  condiciones:
-  \begin{enumerate}
-    \item Linealidad: Dadas métricas de error $V$ y $W$, constantes
-    
-    \item Jugador nulo: Si $\forall S \subseteq N \setminus
-    \{ i \}$, $V (S) = V (S \cup \{ i \})$ entonces $\phi_i = 0$.
-    
-    \item Simetría: Fijados $i, j \in N$, si para todo $S \subseteq N
-    \setminus \{ i, j \}$, se tiene que $V (S \cup \{ i \}) = V (S \cup j)$
-    entonces $\phi_i = \phi_j$.
-    
-    \item Esta hay que escribirla bien.
-  \end{enumerate}
-\end{definition}
+% \begin{proposition}
+%   Cualquier $\phi (N, \mathcal{A}, V)$ que satisfaga las condiciones
+%   anteriores será de la forma
+%   \[
+%   \phi_i = C \sum_{S \subseteq N \setminus \{ i \}}
+%   \frac{V (S \cup \{ i\}) - V (S)}{\binom{n - 1}{| S |}} .
+%   \]
+%   Dónde el sumatorio contempla todos los subconjuntos de $N$ que no
+%   contienen a $i$ y $C$ es una constante arbitraria. Llamaremos a $\phi_i$ el
+%   Valor de Shapley asociado al dato $i$.
+% \end{proposition}
 
-La siguiente proposición es la que da nombre a ...
-
-\begin{proposition}
-  Cualquier $\phi (N, \mathcal{A}, V)$ que satisfaga las condiciones
-  anteriores será de la forma
-  \[
-  \phi_i = C \sum_{S \subseteq N \setminus \{ i \}}
-  \frac{V (S \cup \{ i\}) - V (S)}{\binom{n - 1}{| S |}} .
-  \]
-  Dónde el sumatorio contempla todos los subconjuntos de $N$ que no
-  contienen a $i$ y $C$ es una constante arbitraria. Llamaremos a $\phi_i$ el
-  Valor de Shapley asociado al dato $i$.
-\end{proposition}
-
-\begin{proof}
-  Se puede consultar en {\cite{shapleyValue}}.
-\end{proof}
+% \begin{proof}
+%   Se puede consultar en {\cite{shapleyValue}}.
+% \end{proof}
 
 
-\subsubsection{Beta Shapley}
-En \cite{betaShapley} proponen un semivalor concreto... 
-En este artículo se propone utilizar la función $\beta$ con
-un par de parámetros positivos $(\alpha,\beta)$ para definir
-un semivalor, que vendrá dado por la siguiente función
-de peso
-\[
-  jeje
-\]
+\subsection*{Beta Shapley}
+En \cite{betaShapley} proponen  utilizar la función Beta con
+parámetros positivos $(\alpha,\beta)$ para definir
+un caso particular de semivalor, con la siguiente función de peso:
+\begin{equation*}
+  \begin{split}
+    w_{\alpha, \beta}(j) :&= n \int_{0}^{1} t^{j-1}(1-t)^{n-j}
+    \frac{t^{\beta-1}(1-t)^{\alpha-1}}{\text{Beta}(\alpha,\beta)}dt\\
+    &= n\frac{\text{Beta}(j+\beta-1, n-j+\alpha)}
+  {\text{Beta}(\alpha,\beta)}.
+  \end{split}
+\end{equation*}
+ 
+Dónde $\text{Beta}(\alpha,\beta) = \frac{\Gamma(\alpha)\Gamma(\beta)}
+{\Gamma(\alpha+\beta)}$ es la función Beta, y $\Gamma(\circ)$ es
+la función Gamma. Utilizando algunas de las propiedades vistas
+en \ref{ap:apendice1} podemos simplificar la expresión anterior a:
+\begin{equation*}
+  \begin{split}
+  \label{eq:pesoBeta}
+  w_{\alpha, \beta}(j) = n\frac{\prod_{k=1}^{j-1}(\beta+k-1)
+  \prod_{k=1}^{n-j}(\alpha+k-1)}
+  {\prod_{k=1}^{n-1}(\alpha+\beta+k-1)}.
+  \end{split}
+\end{equation*}
 
-We propose to use $\psi$ semi(z*; U, D, w(n) $\alpha, \beta$ ) and call it Beta($\alpha, \beta$)-Shapley
-value. The pair of hyperparameters ($\alpha, \beta$) decides the weight distribution on [n].
-For instance, when ($\alpha, \beta$) = (1, 1), the normalized weight w(n) $\alpha, \beta$ (j) : =
-(n-1 j-1 )w(n) $\alpha, \beta$ (j) = 1 for all j in [n], giving the uniform weight on
-marginal contributions , i.e., Beta(1,1)-Shapley $\psi$semi(z*; U, D, w(n) 1,1 ) is
-exactly the original data Shapley. Figure 3 shows various weight distributions
-for different pairs of ($\alpha, \beta$). For simplicity, we fix one of the hyperparameter
-to be one. When $\alpha$ \(\geq \) $\beta$ = 1, the normalized weight assigns large weights
-on the small cardinality and remove noise from the large cardinality. Conversely,
-Beta(1,$\beta$) puts more weights on large cardinality and it approaches to the LOO
-as $\beta$ increases.
+Con esto, el nuevo semivalor propuesto, al que llamaremos
+Beta($\alpha, \beta$)-Shapley, queda definido como:
 
-\subsubsection{Banzhaf}
-Este concepto será el central a lo largo de nuestro trabajo.
-Se define igual que su precursor, el valor de Banzhaf descrito
-en la sección... 
+\begin{equation*}
+  \label{eq:betaShapley}
+  \phi_{Beta}(i;v) := \frac{1}{n} \sum_{j=1}^{n} 
+  w_{\alpha, \beta}(j) \sum_{\substack{S \subseteq N \setminus \{i\}
+  \\ ||S||=j-1}}
+  (v(S \cup \{i\})-v(S)).
+\end{equation*}
 
-El interés particular de este concepto es que será, de todos
-los semivalores el que alcanza un mayor \textit{safety margin},
-concepto que introduciremos en la sección...
+Los hiperparámetros ($\alpha, \beta$) determinan la
+distribución de pesos para cada elemento de $N$.
+Por ejemplo, cuando $\alpha = \beta = 1$ tendremos,
+$w_{1,1}(j) = \binom{n-1}{j-1}^{-1}$ para todo $j \in N$,
+dando el peso uniforme en las contribuciones marginales,
+es decir, $\text{Beta}(1,1)$-Shapley es exactamente
+el valor de Shapley de los datos originales.
+Cuando $\alpha \geq \beta = 1$, el peso normalizado asigna
+grandes pesos a conjuntos de pequeña cardinalidad y elimina
+el ruido de los conjuntos de cardinalidad mayor.
+Por el contrario, $\text{Beta}(1,\beta)$ pone más pesos en
+la gran cardinalidad y se acerca a LOO a medida que $\beta$
+aumenta.
 
+\subsection*{Data Banzhaf}
+Se denomina \textit{Data Banzhaf} a la aplicación del valor de
+Banzhaf\ref{ec:banzhafFormula} en eñ contexto de valoración
+de datos. Este semivalor presenta una serie de ventajas
+que lo hacen especialmente interesante. Dichas
+propiedades serán estudiadas en detalle en secciones
+subsiguientes.
 
 \newpage
 \section{Midiendo la robustez}
@@ -460,33 +510,32 @@ la diferencia escalada como:
 
 
 \begin{definition}
-  Sean $i$ y $j$ puntos de $N$. La diferencia
-  entre los semivalores $\phi(i;v)$ y $\phi(j;v)$
+  Sean $i,j \in N$. La diferencia
+  entre los \textit{data values} $\phi(i;v)$ y $\phi(j;v)$
   se define como:
   \begin{align*}
-    D_{i,j}(v,w)&:= n(\phi_w(i;v)-\phi_w(j;v))\\
+    D_{i,j}(v,w)&:= n(\phi(i;v)-\phi(j;v))\\
     &=\sum_{k=1}^{n-1} (w(k)+w(k+1)) \binom{n-2}{k-1}
     \Delta_{i,j}^k(v).
   \end{align*}
-  Donde $\Delta_{i,j}^k(v):=\binom{n-2}{k-1}^{-1} \sum_{|S|=k-1,
-  S\subseteq N \setminus \{i,j\}} (v(S \cup i)-v(S \cup j))$,
-  representa la distinguibilidad promedio entre $i$ y $j$ en
+  Donde $\Delta_{i,j}^k(v):=\binom{n-2}{k-1}^{-1} \sum_{\substack{
+    S \subseteq N \setminus \{i,j\} \\ ||S||=k-1}}
+    (v(S \cup \{i\})-v(S \cup \{j\}))$,
+  representa la \emph{distinguibilidad promedio entre $i$ y $j$} en
   subconjuntos de tamaño $k$ usando una función de utilidad
   sin ruido $v$.
 \end{definition}
 
-Consideremos $\hat{v}$ un estimador de $v$. Sabemos que
+Sea ahora $\hat{v}$ un estimador de $v$. Sabemos que
 $\hat{v}$ y $v$ generarán diferentes \textit{data values}
 para un par de puntos $i$ y $j$ si, y solo si,
-$D_{i,j}(v,w)D_{i,j}(\hat{v},w) \leq 0$.
-
-Se podría pensar inicialmente en definir
-la robustez de un semivalor como la menor cantidad de ruido
-$||\hat{v}-v||$ que alteraría el orden de los
-\textit{data values}. Sin embargo, una definición
-así dependería de la función de utilidad original $v$.
+$D_{i,j}(v,w)D_{i,j}(\hat{v},w) \leq 0$. Se podría pensar
+inicialmente en definir la robustez de un semivalor como
+la menor cantidad de ruido $||\hat{v}-v||$ que alteraría
+el orden de los \textit{data values}. Sin embargo, una
+definición así dependería de la función de utilidad original $v$.
 Si la función original $v$ no es capaz de diferenciar
-dos puntos $i$ y $j$ ($\Lambda_{i,j}^{(k)}(v)\simeq 0$, para
+dos puntos $i$ y $j$ ($\Delta_{i,j}^{(k)}(v)\simeq 0$, para
 todo $k=1,\dots,n-1$), entonces $D_{i,j}(v,w)$ será
 casi 0, y cualquier mínima perturbación podría 
 modificar el orden entre $\phi(i;v)$ y $\phi(j;v)$. 
@@ -496,9 +545,9 @@ robustez de un semivalor, debemos considerar solo las
 funciones de utilidad que sean capaces de distinguir
 entre $i$ y $j$.
 
-\begin{definition}{Distinguibilidad}
+\begin{definition}
   Diremos que un par de puntos $(i,j)$ son $\tau$-distinguibles por
-  la función de utilidad $v$ si, y solo si, $\Lambda_{i,j}^{(k)}(v) \geq \tau$
+  la función de utilidad $v$ si, y solo si, $\Delta_{i,j}^{(k)}(v) \geq \tau$
   para todo $k \in \{1,\dots,n-1\}$.
 \end{definition}
 
@@ -511,24 +560,24 @@ invertiría el orden de los \textit{data values} de al menos un
 par de puntos $(i,j)$, para al menos una función de utilidad $v \in
 \mathcal{V}_{i,j}^{(k)}$.
 
-\begin{definition}{Safety margin}
-  Dado $\tau > 0$, definimos el \textit{safety margin} de un
-  semivalor para un par de puntos $(i,j)$ como:
+\begin{definition}
+  Dado $\tau > 0$, definimos el \emph{safety margin} de un
+  semivalor para un par de puntos $i,j \in N$ como:
   \begin{equation*}
     \text{Safe}_{i,j}^{(k)}(\tau;w):=\min_{v \in \mathcal{V}_{i,j}^{(\tau)}}
     \min_{\hat{v} \in \{\hat{v}:D_{i,j}(v;w)D_{i,j}(\hat{v};w)\leq 0\}}
     ||\hat{v} - v||.
   \end{equation*}
-  El \textit{safety margin} de un semivalor es:
+  El \emph{safety margin} de un semivalor es:
   \begin{equation*}
     \text{Safe}(\tau;w):=\min_{i,j \in N, i \neq j} \text{Safe}_{i,j}(\tau;w).
   \end{equation*}
 \end{definition}
 
-La intuición detrás del \textit{safety margin} es que muestra
-la máxima cantidad de ruido que puede ser añadida a un semivalor sin que
-se altere el orden de los \textit{data values} de ningún par de
-puntos que fuera distinguible por la función de utilidad original.
+% La intuición detrás del \textit{safety margin} es que muestra
+% la máxima cantidad de ruido que puede ser añadida a un semivalor sin que
+% se altere el orden de los \textit{data values} de ningún par de
+% puntos que fuera distinguible por la función de utilidad original.
 
 
 % Corregido hasta aquí por GPT.
@@ -538,7 +587,7 @@ de \cite{dataBanzhaf}.
 
 \begin{theorem}
   Para cualquier $\tau > 0$, el valor de Banzhaf
-  alcanza el mayor \textit{safety margin} ,
+  alcanza el mayor \textit{safety margin},
   \[
   \text{Safe}(\tau;w_{Banzhaf})=\frac{\tau}{2^{\frac{n}{2}-1}}.  
   \]
@@ -546,7 +595,7 @@ de \cite{dataBanzhaf}.
 \end{theorem}
 
 \begin{proof}
-  Consultar...
+  Consultar apéndice C de \cite{dataBanzhaf}.
 \end{proof}
 
 Intuitivamente, este resultado se debe a cómo los
@@ -564,7 +613,7 @@ el semivalor más robusto en el sentido de que el ruido
 de la utilidad afecta mínimamente a los cambios en los
 \textit{data values}. En concreto, el valor de
 Banzhaf alcanza la menor constante de Lipschitz $L$
-tal que $||\phi(v)-\phi(\hat{v})|| \leq L||v-\hat{v}||$
+tal que $||\phi(v)-\phi(\hat{v})|| \leq L||v-\hat{v}||$,
 para todos los posibles pares de funciones de utilidad
 $v$ y $\hat{v}$.
 
@@ -586,9 +635,9 @@ Dado que es prácticamente imposible calcular los
 de datos basados en semivalores, debido a la necesidad
 de un número exponencial de evaluaciones de la función
 de utilidad, se debe recurrir a métodos de aproximación.
-
 A continuación, introducimos el concepto de error
-asociado a un estimador.
+asociado a un estimador, el cual nos será de utilidad
+a la hora de comparar distintos estimadores.
 
 \begin{definition}
   Un estimador de un semivalor $\hat{\phi}$ es
@@ -600,20 +649,21 @@ asociado a un estimador.
   Donde la aleatoriedad se da en la construcción del estimador.
 \end{definition}
 
-\subsection{Estimador Simple de Montecarlo}
-El valor de Banzhaf %\ref{banzhafFormula}
+\subsubsection*{Estimador Simple de Montecarlo}
+El valor de Banzhaf \ref{ec:banzhafFormula}
 puede ser reformulado como:
-\begin{equation}
+\begin{equation*}
   \label{simpleMontecarlo}
-  \phi_{Banzhaf}(i;v) = \mathcal{E}_{S \sim \text{Unif}
-  (2^{N\setminus i})} [v(S \cup \{i\})-v(S)].
-\end{equation}
+  \phi_{Banzhaf}(i;v) = \mathbb{E}_{S \sim \text{Unif}
+  (2^{N\setminus \{i\}})} [v(S \cup \{i\})-v(S)].
+\end{equation*}
 
 A partir de esto, un método de Montecarlo directo
 para estimar $\phi_{Banzhaf}(i;v)$ consistiría en
 generar muestras uniformes de $\mathcal{S}_i
 \subset 2^{N \setminus \{i\}}$ y calcular:
 \begin{equation}
+  \label{ec:simpleMontecarloEstimator}
   \hat{\phi}_{MC}(i;v) = \frac{1}{|\mathcal{S}_i|}\sum_{S \in
   \mathcal{S}_i} [v(S_j \cup \{i\})-v(S_j)].
 \end{equation}
@@ -630,12 +680,14 @@ el estimador $\hat{\phi}_{MC} = [\hat{\phi}_{MC}(1),\dots,
   \log(\frac{n}{\delta}))$ evaluaciones de $v$, y
   $\mathcal{O}(\frac{n}{\epsilon^2}
   \log{\frac{n}{\delta}})$ evaluaciones de $v$ en la norma
-  $l_{\inf}$.
+  $l_{\infty}$.
 \end{theorem}
 
 \begin{proof}
   Consultar apéndice C.1.2 de \cite{dataBanzhaf}.
 \end{proof}
+
+\subsubsection*{Estimador de máxima reutilización}
 
 El método anterior podría mejorarse en eficiencia,
 dado que cada muestra $S \in \mathcal{S}_i$ generada
@@ -644,16 +696,16 @@ $\hat{\phi}_{Banzhaf}(i;v)$. Esto introduce un
 factor de $n$ en la complejidad, ya que es necesario
 generar un mismo número de muestras para cada dato.
 
-Es en este contexto donde surge el concepto del
-estimador de máxima reutilización (MSR), propuesto
-en \cite{dataBanzhaf}. La idea es explotar la
-linealidad de la esperanza, de forma que:
+En este contexto surge el concepto de
+estimador de máxima reutilización (MSR)\cite{dataBanzhaf}.
+La idea es explotar la linealidad de la esperanza, de forma que
+partiendo de \ref{ec:simpleMontecarloEstimator} llegamos a:
 
 \begin{equation}
   \label{maximumSampleReuse}
-  \phi_{Banzhaf}(i;v) = \mathcal{E}_{S \sim \text{Unif}(2^{N\setminus i})}
+  \phi_{Banzhaf}(i;v) = \mathbb{E}_{S \sim \text{Unif}(2^{N\setminus i})}
   [v(S \cup \{i\})] - 
-  \mathcal{E}_{S \sim \text{Unif}(2^{N\setminus i})}
+  \mathbb{E}_{S \sim \text{Unif}(2^{N\setminus i})}
   [v(S)].
 \end{equation}
 
@@ -667,25 +719,24 @@ muestras de $\mathcal{S}$ en dos categorías:
   que contienen el dato $i$, es decir,
   $\mathcal{S}_{\ni i} = \{S \in \mathcal{S}: i \in S\}$.
   \item $\mathcal{S}_{\not \ni  i}$: el conjunto de muestras
-  queno contienen el dato $i$, esto es,
+  que no contienen el dato $i$, esto es,
   $\mathcal{S}_{\not \ni  i} = \{S \in \mathcal{S}: i \not
   \in S\}$.
 \end{itemize}
 
 Así, para cada jugador, diferenciamos entre las muestras
-que incluyen a dicho jugador y las que no.
+que incluyen a dicho jugador y las que no. Utilizando esta
+clasificación y la ecuación \ref{maximumSampleReuse},
+podemos estimar $\phi_{Banzhaf}(i;v)$ de la siguiente manera: 
 
-Utilizando esta clasificación, podemos estimar
-$\phi_{Banzhaf}(i;v)$ de la siguiente manera:
-
-\begin{equation}
+\begin{equation*}
   \hat{\phi}_{MSR}(i;v) = \frac{1}{|\mathcal{S}_{\ni i}|}
   \sum_{S \in \mathcal{S}_{\ni i}} v(S) -
   \frac{1}{|\mathcal{S}_{\not \ni i}|}
   \sum_{S \in \mathcal{S}_{\not \ni i}} v(S).
-\end{equation}
+\end{equation*}
 
-A este método le denominamos \textit{estimador de máxima
+Este estimador se conoce como \emph{estimador de máxima
 reutilización} (MSR).
 \begin{theorem}
   $\hat{\phi}_{MSR}$ es una $(\epsilon,\delta)$-aproximación
@@ -693,34 +744,32 @@ reutilización} (MSR).
   (\frac{n}{\epsilon^2} \log(\frac{n}{\delta}))$ evaluaciones
   de $v$, y $\mathcal{O}(\frac{1}{\epsilon^2}
   \log{\frac{n}{\delta}})$ evaluaciones de $v$ en la norma
-  $l_{\inf}$.
+  $l_{\infty}$.
 \end{theorem}
 
 \begin{proof}
   Consultar apéndice C.1.2 de \cite{dataBanzhaf}.
 \end{proof}
 
-Uno podría cuestionarse: ¿por qué se opta por el valor
-de Banzhaf en lugar de otro semivalor? La razón radica
-en que el valor de Banzhaf es el único semivalor
-que posibilita la implementación del algoritmo MSR.
-Como puede verse en el apéndice C.2 de \cite{dataBanzhaf}.
+Una de las grandes ventajas que presenta el valor
+de Banzhaf respecto a los demás semivalores es que
+se trata del único semivalor que permite la implementación
+del algoritmo MSR. Como puede verse en el apéndice
+C.2 de \cite{dataBanzhaf}.
 
-Aunque el MSR destaca por ser superior al método de
-Montecarlo simple, surge una pregunta válida:
-¿es verdaderamente eficiente el MSR?
+El siguiente teorema nos da una estimación de la bondad del
+MSR frente al resto de estimadores posibles.
 
-La respuesta la encontramos en el siguiente teorema:
 \begin{theorem}
   Todo estimador aleatorio del valor de Banzhaf
   que sea una $(\epsilon,\delta)$-aproximación en norma
-  $l_{\inf}$ con $\delta \in (0,\frac{1}{2})$ requiere
+  $l_{\infty}$ con $\delta \in (0,\frac{1}{2})$ requiere
   al menos $\Omega(\frac{1}{\epsilon})$.
 \end{theorem}
 
 Como hemos visto anteriormente el algoritmo MSR presenta
 una complejidad de $\mathcal{O}(\frac{1}{\epsilon^2}
-\log(\frac{n}{\delta}))$ en la norma $l_{\inf}$.
+\log(\frac{n}{\delta}))$ en la norma $l_{\infty}$.
 Lo que quiere decir que se aleja de la optimalidad
 en un factor de $\mathcal{O}(\frac{1}{\epsilon}
 \log(\frac{n}{\delta}))$.

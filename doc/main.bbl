@@ -435,31 +435,79 @@
     \endentry
     \entry{featureImportance}{article}{}
       \name{author}{2}{}{%
-        {{hash=b659ebc88023a12a732b4db9afdede3d}{%
+        {{hash=2a1075150e1e1dad8127b019f7ca9031}{%
            family={Lundberg},
            familyi={L\bibinitperiod},
-           given={Scott},
-           giveni={S\bibinitperiod}}}%
+           given={Scott\bibnamedelima M.},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
         {{hash=ee964079d93879aaef2382a5fff343d3}{%
            family={Lee},
            familyi={L\bibinitperiod},
            given={Su-In},
            giveni={S\bibinithyphendelim I\bibinitperiod}}}%
       }
-      \strng{namehash}{92d799a71ca7ae2c3ebec3ec87e85189}
-      \strng{fullhash}{92d799a71ca7ae2c3ebec3ec87e85189}
-      \strng{bibnamehash}{92d799a71ca7ae2c3ebec3ec87e85189}
-      \strng{authorbibnamehash}{92d799a71ca7ae2c3ebec3ec87e85189}
-      \strng{authornamehash}{92d799a71ca7ae2c3ebec3ec87e85189}
-      \strng{authorfullhash}{92d799a71ca7ae2c3ebec3ec87e85189}
+      \name{editor}{7}{}{%
+        {{hash=284a778b6c8e17f1aae38e288dc06036}{%
+           family={Guyon},
+           familyi={G\bibinitperiod},
+           given={Isabelle},
+           giveni={I\bibinitperiod}}}%
+        {{hash=86714cf89fed80215d15171e9ed5f412}{%
+           family={Luxburg},
+           familyi={L\bibinitperiod},
+           given={Ulrike},
+           giveni={U\bibinitperiod},
+           prefix={von},
+           prefixi={v\bibinitperiod}}}%
+        {{hash=02404a92b0be3f52ec5ac08e41c13445}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Samy},
+           giveni={S\bibinitperiod}}}%
+        {{hash=8e1e7fe0ffce349db319207a99e10487}{%
+           family={Wallach},
+           familyi={W\bibinitperiod},
+           given={Hanna\bibnamedelima M.},
+           giveni={H\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=a6784304d1cc890b2cb6c6c7f2f3fd76}{%
+           family={Fergus},
+           familyi={F\bibinitperiod},
+           given={Rob},
+           giveni={R\bibinitperiod}}}%
+        {{hash=50229a0f87f08a1fdc1e052ba8c93735}{%
+           family={Vishwanathan},
+           familyi={V\bibinitperiod},
+           given={S.\bibnamedelimi V.\bibnamedelimi N.},
+           giveni={S\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=eaf84e3fe4f887967dc3d793d28b9e94}{%
+           family={Garnett},
+           familyi={G\bibinitperiod},
+           given={Roman},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{9cd6e49767b1dfa9f5df9a46216a8739}
+      \strng{fullhash}{9cd6e49767b1dfa9f5df9a46216a8739}
+      \strng{bibnamehash}{9cd6e49767b1dfa9f5df9a46216a8739}
+      \strng{authorbibnamehash}{9cd6e49767b1dfa9f5df9a46216a8739}
+      \strng{authornamehash}{9cd6e49767b1dfa9f5df9a46216a8739}
+      \strng{authorfullhash}{9cd6e49767b1dfa9f5df9a46216a8739}
+      \strng{editorbibnamehash}{8c6697b820db5e75326258c0d1a3beae}
+      \strng{editornamehash}{e1556a53b433ff03ee66d9c631b120fa}
+      \strng{editorfullhash}{8c6697b820db5e75326258c0d1a3beae}
       \field{sortinit}{1}
       \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{booktitle}{Advances in Neural Information Processing Systems 30: Annual Conference on Neural Information Processing Systems 2017, December 4-9, 2017, Long Beach, CA, {USA}}
       \field{title}{A Unified Approach to Interpreting Model Predictions}
       \field{year}{2017}
-      \verb{eprint}
-      \verb arXiv:1705.07874
+      \field{pages}{4765\bibrangedash 4774}
+      \range{pages}{10}
+      \verb{urlraw}
+      \verb https://proceedings.neurips.cc/paper/2017/hash/8a20a8621978632d76c43dfd28b67767-Abstract.html
+      \endverb
+      \verb{url}
+      \verb https://proceedings.neurips.cc/paper/2017/hash/8a20a8621978632d76c43dfd28b67767-Abstract.html
       \endverb
     \endentry
     \entry{dataShapley}{article}{}
@@ -469,26 +517,52 @@
            familyi={G\bibinitperiod},
            given={Amirata},
            giveni={A\bibinitperiod}}}%
-        {{hash=1b868d50048a635fa27ffa744323fa41}{%
+        {{hash=513cf660ea55635f455cdb1b82247955}{%
            family={Zou},
            familyi={Z\bibinitperiod},
-           given={James},
-           giveni={J\bibinitperiod}}}%
+           given={James\bibnamedelima Y.},
+           giveni={J\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
       }
-      \strng{namehash}{9d9028d9e1d6439936cddd961a2a2e95}
-      \strng{fullhash}{9d9028d9e1d6439936cddd961a2a2e95}
-      \strng{bibnamehash}{9d9028d9e1d6439936cddd961a2a2e95}
-      \strng{authorbibnamehash}{9d9028d9e1d6439936cddd961a2a2e95}
-      \strng{authornamehash}{9d9028d9e1d6439936cddd961a2a2e95}
-      \strng{authorfullhash}{9d9028d9e1d6439936cddd961a2a2e95}
+      \name{editor}{2}{}{%
+        {{hash=050c0df95e5eb5c3218fdd148d0e17a4}{%
+           family={Chaudhuri},
+           familyi={C\bibinitperiod},
+           given={Kamalika},
+           giveni={K\bibinitperiod}}}%
+        {{hash=bd2be300d445e9f6db7808f9533e66cb}{%
+           family={Salakhutdinov},
+           familyi={S\bibinitperiod},
+           given={Ruslan},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {PMLR}%
+      }
+      \strng{namehash}{045db807cce27abe8c28b9399624cfda}
+      \strng{fullhash}{045db807cce27abe8c28b9399624cfda}
+      \strng{bibnamehash}{045db807cce27abe8c28b9399624cfda}
+      \strng{authorbibnamehash}{045db807cce27abe8c28b9399624cfda}
+      \strng{authornamehash}{045db807cce27abe8c28b9399624cfda}
+      \strng{authorfullhash}{045db807cce27abe8c28b9399624cfda}
+      \strng{editorbibnamehash}{ddb716c8c736fb868f09f38a0f4dd1ed}
+      \strng{editornamehash}{ddb716c8c736fb868f09f38a0f4dd1ed}
+      \strng{editorfullhash}{ddb716c8c736fb868f09f38a0f4dd1ed}
       \field{sortinit}{1}
       \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 36th International Conference on Machine Learning, {ICML} 2019, 9-15 June 2019, Long Beach, California, {USA}}
+      \field{series}{Proceedings of Machine Learning Research}
       \field{title}{Data Shapley: Equitable Valuation of Data for Machine Learning}
+      \field{volume}{97}
       \field{year}{2019}
-      \verb{eprint}
-      \verb arXiv:1904.02868
+      \field{pages}{2242\bibrangedash 2251}
+      \range{pages}{10}
+      \verb{urlraw}
+      \verb http://proceedings.mlr.press/v97/ghorbani19c.html
+      \endverb
+      \verb{url}
+      \verb http://proceedings.mlr.press/v97/ghorbani19c.html
       \endverb
     \endentry
     \entry{looFuck}{article}{}
@@ -638,20 +712,51 @@
            given={James},
            giveni={J\bibinitperiod}}}%
       }
+      \name{editor}{3}{}{%
+        {{hash=01c50c5ae75cebee86dca145c4ab7fe2}{%
+           family={Camps-Valls},
+           familyi={C\bibinithyphendelim V\bibinitperiod},
+           given={Gustau},
+           giveni={G\bibinitperiod}}}%
+        {{hash=b7c1baed3d2d60a6cdb3d34bf37cd379}{%
+           family={Ruiz},
+           familyi={R\bibinitperiod},
+           given={Francisco\bibnamedelimb J.\bibnamedelimi R.},
+           giveni={F\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=86077c699c3bcb4f9fecce395f1e6f41}{%
+           family={Valera},
+           familyi={V\bibinitperiod},
+           given={Isabel},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {PMLR}%
+      }
       \strng{namehash}{b9b48616663db73a5fc2a8c062267187}
       \strng{fullhash}{b9b48616663db73a5fc2a8c062267187}
       \strng{bibnamehash}{b9b48616663db73a5fc2a8c062267187}
       \strng{authorbibnamehash}{b9b48616663db73a5fc2a8c062267187}
       \strng{authornamehash}{b9b48616663db73a5fc2a8c062267187}
       \strng{authorfullhash}{b9b48616663db73a5fc2a8c062267187}
+      \strng{editorbibnamehash}{0a4d170bc8c7cbd9b78caefb53c74006}
+      \strng{editornamehash}{0a4d170bc8c7cbd9b78caefb53c74006}
+      \strng{editorfullhash}{0a4d170bc8c7cbd9b78caefb53c74006}
       \field{sortinit}{1}
       \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{booktitle}{International Conference on Artificial Intelligence and Statistics, {AISTATS} 2022, 28-30 March 2022, Virtual Event}
+      \field{series}{Proceedings of Machine Learning Research}
       \field{title}{Beta Shapley: a Unified and Noise-reduced Data Valuation Framework for Machine Learning}
-      \field{year}{2021}
-      \verb{eprint}
-      \verb arXiv:2110.14049
+      \field{volume}{151}
+      \field{year}{2022}
+      \field{pages}{8780\bibrangedash 8802}
+      \range{pages}{23}
+      \verb{urlraw}
+      \verb https://proceedings.mlr.press/v151/kwon22a.html
+      \endverb
+      \verb{url}
+      \verb https://proceedings.mlr.press/v151/kwon22a.html
       \endverb
     \endentry
     \entry{dataBanzhaf}{article}{}
@@ -667,20 +772,53 @@
            given={Ruoxi},
            giveni={R\bibinitperiod}}}%
       }
+      \name{editor}{3}{}{%
+        {{hash=b7c1baed3d2d60a6cdb3d34bf37cd379}{%
+           family={Ruiz},
+           familyi={R\bibinitperiod},
+           given={Francisco\bibnamedelimb J.\bibnamedelimi R.},
+           giveni={F\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=514ab2435e89f0bb66473564e713f95e}{%
+           family={Dy},
+           familyi={D\bibinitperiod},
+           given={Jennifer\bibnamedelima G.},
+           giveni={J\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=cc7a452cec23908dfda4793cf2d43d1a}{%
+           family={Meent},
+           familyi={M\bibinitperiod},
+           given={Jan-Willem},
+           giveni={J\bibinithyphendelim W\bibinitperiod},
+           prefix={van\bibnamedelima de},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {PMLR}%
+      }
       \strng{namehash}{b3eaffda94c913c66fdfec46182391bc}
       \strng{fullhash}{b3eaffda94c913c66fdfec46182391bc}
       \strng{bibnamehash}{b3eaffda94c913c66fdfec46182391bc}
       \strng{authorbibnamehash}{b3eaffda94c913c66fdfec46182391bc}
       \strng{authornamehash}{b3eaffda94c913c66fdfec46182391bc}
       \strng{authorfullhash}{b3eaffda94c913c66fdfec46182391bc}
+      \strng{editorbibnamehash}{cbfe5437d3af6e9bad1f1a2ec4f1e3b7}
+      \strng{editornamehash}{cbfe5437d3af6e9bad1f1a2ec4f1e3b7}
+      \strng{editorfullhash}{cbfe5437d3af6e9bad1f1a2ec4f1e3b7}
       \field{sortinit}{1}
       \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Data Banzhaf: A Robust Data Valuation Framework for Machine Learning}
-      \field{year}{2022}
-      \verb{eprint}
-      \verb arXiv:2205.15466
+      \field{booktitle}{International Conference on Artificial Intelligence and Statistics, 25-27 April 2023, Palau de Congressos, Valencia, Spain}
+      \field{series}{Proceedings of Machine Learning Research}
+      \field{title}{Data Banzhaf: {A} Robust Data Valuation Framework for Machine Learning}
+      \field{volume}{206}
+      \field{year}{2023}
+      \field{pages}{6388\bibrangedash 6421}
+      \range{pages}{34}
+      \verb{urlraw}
+      \verb https://proceedings.mlr.press/v206/wang23e.html
+      \endverb
+      \verb{url}
+      \verb https://proceedings.mlr.press/v206/wang23e.html
       \endverb
     \endentry
     \entry{tay}{article}{}
@@ -706,6 +844,9 @@
            given={Bryan\bibnamedelimb Kian\bibnamedelima Hsiang},
            giveni={B\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
       }
+      \list{publisher}{1}{%
+        {{AAAI} Press}%
+      }
       \strng{namehash}{f441ac82a506c1251d3901277f4a233f}
       \strng{fullhash}{74829fc76c82dd1bc543fa07dac7e746}
       \strng{bibnamehash}{74829fc76c82dd1bc543fa07dac7e746}
@@ -716,12 +857,16 @@
       \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{eprintclass}{cs.LG}
-      \field{eprinttype}{arXiv}
+      \field{booktitle}{Thirty-Sixth {AAAI} Conference on Artificial Intelligence, {AAAI} 2022, Thirty-Fourth Conference on Innovative Applications of Artificial Intelligence, {IAAI} 2022, The Twelveth Symposium on Educational Advances in Artificial Intelligence, {EAAI} 2022 Virtual Event, February 22 - March 1, 2022}
       \field{title}{Incentivizing Collaboration in Machine Learning via Synthetic Data Rewards}
-      \field{year}{2021}
-      \verb{eprint}
-      \verb 2112.09327
+      \field{year}{2022}
+      \field{pages}{9448\bibrangedash 9456}
+      \range{pages}{9}
+      \verb{urlraw}
+      \verb https://ojs.aaai.org/index.php/AAAI/article/view/21177
+      \endverb
+      \verb{url}
+      \verb https://ojs.aaai.org/index.php/AAAI/article/view/21177
       \endverb
     \endentry
     \entry{xu}{article}{}
@@ -815,22 +960,49 @@
            given={Ramesh},
            giveni={R\bibinitperiod}}}%
       }
+      \name{editor}{3}{}{%
+        {{hash=297608d5e43851d6d7da85cac54dc44e}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Brian},
+           giveni={B\bibinitperiod}}}%
+        {{hash=913a96f729f97b561d49da15367aa395}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Yiling},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=1933bd1245dcf04297b9c3cb5dbfa7a7}{%
+           family={Neville},
+           familyi={N\bibinitperiod},
+           given={Jennifer},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {{AAAI} Press}%
+      }
       \strng{namehash}{93a1f29ec12184451a7b6ec2f3e3caeb}
       \strng{fullhash}{93a1f29ec12184451a7b6ec2f3e3caeb}
       \strng{bibnamehash}{93a1f29ec12184451a7b6ec2f3e3caeb}
       \strng{authorbibnamehash}{93a1f29ec12184451a7b6ec2f3e3caeb}
       \strng{authornamehash}{93a1f29ec12184451a7b6ec2f3e3caeb}
       \strng{authorfullhash}{93a1f29ec12184451a7b6ec2f3e3caeb}
+      \strng{editorbibnamehash}{a46b371e2259b38cc8e988d07da51e89}
+      \strng{editornamehash}{a46b371e2259b38cc8e988d07da51e89}
+      \strng{editorfullhash}{a46b371e2259b38cc8e988d07da51e89}
       \field{sortinit}{2}
       \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{eprintclass}{cs.LG}
-      \field{eprinttype}{arXiv}
+      \field{booktitle}{Thirty-Seventh {AAAI} Conference on Artificial Intelligence, {AAAI} 2023, Thirty-Fifth Conference on Innovative Applications of Artificial Intelligence, {IAAI} 2023, Thirteenth Symposium on Educational Advances in Artificial Intelligence, {EAAI} 2023, Washington, DC, USA, February 7-14, 2023}
       \field{title}{Fundamentals of Task-Agnostic Data Valuation}
-      \field{year}{2022}
-      \verb{eprint}
-      \verb 2208.12354
+      \field{year}{2023}
+      \field{pages}{9226\bibrangedash 9234}
+      \range{pages}{9}
+      \verb{urlraw}
+      \verb https://ojs.aaai.org/index.php/AAAI/article/view/26106
+      \endverb
+      \verb{url}
+      \verb https://ojs.aaai.org/index.php/AAAI/article/view/26106
       \endverb
     \endentry
     \entry{reinforcement}{article}{}

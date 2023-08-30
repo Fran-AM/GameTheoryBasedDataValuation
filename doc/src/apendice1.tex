@@ -1,0 +1,141 @@
+\chapter{Funciones Gamma y Beta}
+\label{ap:apendice1}
+\justifying
+\section{Función Gamma}
+Llamaremos función Gamma $(\Gamma)$ a la función definida
+en el intervalo $(0,+\infty)$ por
+\begin{equation}
+    \Gamma(p)=\int_{0}^{+\infty}e^{-t}t^{p-1}\,dt.
+\end{equation}
+
+\begin{theorem}
+    Para todo $p>0$ se tiene que $\Gamma(p+1)=p\Gamma(p)$.
+    
+    En particular, $\Gamma(n+1)=n!$ para todo $n\in\mathbb{N}$.
+\end{theorem}
+
+\begin{proof}
+    Integramos por partes.
+    \[
+        \Gamma(p+1)=\int_{0}^{+\infty}e^{-t}t^{p}\,dt
+        =\left[-e^{-t}t^{p}\right]_{0}^{+\infty}
+        +p\cdot\int_{0}^{+\infty}e^{-t}t^{p-1}\,dt
+    \]
+    Como $\left[-e^{-t}t^{p}\right]_{0}^{+\infty}=0$ al ser
+    $p > 0$, tenemos que $\Gamma(p+1) = p\Gamma(p)$.
+
+    \
+
+    Para la segunda afirmación, sabiendo que $\Gamma(1) = \left[
+    -e^{-t}\right]_0^{+\infty}=1$, tendremos
+    \[
+        \Gamma(n+1)=n\Gamma(n)=n(n-1)\Gamma(n-1)=\dots=n!.
+    \]   
+\end{proof}
+
+\begin{theorem}
+    \label{thm:gamma}
+    Si $a\in\mathbb{C},$ tal que $Re(a)>0$, y $p>0$, entonces:
+    \[
+        \int_{0}^{+\infty}e^{-at}t^{p-1}\,dt=\frac{\Gamma(p)}{a^{p}}.
+    \]
+\end{theorem}
+
+\begin{proof}
+    Realizando el cambio de variable $t = au$ en la integral
+    de la función $\Gamma$, tenemos:
+    \[
+        \Gamma(p)=\int_{0}^{+\infty}e^{-t}t^{p-1}\,dt=
+        \int_{0}^{+\infty}e^{-au}(au)^{p-1}\cdot a\,du=
+        a^{p}\int_{0}^{+\infty}e^{-au}u^{p-1}\,du.
+    \]
+    Despejando tenemos
+    \[
+        \frac{\Gamma(p)}{a^{p}}=\int_{0}^{+\infty}e^{-at}t^{p-1}\,dt.
+    \]
+
+    Esta igualdad se tiene para todo $a\in\mathbb{R}$, ahora bien, si
+    $a\in\mathbb{C}$, con $Re(a)>0$, tenemos que las funciones
+    complejas a cada lado de la igualdad son analíticas en $a$
+    y coinciden en el eje real positivo, por lo que coinciden en todos
+    los puntos en los que sean holomorfas, es decir, al menos en el
+    semiplano real positivo.
+\end{proof}
+
+\section{Función Beta}
+Llamaremos función Beta $Beta$ a la función definida para
+todo par de puntos $p,q>0$ por la integral:
+\[
+Beta(p,q)=\int_{0}^{1}t^{p-1}(1-t)^{q-1}\,dt.    
+\]
+
+\begin{theorem}
+    La función $Beta$ es simétrica en sus dos variables, es decir,
+    $Beta(p,q)=Beta(q,p)$.
+\end{theorem}
+
+\begin{proof}
+    Realizando el cambio de variable $t = 1-u$ en la integral
+    de la función $Beta$, tenemos:
+    \[
+        Beta(p,q)=\int_{0}^{1}t^{p-1}(1-t)^{q-1}\,dt=
+        \int_{0}^{1}(1-u)^{p-1}u^{q-1}\,du.
+    \]
+    Intercambiando $p$ y $q$ tenemos
+    \[
+        B(p,q)=\int_{0}^{1}t^{p-1}(1-t)^{q-1}\,dt=
+        -\int_{1}^{0}(1-u)^{p-1}u^{q-1}\,du=
+        \int_{0}^{1}u^{q-1}(1-u)^{p-1}\,du=B(q,p).
+    \]
+\end{proof}
+
+\begin{theorem}
+    Para todo $p,q>0$ se tiene que
+    \[
+        Beta(p,q)=\frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}.
+    \]
+\end{theorem}
+
+\begin{proof}
+    Realizamos el cambio de variables $v = \frac{t}{1-t}$ en la integral
+    que define la función $Beta$, se tiene:
+    \[
+        Beta(p,q)=\int_{0}^{1}t^{p-1}(1-t)^{q-1}\,dt=
+        \int_{0}^{+\infty}\frac{v^{p-1}}{(1+v)^{p+q}}\,dv.
+    \]
+    Usando la propiedad vista en \ref{thm:gamma}, y tomando
+    $\alpha = p + q$ y $a = 1 + v$, tenemos:
+
+    \[
+        \frac{1}{(1+v)^{p+q}}=\frac{1}{\Gamma(p+q)} \int_0^{+\infty} x^{p+q-1} e^{-(1+v) x} d x .
+    \]
+    Sustituyendo esta última igualdad en la expresión anterior
+    de la función beta se tiene
+    \begin{align*}
+        \beta(p, q) & =\int_0^{+\infty} \frac{v^{p-1}}{(1+v)^{p+q}}
+        dv=\frac{1}{\Gamma(p+q)} \int_0^{+\infty} \int_0^{+\infty}
+        v^{p-1} x^{p+q-1} e^{-(1+v) x}\,dv\,dx= \\
+        & =\frac{1}{\Gamma(p+q)} \int_0^{+\infty} x^{p+q-1}
+        e^{-x}\left(\int_0^{+\infty} v^{p-1} e^{-v x} dv\right)\,dx.
+    \end{align*}
+    Volviendo a usar la expresión
+    \[
+        \int_0^{+\infty} x^{\alpha-1} e^{-a x}\,dx=
+        \frac{\Gamma(\alpha)}{a^\alpha}, a, \alpha>0
+    \]
+    se deduce
+    \[
+        \beta(p, q)=\frac{1}{\Gamma(p+q)} \int_0^{+\infty}
+        x^{p+q-1} e^{-x}\left(\int_0^{+\infty} v^{p-1}
+        e^{-v x}\,dv\right) d x=\frac{1}{\Gamma(p+q)}
+        \int_0^{+\infty} x^{p+q-1} e^{-x} \frac{\Gamma(p)}{x^p}\,dx
+    \]
+    y utilizando la expresión de la función gamma, se concluye
+    \begin{align*}
+        \beta(p, q)&=\frac{1}{\Gamma(p+q)} \int_0^{+\infty} x^{p+q-1}
+        e^{-x} \frac{\Gamma(p)}{x^p}\,dx
+        &=\frac{\Gamma(p)}{\Gamma(p+q)} \int_0^{+\infty} x^{q-1}
+        e^{-x}\,dx=\frac{\Gamma(p) \Gamma(q)} {\Gamma(p+q)}.
+    \end{align*}
+    
+\end{proof}

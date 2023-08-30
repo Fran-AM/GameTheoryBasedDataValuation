@@ -2211,11 +2211,11 @@
     <bcf:citekey order="26">shapleyValue</bcf:citekey>
     <bcf:citekey order="27">shapleyValue</bcf:citekey>
     <bcf:citekey order="28">Dubey2</bcf:citekey>
-    <bcf:citekey order="29">banzhaf</bcf:citekey>
-    <bcf:citekey order="30">dataShapley</bcf:citekey>
-    <bcf:citekey order="30">betaShapley</bcf:citekey>
-    <bcf:citekey order="31">looFuck</bcf:citekey>
-    <bcf:citekey order="32">shapleyValue</bcf:citekey>
+    <bcf:citekey order="29">Dubey2</bcf:citekey>
+    <bcf:citekey order="30">banzhaf</bcf:citekey>
+    <bcf:citekey order="31">dataShapley</bcf:citekey>
+    <bcf:citekey order="31">betaShapley</bcf:citekey>
+    <bcf:citekey order="32">looFuck</bcf:citekey>
     <bcf:citekey order="33">shapleyValue</bcf:citekey>
     <bcf:citekey order="34">betaShapley</bcf:citekey>
     <bcf:citekey order="35">betaShapley</bcf:citekey>
@@ -2225,6 +2225,7 @@
     <bcf:citekey order="39">dataBanzhaf</bcf:citekey>
     <bcf:citekey order="40">dataBanzhaf</bcf:citekey>
     <bcf:citekey order="41">dataBanzhaf</bcf:citekey>
+    <bcf:citekey order="42">dataBanzhaf</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
