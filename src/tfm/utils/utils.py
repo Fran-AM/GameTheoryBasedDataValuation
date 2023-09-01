@@ -255,7 +255,7 @@ def convert_values_to_dataframe(values: ValuationResult) -> pd.DataFrame:
 #     true[:int(0.1 * n_data)] = 1
 #     return f1_score(true, pred)
 
-def f1_misslabel(value_array):
+def f1_misslabel(value_array: np.ndarray) -> float:
     """
     Computes the F1 score for a prediction based on
     a threshold derived from the input data.

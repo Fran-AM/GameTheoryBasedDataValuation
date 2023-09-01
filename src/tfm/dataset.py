@@ -151,8 +151,6 @@ def get_openML_data(
 
     openML_path = '../../data/openML/'
 
-    np.random.seed(999)
-
     # Dictionary to map dataset names to their respective file names
     ds_map = {
         'apsfail': 'APSFailure_41138.pkl',
