@@ -13,8 +13,10 @@ mislabel_detection:
   optimizer: adam
   batch_size: 32
   data_points: 200
+  test_points: 200
+  flip_ratio: 0.1
   max_iter: 1000
-  method_names:
+  methods:
     - Shapley
     - Banzhaf
     - LOO

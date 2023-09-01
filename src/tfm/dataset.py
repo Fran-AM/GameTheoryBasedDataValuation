@@ -1,5 +1,5 @@
 from pydvl.utils.dataset import Dataset
-from utils.utils import build_pyDVL_dataset, oversamp_equilibration
+from utils.utils import build_pyDVL_dataset, undersamp_equilibration
 
 import torchvision.datasets as datasets
 import torchvision
@@ -60,7 +60,6 @@ def create_fmnist() -> Dataset:
         y_test=testset.targets
     )
 
-
 def create_cifar() -> Dataset:
     """
     Create the CIFAR10 dataset.
@@ -85,7 +84,6 @@ def create_cifar() -> Dataset:
         X_test=testset,
         y_test=testset
     )
-
 
 def create_dogcat() -> Dataset:
     """
@@ -135,7 +133,8 @@ def create_dogcat() -> Dataset:
 def get_openML_data(
         dataset: str,
         n_data: int,
-        n_val: int
+        n_test: int,
+        flip_ratio: float = 0.0,
     )->Dataset:
     """
     Read and preprocess the datasets from OpenML.
@@ -143,7 +142,8 @@ def get_openML_data(
     Args:
         dataset (str): The name of the dataset.
         n_data (int): The number of data points to use.
-        n_val (int): The number of validation data points to use.
+        n_test (int): The number of test points to use.
+        flip_ratio (float): The ratio of flipped labels.
 
     Returns:
         Dataset (pyDVL.Dataset): The dataset.
@@ -154,7 +154,7 @@ def get_openML_data(
     np.random.seed(999)
 
     # Dictionary to map dataset names to their respective file names
-    dataset_mapping = {
+    ds_map = {
         'apsfail': 'APSFailure_41138.pkl',
         'click': 'Click_prediction_small_1218.pkl',
         'phoneme': 'phoneme_1489.pkl',
@@ -164,30 +164,37 @@ def get_openML_data(
         '2dplanes': '2dplanes_727.pkl'
     }
 
-    if dataset in dataset_mapping:
-        data_dict = pickle.load(open(openML_path + dataset_mapping[dataset], 'rb'))
-        data, target = data_dict['X_num'], data_dict['y']
-        target = (target == 1).astype(np.int32)
-        data, target = oversamp_equilibration(data, target)
+    if dataset in ds_map:
+        try:
+            data_dict = pickle.load(open(openML_path + ds_map[dataset], 'rb'))
+            data, target = data_dict['X_num'], data_dict['y']
+            target = (target == 1).astype(np.int32)
+            data, target = undersamp_equilibration(data, target)
+        except FileNotFoundError:
+            raise FileNotFoundError(f"File not found for dataset '{dataset}'")
     else:
-        print('No such dataset!')
-        sys.exit(1)
+        raise ValueError(f"Dataset '{dataset}' not found")
+    
+    x_train, y_train = data[:n_data], target[:n_data]
+    x_test, y_test = data[n_data:n_data+n_test],target[n_data:n_data+n_test]
 
-    # Hay que hacer que retorne los dataset
-    # x_train, y_train = data
+    # Normalization
+    x_mean, x_std= np.mean(x_train, 0), np.std(x_train, 0)
+    norm = lambda x: (x - x_mean) / np.clip(x_std, 1e-12, None)
+    x_train, x_test = norm(x_train), norm(x_test)
 
+    # Flip labels
+    if len(y_train.shape) != 1:
+        raise ValueError("Expected y_train to be a 1-dimensionalarray, "
+                         "but got a different shape.")
 
-# Vamos a reescribir la funcion get_minidata(dataset)
+    n_flip = int(n_data*flip_ratio)
+    y_train[:n_flip] = 1 - y_train[:n_flip]
 
-
-# Parte que se lleva a cabo en get_processed_data
-# if dataset in config.OpenML_dataset:
-#     X, y, _, _ = get_data(dataset)
-#     x_train, y_train = X[:n_data], y[:n_data]
-#     x_val, y_val = X[n_data:n_data+n_val], y[n_data:n_data+n_val]
-
-#     X_mean, X_std= np.mean(x_train, 0), np.std(x_train, 0)
-#     normalizer_fn = lambda x: (x - X_mean) / np.clip(X_std, 1e-12, None)
-#     x_train, x_val = normalizer_fn(x_train), normalizer_fn(x_val)
-
+    return Dataset(
+        x_train=x_train,
+        y_train=y_train,
+        x_test=x_test,
+        y_test=y_test
+    )
 

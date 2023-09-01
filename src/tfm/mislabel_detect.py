@@ -16,16 +16,18 @@ def run():
     # params = params_show() Este para cuando esté en el dvc
     params = {
         'mislabel_detection': {
-            'datasets': 'phoneme',
-            'hidden_neurons': 20,
+            'datasets': ['phoneme','wind'],
+            'hidden_neurons': 10,
             'activation_function': 'relu',
             'learning_rate': 0.01,
             'optimizer': 'adam',
             'batch_size': 32,
-            'data_points': 200,
+            'data_points': 64,
+            'test_points': 64,
+            'flip_ratio': 0.1,
             'max_iter': 100,
-            'method_names': 'LOO',
-            'n_repeat': 1
+            'methods': ["LOO"],
+            'n_repeat': 2
         },
         'weighted_acc': {
             'model': 'LinearRegression'
@@ -50,13 +52,14 @@ def run():
         dataset = get_openML_data(
             dataset=dataset_name,
             n_data=md_params["data_points"],
-            n_val=0
+            n_test=md_params["data_points"],
+            flip_ratio=0.1
         )
 
         for repetition in range(n_repeat):
             logger.info(f"Iteracion {repetition}")
 
-            # Score dictionaty creation
+            # Score dictionary creation
             scores = {method: [] for method in params["mislabel_detection"]["methods"]}
 
             repetition_output_dir = experiment_output_dir / f"{repetition}"
@@ -82,8 +85,8 @@ def run():
                 )
                 logger.info("Converting values to DataFrame")
                 df = (
-                    values.to_dataframe()
-                    .drop(columns=["value_stderr"])
+                    values.to_dataframe(column=method_name)
+                    .drop(columns=[f"{method_name}_stderr"])
                     .T
                 )
                 logger.info("Computing f1 scores")
@@ -93,8 +96,12 @@ def run():
             
             logger.info("Saving results to disk")
             scores_df = pd.DataFrame(scores)
-            # Falta el metodo
+            # Are methods identified?
             scores_df.to_csv(repetition_output_dir / "scores.csv", index=False)
+            try:
+                scores_df.to_csv(repetition_output_dir / "scores.csv", index=False)
+            except Exception as e:
+                logger.error(f"Failed to save results to disk: {e}")
 
     logger.info("Finished mislabel detection experiment")
 
