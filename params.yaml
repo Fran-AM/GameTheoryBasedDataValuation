@@ -1,37 +1,28 @@
 mislabel_detection:
-  MNIST:
-    model: LeNet
-    batch_size: 128
-    learning_rate: 0.001
-    optimizer: Adam
-    data_points: 2000
-  FMNIST:
-    model: LeNet
-    batch_size: 128
-    learning_rate: 0.001
-    optimizer: Adam
-    data_points: 2000
-  CIFAR10:
-    model: TwoLayerMLP
-    hidden_neurons: 256
-    activation_function: ReLU
-    batch_size: 128
-    learning_rate: 0.001
-    optimizer: Adam
-    data_points: 2000
-  default:
-    model: TwoLayerMLP
-    hidden_neurons: 100
-    activation_function: ReLU
-    learning_rate: 0.01
-    optimizer: Adam
-    batch_size: 32
-    data_points: 200
-  specific_batch_size:
-    Creditcard: 128
-    Apsfail: 128
-    Click: 128
-    CPU: 128
-  specific_data_points:
-    Click: 1000
-    Phoneme: 500
+  datasets:
+    - click
+    - apsfail
+    - phoneme
+    - wind
+    - pol
+    - cpu
+    - 2dplanes
+  hidden_neurons: 100
+  activation_function: relu
+  learning_rate: 0.01
+  optimizer: adam
+  batch_size: 32
+  data_points: 200
+  max_iter: 1000
+  method_names:
+    - Shapley
+    - Banzhaf
+    - LOO
+    - Beta1-4
+    - Beta1-16
+    - Beta4-1
+    - Beta16-1
+  n_repeat: 5
+
+weighted_acc:
+  model: LinearRegression

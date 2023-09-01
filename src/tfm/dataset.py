@@ -1,5 +1,5 @@
 from pydvl.utils.dataset import Dataset
-from utils.utils import build_pyDVL_dataset, make_balance_sample
+from utils.utils import build_pyDVL_dataset, oversamp_equilibration
 
 import torchvision.datasets as datasets
 import torchvision
@@ -97,7 +97,7 @@ def create_dogcat() -> Dataset:
     """
 
     """
-    Esta hay que revisarla.
+    Warning, esta funcion no ha sido testeada.
     """
     trainset = torchvision.datasets.CIFAR10(
         root='.',
@@ -132,26 +132,35 @@ def create_dogcat() -> Dataset:
         y_test=testset
     )
 
-def get_openML_data(dataset):
-    """Función del chino pero mejorada, hay que ver el tema de lo
-    que retorna"""
+def get_openML_data(
+        dataset: str,
+        n_data: int,
+        n_val: int
+    )->Dataset:
+    """
+    Read and preprocess the datasets from OpenML.
 
-    # TODO: Esta direccion está mal
+    Args:
+        dataset (str): The name of the dataset.
+        n_data (int): The number of data points to use.
+        n_val (int): The number of validation data points to use.
+
+    Returns:
+        Dataset (pyDVL.Dataset): The dataset.
+    """
+
     openML_path = '../../data/openML/'
 
     np.random.seed(999)
 
     # Dictionary to map dataset names to their respective file names
     dataset_mapping = {
-        'fraud': 'CreditCardFraudDetection_42397.pkl',
         'apsfail': 'APSFailure_41138.pkl',
         'click': 'Click_prediction_small_1218.pkl',
         'phoneme': 'phoneme_1489.pkl',
         'wind': 'wind_847.pkl',
         'pol': 'pol_722.pkl',
-        'creditcard': 'default-of-credit-card-clients_42477.pkl',
         'cpu': 'cpu_act_761.pkl',
-        'vehicle': 'vehicle_sensIT_357.pkl',
         '2dplanes': '2dplanes_727.pkl'
     }
 
@@ -159,14 +168,13 @@ def get_openML_data(dataset):
         data_dict = pickle.load(open(openML_path + dataset_mapping[dataset], 'rb'))
         data, target = data_dict['X_num'], data_dict['y']
         target = (target == 1).astype(np.int32)
-        data, target = make_balance_sample(data, target)
-
-        idxs = np.random.permutation(len(data))
-        data, target = data[idxs], target[idxs]
-        return data, target, None, None 
+        data, target = oversamp_equilibration(data, target)
     else:
         print('No such dataset!')
         sys.exit(1)
+
+    # Hay que hacer que retorne los dataset
+    # x_train, y_train = data
 
 
 # Vamos a reescribir la funcion get_minidata(dataset)

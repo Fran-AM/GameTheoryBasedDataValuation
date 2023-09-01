@@ -3,51 +3,98 @@ from pathlib import Path
 import pandas as pd
 from dvc.api import params_show
 from dvc.repo import Repo
-from pydvl.reporting.scores import compute_removal_score
 from pydvl.utils import Utility
 
-from utils.utils import setup_logger
+from sklearn.neural_network import MLPClassifier
 
+from utils.utils import setup_logger, convert_values_to_dataframe, compute_values, f1_misslabel
+from dataset import get_openML_data
 logger = setup_logger()
 
-def run(dataset_name: str, budget: int):
-    # TODO: Tenemos que añadir todos los parametros
-    # necesarios al params.yaml
+def run():
     logger.info("Starting mislabel detection experiment")
-    params = params_show()
-    logger.info(f"Using parameters:\n{params}")
+    # params = params_show() Este para cuando esté en el dvc
+    params = {
+        'mislabel_detection': {
+            'datasets': 'phoneme',
+            'hidden_neurons': 20,
+            'activation_function': 'relu',
+            'learning_rate': 0.01,
+            'optimizer': 'adam',
+            'batch_size': 32,
+            'data_points': 200,
+            'max_iter': 100,
+            'method_names': 'LOO',
+            'n_repeat': 1
+        },
+        'weighted_acc': {
+            'model': 'LinearRegression'
+        }
+    }
 
     # Params used in the experiment
-    mislabel_detect_params =  params["mislabel_detect"]
-    n_repeat = mislabel_detect_params["n_repeat"]
+    md_params =  params["mislabel_detection"]
+    n_repeat = md_params["n_repeat"]
     
-    # Create the output directory
-    experiment_output_dir = (
-        Path(Repo.find_root())
-        / "output"
-        / "mislabel_detection"
-        / f"dataset={dataset_name}"
-        / "results"
-        / f"{budget=}"
-    )
-    experiment_output_dir.mkdir(parents=True, exist_ok=True)
 
-    for repetition in range(n_repeat):
-        logger.info(f"{repetition=}")
+    for dataset_name in md_params["datasets"]:
+        # Create the output directory
+        experiment_output_dir = (
+            Path(Repo.find_root())
+            / "output"
+            / "mislabel_detection"
+            / f"dataset={dataset_name}"
+        )
+        experiment_output_dir.mkdir(parents=True, exist_ok=True)
 
-        repetition_output_dir = experiment_output_dir / f"{repetition=}"
-        repetition_output_dir.mkdir(parents=True, exist_ok=True)
+        dataset = get_openML_data(
+            dataset=dataset_name,
+            n_data=md_params["data_points"],
+            n_val=0
+        )
 
-        all_values = []
-        all_scores = []
+        for repetition in range(n_repeat):
+            logger.info(f"Iteracion {repetition}")
 
-        # Hay que construir las utilidades (Dataset, Modelo, Métrica)
+            # Score dictionaty creation
+            scores = {method: [] for method in params["mislabel_detection"]["methods"]}
 
-            # Cogemos cada uno de los dataset (Los tenemos en los parámetros)
+            repetition_output_dir = experiment_output_dir / f"{repetition}"
+            repetition_output_dir.mkdir(parents=True, exist_ok=True)
+
+            # Model creation
+            model = MLPClassifier(
+                hidden_layer_sizes = (md_params["hidden_neurons"],),
+                learning_rate_init = md_params["learning_rate"],
+                batch_size = md_params["batch_size"],
+                max_iter = md_params["max_iter"],
+                )
             
-            # De
+            # Utility creation
+            utility = Utility(model, dataset, 'f1')
 
-
+            # Compute the values and f1 scores for each method
+            for method_name in md_params["methods"]:
+                logger.info(f"{method_name=}")
+                logger.info("Computing values")
+                values = compute_values(
+                    method_name, utility=utility
+                )
+                logger.info("Converting values to DataFrame")
+                df = (
+                    values.to_dataframe()
+                    .drop(columns=["value_stderr"])
+                    .T
+                )
+                logger.info("Computing f1 scores")
+                # All score cambia en cada repeticion
+                # Pero no en cada método
+                scores[method_name].append(f1_misslabel(df.values[0]))
+            
+            logger.info("Saving results to disk")
+            scores_df = pd.DataFrame(scores)
+            # Falta el metodo
+            scores_df.to_csv(repetition_output_dir / "scores.csv", index=False)
 
     logger.info("Finished mislabel detection experiment")
 

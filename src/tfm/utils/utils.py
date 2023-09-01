@@ -3,8 +3,14 @@ import os
 import random
 import logging
 from typing import Iterable, List
+from pydvl.value.loo import naive_loo
+from pydvl.value.shapley import compute_shapley_values
+from pydvl.utils import Utility
+from pydvl.value.shapley.truncated import RelativeTruncation
+from pydvl.value import MaxUpdates, HistoryDeviation, compute_banzhaf_semivalues
 from pydvl.utils.dataset import Dataset
-
+from pydvl.value.result import ValuationResult
+from sklearn.metrics import f1_score
 
 import numpy as np
 import pandas as pd
@@ -17,10 +23,11 @@ __all__ = [
     "setup_logger",
     "equilibrate_clases",
     "make_balance_sample",
+    "convert_values_to_dataframe",
 ]
 
 # TODO: Set seed for cuda
-def set_random_seed(seed: int) -> None:
+def set_seed(seed: int) -> None:
     """
     Set random seed for reproducibility.
 
@@ -35,7 +42,7 @@ def set_random_seed(seed: int) -> None:
     #torch.manual_seed(seed)
     os.environ['PYTHONHASHSEED'] = str(seed)
 
-def setup_logger():
+def setup_logger() -> logging.Logger:
     """
     Setup the logger for the project.
 
@@ -104,6 +111,35 @@ def build_pyDVL_dataset(
         y_test=y_test.numpy(),
     )
 
+def undersamp_equilibration(
+        data: np.ndarray,
+        target: np.ndarray
+) -> (np.ndarray, np.ndarray):
+    """
+    Equilibrate the classes of a dataset with
+    two classes in the target variable,
+    using undersampling.
+
+    Args:
+        df (pd.DataFrame): The dataset.
+
+    Returns:
+        pd.DataFrame: The balanced dataset.
+    """
+    unique_targets, counts = np.unique(target, return_counts=True)
+    min_count = counts.min()
+    
+    balanced_indices = np.concatenate([
+        np.random.choice(np.where(target == class_label)[0], min_count, replace=False)
+        for class_label in unique_targets
+    ])
+    
+    # Use the indices to extract the corresponding rows from data and target
+    balanced_data = data[balanced_indices]
+    balanced_target = target[balanced_indices]
+    
+    return balanced_data, balanced_target
+
 def oversamp_equilibration(
         data: np.ndarray,
         target: np.ndarray
@@ -142,3 +178,108 @@ def oversamp_equilibration(
         target = np.concatenate((target, target[new_minor]))
 
     return data, target
+
+def compute_values(
+    method_name: str,
+    utility: Utility
+) -> ValuationResult:
+    """
+    Compute the data values for a given method and utility.
+
+    Args:
+        method_name (str): The name of the method to use.
+        utility (Utility): The utility to use. (pyDVL)
+
+    Returns:
+        ValuationResult: The values. (pyDVL)
+    """
+    if method_name == "LOO":
+        values = naive_loo(utility, progress=False)
+    elif method_name == "Shapley":
+        values = compute_shapley_values(
+            u=utility,
+            mode="permutation_montecarlo",
+            done=MaxUpdates(500) | HistoryDeviation(n_steps=100, rtol=0.05),
+            truncation=RelativeTruncation(utility, rtol=0.01)
+        )
+    elif method_name == "Banzhaf":
+        values = compute_banzhaf_semivalues(
+            u=utility,
+            done=MaxUpdates(500)
+        )
+    else:
+        raise ValueError(f"Unknown method: {method_name}")
+    return values
+
+def convert_values_to_dataframe(values: ValuationResult) -> pd.DataFrame:
+    """
+    Convert the values of a ValuationResult object to a DataFrame.
+
+    Args:
+        values (ValuationResult): The values to convert.
+
+    Returns:
+        pd.DataFrame: The DataFrame with the values.
+    """
+    df = (
+        values.to_dataframe(column="value")
+        .drop(columns=["value_stderr"])
+        .T.reset_index(drop=True)
+    )
+    df = df[sorted(df.columns)]
+    return df
+
+# def f1_misslabel(data_values: pd.DataFrame) -> float:
+#     """
+#     Computes the F1 score for a prediction based on
+#     a threshold derived from the input data.
+
+#     Args:
+#         data_values (pd.DataFrame): The data values.
+
+#     Returns:
+#         float: The f1 score.
+#     """
+#     # Get the number of data points
+#     # and initialize the arrays
+#     n_data = len(data_values)
+#     pred = np.zeros(n_data)
+#     true = np.zeros(n_data)
+
+#     # Extract the values from the "value" column and
+#     # compute the threshold
+#     value_column = data_values['value'].values
+#     threshold = np.sort(value_column)[int(0.1 * n_data)]
+    
+#     pred[value_column < threshold] = 1
+#     true[:int(0.1 * n_data)] = 1
+#     return f1_score(true, pred)
+
+def f1_misslabel(value_array):
+    """
+    Computes the F1 score for a prediction based on
+    a threshold derived from the input data.
+
+    Args:
+        value_array (np.ndarray): The data values.
+
+    Returns:
+        float: The f1 score.
+    """
+    # Get the number of data points
+    # and initialize the arrays
+    n_data = len(value_array)
+    pred = np.zeros(n_data)
+    true = np.zeros(n_data)
+
+    # Compute the threshold
+    threshold = np.sort(value_array)[int(0.1 * n_data)]
+    
+    pred[value_array < threshold] = 1
+    true[:int(0.1 * n_data)] = 1
+    
+    # Compute and return the F1 score
+    return f1_score(true, pred)
+
+
+
