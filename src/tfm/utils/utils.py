@@ -305,7 +305,7 @@ def f1_misslabel(value_array: np.ndarray) -> float:
     true[:int(0.1 * n_data)] = 1
     
     # Compute and return the F1 score
-    return f1_score(true, pred)
+    return float(f1_score(true, pred))
 
 
 

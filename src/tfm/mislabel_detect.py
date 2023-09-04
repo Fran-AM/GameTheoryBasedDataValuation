@@ -1,6 +1,5 @@
 from pathlib import Path
 
-import pandas as pd
 import yaml
 from dvc.api import params_show
 from dvc.repo import Repo
@@ -18,21 +17,26 @@ def run():
     # params = params_show() Este para cuando esté en el dvc
     params = {
         'mislabel_detection': {
-            'datasets': ['phoneme','wind'],
-            'hidden_neurons': 10,
+            'datasets': ['apsfail', 'click','phoneme', 'wind', 'pol', 'cpu', '2dplanes'],
+            'hidden_neurons': 100,
             'activation_function': 'relu',
             'learning_rate': 0.01,
             'optimizer': 'adam',
             'batch_size': 32,
-            'data_points': 64,
-            'test_points': 64,
+            'data_points': 200,
+            'test_points': 800,
             'flip_ratio': 0.1,
             'max_iter': 100,
-            'methods': ["LOO"],
-            'n_repeat': 2
+            'methods': ["LOO", "Banzhaf", "Shapley", "Beta-1-16", "Beta-1-4", "Beta-16-1", "Beta-4-1"],
+            'n_repeat': 5
         },
         'weighted_acc': {
-            'model': 'LinearRegression'
+            'datasets': ['apsfail', 'click','phoneme', 'wind', 'pol', 'cpu', '2dplanes'],
+            'loss': 'log_loss',
+            'data_points': 200,
+            'test_points': 800,
+            'methods': ["LOO"],
+            'n_repeat': 2
         }
     }
 
@@ -40,7 +44,6 @@ def run():
     md_params =  params["mislabel_detection"]
     n_repeat = md_params["n_repeat"]
 
-    # Create the output directory
     experiment_output_dir = (
         Path(Repo.find_root())
         / "output"
@@ -48,7 +51,6 @@ def run():
     )
     experiment_output_dir.mkdir(parents=True, exist_ok=True)
 
-    # Model creation
     model = MLPClassifier(
         hidden_layer_sizes = (md_params["hidden_neurons"],),
         learning_rate_init = md_params["learning_rate"],
@@ -56,13 +58,12 @@ def run():
         max_iter = md_params["max_iter"],
         )
 
-    # Dictionary to store all the results
     all_results = {}
 
     for dataset_name in md_params["datasets"]:
         logger.info(f"{dataset_name=}")
         dataset_result = {}
-        
+
         dataset = get_openML_data(
             dataset=dataset_name,
             n_data=md_params["data_points"],
@@ -84,7 +85,7 @@ def run():
                     method_name, utility=utility
                 )
                 logger.info("Computing f1 scores")
-                method_results[repetition] = float(f1_misslabel(values.values))
+                method_results[repetition] = f1_misslabel(values.values)
             
             dataset_result[method_name] = method_results
 
