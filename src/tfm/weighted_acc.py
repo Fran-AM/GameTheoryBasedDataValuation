@@ -1,6 +1,7 @@
 from pathlib import Path
 
 import pandas as pd
+import numpy as np
 from dvc.api import params_show
 from dvc.repo import Repo
 from pydvl.utils import Utility
@@ -88,7 +89,10 @@ def run():
                     utility=utility
                 )
                 # Train the weighted model
-                model.fit(x_train, y_train, values.values)
+                val = values.values
+                norm_values = (val - np.min(val))/(np.max(val) - np.min(val))
+
+                model.fit(x_train, y_train, norm_values)
                 y_weight = model.predict(x_test)
                 w_acc = f1_score(y_test, y_weight, average='micro')
                 scores[method_name].append(w_acc)

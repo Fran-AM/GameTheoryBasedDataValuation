@@ -1,0 +1,156 @@
+\chapter{Análisis Experimental}
+
+\section*{Introducción}
+Esta sección detalla los experimentos efectuados para evaluar la
+eficacia de los métodos de valoración de datos que
+hemos investigado. Cabe destacar el uso de las herramientas
+\textit{pyDVL}, una librería de
+\href{https://www.appliedai.de/en/}{appliedAI} y \textit{DVC},
+herramienta de control del versiones para proyectos de ciencia
+de datos.
+
+Se trabajará con conjuntos de datos estandar que se usan normalmente
+en la literatura para la evaluación de métodos de clasificación
+\cite{dataBanzhaf}.
+Los dataset se pueden observar en la tabla \ref{tab:datasets}.
+
+Evaluaremos los métodos de valoración de datos en dos
+tareas de aprendizaje automático, la detección de puntos
+mal etiquetados y el entrenamiento ponderado.
+Compararemos los resultados obtenidos por LOO, data Banzhaf,
+data Shapley, Beta(1, 4), Beta(1, 16),
+Beta(4, 1), Beta(16, 1). % Los nombres de los Beta no están bien.
+En cuanto a los conjuntos de datos, se utilizarán siete
+conjuntos de datos que se usan habitualmente en la literatura
+como \textit{benchmarks} para la valoración de datos 
+\cite{dataBanzhaf}.
+
+
+
+\subsection*{pyDVL}
+
+\href{https://aai-institute.github.io/pyDVL/0.7.0/}{pyDVL} es una
+herramienta en proceso de mejora, actualmente en su versión
+\texttt{0.7.0}. \textit{pyDVL} agrupa algoritmos destinados al
+cálculo de valores de datos, la mayoría basados en la teoría de
+juegos cooperativos.
+
+\textit{pyDVL} nos permite calcular de forma sencilla y
+automática los valores de datos de un conjunto de datos
+usando distintos métodos de valoración, métodos de
+muestreo, estimadores... 
+
+pyDVL divide el  proceso del cálculo de valores de datos
+en tres sencillos pasos:
+\begin{enumerate}
+    \item Construcción del pyDVL Dataset a partir de tus datos.
+    \item Se crea la utilidad. Concepto abstracto que vincula
+    el modelo que se usará, el conjunto de datos y la métrica
+    de error.
+    \item Se calculan los valores de datos, con el método que
+    se desee.
+\end{enumerate}
+
+% \begin{figure}[h!]
+%     \centering
+%     \begin{lstlisting}
+%     import pyDVL
+%     dataset = pyDVL.Dataset(data)
+%     utility = pyDVL.Utility(model, dataset, metric)
+%     values = utility.calculate_values(method="desired_method")
+%     \end{lstlisting}
+%     \captionof{figure}{Ejemplo de código usando pyDVL.}
+%     \label{fig:pydvl_code}
+% \end{figure}
+
+
+
+
+
+
+
+\begin{table}[ht]
+    \centering
+    \resizebox{0.6\columnwidth}{!}{%
+    \begin{tabular}{lc}
+        \hline
+        \multicolumn{1}{c}{\textbf{Dataset}} & \textbf{Source}                                                       \\ \hline
+        \rowcolor[HTML]{FFFFFF} 
+        Click                                & \href{https://www.openml.org/d/1218}{https://www.openml.org/d/1218}   \\
+        \rowcolor[HTML]{FFFFFF} 
+        Apsfail                              & \href{https://www.openml.org/d/41138}{https://www.openml.org/d/41138} \\
+        Phoneme                              & \href{https://www.openml.org/d/1489}{https://www.openml.org/d/1489}   \\
+        Wind                                 & \href{https://www.openml.org/d/847}{https://www.openml.org/d/847}     \\
+        Pol                                  & \href{https://www.openml.org/d/722}{https://www.openml.org/d/722}     \\
+        CPU                                  & \href{https://www.openml.org/d/761}{https://www.openml.org/d/761}     \\
+        2DPlanes                             & \href{https://www.openml.org/d/727}{https://www.openml.org/d/727}     \\ \hline
+    \end{tabular}%
+    }
+    \caption{Conjuntos de datos usados en los experimentos}
+    \label{tab:datasets}
+\end{table}
+
+
+\subsection*{DVC}
+
+\textit{DVC}, acrónimo de Data Version Control, es una
+herramienta diseñada para la ciencia de datos que se
+integra con herramientas de ingeniería de software ya
+existentes. Su función es asistir a los equipos de machine
+learning en la administración de grandes conjuntos de datos,
+garantizar la reproducibilidad de los proyectos y potenciar
+la colaboración. \textit{DVC} es compatible con cualquier
+terminal y puede ser usado como una biblioteca
+de Python.
+
+El objetivo central de \textit{DVC} es brindar una experiencia
+al estilo Git para estructurar datos, modelos y experimentos en
+proyectos de Ciencia de Datos y Aprendizaje Automático.
+
+Para más detalles, consulta la
+\href{https://dvc.org/doc/user-guide}{Documentación de DVC}.
+
+\section{Detección de ruido sintético}
+Compararemos la habilidad de detección de
+
+We investigate the ability of differ-
+ent data value notions in detecting mislabeled points under
+noisy utility functions. We generate noisy labeled samples
+by flipping labels for a randomly chosen 10\% of training
+data points. We mark a data point as a mislabeled one if its
+data value is less than 10 percentile of all data value scores.
+We use F1-score as the performance metric for mislabeling
+detection.
+
+\section{Entrenamiento ponderado}
+% Este nombre hay que verlo
+En este experimento se usan los \textit{data values}
+como pesos para el entrenamiento de un modelo.
+
+
+
+We now examine how the data value-based importance
+weight can be applied to subsample data points. We
+train a model with 25\% of the given dataset by using
+the importance weight max for
+the i-th sample. With this importance weight, data
+points with higher values are more likely to be selected
+and data points with negative values are not used. We
+train a classifier to minimize the weighted loss then
+evaluate the accuracy on the held-out test dataset.
+
+Se hace algo similar a esto: Explicar lo que hace el fit
+We weight each training point by normalizing
+the associated data value between [0,1]. Then, during train-
+ing, each training sample will be selected with a probability
+equal to the assigned weight. As a result, data points with
+a higher value are more likely to be selected in the random
+mini-batch of SGD, and data points with a lower value are
+rarely used. We train a neural network classifier to mini-
+mize the weighted loss, and then evaluate the accuracy on
+the held-out test dataset. As Table 1 shows, Data Banzhaf
+outperforms other baselines.
+
+\section{Resultados}
+
+

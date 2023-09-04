@@ -2226,6 +2226,8 @@
     <bcf:citekey order="40">dataBanzhaf</bcf:citekey>
     <bcf:citekey order="41">dataBanzhaf</bcf:citekey>
     <bcf:citekey order="42">dataBanzhaf</bcf:citekey>
+    <bcf:citekey order="43">dataBanzhaf</bcf:citekey>
+    <bcf:citekey order="44">dataBanzhaf</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

@@ -28,6 +28,12 @@ twoside]{Thesis}
 \usepackage{tikz}
 \usetikzlibrary{calc} 
 \definecolor{titlepage}{RGB}{121, 11, 21} % rojo
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{xcolor}
+
+
 
 %Estilos
 \usepackage{sty/bib}
@@ -158,7 +164,7 @@ Refname={Definición,Definiciones}]{definition}
 %\afterpage{\blankpage}
 \include{src/marcoTeorico}
 % \afterpage{\blankpage}
-% \include{src/resultados}
+\include{src/experimentos}
 % \include{src/conclusiones}
 
 
@@ -171,6 +177,7 @@ Refname={Definición,Definiciones}]{definition}
 heading=bibintoc,
 title={Bibliografía.}
 ]
+\include{src/indiceTerminos}
 \appendix
 \include{src/apendice1}
 \end{document}  
