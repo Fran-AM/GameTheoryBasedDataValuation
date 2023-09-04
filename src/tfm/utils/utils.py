@@ -7,7 +7,7 @@ from pydvl.value.loo import naive_loo
 from pydvl.value.shapley import compute_shapley_values
 from pydvl.utils import Utility
 from pydvl.value.shapley.truncated import RelativeTruncation
-from pydvl.value import MaxUpdates, HistoryDeviation, compute_banzhaf_semivalues
+from pydvl.value import MaxUpdates, HistoryDeviation, compute_banzhaf_semivalues, compute_beta_shapley_semivalues
 from pydvl.utils.dataset import Dataset
 from pydvl.value.result import ValuationResult
 from sklearn.metrics import f1_score
@@ -38,7 +38,6 @@ def set_seed(seed: int) -> None:
     """
     random.seed(seed)
     np.random.seed(seed)
-    #torch.manual_seed(seed)
     os.environ['PYTHONHASHSEED'] = str(seed)
 
 def setup_logger() -> logging.Logger:
@@ -204,6 +203,34 @@ def compute_values(
     elif method_name == "Banzhaf":
         values = compute_banzhaf_semivalues(
             u=utility,
+            done=MaxUpdates(500)
+        )
+    elif method_name == "Beta-1-16":
+        values = compute_beta_shapley_semivalues(
+            u=utility,
+            alpha=1,
+            beta=16,
+            done=MaxUpdates(500)
+        )
+    elif method_name == "Beta-1-4":
+        values = compute_beta_shapley_semivalues(
+            u=utility,
+            alpha=1,
+            beta=4,
+            done=MaxUpdates(500)
+        )
+    elif method_name == "Beta-16-1":
+        values = compute_beta_shapley_semivalues(
+            u=utility,
+            alpha=16,
+            beta=1,
+            done=MaxUpdates(500)
+        )
+    elif method_name == "Beta-4-1":
+        values = compute_beta_shapley_semivalues(
+            u=utility,
+            alpha=4,
+            beta=1,
             done=MaxUpdates(500)
         )
     else:
