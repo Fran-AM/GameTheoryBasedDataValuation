@@ -26,7 +26,6 @@ __all__ = [
     "convert_values_to_dataframe",
 ]
 
-# TODO: Set seed for cuda
 def set_seed(seed: int) -> None:
     """
     Set random seed for reproducibility.

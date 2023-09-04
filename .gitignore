@@ -5,3 +5,4 @@ Notebooks-pyDVL
 /src/tfm/FashionMNIST
 /src/tfm/MNIST
 /src/tfm/utils/notUsedRN.py
+/output/*
