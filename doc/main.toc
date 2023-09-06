@@ -11,11 +11,14 @@
 \contentsline {subsection}{\numberline {2.3.1}Robustez del valor de Banzhaf}{18}{subsection.39}%
 \contentsline {subsection}{\numberline {2.3.2}Estimación eficiente}{18}{subsection.44}%
 \contentsline {chapter}{\numberline {3}Análisis Experimental}{21}{chapter.55}%
-\contentsline {section}{\numberline {3.1}Detección de ruido sintético}{22}{section.60}%
-\contentsline {section}{\numberline {3.2}Entrenamiento ponderado}{22}{section.61}%
-\contentsline {section}{\numberline {3.3}Resultados}{23}{section.62}%
-\contentsline {chapter}{Bibliografía.}{25}{chapter*.63}%
-\contentsline {chapter}{Índice alfabético}{27}{chapter*.63}%
-\contentsline {chapter}{\numberline {A}Funciones Gamma y Beta}{28}{appendix.65}%
-\contentsline {section}{\numberline {A.1}Función Gamma}{28}{section.66}%
-\contentsline {section}{\numberline {A.2}Función Beta}{29}{section.72}%
+\contentsline {section}{\numberline {3.1}Metodología}{22}{section.56}%
+\contentsline {subsection}{\numberline {3.1.1}Datasets}{22}{subsection.57}%
+\contentsline {subsection}{\numberline {3.1.2}Herramientas}{22}{subsection.59}%
+\contentsline {section}{\numberline {3.2}Detección de datos mal etiquetados}{23}{section.63}%
+\contentsline {section}{\numberline {3.3}Entrenamiento ponderado}{23}{section.64}%
+\contentsline {chapter}{Bibliografía.}{26}{chapter*.65}%
+\contentsline {chapter}{Índice alfabético}{28}{chapter*.65}%
+\contentsline {chapter}{\numberline {A}Funciones Gamma y Beta}{29}{appendix.67}%
+\contentsline {section}{\numberline {A.1}Función Gamma}{29}{section.68}%
+\contentsline {section}{\numberline {A.2}Función Beta}{30}{section.74}%
+\contentsline {chapter}{\numberline {A}Código Python}{32}{appendix.79}%

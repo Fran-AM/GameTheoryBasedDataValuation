@@ -12,10 +12,10 @@ sólida base matemática y a sus intuitivas interpretaciónes,
 entre las que podemos resaltar:
 
 \begin{itemize}
-  \item Pago justo: El valor de Shapley de un jugador es la cantidad
-  que este debería recibir si las recompensas se distribuyesen de
-  manera que los jugadores fueran recompensados en función de su
-  contribución a la recompensa total.
+  \item Pago justo: el valor de Shapley de un jugador es la cantidad
+  que este debería recibir si los pagos se distribuyesen de
+  manera que los jugadores fueran compensados en función de su
+  contribución al beneficio total.
 
   \item Poder de negociación: El valor de Shapley puede
   interpretarse como una medida del poder de negociación de un jugador.
@@ -25,9 +25,9 @@ entre las que podemos resaltar:
 
 El valor de Shapley se basa en una serie de axiomas fundamentales,
 que garantizan propiedades como su equidad, eficiencia y simetría.
-En economía relajar estos axiomas, con el objetivo de dar lugar
-a nuevas formas de reparto de recomenpensa, ha sido uno de
-los principales temas de estudio. Ejemplos de esto serían el
+En economía, relajar estos axiomas con el objetivo de dar lugar
+a nuevas formas de reparto de recomenpensa ha sido uno de
+los principales temas de estudio. Ejemplo de esto sería el
 concepto de semivalor, el cual se obtiene al eliminar el
 axioma de eficiencia \cite{Dubey, Dubey2}.
 Este axioma asegura que la suma de los valores de
@@ -47,18 +47,19 @@ particularizaciones del concepto de semivalor.
 \
 
 Debido a la naturaleza combinatoria del valor de Shapley, el cálculo
-de este es altamente costoso a nivel computacional y resulta en una
+de este es altamente costoso a nivel computacional, y resulta en una
 tarea cuya complejidad crece exponencialmente al aumentar el
 número de jugadores. Es por esto que surgen métodos de estimación del
-mismo, la mayoría de estos métodos se basan en técnias de Montecarlo.
+mismo, la mayoría de estos métodos se basan en técnicas de Montecarlo.
 En 1960, Irwin Mann y el propio Shapley mencionan las estimaciones
-basada en muestreo de permutaciones \cite{permutationSampling}. Pero
+basadas en muestreo de permutaciones \cite{permutationSampling}. Pero
 no es hasta 2015 que se lleva a cabo un análisis de la complejidad
 a la hora de muestrear usando dicha técnica \cite{maleki}.
 Tras esto, en 2019, Covert propone un nuevo método de estimación basado
 en la técnica de muestreo por importancia que mejora los actuales
-\cite{covert}. Cabe destacar el \textit{ApproShapley} propuesto en
-{\cite{Tejada}}  desarrollado por los profesores J.Castro,
+\cite{covert}. De entre los métodos de estimación, cabe mencionar
+el \textit{ApproShapley} propuesto en
+{\cite{Tejada}} y desarrollado por los profesores J.Castro,
 D.Gómez y J.Tejada de la UCM.
 
 \
@@ -68,7 +69,7 @@ del aprendizaje computacional data del año 2005 como un método de
 selección de variables \cite{featureSelection}. Más tarde, en
 2017, se utiliza en el diseño del marco SHAP \cite{featureImportance},
 enfocado en la evaluación de la importancia de variables en modelos de
-predicción. Sin embargo, no es asta el año 2019 en el que se introduce
+predicción. Sin embargo, no es hasta el año 2019 en el que se introduce
 como una alternativa a los métodos de valoración de datos del
 momento \cite{dataShapley}, acuñándose así el concepto 
 \textit{Data Shapley}.
@@ -91,25 +92,26 @@ aprendizaje computacional como la detección de outliers o datos corruptos
 antes en teoría de juegos y se empiezan a reciclar conceptos como los
 semivalores o el valor de Banzhaf. Es en la línea de los semivalores que
 en 2022 surge \textit{Beta Shapley} {\cite{betaShapley}}, una
-generalización de \textit{data Shapley} que supera los
+generalización de \textit{Data Shapley} que supera los
 resultados de los métodos más actuales de valoración de datos
 en varias tareas como son detección de muestras mal etiquetadas
 y selección de puntos problemáticos a la hora de entrenar un modelo.
 
 \
 
-En 2023, aparece \textit{data Banzhaf} \cite{dataBanzhaf},
+En 2023, aparece \textit{Data Banzhaf} \cite{dataBanzhaf},
 un nuevo método de valoración de datos derivado del valor de Banzhaf.
 Este nuevo método surge como una solución a la falta de robustez
-de las herramientas de valoración de datos existentes, falta de
-robustez causada en parte por factores difíciles de controlar como
+de las herramientas de valoración de datos existentes. Esta falta de
+robustez es causada en parte por factores difíciles de controlar como
 la aleatoriedad del método del descenso del gradiente
 estocástico, el cual es ampliamente usado hoy en día.
-Para solventar esta falta de robustez se apoya en el
+Para solventar esta falta de robustez, este método se apoya en el
 concepto de \textit{Safety Margin}, y demuestra que el valor de
 Banzhaf es el semivalor con mayor \textit{Safety Margin}. 
 \textit{Data Banzhaf} supera a los existentes métodos de valoración
 basados en semivalores en varias tareas de aprendizaje automático.
+Como son detección de datos mal etiquetados y entrenamiento ponderado.
 
 \
 
@@ -132,7 +134,7 @@ relevancia de los datos previamente comentados.
 
 \
 
-Como algo casi anecdótico hay literatura en la que se lleva a
+Como algo casi anecdótico, existe literatura en la que se lleva a
 cabo valoración de datos mediante aprendizaje por refuerzo
 \cite{reinforcement}. En dicho trabajo, se utiliza una red
 neuronal profunda para obtener un estimador de la probabiliadad

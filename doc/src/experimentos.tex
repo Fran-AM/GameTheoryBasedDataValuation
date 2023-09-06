@@ -1,72 +1,49 @@
 \chapter{Análisis Experimental}
 
 \section*{Introducción}
-Esta sección detalla los experimentos efectuados para evaluar la
-eficacia de los métodos de valoración de datos que
-hemos investigado. Cabe destacar el uso de las herramientas
-\textit{pyDVL}, una librería de
-\href{https://www.appliedai.de/en/}{appliedAI} y \textit{DVC},
-herramienta de control del versiones para proyectos de ciencia
-de datos.
+En este capítulo, realizamos un estudio comparativo de
+diferentes métodos de valoración de datos, centrándonos
+en su eficacia en dos tareas: la detección de datos mal
+etiquetados y el entrenamiento ponderado. Nuestra motivación
+se basa en contrastar la información existente en trabajos
+como \cite{dataShapley, betaShapley} y especialmente
+\cite{dataBanzhaf}, en el que se afirma que
+\textit{data Banzhaf} es el método de valoración de datos
+que mejor se comporta en estas tareas en las que la función
+de utilidad $acc(\mathcal{A}(D))$ presenta el ruido inherente
+al método del gradiente estocástico usado para el entrenamiento
+de los modelos.
 
-Se trabajará con conjuntos de datos estandar que se usan normalmente
-en la literatura para la evaluación de métodos de clasificación
+\
+
+Buscamos comprender cómo los valores de datos pueden impactar el
+entrenamiento de modelos y, en consecuencia, las
+decisiones derivadas de estos. A lo largo del capítulo,
+ofrecemos detalles sobre los experimentos llevados a cabo,
+los \textit{datasets} empleados y las herramientas
+esenciales que respaldaron nuestra investigación.
+Todos el código desarrollado en este trabajo puede
+ser consultado en repoGit.
+
+\newpage
+
+\section{Metodología}
+\subsection{Datasets}
+
+Los \textit{datasets} utilizados en los experimentos están
+listados en la tabla \ref{tab:datasets}. Estos conjuntos
+son comúnmente empleados en la literatura como
+\textit{benchmarks} para estudios similares al nuestro
 \cite{dataBanzhaf}.
-Los dataset se pueden observar en la tabla \ref{tab:datasets}.
 
-Evaluaremos los métodos de valoración de datos en dos
-tareas de aprendizaje automático, la detección de puntos
-mal etiquetados y el entrenamiento ponderado.
-Compararemos los resultados obtenidos por LOO, data Banzhaf,
-data Shapley, Beta(1, 4), Beta(1, 16),
-Beta(4, 1), Beta(16, 1). % Los nombres de los Beta no están bien.
-En cuanto a los conjuntos de datos, se utilizarán siete
-conjuntos de datos que se usan habitualmente en la literatura
-como \textit{benchmarks} para la valoración de datos 
-\cite{dataBanzhaf}.
-
-
-
-\subsection*{pyDVL}
-
-\href{https://aai-institute.github.io/pyDVL/0.7.0/}{pyDVL} es una
-herramienta en proceso de mejora, actualmente en su versión
-\texttt{0.7.0}. \textit{pyDVL} agrupa algoritmos destinados al
-cálculo de valores de datos, la mayoría basados en la teoría de
-juegos cooperativos.
-
-\textit{pyDVL} nos permite calcular de forma sencilla y
-automática los valores de datos de un conjunto de datos
-usando distintos métodos de valoración, métodos de
-muestreo, estimadores... 
-
-pyDVL divide el  proceso del cálculo de valores de datos
-en tres sencillos pasos:
-\begin{enumerate}
-    \item Construcción del pyDVL Dataset a partir de tus datos.
-    \item Se crea la utilidad. Concepto abstracto que vincula
-    el modelo que se usará, el conjunto de datos y la métrica
-    de error.
-    \item Se calculan los valores de datos, con el método que
-    se desee.
-\end{enumerate}
-
-% \begin{figure}[h!]
-%     \centering
-%     \begin{lstlisting}
-%     import pyDVL
-%     dataset = pyDVL.Dataset(data)
-%     utility = pyDVL.Utility(model, dataset, metric)
-%     values = utility.calculate_values(method="desired_method")
-%     \end{lstlisting}
-%     \captionof{figure}{Ejemplo de código usando pyDVL.}
-%     \label{fig:pydvl_code}
-% \end{figure}
-
-
-
-
-
+Las características de todos estos \textit{datasets} son
+similares. Contienen datos etiquetados, con dos clases
+en la variable objetivo. En cuanto al preprocesado de estos,
+se destaca que se llevó a cabo un
+preprocesado en todos ellos para equilibrar
+el número de muestras de cada una de las clases.
+% Hay que hacer referencia a que hay codigo en el apéndice.
+En el apéndice \ref{ap:apendice2} puede verse el código..
 
 
 \begin{table}[ht]
@@ -78,79 +55,160 @@ en tres sencillos pasos:
         \rowcolor[HTML]{FFFFFF} 
         Click                                & \href{https://www.openml.org/d/1218}{https://www.openml.org/d/1218}   \\
         \rowcolor[HTML]{FFFFFF} 
-        Apsfail                              & \href{https://www.openml.org/d/41138}{https://www.openml.org/d/41138} \\
         Phoneme                              & \href{https://www.openml.org/d/1489}{https://www.openml.org/d/1489}   \\
         Wind                                 & \href{https://www.openml.org/d/847}{https://www.openml.org/d/847}     \\
-        Pol                                  & \href{https://www.openml.org/d/722}{https://www.openml.org/d/722}     \\
         CPU                                  & \href{https://www.openml.org/d/761}{https://www.openml.org/d/761}     \\
         2DPlanes                             & \href{https://www.openml.org/d/727}{https://www.openml.org/d/727}     \\ \hline
     \end{tabular}%
     }
-    \caption{Conjuntos de datos usados en los experimentos}
+    \caption{Datasets usados en los experimentos}
     \label{tab:datasets}
 \end{table}
 
 
+% \begin{lstlisting}
+%     def undersamp_equilibration(
+%         data: np.ndarray,
+%         target: np.ndarray
+%     ) -> (np.ndarray, np.ndarray):
+%     """
+%     Equilibrate the classes of a dataset with
+%     two classes in the target variable,
+%     using undersampling.
+
+%     Args:
+%         df (pd.DataFrame): The dataset.
+
+%     Returns:
+%         pd.DataFrame: The balanced dataset.
+%     """
+%     unique_targets, counts = np.unique(target, return_counts=True)
+%     min_count = counts.min()
+    
+%     balanced_indices = np.concatenate([
+%         np.random.choice(np.where(target == class_label)[0], min_count, replace=False)
+%         for class_label in unique_targets
+%     ])
+    
+%     # Use the indices to extract the corresponding rows from data and target
+%     balanced_data = data[balanced_indices]
+%     balanced_target = target[balanced_indices]
+    
+%     return balanced_data, balanced_target
+% \end{lstlisting}
+
+\subsection{Herramientas}
+
+Entre las herramientas utilizadas, es relevante
+destacar \textit{pyDVL}, una librería de
+\href{https://www.appliedai.de/en/}{appliedAI}, y
+\textit{DVC}, una herramienta de control de versiones
+específica para proyectos de ciencia de datos.
+
+\subsubsection*{pyDVL}
+
+\href{https://aai-institute.github.io/pyDVL/0.7.0/}{pyDVL},
+actualmente en su versión \texttt{0.7.0}, es una
+librería que engloba diversos algoritmos enfocados al cálculo
+de \textit{data values}, estando la mayoría de ellos basados en
+la teoría de juegos cooperativos. Con \textit{pyDVL}, es posible
+calcular de manera sencilla y automática los \textit{data values}
+de un \textit{dataset} determinado, empleando diferentes métodos de
+valoración, técnicas de muestreo y estimadores, entre otros. 
+
+El proceso de cálculo de valores de datos en
+\textit{pyDVL} se divide en tres pasos esenciales:
+\begin{enumerate}
+    \item Construcción del dataset de pyDVL a
+    partir de tus datos.
+    \item Creación de la utilidad, un concepto abstracto
+    que interrelaciona el modelo a usar, el dataset y la
+    métrica de error.
+    \item Cálculo de los valores de datos utilizando el
+    método seleccionado.
+\end{enumerate}
+
+% Aquí puedes añadir ejemplos de uso de funcionalidades de pyDVL
+% \textbf{Ejemplo de uso de pyDVL:}
+% \begin{verbatim}
+% Código Python de un ejemplo de cómo usar pyDVL...
+% \end{verbatim}
+
 \subsection*{DVC}
 
-\textit{DVC}, acrónimo de Data Version Control, es una
-herramienta diseñada para la ciencia de datos que se
-integra con herramientas de ingeniería de software ya
-existentes. Su función es asistir a los equipos de machine
-learning en la administración de grandes conjuntos de datos,
-garantizar la reproducibilidad de los proyectos y potenciar
-la colaboración. \textit{DVC} es compatible con cualquier
-terminal y puede ser usado como una biblioteca
-de Python.
-
-El objetivo central de \textit{DVC} es brindar una experiencia
+\textit{DVC}, acrónimo de Data Version Control,
+es una herramienta concebida para proyectos de ciencia de
+datos, que se integra perfectamente con herramientas de
+ingeniería de software ya consolidadas como Git. Se
+desarrolla con el propósito deayudar a equipos de machine learning
+en la gestión de grandes volúmenes de datos, asegurar la
+reproducibilidad de los proyectos y fortalecer el
+trabajo colaborativo. \textit{DVC} es compatible con
+cualquier terminal y también puede ser invocado como
+una biblioteca de Python. Su central  es brindar una experiencia
 al estilo Git para estructurar datos, modelos y experimentos en
-proyectos de Ciencia de Datos y Aprendizaje Automático.
+proyectos de Ciencia de Datos y Aprendizaje Automático. Para
+información más detallada, consultar
+la \href{https://dvc.org/doc/user-guide}{Documentación de oficial}.
 
-Para más detalles, consulta la
-\href{https://dvc.org/doc/user-guide}{Documentación de DVC}.
 
-\section{Detección de ruido sintético}
-Compararemos la habilidad de detección de
+\section{Detección de datos mal etiquetados}
 
-We investigate the ability of differ-
-ent data value notions in detecting mislabeled points under
-noisy utility functions. We generate noisy labeled samples
-by flipping labels for a randomly chosen 10\% of training
-data points. We mark a data point as a mislabeled one if its
-data value is less than 10 percentile of all data value scores.
-We use F1-score as the performance metric for mislabeling
-detection.
+Investigamos la habilidad de distintos métodos de
+valoración de datos para identificar puntos mal
+etiquetados en escenarios con funciones de utilidad ruidosas.
+Esta capacidad de detectar y corregir puntos mal etiquetados
+es esencial para mejorar el rendimiento de los modelos de
+machine learning y reducir el tiempo de entrenamiento de
+los mismos.
+
+\
+Para llevar a cabo este experimento generamos muestras
+con etiquetas intercambiadas invirtiendo las
+etiquetas del 10\% de los puntos de datos de entrenamiento.
+A la hora de la evaluación de esta tarea, un punto de
+datos se considera incorrectamente etiquetado si su
+\textit{data value} se encuentra por debajo del percentil
+10 en relacióncon todas las puntuaciones de valoración de datos.
+
+\
+
+Utilizaremos un perceptrón multicapa como modelo, que cuenta
+con una única capa oculta compuesta por 100 neuronas. La
+función de activación será ReLU, y el \textit{learning rate}
+inicial se establece en $10^{-2}$. Se usará el optimizador
+Adam durante el proceso de entrenamiento. El tamaño de los
+\textit{batches} es de 32 datos para todos los
+\textit{datasets}. Dado que el proceso de valoración de datos
+es muy costoso desde el punto de vista computacional, trabajaremos
+con subconjuntos de los \textit{datasets} originales. De cada
+conjunto, seleccionaremos 200 muestas al azar para
+llevar a cabo el experimento. En relación a los estimadores que
+se utilizarán para cada método, aplicaremos Permutation Sampling
+en todos los casos.
 
 \section{Entrenamiento ponderado}
-% Este nombre hay que verlo
-En este experimento se usan los \textit{data values}
-como pesos para el entrenamiento de un modelo.
 
+Estudiamos ahora cómo se puede aplicar un sistema de
+ponderación basado en \textit{data values} para realizar
+una suerte de submuestreo de puntos de datos.
+\href{https://acortar.link/bclshR}{SGDClassifier} de
+\href{https://scikit-learn.org/stable/index.html}{scikit-learn},
+en su modalidad de regresión logística.
 
+Como parámetros usaremos regularización estándar $L_2$,
+con coeficiente $\alpha= 10^{-4}$. El número máximo
+de épocas de entrenamiento será de $10^3$, y tolerancia
+de $10^{-3}$ para el criterio de parada.
 
-We now examine how the data value-based importance
-weight can be applied to subsample data points. We
-train a model with 25\% of the given dataset by using
-the importance weight max for
-the i-th sample. With this importance weight, data
-points with higher values are more likely to be selected
-and data points with negative values are not used. We
-train a classifier to minimize the weighted loss then
-evaluate the accuracy on the held-out test dataset.
+Para la ponderación, normalizaremos el \textit{data value}
+asociado a cada punto de entrenamiento en el rango $[0,1]$.
+Durante el proceso de entrenamiento, cada muestra se multiplicará por
+su peso correspondiente. Esto significa que los puntos con
+valores más altos tendrán una mayor influencia en la regresión
+logística. Finalmente, entrenaremos los clasificadores
+utilizando los conjuntos de entrenamiento y evaluaremos la
+precisión en los conjuntos de test.
 
-Se hace algo similar a esto: Explicar lo que hace el fit
-We weight each training point by normalizing
-the associated data value between [0,1]. Then, during train-
-ing, each training sample will be selected with a probability
-equal to the assigned weight. As a result, data points with
-a higher value are more likely to be selected in the random
-mini-batch of SGD, and data points with a lower value are
-rarely used. We train a neural network classifier to mini-
-mize the weighted loss, and then evaluate the accuracy on
-the held-out test dataset. As Table 1 shows, Data Banzhaf
-outperforms other baselines.
-
-\section{Resultados}
 
 

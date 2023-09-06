@@ -1,5 +1,86 @@
 \begin{theindex}
+{\large\sffamily\bfseries S\'imbolos}\nopagebreak
 
-  \item Juego cooperativo, \hyperpage{9}
+  \item $2^N$ \dotfill \hyperpage{10}
+  \item $N$ \dotfill \hyperpage{10}
+  \item $S$ \dotfill \hyperpage{10}
+  \item $\Gamma$ \dotfill \hyperpage{15}
+  \item $\mathcal{A}$ \dotfill \hyperpage{14}
+  \item $\phi$ \dotfill \hyperpage{12}
+  \item $\phi_{Beta}$ \dotfill \hyperpage{16}
+  \item $\phi_{Shapley}$ \dotfill \hyperpage{11}
+  \item $\phi_{loo}$ \dotfill \hyperpage{15}
+  \item $f$ \dotfill \hyperpage{14}
+  \item $n$ \dotfill \hyperpage{11}
+  \item $s$ \dotfill \hyperpage{11}
+  \item $v$ \dotfill \hyperpage{10}
+  \item $w$ \dotfill \hyperpage{12}
+  \item $w_{Banzhaf}$ \dotfill \hyperpage{13}
+  \item $w_{Shapley}$ \dotfill \hyperpage{12}
+  \item $w_{\alpha, \beta}$ \dotfill \hyperpage{15}
+
+  \indexspace
+{\large\sffamily\bfseries B}\nopagebreak
+
+  \item Beta \dotfill \hyperpage{15}
+
+  \indexspace
+{\large\sffamily\bfseries C}\nopagebreak
+
+  \item Coalición \dotfill \hyperpage{10}
+
+  \indexspace
+{\large\sffamily\bfseries D}\nopagebreak
+
+  \item Data Banzhaf \dotfill \hyperpage{16}
+  \item Data Shapley \dotfill \hyperpage{15}
+  \item Data values \dotfill \hyperpage{15}
+
+  \indexspace
+{\large\sffamily\bfseries E}\nopagebreak
+
+  \item Eficiencia \dotfill \hyperpage{10}
+  \item Estrategia \dotfill \hyperpage{9}
+
+  \indexspace
+{\large\sffamily\bfseries F}\nopagebreak
+
+  \item Función peso \dotfill \hyperpage{12}
+
+  \indexspace
+{\large\sffamily\bfseries G}\nopagebreak
+
+  \item Ganancia \dotfill \hyperpage{9}
+
+  \indexspace
+{\large\sffamily\bfseries J}\nopagebreak
+
+  \item Juego \dotfill \hyperpage{9}
+    \subitem cooperativo \dotfill \hyperpage{9}
+  \item Jugador \dotfill \hyperpage{9}
+    \subitem nulo \dotfill \hyperpage{11}
+
+  \indexspace
+{\large\sffamily\bfseries L}\nopagebreak
+
+  \item Linealidad \dotfill \hyperpage{10}
+  \item LOO \dotfill \hyperpage{15}
+
+  \indexspace
+{\large\sffamily\bfseries S}\nopagebreak
+
+  \item Semivalor \dotfill \hyperpage{12}
+  \item Simetría \dotfill \hyperpage{10}
+
+  \indexspace
+{\large\sffamily\bfseries T}\nopagebreak
+
+  \item Teoría de juegos \dotfill \hyperpage{9}
+
+  \indexspace
+{\large\sffamily\bfseries V}\nopagebreak
+
+  \item Valor de Banzhaf \dotfill \hyperpage{12}
+  \item Valor de Shapley \dotfill \hyperpage{10}
 
 \end{theindex}

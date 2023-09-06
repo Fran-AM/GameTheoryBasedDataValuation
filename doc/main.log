@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.7.4)  4 SEP 2023 14:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.7.4)  6 SEP 2023 17:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1077,7 +1077,7 @@ Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
 )
 Package scrhack Info: hyperref hack deactivated because of
 (scrhack)             detection of hyperref version, that doesn't
-(scrhack)             need that hack, on input line 111.
+(scrhack)             need that hack, on input line 130.
 Package hyperref Info: Driver (autodetected): hpdftex.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
@@ -1095,17 +1095,17 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 )
 \Hy@SectionHShift=\skip115
 )
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 111.
-Package hyperref Info: Option `hypertexnames' set `false' on input line 111.
-Package hyperref Info: Option `colorlinks' set `true' on input line 111.
-Package hyperref Info: Option `unicode' set `true' on input line 111.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 130.
+Package hyperref Info: Option `hypertexnames' set `false' on input line 130.
+Package hyperref Info: Option `colorlinks' set `true' on input line 130.
+Package hyperref Info: Option `unicode' set `true' on input line 130.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2020/01/14 v7.00d Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Option `breaklinks' set `true' on input line 111.
-Package hyperref Info: Option `pageanchor' set `true' on input line 111.
+Package hyperref Info: Option `breaklinks' set `true' on input line 130.
+Package hyperref Info: Option `pageanchor' set `true' on input line 130.
  (/usr/share/texlive/texmf-dist/tex/latex/cleveref/cleveref.sty
 Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
 Package cleveref Info: `hyperref' support loaded on input line 2370.
@@ -1129,33 +1129,33 @@ Package csquotes Info: ... found 'babel' package.
  (/home/franaguilar/Escritorio/TFM/doc/main.aux (/home/franaguilar/Escritorio/TFM/doc/src/cubierta.aux)
 LaTeX Info: Redefining \. on input line 28.
 LaTeX Info: Redefining \% on input line 28.
- (/home/franaguilar/Escritorio/TFM/doc/src/portada.aux) (/home/franaguilar/Escritorio/TFM/doc/src/estadoDelArte.aux) (/home/franaguilar/Escritorio/TFM/doc/src/marcoTeorico.aux) (/home/franaguilar/Escritorio/TFM/doc/src/experimentos.aux) (/home/franaguilar/Escritorio/TFM/doc/src/indiceTerminos.aux) (/home/franaguilar/Escritorio/TFM/doc/src/apendice1.aux))
+ (/home/franaguilar/Escritorio/TFM/doc/src/portada.aux) (/home/franaguilar/Escritorio/TFM/doc/src/estadoDelArte.aux) (/home/franaguilar/Escritorio/TFM/doc/src/marcoTeorico.aux) (/home/franaguilar/Escritorio/TFM/doc/src/experimentos.aux) (/home/franaguilar/Escritorio/TFM/doc/src/indiceTerminos.aux) (/home/franaguilar/Escritorio/TFM/doc/src/apendice1.aux) (/home/franaguilar/Escritorio/TFM/doc/src/apendice2.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Trying to load font information for T1+ppl on input line 111.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Trying to load font information for T1+ppl on input line 130.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 )
-LaTeX Info: Redefining \. on input line 111.
-LaTeX Info: Redefining \% on input line 111.
+LaTeX Info: Redefining \. on input line 130.
+LaTeX Info: Redefining \% on input line 130.
  (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
 ) (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary-Spanish.dict
@@ -1228,48 +1228,48 @@ Package caption Info: End \AtBeginDocument code.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package scrlayer Info: Setting magic \footheight to \baselineskip while
-(scrlayer)             \begin{document} on input line 111.
-LaTeX Info: Redefining \sptext on input line 111.
-LaTeX Info: Redefining \lsc on input line 111.
-LaTeX Info: Redefining \. on input line 111.
-LaTeX Info: Redefining \% on input line 111.
-LaTeX Info: Redefining \dotlessi on input line 111.
-Package scrbase Info: activating spanish \abbrevname on input line 111.
-LaTeX Info: Redefining \sptext on input line 111.
-LaTeX Info: Redefining \lsc on input line 111.
-LaTeX Info: Redefining \. on input line 111.
-LaTeX Info: Redefining \% on input line 111.
-LaTeX Info: Redefining \dotlessi on input line 111.
-Package scrbase Info: activating spanish \byname on input line 111.
-LaTeX Info: Redefining \sptext on input line 111.
-LaTeX Info: Redefining \lsc on input line 111.
-LaTeX Info: Redefining \. on input line 111.
-LaTeX Info: Redefining \% on input line 111.
-LaTeX Info: Redefining \dotlessi on input line 111.
-Package scrbase Info: activating spanish \acknowledgementname on input line 111.
-LaTeX Info: Redefining \sptext on input line 111.
-LaTeX Info: Redefining \lsc on input line 111.
-LaTeX Info: Redefining \. on input line 111.
-LaTeX Info: Redefining \% on input line 111.
-LaTeX Info: Redefining \dotlessi on input line 111.
-Package scrbase Info: activating spanish \authorshipname on input line 111.
-LaTeX Info: Redefining \sptext on input line 111.
-LaTeX Info: Redefining \lsc on input line 111.
-LaTeX Info: Redefining \. on input line 111.
-LaTeX Info: Redefining \% on input line 111.
-LaTeX Info: Redefining \dotlessi on input line 111.
-Package scrbase Info: activating spanish \constantsname on input line 111.
-LaTeX Info: Redefining \sptext on input line 111.
-LaTeX Info: Redefining \lsc on input line 111.
-LaTeX Info: Redefining \. on input line 111.
-LaTeX Info: Redefining \% on input line 111.
-LaTeX Info: Redefining \dotlessi on input line 111.
-Package scrbase Info: activating spanish \symbolsname on input line 111.
+(scrlayer)             \begin{document} on input line 130.
+LaTeX Info: Redefining \sptext on input line 130.
+LaTeX Info: Redefining \lsc on input line 130.
+LaTeX Info: Redefining \. on input line 130.
+LaTeX Info: Redefining \% on input line 130.
+LaTeX Info: Redefining \dotlessi on input line 130.
+Package scrbase Info: activating spanish \abbrevname on input line 130.
+LaTeX Info: Redefining \sptext on input line 130.
+LaTeX Info: Redefining \lsc on input line 130.
+LaTeX Info: Redefining \. on input line 130.
+LaTeX Info: Redefining \% on input line 130.
+LaTeX Info: Redefining \dotlessi on input line 130.
+Package scrbase Info: activating spanish \byname on input line 130.
+LaTeX Info: Redefining \sptext on input line 130.
+LaTeX Info: Redefining \lsc on input line 130.
+LaTeX Info: Redefining \. on input line 130.
+LaTeX Info: Redefining \% on input line 130.
+LaTeX Info: Redefining \dotlessi on input line 130.
+Package scrbase Info: activating spanish \acknowledgementname on input line 130.
+LaTeX Info: Redefining \sptext on input line 130.
+LaTeX Info: Redefining \lsc on input line 130.
+LaTeX Info: Redefining \. on input line 130.
+LaTeX Info: Redefining \% on input line 130.
+LaTeX Info: Redefining \dotlessi on input line 130.
+Package scrbase Info: activating spanish \authorshipname on input line 130.
+LaTeX Info: Redefining \sptext on input line 130.
+LaTeX Info: Redefining \lsc on input line 130.
+LaTeX Info: Redefining \. on input line 130.
+LaTeX Info: Redefining \% on input line 130.
+LaTeX Info: Redefining \dotlessi on input line 130.
+Package scrbase Info: activating spanish \constantsname on input line 130.
+LaTeX Info: Redefining \sptext on input line 130.
+LaTeX Info: Redefining \lsc on input line 130.
+LaTeX Info: Redefining \. on input line 130.
+LaTeX Info: Redefining \% on input line 130.
+LaTeX Info: Redefining \dotlessi on input line 130.
+Package scrbase Info: activating spanish \symbolsname on input line 130.
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 111.
+LaTeX Info: Redefining \selectfont on input line 130.
  ABD: EveryShipout initializing macros
 \c@lstlisting=\count493
-Package scrhack Info: undefining \float@addtolists on input line 111.
+Package scrhack Info: undefining \float@addtolists on input line 130.
 Package biblatex Info: Trying to load language 'spanish'...
 Package biblatex Info: ... file 'spanish.lbx' found.
  (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/spanish.lbx
@@ -1283,10 +1283,10 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (/home/franaguilar/Escritorio/TFM/doc/main.bbl)
-Package biblatex Info: Reference section=0 on input line 111.
-Package biblatex Info: Reference segment=0 on input line 111.
+Package biblatex Info: Reference section=0 on input line 130.
+Package biblatex Info: Reference segment=0 on input line 130.
 \AtBeginShipoutBox=\box126
-Package hyperref Info: Link coloring ON on input line 111.
+Package hyperref Info: Link coloring ON on input line 130.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -1296,30 +1296,30 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count494
 )
-LaTeX Info: Redefining \ref on input line 111.
-LaTeX Info: Redefining \pageref on input line 111.
-LaTeX Info: Redefining \nameref on input line 111.
+LaTeX Info: Redefining \ref on input line 130.
+LaTeX Info: Redefining \pageref on input line 130.
+LaTeX Info: Redefining \nameref on input line 130.
  (/home/franaguilar/Escritorio/TFM/doc/main.out) (/home/franaguilar/Escritorio/TFM/doc/main.out)
 \@outlinefile=\write6
 \openout6 = `main.out'.
 
-LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 111.
+LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 130.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
-LaTeX Font Info:    Trying to load font information for OML+zplm on input line 111.
+LaTeX Font Info:    Trying to load font information for OML+zplm on input line 130.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 111.
+LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 130.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 111.
+LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 130.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
-LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 111.
+LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 130.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
@@ -1327,7 +1327,7 @@ File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 
  (/home/franaguilar/Escritorio/TFM/doc/src/cubierta.tex
 \GPT@outputbox=\box127
-<img/escudo_ucm.png, id=82, 350.30875pt x 401.5pt>
+<img/escudo_ucm.png, id=94, 350.30875pt x 401.5pt>
 File: img/escudo_ucm.png Graphic file (type png)
 <use img/escudo_ucm.png>
 Package pdftex.def Info: img/escudo_ucm.png  used on input line 9.
@@ -1344,7 +1344,7 @@ Package pdftex.def Info: img/escudo_ucm.png  used on input line 9.
 \openout2 = `src/portada.aux'.
 
  (/home/franaguilar/Escritorio/TFM/doc/src/portada.tex
-<img/escudo_ucm_byn.jpg, id=97, 284.5029pt x 262.0992pt>
+<img/escudo_ucm_byn.jpg, id=109, 284.5029pt x 262.0992pt>
 File: img/escudo_ucm_byn.jpg Graphic file (type jpg)
 <use img/escudo_ucm_byn.jpg>
 Package pdftex.def Info: img/escudo_ucm_byn.jpg  used on input line 8.
@@ -1378,13 +1378,13 @@ Cap\'{\i }tulo 1.
 
 
 ]
-LaTeX Info: Redefining \. on input line 132.
-LaTeX Info: Redefining \% on input line 132.
-Package cleveref Info: loaded `spanish' language definitions on input line 132.
+LaTeX Info: Redefining \. on input line 134.
+LaTeX Info: Redefining \% on input line 134.
+Package cleveref Info: loaded `spanish' language definitions on input line 134.
  [7])
-LaTeX Info: Redefining \. on input line 163.
-LaTeX Info: Redefining \% on input line 163.
-Package cleveref Info: loaded `spanish' language definitions on input line 163.
+LaTeX Info: Redefining \. on input line 182.
+LaTeX Info: Redefining \% on input line 182.
+Package cleveref Info: loaded `spanish' language definitions on input line 182.
  [8]
 \openout2 = `src/marcoTeorico.aux'.
 
@@ -1397,7 +1397,7 @@ Package hyperref Info: bookmark level for unknown definition defaults to 0 on in
 
 
 ]
-LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 75.
+LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 74.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 )
@@ -1406,104 +1406,121 @@ LaTeX Info: Redefining \% on input line 132.
 Package cleveref Info: loaded `spanish' language definitions on input line 132.
  [10]
 Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 140.
-Package hyperref Info: bookmark level for unknown proposition defaults to 0 on input line 162.
-LaTeX Info: Redefining \. on input line 205.
-LaTeX Info: Redefining \% on input line 205.
-Package cleveref Info: loaded `spanish' language definitions on input line 205.
+Package hyperref Info: bookmark level for unknown proposition defaults to 0 on input line 163.
+LaTeX Info: Redefining \. on input line 206.
+LaTeX Info: Redefining \% on input line 206.
+Package cleveref Info: loaded `spanish' language definitions on input line 206.
  [11]
-LaTeX Info: Redefining \. on input line 267.
-LaTeX Info: Redefining \% on input line 267.
-Package cleveref Info: loaded `spanish' language definitions on input line 267.
+LaTeX Info: Redefining \. on input line 269.
+LaTeX Info: Redefining \% on input line 269.
+Package cleveref Info: loaded `spanish' language definitions on input line 269.
  [12]
-LaTeX Info: Redefining \. on input line 297.
-LaTeX Info: Redefining \% on input line 297.
-Package cleveref Info: loaded `spanish' language definitions on input line 297.
+LaTeX Info: Redefining \. on input line 300.
+LaTeX Info: Redefining \% on input line 300.
+Package cleveref Info: loaded `spanish' language definitions on input line 300.
  [13]
-LaTeX Info: Redefining \. on input line 379.
-LaTeX Info: Redefining \% on input line 379.
-Package cleveref Info: loaded `spanish' language definitions on input line 379.
+LaTeX Info: Redefining \. on input line 383.
+LaTeX Info: Redefining \% on input line 383.
+Package cleveref Info: loaded `spanish' language definitions on input line 383.
  [14]
-LaTeX Info: Redefining \. on input line 462.
-LaTeX Info: Redefining \% on input line 462.
-Package cleveref Info: loaded `spanish' language definitions on input line 462.
+LaTeX Info: Redefining \. on input line 461.
+LaTeX Info: Redefining \% on input line 461.
+Package cleveref Info: loaded `spanish' language definitions on input line 461.
  [15]
-LaTeX Info: Redefining \. on input line 486.
-LaTeX Info: Redefining \% on input line 486.
-Package cleveref Info: loaded `spanish' language definitions on input line 486.
+LaTeX Info: Redefining \. on input line 491.
+LaTeX Info: Redefining \% on input line 491.
+Package cleveref Info: loaded `spanish' language definitions on input line 491.
  [16]
-LaTeX Info: Redefining \. on input line 564.
-LaTeX Info: Redefining \% on input line 564.
-Package cleveref Info: loaded `spanish' language definitions on input line 564.
+LaTeX Info: Redefining \. on input line 569.
+LaTeX Info: Redefining \% on input line 569.
+Package cleveref Info: loaded `spanish' language definitions on input line 569.
  [17]
-LaTeX Info: Redefining \. on input line 643.
-LaTeX Info: Redefining \% on input line 643.
-Package cleveref Info: loaded `spanish' language definitions on input line 643.
+LaTeX Info: Redefining \. on input line 648.
+LaTeX Info: Redefining \% on input line 648.
+Package cleveref Info: loaded `spanish' language definitions on input line 648.
  [18]
-Overfull \hbox (24.57951pt too wide) in paragraph at lines 699--703
-[]\T1/ppl/m/n/12 En es-te con-tex-to sur-ge el con-cep-to de es-ti-ma-dor de má-xi-ma re-uti-li-za-ción (MSR)[[][]18[][]].
+Overfull \hbox (1.5876pt too wide) in paragraph at lines 704--708
+[]\T1/ppl/m/n/12 En es-te con-tex-to sur-ge el con-cep-to de es-ti-ma-dor de má-xi-ma re-uti-li-za-ción (MSR)
  []
 
-LaTeX Info: Redefining \. on input line 725.
-LaTeX Info: Redefining \% on input line 725.
-Package cleveref Info: loaded `spanish' language definitions on input line 725.
+LaTeX Info: Redefining \. on input line 730.
+LaTeX Info: Redefining \% on input line 730.
+Package cleveref Info: loaded `spanish' language definitions on input line 730.
 [19]
-Overfull \hbox (15.18724pt too wide) in paragraph at lines 742--748
+Overfull \hbox (15.18724pt too wide) in paragraph at lines 747--753
 []\T1/ppl/b/n/12 Teorema 2.3.8. []$[]$ \T1/ppl/m/it/12 es una $\OT1/zplm/m/n/12 (\OML/zplm/m/it/12 ^^O\OT1/ppl/m/n/12 , \OML/zplm/m/it/12 ^^N\OT1/zplm/m/n/12 )$\T1/ppl/m/it/12 -aproximación de $\OML/zplm/m/it/12 ^^^[]$ \T1/ppl/m/it/12 en nor-ma $\OML/zplm/m/it/12 l[]$ \T1/ppl/m/it/12 con $\OMS/zplm/m/n/12 O\OT1/zplm/m/n/12 ([] []([]))$
  []
 
 
-Overfull \hbox (19.6141pt too wide) in paragraph at lines 764--768
+Overfull \hbox (19.6141pt too wide) in paragraph at lines 769--773
 []\T1/ppl/b/n/12 Teorema 2.3.9. []\T1/ppl/m/it/12 To-do es-ti-ma-dor alea-to-rio del va-lor de Banz-haf que sea una $\OT1/zplm/m/n/12 (\OML/zplm/m/it/12 ^^O\OT1/ppl/m/n/12 , \OML/zplm/m/it/12 ^^N\OT1/zplm/m/n/12 )$\T1/ppl/m/it/12 -aproximación
  []
 
 )
-LaTeX Info: Redefining \. on input line 165.
-LaTeX Info: Redefining \% on input line 165.
-Package cleveref Info: loaded `spanish' language definitions on input line 165.
+LaTeX Info: Redefining \. on input line 184.
+LaTeX Info: Redefining \% on input line 184.
+Package cleveref Info: loaded `spanish' language definitions on input line 184.
  [20]
 \openout2 = `src/experimentos.aux'.
 
  (/home/franaguilar/Escritorio/TFM/doc/src/experimentos.tex
 Cap\'{\i }tulo 3.
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 34.
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
 1: section
 [21
 
 
 
 ]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 111.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
 LaTeX Info: Redefining \. on input line 153.
 LaTeX Info: Redefining \% on input line 153.
 Package cleveref Info: loaded `spanish' language definitions on input line 153.
- [22])
-LaTeX Info: Redefining \. on input line 167.
-LaTeX Info: Redefining \% on input line 167.
-Package cleveref Info: loaded `spanish' language definitions on input line 167.
- [23] [24
+ [22]
+LaTeX Info: Redefining \. on input line 212.
+LaTeX Info: Redefining \% on input line 212.
+Package cleveref Info: loaded `spanish' language definitions on input line 212.
+ [23])
+LaTeX Info: Redefining \. on input line 186.
+LaTeX Info: Redefining \% on input line 186.
+Package cleveref Info: loaded `spanish' language definitions on input line 186.
+ [24] [25
 
 
 ]
-Overfull \hbox (6.81886pt too wide) in paragraph at lines 179--179
-\T1/ppl/m/n/12 wit-hout Ef-fi-ciency^^T \T1/ppl/m/it/12 Mat-he-ma-tics of Ope-ra-tions Re-search \T1/ppl/m/n/12 6.1, 1981, págs. 122[]128. 
+Overfull \hbox (1.9855pt too wide) in paragraph at lines 194--194
+[]\T1/ppl/m/n/12 Stefano Mo-ret-ti, Vi-to Frag-ne-lli, Fio-ra-van-te Pa-tro-ne y Ste-fano Bo-nas-si. ^^S  Using
+ []
+
+
+Overfull \hbox (9.82317pt too wide) in paragraph at lines 194--194
+\T1/ppl/m/n/12 wit-hout Ef-fi-ciency^^T. \T1/ppl/m/it/12 Mat-he-ma-tics of Ope-ra-tions Re-search \T1/ppl/m/n/12 6.1, 1981, págs. 122[]128. 
  []
 
 1: section
-[25]
-LaTeX Info: Redefining \. on input line 180.
-LaTeX Info: Redefining \% on input line 180.
-Package cleveref Info: loaded `spanish' language definitions on input line 180.
- [26]
+[26]
+Overfull \hbox (1.13547pt too wide) in paragraph at lines 194--194
+\T1/ppl/m/n/12 2019. Ed. por Ka-ma-li-ka Chaud-hu-ri y Rus-lan Sa-lak-hut-di-nov, págs. 2242[]2251. 
+ []
+
+LaTeX Info: Redefining \. on input line 195.
+LaTeX Info: Redefining \% on input line 195.
+Package cleveref Info: loaded `spanish' language definitions on input line 195.
+[27]
 \openout2 = `src/indiceTerminos.aux'.
 
  (/home/franaguilar/Escritorio/TFM/doc/src/indiceTerminos.tex)
-runsystem(makeindex main.idx)...executed safely (allowed).
+runsystem(makeindex -s index/style.ist main.idx)...executed safely (allowed).
 
- (/home/franaguilar/Escritorio/TFM/doc/main.ind)
+ (/home/franaguilar/Escritorio/TFM/doc/main.ind
+LaTeX Font Info:    Trying to load font information for T1+cmss on input line 2.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
+File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+))
 1: section
-[27
+[28
 
 
 
@@ -1513,7 +1530,7 @@ runsystem(makeindex main.idx)...executed safely (allowed).
  (/home/franaguilar/Escritorio/TFM/doc/src/apendice1.tex
 Ap\'{e}ndice A.
 1: section
-[28
+[29
 
 
 
@@ -1525,7 +1542,7 @@ Overfull \hbox (48.88777pt too wide) detected at line 89
 LaTeX Info: Redefining \. on input line 120.
 LaTeX Info: Redefining \% on input line 120.
 Package cleveref Info: loaded `spanish' language definitions on input line 120.
-[29]
+[30]
 Overfull \hbox (70.82465pt too wide) detected at line 132
 \OML/zplm/m/it/12 ^^L\OT1/zplm/m/n/12 (\OML/zplm/m/it/12 p\OT1/ppl/m/n/12 , \OML/zplm/m/it/12 q\OT1/zplm/m/n/12 ) = [] [][] \OML/zplm/m/it/12 x[]e[] [] dx \OT1/zplm/m/n/12 = [] [][] \OML/zplm/m/it/12 x[]e[][] dx
  []
@@ -1536,38 +1553,49 @@ Overfull \hbox (23.60374pt too wide) detected at line 139
  []
 
 )
-LaTeX Info: Redefining \. on input line 182.
-LaTeX Info: Redefining \% on input line 182.
-Package cleveref Info: loaded `spanish' language definitions on input line 182.
- [30]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 183.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 183.
+LaTeX Info: Redefining \. on input line 197.
+LaTeX Info: Redefining \% on input line 197.
+Package cleveref Info: loaded `spanish' language definitions on input line 197.
+ [31]
+\openout2 = `src/apendice2.aux'.
+
+ (/home/franaguilar/Escritorio/TFM/doc/src/apendice2.tex
+Ap\'{e}ndice A.
+)
+1: section
+[32
+
+
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 200.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 200.
  (/home/franaguilar/Escritorio/TFM/doc/main.aux (/home/franaguilar/Escritorio/TFM/doc/src/cubierta.aux)
 LaTeX Info: Redefining \. on input line 28.
 LaTeX Info: Redefining \% on input line 28.
 Package cleveref Info: loaded `spanish' language definitions on input line 28.
- (/home/franaguilar/Escritorio/TFM/doc/src/portada.aux) (/home/franaguilar/Escritorio/TFM/doc/src/estadoDelArte.aux) (/home/franaguilar/Escritorio/TFM/doc/src/marcoTeorico.aux) (/home/franaguilar/Escritorio/TFM/doc/src/experimentos.aux) (/home/franaguilar/Escritorio/TFM/doc/src/indiceTerminos.aux) (/home/franaguilar/Escritorio/TFM/doc/src/apendice1.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 183.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 183.
+ (/home/franaguilar/Escritorio/TFM/doc/src/portada.aux) (/home/franaguilar/Escritorio/TFM/doc/src/estadoDelArte.aux) (/home/franaguilar/Escritorio/TFM/doc/src/marcoTeorico.aux) (/home/franaguilar/Escritorio/TFM/doc/src/experimentos.aux) (/home/franaguilar/Escritorio/TFM/doc/src/indiceTerminos.aux) (/home/franaguilar/Escritorio/TFM/doc/src/apendice1.aux) (/home/franaguilar/Escritorio/TFM/doc/src/apendice2.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 200.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 200.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: E5B75D0974A32E2B91C3EB5C01A602C2;2816.
+(rerunfilecheck)             Checksum: 562308D53AE1237A81CA9562DF33F88F;3187.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43650 strings out of 481239
- 892574 string characters out of 5920378
- 1532811 words of memory out of 5000000
- 58031 multiletter control sequences out of 15000+600000
- 598430 words of font info for 157 fonts, out of 8000000 for 9000
+ 43700 strings out of 481239
+ 893875 string characters out of 5920378
+ 1540191 words of memory out of 5000000
+ 58064 multiletter control sequences out of 15000+600000
+ 599971 words of font info for 159 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  65i,20n,87p,2173b,2603s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on /home/franaguilar/Escritorio/TFM/doc/main.pdf (30 pages, 636703 bytes).
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on /home/franaguilar/Escritorio/TFM/doc/main.pdf (32 pages, 655683 bytes).
 PDF statistics:
- 464 PDF objects out of 1000 (max. 8388607)
- 412 compressed objects within 5 object streams
- 129 named destinations out of 1000 (max. 500000)
- 175 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 534 PDF objects out of 1000 (max. 8388607)
+ 479 compressed objects within 5 object streams
+ 134 named destinations out of 1000 (max. 500000)
+ 199 words of extra memory for PDF output out of 10000 (max. 10000000)
 

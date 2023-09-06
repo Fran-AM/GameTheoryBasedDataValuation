@@ -8,11 +8,11 @@
 \section{Teoría de juegos}
 \subsection*{Definición y conceptos básicos}
 
-La \emph{teoría de juegos} puede ser entendida como la rama de las
-matemáticas que analiza situaciones en las que el resultado para
-cada jugador o participante depende no solo de sus propias
-decisiones, sino también de las tomadas por otros
-jugadores. Estas situaciones se conocen como \emph{juegos}.
+La \emph{teoría de juegos} \index{Teoría de juegos} puede ser
+entendida como la rama de las matemáticas que analiza situaciones
+en las que el resultado para cada jugador o participante depende no
+solo de sus propias decisiones, sino también de las tomadas por otros
+jugadores. Estas situaciones se conocen como \emph{juegos}. \index{Juego}
 
 \begin{definition}
   Un \emph{juego} es una interacción entre jugadores
@@ -23,21 +23,21 @@ jugadores. Estas situaciones se conocen como \emph{juegos}.
   otros. Un juego se define por:
   \begin{itemize}
     \item \textbf{Los jugadores que intervienen.} Cada \emph{jugador}
-      es un agente que tiene a su disposición diversas
+      \index{Jugador} es un agente que tiene a su disposición diversas
       estrategias basadas en las posibles recompensas que
       podría recibir.
 
     \item \textbf{Las estrategias disponibles para cada jugador.}
-      Una \emph{estrategia} es un plan de acción que un jugador
-      puede adoptar dentro de un juego. Esta estrategia dicta las
-      acciones que tomará en cada situación posible que se presente
+      Una \emph{estrategia} \index{Estrategia} es un plan de acción que
+      un jugador puede adoptar dentro de un juego. Esta estrategia dicta
+      las acciones que tomará en cada situación que se presente
       en el juego.
 
     \item \textbf{Las ganancias de cada jugador en función de los
-      resultados.} Las \emph{ganancias} son representaciones de
-      las motivaciones de los jugadores, pudiendo representar
-      beneficios, cantidades, o simplemente reflejar la conveniencia
-      de los diferentes desenlaces.
+      resultados.} Las \emph{ganancias} \index{Ganancia} son
+      representaciones de las motivaciones de los jugadores, pudiendo
+      representar beneficios, cantidades, o simplemente reflejar la
+      conveniencia de los diferentes desenlaces.
   \end{itemize}
 \end{definition}
 
@@ -45,12 +45,12 @@ A lo largo de este trabajo nos centraremos en el estudio de juegos
 cooperativos.
 
 \begin{definition}
-  Un \emph{juego cooperativo} \index{Juego cooperativo} es aquel en
+  Un \emph{juego cooperativo} \index{Juego!cooperativo} es aquel en
   el que los jugadores pueden comunicarse y negociar con el
   fin de establecer acuerdos vinculantes.
 \end{definition}
 
-Los acuerdos mencionados se denominan \emph{coaliciones}.
+Los acuerdos mencionados se denominan \emph{coaliciones} \index{Coalición}.
 Se trata de grupos de jugadores que eligen actuar juntos para
 lograr un objetivo común. Las coaliciones pueden
 variar desde la compuesta por todos los jugadores hasta la que
@@ -59,23 +59,22 @@ incluye a un único jugador.
 \
 
 Un juego cooperativo se define completamente a través de su
-conjunto de jugadores $N$ y de su función característica.
+conjunto de jugadores $N$ \index{$N$} y de su función característica.
 Esta función establece la relación entre la formación de
 coaliciones y los beneficios que obtienen los jugadores,
 asignando a cada posible coalición (es decir, a cada
-subconjunto del conjunto potencia de $N$, denotado $2^N$)
+subconjunto del conjunto potencia de $N$, denotado $2^N$) \index{$2^N$}
 un beneficio específico que pueden alcanzar.
 
 \begin{definition}
-  Una \emph{función característica} $v$ es una función
-  \begin{equation*}
-    \begin{split}
-      v&:2^N \longrightarrow \mathbb{R}\\
-      S&\longmapsto v(S)
-    \end{split}\ .
-  \end{equation*}
-  Asignando a cada posible coalición la máxima
-  utilidad que los jugadores de $S$ pueden obtener,
+  Una \emph{función característica} $v$ \index{$v$} es una función
+  \begin{align*}
+    v:2^N& \longrightarrow \mathbb{R}\\
+    S&\longmapsto v(S)
+  \end{align*}
+
+  que asigna a cada posible coalición $S$ \index{$S$} la máxima
+  ganancia que sus jugadores pueden obtener,
   independientemente de lo que haga el resto de
   jugadores.
 \end{definition}
@@ -95,8 +94,8 @@ característica $v$.
 
 \
 
-El \emph{Valor de Shapley} es un concepto de teoría de juegos
-que asigna de manera equitativa las ganancias
+El \emph{valor de Shapley} \index{Valor de Shapley} es un concepto
+de teoría de juegos que asigna de manera equitativa las ganancias
 entre los miembros de una coalición. Propuesto
 por Lloyd Shapley en 1952 \cite{shapleyValue},
 se fundamenta en los siguientes axiomas:
@@ -104,7 +103,7 @@ se fundamenta en los siguientes axiomas:
 \begin{itemize}
   \item \textbf{Simetría}. Si dos jugadores son simétricos, es decir,
   si su contribución a cualquier coalición es la misma,
-  entonces presentan el mismo valor.
+  entonces poseen el mismo valor. \index{Simetría}
   $$
   \text{Si } \forall S \subseteq N \setminus \{i, j\},\ 
   v(S \cup \{i\}) = v(S \cup \{j\}) \implies \phi_{Shapley}(i;v) =
@@ -113,46 +112,48 @@ se fundamenta en los siguientes axiomas:
 
   \item \textbf{Eficiencia}. El valor total producido por la coalición
   conformada por todos los jugadores se distribuye entre los
-  jugadores. Es decir,
+  jugadores. Es decir, \index{Eficiencia}
   $$
   v(N)=\sum_{i\in N}\phi_{Shapley}(i;v).
   $$
 
   \item \textbf{Linealidad}. Dados dos juegos $u$ y $v$, el valor del
   juego $u+v$ es la suma de los valores de cada juego. Es decir,
+  \index{Linealidad}
   $$
-  \phi_{Shapley}(i;u+v)=\phi_{Shapley}(i;u)+\phi_{Shapley}(i;v).
+  \phi_{Shapley}(i;u+v)=\phi_{Shapley}(i;u)+\phi_{Shapley}(i;v)\ \forall i \in N.
   $$
 
   \item \textbf{Jugador nulo}. Los jugadores que no aportan a ninguna
-  coalición tendrán valor nulo. Es decir,
+  coalición tendrán valor nulo. Es decir, \index{Jugador!nulo}
   $$
   \text{Si } \forall S \subseteq N \setminus \{i\},\ 
   v(S \cup \{i\}) = v(S) \implies \phi_{Shapley}(i;v) = 0.
   $$
 \end{itemize}
 
-El siguiente teorema, extraído de \cite{shapleyValue} prueba
-que se trata del único método de valoración de datos satisfaciendo
+El siguiente teorema, extraído de \cite{shapleyValue}, prueba
+que se trata del único método de valoración de datos que satisface
 estos axiomas.
 
 \begin{theorem}
-  Existe una única función $\phi_{Shapley}$ satisfaciendo los axiomas
-  de simetría, eficiencia, linealidad y jugador nulo, y viene
-  dada por la fórmula:
+  Existe una única función $\phi_{Shapley}$ \index{$\phi_{Shapley}$}
+  satisfaciendo los axiomas de simetría, eficiencia, linealidad y
+  jugador nulo, y viene dada por la fórmula:
   \begin{align*}
     \phi_{Shapley}(i;v)&=\sum_{S\subseteq N}
-    \frac{(|S|-1)!(|N|-|S|)!}{|N|!}(v(S)-v(S \setminus \{i\}))\\
-    &= \sum_{S\subseteq N \setminus \{i\}} \frac{|S|!(|N|-|S|-1)!}
-    {|N|!}(v(S\cup \{i\})-v(S)).
+    \frac{(s-1)!(n-s)!}{n!}(v(S)-v(S \setminus \{i\}))\\
+    &= \sum_{S\subseteq N \setminus \{i\}} \frac{s!(n-s-1)!}
+    {n!}(v(S\cup \{i\})-v(S)).
   \end{align*}
-  
+  Donde $n = |N|$ y $s = |S|$ son los cardinales de $N$ y $S$
+  respectivamente. \index{$n$} \index{$s$}
 \end{theorem}
 
-\begin{proof}
-  La demostración detallada se encuentra en la sección 3
-  de \cite{shapleyValue}.
-\end{proof}
+La demostración detallada se encuentra en la sección 3
+de \cite{shapleyValue}.
+
+\
 
 Más adelante nos será útil expresar el valor de Shapley de
 una forma alternativa, que nos permitirá relacionarlo mejor
@@ -163,7 +164,7 @@ con otros conceptos.
   \begin{equation}
     \label{shapleyFormula}
     \phi_{Shapley}(i;v)=\frac{1}{n}\sum_{k=1}^n \binom{n-1}{k-1}^{-1} 
-    \sum_{\substack{S \subseteq N \setminus \{i\} \\ ||S||=k-1}}(v(S\cup\{i\})-v(S)).
+    \sum_{\substack{S \subseteq N \setminus \{i\} \\ |S|=k-1}}(v(S\cup\{i\})-v(S)).
   \end{equation}
 \end{proposition}
 
@@ -175,11 +176,11 @@ con otros conceptos.
   podemos reescribir la ecuación \ref{shapleyFormula} como:
   \begin{align*}
     \phi_{Shapley}(i,v) &= \frac{1}{n} \sum_{k=1}^{n} \frac{(k-1)!(n-k)!}{(n-1)!}
-    \sum_{\substack{S \subseteq N \setminus \{i\} \\ ||S||=k-1}}(v(S\cup\{i\})-v(S))\\
+    \sum_{\substack{S \subseteq N \setminus \{i\} \\ |S|=k-1}}(v(S\cup\{i\})-v(S))\\
     &= \sum_{k=1}^{n} \frac{(k-1)!(n-k)!}{n!}
-    \sum_{\substack{S \subseteq N \setminus \{i\} \\ ||S||=k-1}}(v(S\cup\{i\})-v(S))\\
-    & = \sum_{S\subseteq N \setminus \{i\}} \frac{|S|!(|N|-|S|-1)!}
-    {|N|!}(v(S\cup \{i\})-v(S)).
+    \sum_{\substack{S \subseteq N \setminus \{i\} \\ |S|=k-1}}(v(S\cup\{i\})-v(S))\\
+    & = \sum_{S\subseteq N \setminus \{i\}} \frac{s!(n-s-1)!}
+    {n!}(v(S\cup \{i\})-v(S)).
   \end{align*}
 
 \end{proof}
@@ -201,34 +202,34 @@ que surgen al relajar el axioma de eficiencia. Así, permiten
 una variedad más amplia de métodos de valoración en el estudio
 de juegos cooperativos, siendo especialmente útiles en escenarios
 donde no es necesario o deseado que la totalidad de la recompensa
-sea distribuida.
+sea distribuida. \index{Semivalor}
 
 La clave de los semivalores es que asignan pesos a las
 coaliciones basándose en el tamaño de estas. Estos pesos
 son utilizados para calcular la contribución marginal promedio
 de cada jugador. A diferencia del valor de Shapley, que es
 único dada su definición basada en axiomas \cite{shapleyValue},
-hay múltiples semivalores posibles, dependiendo de cómo se
+hay múltiples semivalores posibles dependiendo de cómo se
 determinen los pesos. Esta variabilidad en los semivalores queda
 formalizada en el siguiente teorema:
 
 \begin{theorem}{Representación de semivalores \cite{Dubey2}.}
   
-  Una función $\phi$ es un semivalor, si y solo
-  si, existe una función peso $w:[n] \rightarrow
-  \mathbb{R}$ tal que
+  Una función $\phi$ \index{$\phi$} es un semivalor sii
+  existe una función peso $w:\{1,\dots,n\} \rightarrow
+  \mathbb{R}$ tal que \index{Función peso} \index{$w$}
   $$\sum_{k=1}^n \binom{n-1}{k-1}w(k) = n,$$
   que permite representar $\phi$ mediante la expresión:
   $$
   \phi(i;v) = \sum_{k=1}^n \frac{w(k)}{n}
-  \sum_{\substack{S \subseteq N \setminus \{i\} \\ ||S||=k-1}}
+  \sum_{\substack{S \subseteq N \setminus \{i\} \\ |S|=k-1}}
   (v(S\cup \{i\} - v(S))).
   $$
 \end{theorem}
 
-\begin{proof}
-  Se puede consultar en \cite{Dubey2}.
-\end{proof}
+La demostración se puede consultar en \cite{Dubey2}.
+
+\
 
 Este teorema establece una biyección entre semivalores y
 funciones de peso. Esta correspondencia uno a uno
@@ -240,14 +241,15 @@ en términos de su función de peso.
 Finalmente, es importante destacar que el valor de Shapley
 es un caso particular de semivalor. En este caso la función
 de peso será $w_{Shapley} = \binom{n-1}{k-1}^{-1}$.
+\index{$w_{Shapley}$}
 
 
 \subsection{El valor de Banzhaf}
 
 El \emph{valor de Banzhaf}, también denominado índice de poder
-de Banzhaf\cite{banzhaf}, es una métrica de teoría de juegos
+de Banzhaf \cite{banzhaf}, es una métrica de teoría de juegos
 cooperativos que busca cuantificar el poder e influencia de un
-jugador dentro de una coalición.
+jugador dentro de una coalición. \index{Valor de Banzhaf}
 Este índice fue introducido por John F. Banzhaf III en 1965,
 con la finalidad de ofrecer una herramienta analítica que
 pudiese determinar el poder de influencia de un jugador,
@@ -258,18 +260,18 @@ Banzhaf, es fundamental familiarizarse con ciertos conceptos
 relacionados:
 
 \begin{itemize}
-  \item \emph{Sistema de votación ponderado}: Es un sistema de
+  \item \emph{Sistema de votación ponderado}: es un sistema de
   votación en el que cada jugador tiene un peso o poder de voto
   particular. Para que una propuesta sea aprobada, la suma de los
   pesos de los jugadores que votan a favor debe superar un
   umbral o cuota establecida.
 
-  \item \emph{Jugador pivote}: Se considera que un jugador actúa
+  \item \emph{Jugador pivote}: ee considera que un jugador actúa
   como pivote si, al modificar su voto de negativo a positivo,
   la propuesta es aprobada. Sin embargo, si se abstuviera o
   mantuviera su voto en contra, la propuesta sería rechazada.
 
-  \item \emph{Índice de poder de Banzhaf} Este índice mide la
+  \item \emph{Índice de poder de Banzhaf}: este índice mide la
   frecuencia con la que un jugador se convierte en pivote.
   Es importante destacar que el poder de un jugador no siempre
   es directamente proporcional a su peso en la votación.
@@ -286,13 +288,14 @@ relacionados:
 \end{definition}
 
 A pesar de sus similitudes con el valor de Shapley, el índice
-de Banzhaf se diferencia en su enfoque y en la forma de asignar
+de Banzhaf se distingue en su enfoque y la forma de asignar
 poder a los jugadores.
 Mientras que el valor de Shapley se basa en contribuciones
 marginales promediadas, el índice de Banzhaf se enfoca en la
 capacidad de un jugador de influir en el resultado final de
 una votación. Específicamente, es un semivalor
 con un peso asociado dado por $w_{Banzhaf} = \frac{1}{2^{n-1}}$.
+\index{$w_{Banzhaf}$}
 
 \newpage
 \section{Valoración de datos}
@@ -311,34 +314,34 @@ en juego la valoración de datos.
 Cuando nos referimos al valor de un dato, es esencial
 comprender que dicho valor no es unidimensional. Un dato
 puede ser valorado desde diferentes perspectivas y
-categorizado basado en diversas cualidades:
+categorizado basándose en diversas cualidades:
 
 \begin{enumerate}
   \item \textbf{Valor Intrínsico vs. Extrínseco}:
   \begin{itemize}
-    \item \emph{Valor intrínseco}: Se refiere al valor
+    \item \emph{Valor intrínseco}: se refiere al valor
     inherente al propio dato, basado en su precisión y calidad.
     Este valor es independiente del uso que se le dé al dato.
 
-    \item \emph{Valor extrínseco}: Se corresponde al valor
+    \item \emph{Valor extrínseco}: se corresponde al valor
     que se le atribuye al dato en función de su uso.
     Depende, pues, del contexto en el que se use el dato.
   \end{itemize}
 
   \item \textbf{Valor Directo vs. Indirecto}:
   \begin{itemize}
-    \item \emph{Valor directo}: Alude al beneficio
+    \item \emph{Valor directo}: alude al beneficio
     inmediato que se obtiene de un dato, como podría ser
     al venderlo.
 
-    \item \emph{Valor indirecto}: Se refiere al
+    \item \emph{Valor indirecto}: se refiere al
     beneficio derivado del uso estratégico del dato.
   \end{itemize}
 \end{enumerate}
 
 En este trabajo nos centraremos en estudiar el valor extrínseco
 e indirecto de los datos. Esta investigación nos permitirá,
-posteriormente, discernir el valor directo de los datos y
+posteriormente, determinar el valor directo de los datos y
 detectar posibles problemas en su valor intrínseco.
 
 \
@@ -358,6 +361,7 @@ el cual se compone de tres elementos esenciales:
   \item El \emph{algoritmo de aprendizaje}  $\mathcal{A}$,
   será tratado como una caja negra que toma un conjunto de
   entrenamiento $N$ y genera un predictor $f$.
+  \index{$\mathcal{A}$} \index{$f$}
   
   \item La \emph{función de utilidad} $v$ es una aplicación
   que asigna a cada subconjunto de $N$ un valor, reflejando
@@ -369,41 +373,40 @@ el cual se compone de tres elementos esenciales:
   para cualquier $S \subseteq N$.
 \end{enumerate}
 
-Por lo tanto, podemos concebir la valoración de datos como el
+Por lo tanto, podemos entender la valoración de datos como el
 proceso de asignar un valor a cada dato del conjunto $N$,
 reflejando su contribución en el entrenamiento del modelo.
 Cada uno de estos valores estará determinado por $N,
-\mathcal{A}$ y $v$, pero por simplicidad, lo expresaremos
+\mathcal{A}$ y $v$, pero por simplicidad lo expresaremos
 como $\phi(i ; v)$. A estas puntuaciones se les denomina
-\textit{data values}.
+\textit{data values}. \index{Data values}
 
 Los distintos enfoques que seguiremos para calcular estos
-\textit{data values} son los siguientes:
+\textit{data values} se desarrollan a continuación.
 
 \subsection*{LOO Error}
 
 El método más sencillo para valorar datos consiste en medir la
 contribución de un punto individual al desempeño global del
-conjunto de entrenamiento:
+conjunto de entrenamiento: \index{$\phi_{loo}$}
 \[
   \phi_{{loo}} (i ; v) = v (N) - v (N \setminus \{i\}).
 \]
-Este método es conocido como \textit{leave-one-out}(LOO).
+Este método es conocido como \textit{leave-one-out} (LOO). \index{LOO}
 Para calcular el valor exacto de los valores LOO para
 un conjunto de entrenamiento de tamaño $N$, sería
-necesario reentrenar el modelo $N$ veces. Este procedimiento
-resulta poco práctica cuando el tamaño del conjunto de datos
+necesario reentrenar el modelo $n$ veces. Este procedimiento
+resulta poco práctico cuando el tamaño del conjunto de datos
 es considerablemente grande \cite{looFuck}.
 
 \subsection*{Data Shapley}
-En la sección \ref{sec:valorShapley}, se presentó
-el valor de Shapley. En \cite{shapleyValue}, se propone
-desarrollar un método para lograr una valoración equitativa.
-Resulta que las condiciones de métodos equitativos coinciden
-con los axiomas del valor de Shapley, es así que surge
-el concepto de \emph{data Shapley}.
-La fórmula de data Shapley es la misma que la vista
-en la ecuación \ref{shapleyFormula}
+En la sección \ref{sec:valorShapley} se presentó
+el valor de Shapley, y en \cite{shapleyValue}, se propone
+el desarrollo de un método para lograr una valoración equitativa:
+\textit{Data Shapley} \index{Data Shapley}. El nombre se debe al
+hecho de que las condiciones de la valoración equitativa coinciden
+con los axiomas del valor de Shapley. La fórmula de \textit{Data Shapley} es
+la misma que la vista en la ecuación \ref{shapleyFormula}
 
 % La siguiente proposición es la que da nombre a ...
 
@@ -437,10 +440,11 @@ un caso particular de semivalor, con la siguiente función de peso:
   \end{split}
 \end{equation*}
  
-Dónde $\text{Beta}(\alpha,\beta) = \frac{\Gamma(\alpha)\Gamma(\beta)}
+Donde $\text{Beta}(\alpha,\beta) = \frac{\Gamma(\alpha)\Gamma(\beta)}
 {\Gamma(\alpha+\beta)}$ es la función Beta, y $\Gamma(\circ)$ es
 la función Gamma. Utilizando algunas de las propiedades vistas
-en \ref{ap:apendice1} podemos simplificar la expresión anterior a:
+en el apéndice \ref{ap:apendice1} podemos simplificar la expresión
+anterior a: \index{Beta} \index{$\Gamma$} \index{$w_{\alpha, \beta}$}
 \begin{equation*}
   \begin{split}
   \label{eq:pesoBeta}
@@ -452,12 +456,13 @@ en \ref{ap:apendice1} podemos simplificar la expresión anterior a:
 
 Con esto, el nuevo semivalor propuesto, al que llamaremos
 Beta($\alpha, \beta$)-Shapley, queda definido como:
+\index{$\phi_{Beta}$}
 
 \begin{equation*}
   \label{eq:betaShapley}
   \phi_{Beta}(i;v) := \frac{1}{n} \sum_{j=1}^{n} 
   w_{\alpha, \beta}(j) \sum_{\substack{S \subseteq N \setminus \{i\}
-  \\ ||S||=j-1}}
+  \\ |S|=j-1}}
   (v(S \cup \{i\})-v(S)).
 \end{equation*}
 
@@ -477,17 +482,17 @@ aumenta.
 
 \subsection*{Data Banzhaf}
 Se denomina \textit{Data Banzhaf} a la aplicación del valor de
-Banzhaf\ref{ec:banzhafFormula} en eñ contexto de valoración
-de datos. Este semivalor presenta una serie de ventajas
-que lo hacen especialmente interesante. Dichas
+Banzhaf, visto en la sección \ref{ec:banzhafFormula} en el
+contexto de valoración de datos. Este semivalor presenta una
+serie de ventajas que lo hacen especialmente interesante. Dichas
 propiedades serán estudiadas en detalle en secciones
-subsiguientes.
+siguientes. \index{Data Banzhaf}
 
 \newpage
 \section{Midiendo la robustez}
 
 En diversas situaciones, como la selección de datos, el orden
-de los \textit{data values} es lo que aporta valor\cite{betaShapley}.
+de los \textit{data values} es lo que aporta valor \cite{betaShapley}.
 Un ejemplo podría ser el filtrado de datos de baja calidad.
 El escenario ideal, sería aquel en el que incluso
 estando perturbada la función de utilidad, se preserva
@@ -519,7 +524,7 @@ la diferencia escalada como:
     \Delta_{i,j}^k(v).
   \end{align*}
   Donde $\Delta_{i,j}^k(v):=\binom{n-2}{k-1}^{-1} \sum_{\substack{
-    S \subseteq N \setminus \{i,j\} \\ ||S||=k-1}}
+    S \subseteq N \setminus \{i,j\} \\ |S|=k-1}}
     (v(S \cup \{i\})-v(S \cup \{j\}))$,
   representa la \emph{distinguibilidad promedio entre $i$ y $j$} en
   subconjuntos de tamaño $k$ usando una función de utilidad
@@ -697,7 +702,7 @@ factor de $n$ en la complejidad, ya que es necesario
 generar un mismo número de muestras para cada dato.
 
 En este contexto surge el concepto de
-estimador de máxima reutilización (MSR)\cite{dataBanzhaf}.
+estimador de máxima reutilización (MSR) \cite{dataBanzhaf}.
 La idea es explotar la linealidad de la esperanza, de forma que
 partiendo de \ref{ec:simpleMontecarloEstimator} llegamos a:
 
