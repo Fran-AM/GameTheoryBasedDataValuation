@@ -14,24 +14,41 @@
 \indexentry{Eficiencia|hyperpage}{10}
 \indexentry{Linealidad|hyperpage}{10}
 \indexentry{Jugador!nulo|hyperpage}{11}
-\indexentry{$\phi_{Shapley}$|hyperpage}{11}
+\indexentry{$\phi$!$\phi_{Shapley}$|hyperpage}{11}
 \indexentry{$n$|hyperpage}{11}
 \indexentry{$s$|hyperpage}{11}
 \indexentry{Semivalor|hyperpage}{12}
 \indexentry{$\phi$|hyperpage}{12}
 \indexentry{Función peso|hyperpage}{12}
 \indexentry{$w$|hyperpage}{12}
-\indexentry{$w_{Shapley}$|hyperpage}{12}
+\indexentry{$w$!$w_{Shapley}$|hyperpage}{12}
 \indexentry{Valor de Banzhaf|hyperpage}{12}
-\indexentry{$w_{Banzhaf}$|hyperpage}{13}
+\indexentry{$w$!$w_{Banzhaf}$|hyperpage}{13}
 \indexentry{$\mathcal{A}$|hyperpage}{14}
 \indexentry{$f$|hyperpage}{14}
+\indexentry{Función de utilidad|hyperpage}{14}
 \indexentry{Data values|hyperpage}{15}
-\indexentry{$\phi_{loo}$|hyperpage}{15}
+\indexentry{$\phi$!$\phi_{loo}$|hyperpage}{15}
 \indexentry{LOO|hyperpage}{15}
 \indexentry{Data Shapley|hyperpage}{15}
 \indexentry{Beta|hyperpage}{15}
 \indexentry{$\Gamma$|hyperpage}{15}
-\indexentry{$w_{\alpha, \beta}$|hyperpage}{15}
-\indexentry{$\phi_{Beta}$|hyperpage}{16}
+\indexentry{$w$!$w_{\alpha, \beta}$|hyperpage}{15}
+\indexentry{$\phi$!$\phi_{Beta}$|hyperpage}{16}
+\indexentry{$\phi$!$\phi_{Banzhaf}$|hyperpage}{16}
 \indexentry{Data Banzhaf|hyperpage}{16}
+\indexentry{Diferencia escalada|hyperpage}{17}
+\indexentry{$D_{i,j}$|hyperpage}{17}
+\indexentry{$\Delta_{i,j}^k$|hyperpage}{17}
+\indexentry{$\hat{v}$|hyperpage}{17}
+\indexentry{Safety margin|hyperpage}{18}
+\indexentry{$\text{Safe}_{i,j}$|hyperpage}{18}
+\indexentry{$\text{Safe}$|hyperpage}{18}
+\indexentry{$\hat{\phi}$|hyperpage}{19}
+\indexentry{$(\epsilon,\delta)$-aproximación|hyperpage}{19}
+\indexentry{$\mathbb{E}$|hyperpage}{19}
+\indexentry{$\hat{\phi}_{MC}$|hyperpage}{19}
+\indexentry{MRS|hyperpage}{19}
+\indexentry{$\mathcal{S}$|hyperpage}{19}
+\indexentry{$\hat{\phi}_{MSR}$|hyperpage}{20}
+\indexentry{Estimador de máxima reutilización|hyperpage}{20}

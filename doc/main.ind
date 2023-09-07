@@ -1,23 +1,35 @@
 \begin{theindex}
 {\large\sffamily\bfseries S\'imbolos}\nopagebreak
 
+  \item $(\epsilon,\delta)$-aproximación \dotfill \hyperpage{19}
   \item $2^N$ \dotfill \hyperpage{10}
+  \item $D_{i,j}$ \dotfill \hyperpage{17}
   \item $N$ \dotfill \hyperpage{10}
   \item $S$ \dotfill \hyperpage{10}
+  \item $\Delta_{i,j}^k$ \dotfill \hyperpage{17}
   \item $\Gamma$ \dotfill \hyperpage{15}
+  \item $\hat{\phi}$ \dotfill \hyperpage{19}
+  \item $\hat{\phi}_{MC}$ \dotfill \hyperpage{19}
+  \item $\hat{\phi}_{MSR}$ \dotfill \hyperpage{20}
+  \item $\hat{v}$ \dotfill \hyperpage{17}
+  \item $\mathbb{E}$ \dotfill \hyperpage{19}
   \item $\mathcal{A}$ \dotfill \hyperpage{14}
+  \item $\mathcal{S}$ \dotfill \hyperpage{19}
   \item $\phi$ \dotfill \hyperpage{12}
-  \item $\phi_{Beta}$ \dotfill \hyperpage{16}
-  \item $\phi_{Shapley}$ \dotfill \hyperpage{11}
-  \item $\phi_{loo}$ \dotfill \hyperpage{15}
+    \subitem $\phi_{Banzhaf}$ \dotfill \hyperpage{16}
+    \subitem $\phi_{Beta}$ \dotfill \hyperpage{16}
+    \subitem $\phi_{Shapley}$ \dotfill \hyperpage{11}
+    \subitem $\phi_{loo}$ \dotfill \hyperpage{15}
+  \item $\text{Safe}$ \dotfill \hyperpage{18}
+  \item $\text{Safe}_{i,j}$ \dotfill \hyperpage{18}
   \item $f$ \dotfill \hyperpage{14}
   \item $n$ \dotfill \hyperpage{11}
   \item $s$ \dotfill \hyperpage{11}
   \item $v$ \dotfill \hyperpage{10}
   \item $w$ \dotfill \hyperpage{12}
-  \item $w_{Banzhaf}$ \dotfill \hyperpage{13}
-  \item $w_{Shapley}$ \dotfill \hyperpage{12}
-  \item $w_{\alpha, \beta}$ \dotfill \hyperpage{15}
+    \subitem $w_{Banzhaf}$ \dotfill \hyperpage{13}
+    \subitem $w_{Shapley}$ \dotfill \hyperpage{12}
+    \subitem $w_{\alpha, \beta}$ \dotfill \hyperpage{15}
 
   \indexspace
 {\large\sffamily\bfseries B}\nopagebreak
@@ -35,16 +47,19 @@
   \item Data Banzhaf \dotfill \hyperpage{16}
   \item Data Shapley \dotfill \hyperpage{15}
   \item Data values \dotfill \hyperpage{15}
+  \item Diferencia escalada \dotfill \hyperpage{17}
 
   \indexspace
 {\large\sffamily\bfseries E}\nopagebreak
 
   \item Eficiencia \dotfill \hyperpage{10}
+  \item Estimador de máxima reutilización \dotfill \hyperpage{20}
   \item Estrategia \dotfill \hyperpage{9}
 
   \indexspace
 {\large\sffamily\bfseries F}\nopagebreak
 
+  \item Función de utilidad \dotfill \hyperpage{14}
   \item Función peso \dotfill \hyperpage{12}
 
   \indexspace
@@ -67,8 +82,14 @@
   \item LOO \dotfill \hyperpage{15}
 
   \indexspace
+{\large\sffamily\bfseries M}\nopagebreak
+
+  \item MRS \dotfill \hyperpage{19}
+
+  \indexspace
 {\large\sffamily\bfseries S}\nopagebreak
 
+  \item Safety margin \dotfill \hyperpage{18}
   \item Semivalor \dotfill \hyperpage{12}
   \item Simetría \dotfill \hyperpage{10}
 

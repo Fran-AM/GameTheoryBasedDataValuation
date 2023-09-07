@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.7.4)  6 SEP 2023 17:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.7.4)  6 SEP 2023 20:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1427,32 +1427,32 @@ LaTeX Info: Redefining \. on input line 461.
 LaTeX Info: Redefining \% on input line 461.
 Package cleveref Info: loaded `spanish' language definitions on input line 461.
  [15]
-LaTeX Info: Redefining \. on input line 491.
-LaTeX Info: Redefining \% on input line 491.
-Package cleveref Info: loaded `spanish' language definitions on input line 491.
+LaTeX Info: Redefining \. on input line 492.
+LaTeX Info: Redefining \% on input line 492.
+Package cleveref Info: loaded `spanish' language definitions on input line 492.
  [16]
-LaTeX Info: Redefining \. on input line 569.
-LaTeX Info: Redefining \% on input line 569.
-Package cleveref Info: loaded `spanish' language definitions on input line 569.
+LaTeX Info: Redefining \. on input line 572.
+LaTeX Info: Redefining \% on input line 572.
+Package cleveref Info: loaded `spanish' language definitions on input line 572.
  [17]
-LaTeX Info: Redefining \. on input line 648.
-LaTeX Info: Redefining \% on input line 648.
-Package cleveref Info: loaded `spanish' language definitions on input line 648.
+LaTeX Info: Redefining \. on input line 655.
+LaTeX Info: Redefining \% on input line 655.
+Package cleveref Info: loaded `spanish' language definitions on input line 655.
  [18]
-Overfull \hbox (1.5876pt too wide) in paragraph at lines 704--708
+Overfull \hbox (1.5876pt too wide) in paragraph at lines 715--719
 []\T1/ppl/m/n/12 En es-te con-tex-to sur-ge el con-cep-to de es-ti-ma-dor de má-xi-ma re-uti-li-za-ción (MSR)
  []
 
-LaTeX Info: Redefining \. on input line 730.
-LaTeX Info: Redefining \% on input line 730.
-Package cleveref Info: loaded `spanish' language definitions on input line 730.
+LaTeX Info: Redefining \. on input line 738.
+LaTeX Info: Redefining \% on input line 738.
+Package cleveref Info: loaded `spanish' language definitions on input line 738.
 [19]
-Overfull \hbox (15.18724pt too wide) in paragraph at lines 747--753
+Overfull \hbox (15.18724pt too wide) in paragraph at lines 761--767
 []\T1/ppl/b/n/12 Teorema 2.3.8. []$[]$ \T1/ppl/m/it/12 es una $\OT1/zplm/m/n/12 (\OML/zplm/m/it/12 ^^O\OT1/ppl/m/n/12 , \OML/zplm/m/it/12 ^^N\OT1/zplm/m/n/12 )$\T1/ppl/m/it/12 -aproximación de $\OML/zplm/m/it/12 ^^^[]$ \T1/ppl/m/it/12 en nor-ma $\OML/zplm/m/it/12 l[]$ \T1/ppl/m/it/12 con $\OMS/zplm/m/n/12 O\OT1/zplm/m/n/12 ([] []([]))$
  []
 
 
-Overfull \hbox (19.6141pt too wide) in paragraph at lines 769--773
+Overfull \hbox (19.6141pt too wide) in paragraph at lines 785--789
 []\T1/ppl/b/n/12 Teorema 2.3.9. []\T1/ppl/m/it/12 To-do es-ti-ma-dor alea-to-rio del va-lor de Banz-haf que sea una $\OT1/zplm/m/n/12 (\OML/zplm/m/it/12 ^^O\OT1/ppl/m/n/12 , \OML/zplm/m/it/12 ^^N\OT1/zplm/m/n/12 )$\T1/ppl/m/it/12 -aproximación
  []
 
@@ -1518,19 +1518,23 @@ runsystem(makeindex -s index/style.ist main.idx)...executed safely (allowed).
 LaTeX Font Info:    Trying to load font information for T1+cmss on input line 2.
  (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-))
+)
 1: section
 [28
 
 
 
-]
+])
+LaTeX Info: Redefining \. on input line 195.
+LaTeX Info: Redefining \% on input line 195.
+Package cleveref Info: loaded `spanish' language definitions on input line 195.
+ [29]
 \openout2 = `src/apendice1.aux'.
 
  (/home/franaguilar/Escritorio/TFM/doc/src/apendice1.tex
 Ap\'{e}ndice A.
 1: section
-[29
+[30
 
 
 
@@ -1542,7 +1546,7 @@ Overfull \hbox (48.88777pt too wide) detected at line 89
 LaTeX Info: Redefining \. on input line 120.
 LaTeX Info: Redefining \% on input line 120.
 Package cleveref Info: loaded `spanish' language definitions on input line 120.
-[30]
+[31]
 Overfull \hbox (70.82465pt too wide) detected at line 132
 \OML/zplm/m/it/12 ^^L\OT1/zplm/m/n/12 (\OML/zplm/m/it/12 p\OT1/ppl/m/n/12 , \OML/zplm/m/it/12 q\OT1/zplm/m/n/12 ) = [] [][] \OML/zplm/m/it/12 x[]e[] [] dx \OT1/zplm/m/n/12 = [] [][] \OML/zplm/m/it/12 x[]e[][] dx
  []
@@ -1556,14 +1560,14 @@ Overfull \hbox (23.60374pt too wide) detected at line 139
 LaTeX Info: Redefining \. on input line 197.
 LaTeX Info: Redefining \% on input line 197.
 Package cleveref Info: loaded `spanish' language definitions on input line 197.
- [31]
+ [32]
 \openout2 = `src/apendice2.aux'.
 
  (/home/franaguilar/Escritorio/TFM/doc/src/apendice2.tex
 Ap\'{e}ndice A.
 )
 1: section
-[32
+[33
 
 
 
@@ -1584,18 +1588,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43700 strings out of 481239
- 893875 string characters out of 5920378
- 1540191 words of memory out of 5000000
+ 43701 strings out of 481239
+ 893882 string characters out of 5920378
+ 1537293 words of memory out of 5000000
  58064 multiletter control sequences out of 15000+600000
  599971 words of font info for 159 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  65i,20n,87p,2173b,2603s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on /home/franaguilar/Escritorio/TFM/doc/main.pdf (32 pages, 655683 bytes).
+Output written on /home/franaguilar/Escritorio/TFM/doc/main.pdf (33 pages, 657468 bytes).
 PDF statistics:
- 534 PDF objects out of 1000 (max. 8388607)
- 479 compressed objects within 5 object streams
- 134 named destinations out of 1000 (max. 500000)
+ 553 PDF objects out of 1000 (max. 8388607)
+ 497 compressed objects within 5 object streams
+ 135 named destinations out of 1000 (max. 500000)
  199 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -41,8 +41,8 @@ jugadores. Estas situaciones se conocen como \emph{juegos}. \index{Juego}
   \end{itemize}
 \end{definition}
 
-A lo largo de este trabajo nos centraremos en el estudio de juegos
-cooperativos.
+Un tipo particular de juego, que cobra especial importancia
+en este trabajo son los juegos cooperativos.
 
 \begin{definition}
   Un \emph{juego cooperativo} \index{Juego!cooperativo} es aquel en
@@ -137,7 +137,7 @@ que se trata del único método de valoración de datos que satisface
 estos axiomas.
 
 \begin{theorem}
-  Existe una única función $\phi_{Shapley}$ \index{$\phi_{Shapley}$}
+  Existe una única función $\phi_{Shapley}$ \index{$\phi$!$\phi_{Shapley}$}
   satisfaciendo los axiomas de simetría, eficiencia, linealidad y
   jugador nulo, y viene dada por la fórmula:
   \begin{align*}
@@ -241,7 +241,7 @@ en términos de su función de peso.
 Finalmente, es importante destacar que el valor de Shapley
 es un caso particular de semivalor. En este caso la función
 de peso será $w_{Shapley} = \binom{n-1}{k-1}^{-1}$.
-\index{$w_{Shapley}$}
+\index{$w$!$w_{Shapley}$}
 
 
 \subsection{El valor de Banzhaf}
@@ -295,7 +295,7 @@ marginales promediadas, el índice de Banzhaf se enfoca en la
 capacidad de un jugador de influir en el resultado final de
 una votación. Específicamente, es un semivalor
 con un peso asociado dado por $w_{Banzhaf} = \frac{1}{2^{n-1}}$.
-\index{$w_{Banzhaf}$}
+\index{$w$!$w_{Banzhaf}$}
 
 \newpage
 \section{Valoración de datos}
@@ -361,7 +361,7 @@ el cual se compone de tres elementos esenciales:
   \item El \emph{algoritmo de aprendizaje}  $\mathcal{A}$,
   será tratado como una caja negra que toma un conjunto de
   entrenamiento $N$ y genera un predictor $f$.
-  \index{$\mathcal{A}$} \index{$f$}
+  \index{$\mathcal{A}$} \index{$f$} 
   
   \item La \emph{función de utilidad} $v$ es una aplicación
   que asigna a cada subconjunto de $N$ un valor, reflejando
@@ -370,7 +370,7 @@ el cual se compone de tres elementos esenciales:
   entrenado con el subconjunto dado, es decir
   $v(S) = acc (\mathcal{A} (S))$. Sin pérdida de generalidad
   asumiremos a lo largo del documento que $v (S) \in [0, 1]$
-  para cualquier $S \subseteq N$.
+  para cualquier $S \subseteq N$. \index{Función de utilidad}
 \end{enumerate}
 
 Por lo tanto, podemos entender la valoración de datos como el
@@ -388,7 +388,7 @@ Los distintos enfoques que seguiremos para calcular estos
 
 El método más sencillo para valorar datos consiste en medir la
 contribución de un punto individual al desempeño global del
-conjunto de entrenamiento: \index{$\phi_{loo}$}
+conjunto de entrenamiento: \index{$\phi$!$\phi_{loo}$}
 \[
   \phi_{{loo}} (i ; v) = v (N) - v (N \setminus \{i\}).
 \]
@@ -444,7 +444,7 @@ Donde $\text{Beta}(\alpha,\beta) = \frac{\Gamma(\alpha)\Gamma(\beta)}
 {\Gamma(\alpha+\beta)}$ es la función Beta, y $\Gamma(\circ)$ es
 la función Gamma. Utilizando algunas de las propiedades vistas
 en el apéndice \ref{ap:apendice1} podemos simplificar la expresión
-anterior a: \index{Beta} \index{$\Gamma$} \index{$w_{\alpha, \beta}$}
+anterior a: \index{Beta} \index{$\Gamma$} \index{$w$!$w_{\alpha, \beta}$}
 \begin{equation*}
   \begin{split}
   \label{eq:pesoBeta}
@@ -456,7 +456,7 @@ anterior a: \index{Beta} \index{$\Gamma$} \index{$w_{\alpha, \beta}$}
 
 Con esto, el nuevo semivalor propuesto, al que llamaremos
 Beta($\alpha, \beta$)-Shapley, queda definido como:
-\index{$\phi_{Beta}$}
+\index{$\phi$!$\phi_{Beta}$}
 
 \begin{equation*}
   \label{eq:betaShapley}
@@ -481,8 +481,9 @@ la gran cardinalidad y se acerca a LOO a medida que $\beta$
 aumenta.
 
 \subsection*{Data Banzhaf}
-Se denomina \textit{Data Banzhaf} a la aplicación del valor de
-Banzhaf, visto en la sección \ref{ec:banzhafFormula} en el
+Se denomina \textit{Data Banzhaf} ($\phi_{Banzhaf}$)
+\index{$\phi$!$\phi_{Banzhaf}$} a la aplicación del valor de
+Banzhaf (Ecuación \ref{ec:banzhafFormula}) en el
 contexto de valoración de datos. Este semivalor presenta una
 serie de ventajas que lo hacen especialmente interesante. Dichas
 propiedades serán estudiadas en detalle en secciones
@@ -494,7 +495,7 @@ siguientes. \index{Data Banzhaf}
 En diversas situaciones, como la selección de datos, el orden
 de los \textit{data values} es lo que aporta valor \cite{betaShapley}.
 Un ejemplo podría ser el filtrado de datos de baja calidad.
-El escenario ideal, sería aquel en el que incluso
+El escenario ideal sería aquel en el que, incluso
 estando perturbada la función de utilidad, se preserva
 el mismo orden de \textit{data values}.
 
@@ -515,9 +516,9 @@ la diferencia escalada como:
 
 
 \begin{definition}
-  Sean $i,j \in N$. La diferencia
+  Dados $i,j \in N$, la diferencia escalada \index{Diferencia escalada}
   entre los \textit{data values} $\phi(i;v)$ y $\phi(j;v)$
-  se define como:
+  se define como: \index{$D_{i,j}$}
   \begin{align*}
     D_{i,j}(v,w)&:= n(\phi(i;v)-\phi(j;v))\\
     &=\sum_{k=1}^{n-1} (w(k)+w(k+1)) \binom{n-2}{k-1}
@@ -525,23 +526,25 @@ la diferencia escalada como:
   \end{align*}
   Donde $\Delta_{i,j}^k(v):=\binom{n-2}{k-1}^{-1} \sum_{\substack{
     S \subseteq N \setminus \{i,j\} \\ |S|=k-1}}
-    (v(S \cup \{i\})-v(S \cup \{j\}))$,
-  representa la \emph{distinguibilidad promedio entre $i$ y $j$} en
+    (v(S \cup \{i\})-v(S \cup \{j\}))$ \index{$\Delta_{i,j}^k$}
+  se denomina \emph{distinguibilidad promedio entre $i$ y $j$} en
   subconjuntos de tamaño $k$ usando una función de utilidad
   sin ruido $v$.
 \end{definition}
 
-Sea ahora $\hat{v}$ un estimador de $v$. Sabemos que
-$\hat{v}$ y $v$ generarán diferentes \textit{data values}
-para un par de puntos $i$ y $j$ si, y solo si,
-$D_{i,j}(v,w)D_{i,j}(\hat{v},w) \leq 0$. Se podría pensar
+Sea ahora $\hat{v}$ un estimador de $v$. Es fácil ver que
+\index{$\hat{v}$} $\hat{v}$ y $v$ generarán diferentes
+\textit{data values} para un par de puntos $i$ y $j$ sii
+$D_{i,j}(v,w)D_{i,j}(\hat{v},w) \leq 0$.
+
+Se podría pensar
 inicialmente en definir la robustez de un semivalor como
 la menor cantidad de ruido $||\hat{v}-v||$ que alteraría
 el orden de los \textit{data values}. Sin embargo, una
 definición así dependería de la función de utilidad original $v$.
 Si la función original $v$ no es capaz de diferenciar
-dos puntos $i$ y $j$ ($\Delta_{i,j}^{(k)}(v)\simeq 0$, para
-todo $k=1,\dots,n-1$), entonces $D_{i,j}(v,w)$ será
+dos puntos $i$ y $j$ ($\Delta_{i,j}^{k}(v)\simeq 0\ \forall
+k=1,\dots,n-1$), entonces $D_{i,j}(v,w)$ será
 casi 0, y cualquier mínima perturbación podría 
 modificar el orden entre $\phi(i;v)$ y $\phi(j;v)$. 
 
@@ -552,28 +555,31 @@ entre $i$ y $j$.
 
 \begin{definition}
   Diremos que un par de puntos $(i,j)$ son $\tau$-distinguibles por
-  la función de utilidad $v$ si, y solo si, $\Delta_{i,j}^{(k)}(v) \geq \tau$
+  la función de utilidad $v$ si, y solo si, $\Delta_{i,j}^{k}(v) \geq \tau$
   para todo $k \in \{1,\dots,n-1\}$.
 \end{definition}
 
-Sea ahora $\mathcal{V}_{i,j}^{(k)}$ el conjunto de todas las funciones
-de utilidad $v$ que son capaces de $\tau$-distinguir $(i,j)$. 
+Sea ahora $\mathcal{V}_{i,j}^{k}$ el conjunto de todas las funciones
+de utilidad $v$ que son capaces de $\tau$-distinguir $i$ y $j$. 
 Usando la definción anterior, podemos caracterizar la robustez de
 un semivalor mediante su \textit{safety margin}, que representa la
 menor cantidad de ruido $||\hat{v} - v||$ que, al añadirse,
 invertiría el orden de los \textit{data values} de al menos un
 par de puntos $(i,j)$, para al menos una función de utilidad $v \in
-\mathcal{V}_{i,j}^{(k)}$.
+\mathcal{V}_{i,j}^{k}$.
 
 \begin{definition}
-  Dado $\tau > 0$, definimos el \emph{safety margin} de un
-  semivalor para un par de puntos $i,j \in N$ como:
+  Dado $\tau > 0$, definimos el \emph{safety margin} \index{Safety margin}
+  de un semivalor para un par de puntos $i,j \in N$ como:
+  \index{$\text{Safe}_{i,j}$}
   \begin{equation*}
-    \text{Safe}_{i,j}^{(k)}(\tau;w):=\min_{v \in \mathcal{V}_{i,j}^{(\tau)}}
-    \min_{\hat{v} \in \{\hat{v}:D_{i,j}(v;w)D_{i,j}(\hat{v};w)\leq 0\}}
+    \text{Safe}_{i,j}(\tau;w):=\min_{v \in \mathcal{V}_{i,j}^{(\tau)}}
+    \min_{\hat{v} \in V}
     ||\hat{v} - v||.
   \end{equation*}
-  El \emph{safety margin} de un semivalor es:
+  Donde $V = \{\hat{v}:D_{i,j}(v;w)D_{i,j}(\hat{v};w)\leq 0\}$.
+
+  El \emph{safety margin} de un semivalor es: \index{$\text{Safe}$}
   \begin{equation*}
     \text{Safe}(\tau;w):=\min_{i,j \in N, i \neq j} \text{Safe}_{i,j}(\tau;w).
   \end{equation*}
@@ -592,18 +598,19 @@ de \cite{dataBanzhaf}.
 
 \begin{theorem}
   Para cualquier $\tau > 0$, el valor de Banzhaf
-  alcanza el mayor \textit{safety margin},
+  alcanza el mayor \textit{safety margin}
   \[
   \text{Safe}(\tau;w_{Banzhaf})=\frac{\tau}{2^{\frac{n}{2}-1}}.  
   \]
-  De entre todos los semivalores.
+  de entre todos los semivalores.
 \end{theorem}
 
-\begin{proof}
-  Consultar apéndice C de \cite{dataBanzhaf}.
-\end{proof}
+La demostración se puede consultar en el apéndice
+C de \cite{dataBanzhaf}.
 
-Intuitivamente, este resultado se debe a cómo los
+\
+
+Intuitivamente, este resultado es consecuencia de cómo los
 semivalores asignan diferentes pesos en función del
 tamaño de los subconjuntos evaluados. Así, es posible
 construir una perturbación de la función de utilidad
@@ -623,15 +630,15 @@ para todos los posibles pares de funciones de utilidad
 $v$ y $\hat{v}$.
 
 \begin{theorem}
-  El valor de Banzhaf, con $w(k) = \frac{n}{2^{n-1}}$, logra
-  la menor constante de Lipschitz,
+  El valor de Banzhaf, con $w_{Banzhaf}(k) = \frac{n}{2^{n-1}}$,
+  logra la menor constante de Lipschitz,
   $L = \frac{1}{2^{\frac{n}{2}-1}}$ de entre todos los semivalores.
 \end{theorem}
 
-\begin{proof}
-  Consultar apéndice C.4 de \cite{dataBanzhaf}.
-\end{proof}
+La demostración se puede consultar en el apéndice
+C.4 de \cite{dataBanzhaf}.
 
+\
 
 \subsection{Estimación eficiente}
 
@@ -645,17 +652,18 @@ asociado a un estimador, el cual nos será de utilidad
 a la hora de comparar distintos estimadores.
 
 \begin{definition}
-  Un estimador de un semivalor $\hat{\phi}$ es
+  Un estimador de un semivalor $\hat{\phi}$ es \index{$\hat{\phi}$}
   una $(\epsilon,\delta)$-aproximación del semivalor $\phi$ 
   en norma $l_p$ si, y solo si,
+  \index{$(\epsilon,\delta)$-aproximación}
   \[
-  P_{\hat{\phi}}[||\hat{\phi}-\phi)||_p\leq \epsilon] \geq 1-\delta.
+  P_{\hat{\phi}}[||\hat{\phi}-\phi||_p\leq \epsilon] \geq 1-\delta.
   \]
   Donde la aleatoriedad se da en la construcción del estimador.
 \end{definition}
 
 \subsubsection*{Estimador Simple de Montecarlo}
-El valor de Banzhaf \ref{ec:banzhafFormula}
+El valor de Banzhaf (Ecuación \ref{ec:banzhafFormula})
 puede ser reformulado como:
 \begin{equation*}
   \label{simpleMontecarlo}
@@ -663,9 +671,11 @@ puede ser reformulado como:
   (2^{N\setminus \{i\}})} [v(S \cup \{i\})-v(S)].
 \end{equation*}
 
-A partir de esto, un método de Montecarlo directo
-para estimar $\phi_{Banzhaf}(i;v)$ consistiría en
-generar muestras uniformes de $\mathcal{S}_i
+Donde $\mathbb{E}$ \index{$\mathbb{E}$} denota la esperanza.
+
+Apartir de esto, un método de Montecarlo directo para estimar
+$\phi_{Banzhaf}(i;v)$ consistiría
+en generar muestras uniformes de $\mathcal{S}_i
 \subset 2^{N \setminus \{i\}}$ y calcular:
 \begin{equation}
   \label{ec:simpleMontecarloEstimator}
@@ -673,9 +683,9 @@ generar muestras uniformes de $\mathcal{S}_i
   \mathcal{S}_i} [v(S_j \cup \{i\})-v(S_j)].
 \end{equation}
 
-Al repetir este proceso para cada punto $i \in N$, obtendremos
+Al repetir este proceso para cada $i \in N$, obtendremos
 el estimador $\hat{\phi}_{MC} = [\hat{\phi}_{MC}(1),\dots,
-\hat{\phi}_{MC}(n)]$.
+\hat{\phi}_{MC}(n)]$. \index{$\hat{\phi}_{MC}$}
 
 
 \begin{theorem}
@@ -688,36 +698,38 @@ el estimador $\hat{\phi}_{MC} = [\hat{\phi}_{MC}(1),\dots,
   $l_{\infty}$.
 \end{theorem}
 
-\begin{proof}
-  Consultar apéndice C.1.2 de \cite{dataBanzhaf}.
-\end{proof}
+La demostración se puede consultar en el apéndice
+C.1.2 de \cite{dataBanzhaf}.
+
+\
 
 \subsubsection*{Estimador de máxima reutilización}
 
-El método anterior podría mejorarse en eficiencia,
+El método anterior resulta poco eficiente,
 dado que cada muestra $S \in \mathcal{S}_i$ generada
 solo contribuye a la estimación de
-$\hat{\phi}_{Banzhaf}(i;v)$. Esto introduce un
+$\hat{\phi}_{Banzhaf}(i;v)$ y esto introduce un
 factor de $n$ en la complejidad, ya que es necesario
 generar un mismo número de muestras para cada dato.
 
-En este contexto surge el concepto de
-estimador de máxima reutilización (MSR) \cite{dataBanzhaf}.
+En este contexto surge el concepto de estimador de máxima
+reutilización (MSR) \index{MRS} \cite{dataBanzhaf}.
 La idea es explotar la linealidad de la esperanza, de forma que
 partiendo de \ref{ec:simpleMontecarloEstimator} llegamos a:
 
 \begin{equation}
   \label{maximumSampleReuse}
-  \phi_{Banzhaf}(i;v) = \mathbb{E}_{S \sim \text{Unif}(2^{N\setminus i})}
+  \phi_{Banzhaf}(i;v) = \mathbb{E}_{S \sim \text{Unif}(2^{N\setminus \{i\}})}
   [v(S \cup \{i\})] - 
-  \mathbb{E}_{S \sim \text{Unif}(2^{N\setminus i})}
+  \mathbb{E}_{S \sim \text{Unif}(2^{N\setminus \{i\}})}
   [v(S)].
 \end{equation}
 
 Tomemos como ejemplo un conjunto de $m$ muestras
-$\mathcal{S} = \{S_1,\dots,S_m\}$, generado de manera
+$\mathcal{S} = \{S_1,\dots,S_m\}$ generado de manera
 uniforme. Para cada $i \in N$, podemos clasificar las
 muestras de $\mathcal{S}$ en dos categorías:
+\index{$\mathcal{S}$}
 
 \begin{itemize}
   \item $\mathcal{S}_{\ni i}$: el conjunto de muestras
@@ -742,24 +754,28 @@ podemos estimar $\phi_{Banzhaf}(i;v)$ de la siguiente manera:
 \end{equation*}
 
 Este estimador se conoce como \emph{estimador de máxima
-reutilización} (MSR).
+reutilización} (MSR). \index{$\hat{\phi}_{MSR}$}
+\index{Estimador de máxima reutilización}
+
 \begin{theorem}
   $\hat{\phi}_{MSR}$ es una $(\epsilon,\delta)$-aproximación
-  de $\phi_{Banzhaf}$ en norma $l_p$ con $\mathcal{O}
+  de $\phi_{Banzhaf}$ en norma $l_p$ con  $\mathcal{O}
   (\frac{n}{\epsilon^2} \log(\frac{n}{\delta}))$ evaluaciones
   de $v$, y $\mathcal{O}(\frac{1}{\epsilon^2}
   \log{\frac{n}{\delta}})$ evaluaciones de $v$ en la norma
   $l_{\infty}$.
 \end{theorem}
 
-\begin{proof}
-  Consultar apéndice C.1.2 de \cite{dataBanzhaf}.
-\end{proof}
+
+La demostración se puede consultar en el 
+apéndice C.1.2 de \cite{dataBanzhaf}.
+
+\
 
 Una de las grandes ventajas que presenta el valor
 de Banzhaf respecto a los demás semivalores es que
 se trata del único semivalor que permite la implementación
-del algoritmo MSR. Como puede verse en el apéndice
+del algoritmo MSR, como puede verse en el apéndice
 C.2 de \cite{dataBanzhaf}.
 
 El siguiente teorema nos da una estimación de la bondad del
@@ -772,9 +788,14 @@ MSR frente al resto de estimadores posibles.
   al menos $\Omega(\frac{1}{\epsilon})$.
 \end{theorem}
 
+La demostración detallada se puede consultar en el apéndice
+C.1.3 de \cite{dataBanzhaf}.
+
+\
+
 Como hemos visto anteriormente el algoritmo MSR presenta
 una complejidad de $\mathcal{O}(\frac{1}{\epsilon^2}
 \log(\frac{n}{\delta}))$ en la norma $l_{\infty}$.
-Lo que quiere decir que se aleja de la optimalidad
+Esto quiere decir que se aleja de la optimalidad
 en un factor de $\mathcal{O}(\frac{1}{\epsilon}
 \log(\frac{n}{\delta}))$.

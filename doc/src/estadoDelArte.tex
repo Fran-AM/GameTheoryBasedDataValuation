@@ -106,9 +106,9 @@ de las herramientas de valoración de datos existentes. Esta falta de
 robustez es causada en parte por factores difíciles de controlar como
 la aleatoriedad del método del descenso del gradiente
 estocástico, el cual es ampliamente usado hoy en día.
-Para solventar esta falta de robustez, este método se apoya en el
-concepto de \textit{Safety Margin}, y demuestra que el valor de
-Banzhaf es el semivalor con mayor \textit{Safety Margin}. 
+Para solventar esta falta de robustez, \textit{Data Banzhaf} se
+apoya en el concepto de \textit{Safety Margin}, y demuestra que el
+valor de Banzhaf es el semivalor con mayor \textit{Safety Margin}. 
 \textit{Data Banzhaf} supera a los existentes métodos de valoración
 basados en semivalores en varias tareas de aprendizaje automático.
 Como son detección de datos mal etiquetados y entrenamiento ponderado.
@@ -134,7 +134,9 @@ relevancia de los datos previamente comentados.
 
 \
 
-Como algo casi anecdótico, existe literatura en la que se lleva a
+Por tener una visión completa de las diferentes técnicas,
+se incluye una referencia que se utiliza una técnica
+muy distinta a las comentadas. Esta consiste en llevar a
 cabo valoración de datos mediante aprendizaje por refuerzo
 \cite{reinforcement}. En dicho trabajo, se utiliza una red
 neuronal profunda para obtener un estimador de la probabiliadad

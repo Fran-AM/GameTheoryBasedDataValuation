@@ -18,7 +18,7 @@
 \contentsline {section}{\numberline {3.3}Entrenamiento ponderado}{23}{section.64}%
 \contentsline {chapter}{Bibliografía.}{26}{chapter*.65}%
 \contentsline {chapter}{Índice alfabético}{28}{chapter*.65}%
-\contentsline {chapter}{\numberline {A}Funciones Gamma y Beta}{29}{appendix.67}%
-\contentsline {section}{\numberline {A.1}Función Gamma}{29}{section.68}%
-\contentsline {section}{\numberline {A.2}Función Beta}{30}{section.74}%
-\contentsline {chapter}{\numberline {A}Código Python}{32}{appendix.79}%
+\contentsline {chapter}{\numberline {A}Funciones Gamma y Beta}{30}{appendix.67}%
+\contentsline {section}{\numberline {A.1}Función Gamma}{30}{section.68}%
+\contentsline {section}{\numberline {A.2}Función Beta}{31}{section.74}%
+\contentsline {chapter}{\numberline {A}Código Python}{33}{appendix.79}%
