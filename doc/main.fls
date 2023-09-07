@@ -356,6 +356,8 @@ INPUT /home/franaguilar/Escritorio/TFM/doc/src/cubierta.aux
 INPUT /home/franaguilar/Escritorio/TFM/doc/src/cubierta.aux
 INPUT /home/franaguilar/Escritorio/TFM/doc/src/portada.aux
 INPUT /home/franaguilar/Escritorio/TFM/doc/src/portada.aux
+INPUT /home/franaguilar/Escritorio/TFM/doc/src/introduccion.aux
+INPUT /home/franaguilar/Escritorio/TFM/doc/src/introduccion.aux
 INPUT /home/franaguilar/Escritorio/TFM/doc/src/estadoDelArte.aux
 INPUT /home/franaguilar/Escritorio/TFM/doc/src/estadoDelArte.aux
 INPUT /home/franaguilar/Escritorio/TFM/doc/src/marcoTeorico.aux
@@ -495,6 +497,12 @@ INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplb8t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplb8t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm
+OUTPUT /home/franaguilar/Escritorio/TFM/doc/src/introduccion.aux
+INPUT /home/franaguilar/Escritorio/TFM/doc/src/introduccion.tex
+INPUT /home/franaguilar/Escritorio/TFM/doc/src/introduccion.tex
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplb8t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplb8t.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm
 OUTPUT /home/franaguilar/Escritorio/TFM/doc/src/estadoDelArte.aux
 INPUT /home/franaguilar/Escritorio/TFM/doc/src/estadoDelArte.tex
 INPUT /home/franaguilar/Escritorio/TFM/doc/src/estadoDelArte.tex
@@ -504,7 +512,6 @@ OUTPUT /home/franaguilar/Escritorio/TFM/doc/src/marcoTeorico.aux
 INPUT /home/franaguilar/Escritorio/TFM/doc/src/marcoTeorico.tex
 INPUT /home/franaguilar/Escritorio/TFM/doc/src/marcoTeorico.tex
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr8t.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplb8t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr8t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr8t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr7t.tfm
@@ -541,8 +548,6 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmb7t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmb7t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmb7t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr8t.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplb8t.vf
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplr8t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplr8t.vf
@@ -624,6 +629,8 @@ INPUT /home/franaguilar/Escritorio/TFM/doc/src/cubierta.aux
 INPUT /home/franaguilar/Escritorio/TFM/doc/src/cubierta.aux
 INPUT /home/franaguilar/Escritorio/TFM/doc/src/portada.aux
 INPUT /home/franaguilar/Escritorio/TFM/doc/src/portada.aux
+INPUT /home/franaguilar/Escritorio/TFM/doc/src/introduccion.aux
+INPUT /home/franaguilar/Escritorio/TFM/doc/src/introduccion.aux
 INPUT /home/franaguilar/Escritorio/TFM/doc/src/estadoDelArte.aux
 INPUT /home/franaguilar/Escritorio/TFM/doc/src/estadoDelArte.aux
 INPUT /home/franaguilar/Escritorio/TFM/doc/src/marcoTeorico.aux

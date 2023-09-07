@@ -1,3 +1,75 @@
 \chapter{Introducción}
 \justifying
-.
+
+Obtener datos de entrenamiento adecuados suele ser uno de los
+desafíos más grandes y costosos en aprendizaje automático (ML).
+\index{ML} En muchas aplicaciones prácticas, parte de los datos
+puede estar contaminada con ruido debido a valores atípicos o errores
+en el etiquetado. Entender qué tipos de datos son más
+beneficiosos para el entrenamiento puede guiar a una mejor
+adquisición y selección de estos. Debido a estos factores,
+la valoración de datos ha emergido como un área esencial de
+investigación en el campo del ML.
+
+\
+
+Dentro del contexto del ML, el valor de un dato particular
+está intrínsecamente relacionado con otros datos utilizados
+en el entrenamiento del modelo. Por ejemplo, el valor de una
+muestra específica puede disminuir si se incorporan al conjunto
+de entrenamiento otras similares a esta. Por ello,
+nos centraremos en un contexto de aprendizaje
+supervisado, donde se dispone con un conjunto de datos, un modelo,
+y una métrica de error prefijados. Es importante enfatizar que
+no estamos definiendo un valor universal para los datos, sino
+un valor que depende de los elementos previamente prefijados.
+
+\
+
+Asignar valor a los datos es una tarea
+compleja que implica consideraciones multifactoriales.
+En este contexto, la teoría de juegos emerge como una
+herramienta para abordar esta problemática.
+En el ámbito del aprendizaje automático, en lugar de jugadores,
+contamos con datos individuales. Si consideramos un problema de
+ML como un juego, el objetivo es maximizar
+una métrica de rendimiento, como la precisión del algoritmo.
+Aquí, el ``beneficio'' es el impacto positivo que un dato
+(o conjunto de datos) tiene en el rendimiento del algoritmo.
+
+Una de las piezas más destacadas en este entramado es el
+valor de Shapley, procedente de la teoría
+cooperativa de juegos. Este concepto permite asignar
+a cada jugador (o dato, en nuestro caso) una porción
+del valor total del juego, basándose
+en sus contribuciones a lo largo de todas las posibles
+coaliciones. Es en torno al valor de Shapley que se
+desarrollan todos los conceptos que estudiaremos a lo largo de este
+trabajo, como es \textit{data Banzhaf}, derivado del
+valor de Banzhaf, que ha probado ser el más robusto entre
+todos los valores discutidos en la literatura.
+
+\
+
+Sin embargo, aunque métricas como el valor de Shapley o Banzhaf
+son teóricamente atractivas, calcularlas en escenarios reales es
+prácticamente inviable debido a la explosión combinatoria de
+posibles coaliciones. Por esto, estimar los valores
+de los datos mediante técnicas  basadas en teoría de juegos
+es un gran desafío, ya que implica equilibrar la precisión y
+la eficiencia computacional. Los estimadores juegan un papel
+fundamental en este aspecto, proporcionando
+soluciones prácticas para aproximarse a los valores
+exactos sin incurrir en costes prohibitivos.
+
+
+\subsection*{¿Qué se aporta?}
+En este trabajo se han construido las bases para llevar
+a cabo una comparativa de calidad de los diferentes métodos
+de valoración de datos basados en teoría de juegos y sus
+estimadores. Mediante
+el desarrollo de una infraestructura de software
+escalable, reproducible y bien documentada, que permitirá
+continuar con el desarrollo de las pruebas y experimentos.
+
+

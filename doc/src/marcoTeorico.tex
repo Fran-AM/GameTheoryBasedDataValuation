@@ -434,17 +434,17 @@ un caso particular de semivalor, con la siguiente función de peso:
 \begin{equation*}
   \begin{split}
     w_{\alpha, \beta}(j) :&= n \int_{0}^{1} t^{j-1}(1-t)^{n-j}
-    \frac{t^{\beta-1}(1-t)^{\alpha-1}}{\text{Beta}(\alpha,\beta)}dt\\
-    &= n\frac{\text{Beta}(j+\beta-1, n-j+\alpha)}
-  {\text{Beta}(\alpha,\beta)}.
+    \frac{t^{\beta-1}(1-t)^{\alpha-1}}{Beta(\alpha,\beta)}dt\\
+    &= n\frac{Beta(j+\beta-1, n-j+\alpha)}
+  {Beta(\alpha,\beta)}.
   \end{split}
 \end{equation*}
  
-Donde $\text{Beta}(\alpha,\beta) = \frac{\Gamma(\alpha)\Gamma(\beta)}
+Donde $Beta(\alpha,\beta) = \frac{\Gamma(\alpha)\Gamma(\beta)}
 {\Gamma(\alpha+\beta)}$ es la función Beta, y $\Gamma(\circ)$ es
 la función Gamma. Utilizando algunas de las propiedades vistas
 en el apéndice \ref{ap:apendice1} podemos simplificar la expresión
-anterior a: \index{Beta} \index{$\Gamma$} \index{$w$!$w_{\alpha, \beta}$}
+anterior a: \index{$w$!$w_{\alpha, \beta}$}
 \begin{equation*}
   \begin{split}
   \label{eq:pesoBeta}
@@ -471,12 +471,12 @@ distribución de pesos para cada elemento de $N$.
 Por ejemplo, cuando $\alpha = \beta = 1$ tendremos,
 $w_{1,1}(j) = \binom{n-1}{j-1}^{-1}$ para todo $j \in N$,
 dando el peso uniforme en las contribuciones marginales,
-es decir, $\text{Beta}(1,1)$-Shapley es exactamente
+es decir, $Beta(1,1)$-Shapley es exactamente
 el valor de Shapley de los datos originales.
 Cuando $\alpha \geq \beta = 1$, el peso normalizado asigna
 grandes pesos a conjuntos de pequeña cardinalidad y elimina
 el ruido de los conjuntos de cardinalidad mayor.
-Por el contrario, $\text{Beta}(1,\beta)$ pone más pesos en
+Por el contrario, $Beta(1,\beta)$ pone más pesos en
 la gran cardinalidad y se acerca a LOO a medida que $\beta$
 aumenta.
 
