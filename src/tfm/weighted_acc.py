@@ -34,11 +34,10 @@ def run():
             'n_repeat': 1
         },
         'weighted_acc': {
-            #'datasets': ['click','phoneme', 'wind', 'cpu', '2dplanes'],
-            'datasets': ['phoneme'],
+            'datasets': ['click','phoneme', 'wind', 'cpu', '2dplanes'],
             'loss': 'log_loss',
             'data_points': 200,
-            'methods': ["LOO"],
+            'methods': ["LOO", "Banzhaf", "Shapley", "Beta-1-16", "Beta-1-4", "Beta-16-1", "Beta-4-1"],
             'n_repeat': 1
         }
     }
@@ -95,14 +94,14 @@ def run():
 
                 model.fit(x_train, y_train, sample_weight=norm_values)
                 y_weight = model.predict(x_test)
-                w_acc = f1_score(y_test, y_weight, average='micro')
+                w_acc = f1_score(y_test, y_weight)
                 method_results[repetition] = float(w_acc)
 
             dataset_results[method_name] = method_results
         # Train the non weighted model
         model.fit(x_train, y_train)
         y_unif = model.predict(x_test)
-        u_acc = f1_score(y_test, y_unif, average='micro')
+        u_acc = f1_score(y_test, y_unif)
         dataset_results["uniform"] = float(u_acc)
 
         all_results[dataset_name] = dataset_results

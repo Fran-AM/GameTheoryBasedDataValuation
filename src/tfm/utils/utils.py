@@ -194,7 +194,7 @@ def compute_values(
         ValuationResult: The values. (pyDVL)
     """
     if method_name == "LOO":
-        values = naive_loo(utility, progress=False)
+        values = naive_loo(utility)
     elif method_name == "Shapley":
         values = compute_shapley_values(
             u=utility,
@@ -263,32 +263,6 @@ def convert_values_to_dataframe(values: ValuationResult) -> pd.DataFrame:
     )
     df = df[sorted(df.columns)]
     return df
-
-# def f1_misslabel(data_values: pd.DataFrame) -> float:
-#     """
-#     Computes the F1 score for a prediction based on
-#     a threshold derived from the input data.
-
-#     Args:
-#         data_values (pd.DataFrame): The data values.
-
-#     Returns:
-#         float: The f1 score.
-#     """
-#     # Get the number of data points
-#     # and initialize the arrays
-#     n_data = len(data_values)
-#     pred = np.zeros(n_data)
-#     true = np.zeros(n_data)
-
-#     # Extract the values from the "value" column and
-#     # compute the threshold
-#     value_column = data_values['value'].values
-#     threshold = np.sort(value_column)[int(0.1 * n_data)]
-    
-#     pred[value_column < threshold] = 1
-#     true[:int(0.1 * n_data)] = 1
-#     return f1_score(true, pred)
 
 def f1_misslabel(value_array: np.ndarray) -> float:
     """
