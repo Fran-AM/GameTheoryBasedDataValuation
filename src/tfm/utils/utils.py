@@ -119,10 +119,12 @@ def undersamp_equilibration(
     using undersampling.
 
     Args:
-        df (pd.DataFrame): The dataset.
+        data (np.ndarray): Array containing the data points.
+        target (np.ndarray): Array containing the target values
+            for each data point.
 
     Returns:
-        pd.DataFrame: The balanced dataset.
+        (np.ndarray, np.ndarray): The balanced data and target.
     """
     unique_targets, counts = np.unique(target, return_counts=True)
     min_count = counts.min()
@@ -197,41 +199,48 @@ def compute_values(
         values = compute_shapley_values(
             u=utility,
             mode="permutation_montecarlo",
-            done=MaxUpdates(500) | HistoryDeviation(n_steps=100, rtol=0.05),
-            truncation=RelativeTruncation(utility, rtol=0.01)
+            done=HistoryDeviation(n_steps=100, rtol=0.05),
+            truncation=RelativeTruncation(utility, rtol=0.01),
+            progress=True,
+            n_jobs=6
         )
     elif method_name == "Banzhaf":
         values = compute_banzhaf_semivalues(
             u=utility,
-            done=MaxUpdates(500)
+            progress=True,
+            n_jobs=6
         )
     elif method_name == "Beta-1-16":
         values = compute_beta_shapley_semivalues(
             u=utility,
             alpha=1,
             beta=16,
-            done=MaxUpdates(500)
+            progress=True,
+            n_jobs=6
         )
     elif method_name == "Beta-1-4":
         values = compute_beta_shapley_semivalues(
             u=utility,
             alpha=1,
             beta=4,
-            done=MaxUpdates(500)
+            progress=True,
+            n_jobs=6
         )
     elif method_name == "Beta-16-1":
         values = compute_beta_shapley_semivalues(
             u=utility,
             alpha=16,
             beta=1,
-            done=MaxUpdates(500)
+            progress=True,
+            n_jobs=6
         )
     elif method_name == "Beta-4-1":
         values = compute_beta_shapley_semivalues(
             u=utility,
             alpha=4,
             beta=1,
-            done=MaxUpdates(500)
+            progress=True,
+            n_jobs=6
         )
     else:
         raise ValueError(f"Unknown method: {method_name}")

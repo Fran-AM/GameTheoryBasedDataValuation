@@ -14,7 +14,6 @@ def run():
     phoneme = get_openML_data(
         dataset='phoneme',
         n_data=200,
-        n_test=200,
         flip_ratio=0.0
     )
 

@@ -1,5 +1,6 @@
 from pydvl.utils.dataset import Dataset
 from utils.utils import build_pyDVL_dataset, undersamp_equilibration
+from sklearn.model_selection import train_test_split
 
 import torchvision.datasets as datasets
 import torchvision
@@ -133,7 +134,6 @@ def create_dogcat() -> Dataset:
 def get_openML_data(
         dataset: str,
         n_data: int,
-        n_test: int,
         flip_ratio: float = 0.0,
     )->Dataset:
     """
@@ -142,7 +142,6 @@ def get_openML_data(
     Args:
         dataset (str): The name of the dataset.
         n_data (int): The number of data points to use.
-        n_test (int): The number of test points to use.
         flip_ratio (float): The ratio of flipped labels.
 
     Returns:
@@ -173,8 +172,9 @@ def get_openML_data(
     else:
         raise ValueError(f"Dataset '{dataset}' not found")
     
-    x_train, y_train = data[:n_data], target[:n_data]
-    x_test, y_test = data[n_data:n_data+n_test],target[n_data:n_data+n_test]
+    x_train, x_test, y_train, y_test = train_test_split(
+        data, target, train_size=n_data, random_state=42
+    )
 
     # Normalization
     x_mean, x_std= np.mean(x_train, 0), np.std(x_train, 0)

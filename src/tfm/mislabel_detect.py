@@ -17,26 +17,24 @@ def run():
     # params = params_show() Este para cuando esté en el dvc
     params = {
         'mislabel_detection': {
-            'datasets': ['apsfail', 'click','phoneme', 'wind', 'pol', 'cpu', '2dplanes'],
+            'datasets': ['click','phoneme', 'wind', 'cpu', '2dplanes'],
             'hidden_neurons': 100,
             'activation_function': 'relu',
             'learning_rate': 0.01,
             'optimizer': 'adam',
             'batch_size': 32,
             'data_points': 200,
-            'test_points': 800,
             'flip_ratio': 0.1,
             'max_iter': 100,
             'methods': ["LOO", "Banzhaf", "Shapley", "Beta-1-16", "Beta-1-4", "Beta-16-1", "Beta-4-1"],
-            'n_repeat': 5
+            'n_repeat': 1
         },
         'weighted_acc': {
-            'datasets': ['apsfail', 'click','phoneme', 'wind', 'pol', 'cpu', '2dplanes'],
+            'datasets': ['click','phoneme', 'wind', 'cpu', '2dplanes'],
             'loss': 'log_loss',
             'data_points': 200,
-            'test_points': 800,
             'methods': ["LOO"],
-            'n_repeat': 2
+            'n_repeat': 1
         }
     }
 
@@ -67,7 +65,6 @@ def run():
         dataset = get_openML_data(
             dataset=dataset_name,
             n_data=md_params["data_points"],
-            n_test=md_params["test_points"],
             flip_ratio=0.1
         )
 
