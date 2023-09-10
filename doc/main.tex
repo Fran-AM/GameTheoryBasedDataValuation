@@ -33,6 +33,7 @@ twoside]{Thesis}
 \usepackage{listings}
 \usepackage{xcolor}
 
+
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
@@ -127,6 +128,7 @@ Refname={Lema,Lemas}]{lema}
 \declaretheorem[name=Definición, style=definition, sibling=theorem, refname={definición,definiciones},
 Refname={Definición,Definiciones}]{definition}
 
+
 \begin{document}
 % Redefs %
 \renewcommand{\figurename}{Figura}
@@ -160,9 +162,15 @@ Refname={Definición,Definiciones}]{definition}
 %\listoftables
 
 %% Resumen page %%
-%\include{src/abstract}
+\afterpage{\blankpage}
+\include{src/abstract}
+% \keywords{Valoración de datos, Teoría de juegos,
+% Juegos cooperativos, Valor de Banzhaf, Valor de Shapley,
+% pyDVL}
+
 
 %% Introduction %%
+\afterpage{\blankpage}
 \include{src/introduccion}
 %% Abreviaciones %%
 %\include{src/abreviations}
@@ -177,17 +185,18 @@ Refname={Definición,Definiciones}]{definition}
 
 %% Chapters %%
 % TODO mirar lo de las páginas
-\setcounter{page}{8}
+\setcounter{page}{11}
 % \afterpage{\blankpage}
 %\include{src/objetivosYMetodología}
 \include{src/estadoDelArte}
-%\afterpage{\blankpage}
+\afterpage{\blankpage}
 \include{src/marcoTeorico}
 % \afterpage{\blankpage}
 \include{src/experimentos}
-% \include{src/conclusiones}
-
 \afterpage{\blankpage}
+\include{src/conclusiones}
+
+%\afterpage{\blankpage}
 %%	Bibliography %%
 \printbibliography[
 heading=bibintoc,
@@ -196,6 +205,6 @@ title={Bibliografía.}
 \include{src/indiceTerminos}
 \appendix
 \include{src/apendice1}
-\appendix
+\afterpage{\blankpage}
 \include{src/apendice2}
 \end{document}  

@@ -1,4 +1,100 @@
-\chapter{Código Python}
+\chapter{Código relevante}
 \label{ap:apendice2}
 \justifying
+Se muestran algunos fragmentos de código que se consideran
+interesantes y pueden ayudar a seguir de una forma más
+sencilla el desarrollo de este documento.
+\newpage
+
+
+
+\section{Preprocesado de datos}
+\begin{figure}[ht!]
+    \begin{lstlisting}
+def get_openML_data(
+    dataset: str,
+    n_data: int,
+    flip_ratio: float = 0.0,
+)->Dataset:
+if dataset in ds_map:
+    try:
+        data_dict =
+        pickle.load(open(openML_path + ds_map[dataset], 'rb'))
+        data, target = data_dict['X_num'], data_dict['y']
+        target = (target == 1).astype(np.int32)
+        data, target = undersamp_equilibration(data, target)
+    except FileNotFoundError:
+        raise FileNotFoundError(f"File not found for dataset '{dataset}'")
+else:
+    raise ValueError(f"Dataset '{dataset}' not found")
+
+x_train, x_test, y_train, y_test = train_test_split(
+    data, target, train_size=n_data, random_state=42
+)
+
+# Normalization
+x_mean, x_std= np.mean(x_train, 0), np.std(x_train, 0)
+norm = lambda x: (x - x_mean) / np.clip(x_std, 1e-12, None)
+x_train, x_test = norm(x_train), norm(x_test)
+
+# Flip labels
+if len(y_train.shape) != 1:
+    raise ValueError("Expected y_train to be a 1-dimensionalarray, "
+                        "but got a different shape.")
+
+n_flip = int(n_data*flip_ratio)
+y_train[:n_flip] = 1 - y_train[:n_flip]
+
+return Dataset(
+    x_train=x_train,
+    y_train=y_train,
+    x_test=x_test,
+    y_test=y_test
+)
+    \end{lstlisting}
+    \caption{Función para la lectura y preprocesado de los datos de OpenML.}
+    \label{fig:preprocesado}
+\end{figure}
+
+\newpage
+
+\section{Ejemplo de uso de pyDVL}
+\label{sec:ejemplo_pydvl}
+\begin{figure}[ht!]
+    \begin{lstlisting}
+# Contruccion del pyDVL dataset
+x_train, x_test, y_train, y_test = train_test_split(
+data, target, train_size=n_data, random_state=42
+)
+pyDataset = Dataset(
+    x_train=x_train,
+    y_train=y_train,
+    x_test=x_test,
+    y_test=y_test
+    )
+
+# Construccion del modelo y la utilidad
+model = MLPClassifier(
+hidden_layer_sizes = (md_params["hidden_neurons"],),
+learning_rate_init = md_params["learning_rate"],
+batch_size = md_params["batch_size"],
+max_iter = md_params["max_iter"],
+
+utility = Utility(model, pyDataset, 'accuracy')
+
+# Calculo de los valores de Shapley
+values = compute_shapley_values(
+    u=utility,
+    mode="permutation_montecarlo",
+    done=HistoryDeviation(n_steps=100, rtol=0.05),
+    truncation=RelativeTruncation(utility, rtol=0.01),
+    progress=True,
+    n_jobs=6
+)
+    \end{lstlisting}
+\end{figure}
+
+
+
+
 

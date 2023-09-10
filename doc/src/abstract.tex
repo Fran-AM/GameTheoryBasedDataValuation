@@ -1,77 +1,45 @@
-\chapter*{Resumen}
+\chapter{Resumen}
 \justifying
 
-Este trabajo se enfoca en la valoración de datos mediante la
-teoría de juegos. El principal objetivo es comparar los
-diferentes métodos presentes en la literatura actual,
-prestando especial atención al citado en \cite{dataBanzhaf}.
-Además, se busca realizar esta comparación implementando
-buenas prácticas tanto en ciencia de datos como en ingeniería
-de software, con el fin de obtener un producto final
-reproducible y de alta calidad. Para llevar a cabo los
-experimentos necesarios en la comparación de estos
-métodos, se emplea la librería pyDVL, que implementa los
-algoritmos analizados. El código desarrollado está
-disponible en \href{https://github.com/Fran-AM/TFM}{Fran-AM/TFM}.
+Este trabajo  se centra en la valoración de
+datos basada en teoría de juegos. Se comienza llevando a cabo
+una revisión exhaustiva de la literatura actual sobre el tema,
+introduciendo posteriormente los
+conceptos básicos necesarios para la comprensión de este, y
+destacando la relevancia de los juegos cooperativos, los cuales
+actuarán como punto de unión entre la valoración de datos y la teoría
+de juegos en este estudio.
 
-A lo largo del estudio, se realiza una revisión exhaustiva de la
-literatura actual sobre el tema, culminando en el método
-\textit{Data Banzhaf}, el cual ha demostrado obtener los mejores
-resultados en tareas como la detección de datos mal etiquetados
-y el entrenamiento ponderado, experimentos que replicaremos en
-nuestro trabajo.
+\
 
-Los resultados obtenidos no fueron los esperados, dado que
-\textit{Data Banzhaf} no logró superar a otros métodos
-estudiados. Sin embargo, existe una razón para ello: no se
-pudo utilizar el estimador MSR, que era el que ofrecía mejores
-resultados de convergencia. La limitada capacidad de cómputo
-podría ser una razón por la cual los resultados no son
-completamente confiables.
+El objetivo principal es comparar los diferentes métodos
+descritos en la literatura, haciendo especial énfasis
+en \textit{Data Banzhaf} \cite{dataBanzhaf}. A lo largo
+del estudio, se aborda el concepto de \textit{safety margin},
+el cual servirá para medir la robustez de los métodos de valoración.
+Cualidad en la que \textit{data Banzhaf} ha demostrados sobresalir
+por encima del resto de semivalores.
 
+\
 
+Otro objetivo que perseguía este trabajo era familiarizarse
+con buenas prácticas tanto en ciencia de datos como en ingeniería
+de software. Para ello, se ha utilizado DVC como control de versiones
+especializado para proyectos de ML y se han seguido las recomendaciones
+dadas en  \href{https://paperswithcode.com/rc2022}
+{ML Reproducibility Challenge}
+de \href{https://paperswithcode.com/}{papers with code}.
+Con esto se ha conseguido un código reproducible, una fundamental
+en la ciencia, pero no muy común en ciencia de datos.
+El código  se encuentra disponible en
+\href{https://github.com/Fran-AM/TFM}{Fran-AM/TFM}.
 
+\
 
+Finalmente, los métodos estudiados se comparan en dos
+tareas de ML que suelen usarse como métrica de rendimiento
+para este tipo de estudios: detección de datos mal etiquetados y
+entrenamiento ponderado de modelos. Para estos experimentos,
+se seleccionan varios conjuntos de datos comúnmente
+referenciados en la literatura en trabajos similares.
 
-% Marco teórico
-
-El capítulo se adentra en la teoría de juegos, un campo
-matemático que analiza cómo las decisiones de un individuo
-o jugador pueden influir en los resultados de otros jugadores
-en situaciones interactivas. Se destaca la importancia de los
-juegos cooperativos, donde los jugadores tienen la capacidad
-de comunicarse y establecer acuerdos.
-
-Posteriormente, el capítulo aborda la relevancia de la
-valoración de datos en la sociedad actual. Se subraya cómo
-los datos se han convertido en un recurso crucial en
-diversos sectores y cómo es esencial determinar su valor.
-Se discuten diferentes perspectivas desde las cuales se
-puede valorar un dato, como su valor inherente o el valor
-basado en su uso.
-
-El enfoque principal del capítulo es entender cómo se puede
-determinar el valor de los datos y cómo este valor puede
-influir en decisiones y resultados en diferentes contextos.
-
-El tercer capítulo se centra en comprender cómo los valores
-asignados a los datos pueden influir en el entrenamiento de
-modelos y, en consecuencia, en las decisiones que se derivan
-de estos modelos. Se detallan los experimentos realizados,
-los conjuntos de datos empleados y las herramientas esenciales
-que respaldaron la investigación.
-
-Se mencionan varios conjuntos de datos que se utilizan
-comúnmente en la literatura como puntos de referencia para
-estudios similares. Estos conjuntos de datos contienen
-información etiquetada y se han preprocesado para equilibrar
-el número de muestras de cada clase.
-
-En cuanto a las herramientas, se destaca el uso de pyDVL,
-una librería que engloba diversos algoritmos enfocados al
-cálculo de valores de datos, y DVC, una herramienta de control
-de versiones específica para proyectos de ciencia de datos.
-
-El capítulo también hace referencia a un repositorio Git,
-"repoGit", donde se puede consultar todo el código desarrollado
-para este trabajo.

@@ -1,53 +1,53 @@
-\indexentry{ML|hyperpage}{6}
-\indexentry{Teoría de juegos|hyperpage}{11}
-\indexentry{Juego|hyperpage}{11}
-\indexentry{Jugador|hyperpage}{11}
-\indexentry{Estrategia|hyperpage}{11}
-\indexentry{Ganancia|hyperpage}{11}
-\indexentry{Juego!cooperativo|hyperpage}{11}
-\indexentry{Coalición|hyperpage}{12}
-\indexentry{$N$|hyperpage}{12}
-\indexentry{$2^N$|hyperpage}{12}
-\indexentry{$v$|hyperpage}{12}
-\indexentry{$S$|hyperpage}{12}
-\indexentry{Valor de Shapley|hyperpage}{12}
-\indexentry{Simetría|hyperpage}{12}
-\indexentry{Eficiencia|hyperpage}{12}
-\indexentry{Linealidad|hyperpage}{12}
-\indexentry{Jugador!nulo|hyperpage}{13}
-\indexentry{$\phi$!$\phi_{Shapley}$|hyperpage}{13}
-\indexentry{$n$|hyperpage}{13}
-\indexentry{$s$|hyperpage}{13}
-\indexentry{Semivalor|hyperpage}{14}
-\indexentry{$\phi$|hyperpage}{14}
-\indexentry{Función peso|hyperpage}{14}
-\indexentry{$w$|hyperpage}{14}
-\indexentry{$w$!$w_{Shapley}$|hyperpage}{14}
-\indexentry{Valor de Banzhaf|hyperpage}{14}
-\indexentry{$w$!$w_{Banzhaf}$|hyperpage}{15}
-\indexentry{$\mathcal{A}$|hyperpage}{16}
-\indexentry{$f$|hyperpage}{16}
-\indexentry{Función de utilidad|hyperpage}{16}
-\indexentry{Data values|hyperpage}{17}
-\indexentry{$\phi$!$\phi_{loo}$|hyperpage}{17}
-\indexentry{LOO|hyperpage}{17}
-\indexentry{Data Shapley|hyperpage}{17}
-\indexentry{$w$!$w_{\alpha, \beta}$|hyperpage}{17}
-\indexentry{$\phi$!$\phi_{Beta}$|hyperpage}{18}
-\indexentry{$\phi$!$\phi_{Banzhaf}$|hyperpage}{18}
-\indexentry{Data Banzhaf|hyperpage}{18}
-\indexentry{Diferencia escalada|hyperpage}{19}
-\indexentry{$D_{i,j}$|hyperpage}{19}
-\indexentry{$\Delta_{i,j}^k$|hyperpage}{19}
-\indexentry{$\hat{v}$|hyperpage}{19}
-\indexentry{Safety margin|hyperpage}{20}
-\indexentry{$\text{Safe}_{i,j}$|hyperpage}{20}
-\indexentry{$\text{Safe}$|hyperpage}{20}
-\indexentry{$\hat{\phi}$|hyperpage}{21}
-\indexentry{$(\epsilon,\delta)$-aproximación|hyperpage}{21}
-\indexentry{$\mathbb{E}$|hyperpage}{21}
-\indexentry{$\hat{\phi}_{MC}$|hyperpage}{21}
-\indexentry{MRS|hyperpage}{21}
-\indexentry{$\mathcal{S}$|hyperpage}{21}
-\indexentry{$\hat{\phi}_{MSR}$|hyperpage}{22}
-\indexentry{Estimador de máxima reutilización|hyperpage}{22}
+\indexentry{ML|hyperpage}{9}
+\indexentry{Teoría de juegos|hyperpage}{15}
+\indexentry{Juego|hyperpage}{15}
+\indexentry{Jugador|hyperpage}{15}
+\indexentry{Estrategia|hyperpage}{15}
+\indexentry{Ganancia|hyperpage}{15}
+\indexentry{Juego!cooperativo|hyperpage}{15}
+\indexentry{Coalición|hyperpage}{16}
+\indexentry{$N$|hyperpage}{16}
+\indexentry{$2^N$|hyperpage}{16}
+\indexentry{$v$|hyperpage}{16}
+\indexentry{$S$|hyperpage}{16}
+\indexentry{Valor de Shapley|hyperpage}{16}
+\indexentry{Simetría|hyperpage}{16}
+\indexentry{Eficiencia|hyperpage}{16}
+\indexentry{Linealidad|hyperpage}{16}
+\indexentry{Jugador!nulo|hyperpage}{17}
+\indexentry{$\phi$!$\phi_{Shapley}$|hyperpage}{17}
+\indexentry{$n$|hyperpage}{17}
+\indexentry{$s$|hyperpage}{17}
+\indexentry{Semivalor|hyperpage}{18}
+\indexentry{$\phi$|hyperpage}{18}
+\indexentry{Función peso|hyperpage}{18}
+\indexentry{$w$|hyperpage}{18}
+\indexentry{$w$!$w_{Shapley}$|hyperpage}{18}
+\indexentry{Valor de Banzhaf|hyperpage}{18}
+\indexentry{$w$!$w_{Banzhaf}$|hyperpage}{19}
+\indexentry{$\mathcal{A}$|hyperpage}{20}
+\indexentry{$f$|hyperpage}{20}
+\indexentry{Función de utilidad|hyperpage}{20}
+\indexentry{Data values|hyperpage}{21}
+\indexentry{$\phi$!$\phi_{loo}$|hyperpage}{21}
+\indexentry{LOO|hyperpage}{21}
+\indexentry{Data Shapley|hyperpage}{21}
+\indexentry{$w$!$w_{\alpha, \beta}$|hyperpage}{21}
+\indexentry{$\phi$!$\phi_{Beta}$|hyperpage}{22}
+\indexentry{$\phi$!$\phi_{Banzhaf}$|hyperpage}{22}
+\indexentry{Data Banzhaf|hyperpage}{22}
+\indexentry{Diferencia escalada|hyperpage}{23}
+\indexentry{$D_{i,j}$|hyperpage}{23}
+\indexentry{$\Delta_{i,j}^k$|hyperpage}{23}
+\indexentry{$\hat{v}$|hyperpage}{23}
+\indexentry{Safety margin|hyperpage}{24}
+\indexentry{$\text{Safe}_{i,j}$|hyperpage}{24}
+\indexentry{$\text{Safe}$|hyperpage}{24}
+\indexentry{$\hat{\phi}$|hyperpage}{25}
+\indexentry{$(\epsilon,\delta)$-aproximación|hyperpage}{25}
+\indexentry{$\mathbb{E}$|hyperpage}{25}
+\indexentry{$\hat{\phi}_{MC}$|hyperpage}{25}
+\indexentry{MRS|hyperpage}{25}
+\indexentry{$\mathcal{S}$|hyperpage}{25}
+\indexentry{$\hat{\phi}_{MSR}$|hyperpage}{26}
+\indexentry{Estimador de máxima reutilización|hyperpage}{26}

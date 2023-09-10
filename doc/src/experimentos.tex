@@ -16,16 +16,14 @@
 
 % \
 
-Buscamos comprender cómo los valores de datos pueden impactar el
-entrenamiento de modelos y, en consecuencia, las
-decisiones derivadas de estos. A lo largo del capítulo,
-ofrecemos detalles sobre los experimentos llevados a cabo,
-los \textit{datasets} empleados y las herramientas
-esenciales que respaldaron nuestra investigación.
+En este capítulo buscamos comprender cómo los valores
+de datos pueden impactar el entrenamiento de modelos y, en
+consecuencia, las decisiones derivadas de estos. A lo largo
+del capítulo, ofrecemos detalles sobre los experimentos
+llevados a cabo, los \textit{datasets} empleados y las
+herramientas esenciales que respaldaron nuestra investigación.
 Todos el código desarrollado en este trabajo puede
-ser consultado en repoGit.
-
-\newpage
+ser consultado en \href{https://github.com/Fran-AM/TFM}{Fran-AM/TFM}.
 
 \section{Metodología}
 \subsection{Datasets}
@@ -36,14 +34,13 @@ son comúnmente empleados en la literatura como
 \textit{benchmarks} para estudios similares al nuestro
 \cite{dataBanzhaf}.
 
-Las características de todos estos \textit{datasets} son
+Las características de todos estos son
 similares. Contienen datos etiquetados, con dos clases
-en la variable objetivo. En cuanto al preprocesado de estos,
-se destaca que se llevó a cabo un
-preprocesado en todos ellos para equilibrar
+en la variable objetivo. En cuanto al preprocesado,
+se llevó a cabo un submuestreo en todos ellos para equilibrar
 el número de muestras de cada una de las clases.
-% Hay que hacer referencia a que hay codigo en el apéndice.
-En el apéndice \ref{ap:apendice2} puede verse el código..
+Dicho preprocesado se puede consultar en la figura
+\ref{fig:preprocesado} del Apéndice \ref{ap:apendice2}
 
 
 \begin{table}[ht]
@@ -66,55 +63,24 @@ En el apéndice \ref{ap:apendice2} puede verse el código..
 \end{table}
 
 
-% \begin{lstlisting}
-%     def undersamp_equilibration(
-%         data: np.ndarray,
-%         target: np.ndarray
-%     ) -> (np.ndarray, np.ndarray):
-%     """
-%     Equilibrate the classes of a dataset with
-%     two classes in the target variable,
-%     using undersampling.
-
-%     Args:
-%         df (pd.DataFrame): The dataset.
-
-%     Returns:
-%         pd.DataFrame: The balanced dataset.
-%     """
-%     unique_targets, counts = np.unique(target, return_counts=True)
-%     min_count = counts.min()
-    
-%     balanced_indices = np.concatenate([
-%         np.random.choice(np.where(target == class_label)[0], min_count, replace=False)
-%         for class_label in unique_targets
-%     ])
-    
-%     # Use the indices to extract the corresponding rows from data and target
-%     balanced_data = data[balanced_indices]
-%     balanced_target = target[balanced_indices]
-    
-%     return balanced_data, balanced_target
-% \end{lstlisting}
-
 \subsection{Herramientas}
 
 Entre las herramientas utilizadas, es relevante
-destacar \textit{pyDVL}, una librería de
-\href{https://www.appliedai.de/en/}{appliedAI}, y
-\textit{DVC}, una herramienta de control de versiones
-específica para proyectos de ciencia de datos.
+destacar \href{https://aai-institute.github.io/pyDVL/0.7.0/}{pyDVL},
+una librería de \href{https://www.appliedai.de/en/}{appliedAI}, y
+\href{https://dvc.org/}{DVC}, como instrumento de control de
+versiones específica para proyectos de ciencia de datos.
 
 \subsubsection*{pyDVL}
 
-\href{https://aai-institute.github.io/pyDVL/0.7.0/}{pyDVL},
-actualmente en su versión \texttt{0.7.0}, es una
-librería que engloba diversos algoritmos enfocados al cálculo
-de \textit{data values}, estando la mayoría de ellos basados en
-la teoría de juegos cooperativos. Con \textit{pyDVL}, es posible
-calcular de manera sencilla y automática los \textit{data values}
-de un \textit{dataset} determinado, empleando diferentes métodos de
-valoración, técnicas de muestreo y estimadores, entre otros. 
+\textit{pyDVL} es una librería, actualmente en su versión
+\texttt{0.7.0}, que engloba diversos algoritmos enfocados al cálculo
+de \textit{data values}. La mayoría de los métodos que implementa
+están basados en teoría de juegos cooperativos.
+Con \textit{pyDVL}, es posible calcular de manera sencilla y
+automática los \textit{data values} de un \textit{dataset}
+determinado, empleando diferentes métodos de
+valoración, técnicas de muestreo y estimadores. 
 
 El proceso de cálculo de valores de datos en
 \textit{pyDVL} se divide en tres pasos esenciales:
@@ -127,6 +93,8 @@ El proceso de cálculo de valores de datos en
     \item Cálculo de los valores de datos utilizando el
     método seleccionado.
 \end{enumerate}
+Se dispone de un ejemplo de uso en la sección \ref{sec:ejemplo_pydvl}
+del Apéndice \ref{ap:apendice2}
 
 % Aquí puedes añadir ejemplos de uso de funcionalidades de pyDVL
 % \textbf{Ejemplo de uso de pyDVL:}
@@ -138,77 +106,234 @@ El proceso de cálculo de valores de datos en
 
 \textit{DVC}, acrónimo de Data Version Control,
 es una herramienta concebida para proyectos de ciencia de
-datos, que se integra perfectamente con herramientas de
-ingeniería de software ya consolidadas como Git. Se
-desarrolla con el propósito deayudar a equipos de machine learning
-en la gestión de grandes volúmenes de datos, asegurar la
-reproducibilidad de los proyectos y fortalecer el
+datos, desarrollada con el propósito de ayudar a equipos de
+ML en la gestión de grandes volúmenes de datos,
+asegurar la reproducibilidad de los proyectos y fortalecer el
 trabajo colaborativo. \textit{DVC} es compatible con
 cualquier terminal y también puede ser invocado como
-una biblioteca de Python. Su central  es brindar una experiencia
-al estilo Git para estructurar datos, modelos y experimentos en
-proyectos de Ciencia de Datos y Aprendizaje Automático. Para
-información más detallada, consultar
+una biblioteca de Python. Su objetivo principal es brindar una
+experiencia al estilo Git para estructurar datos, modelos y
+experimentos en proyectos de Ciencia de Datos y Aprendizaje
+Automático. Para información más detallada, consultar
 la \href{https://dvc.org/doc/user-guide}{Documentación de oficial}.
 
+\newpage
 
-\section{Detección de datos mal etiquetados}
+\section{Experimentos}
+\subsection{Detección de datos mal etiquetados}
 
 Investigamos la habilidad de distintos métodos de
 valoración de datos para identificar puntos mal
 etiquetados en escenarios con funciones de utilidad ruidosas.
 Esta capacidad de detectar y corregir puntos mal etiquetados
 es esencial para mejorar el rendimiento de los modelos de
-machine learning y reducir el tiempo de entrenamiento de
+ML y reducir el tiempo de entrenamiento de
 los mismos.
 
 \
-Para llevar a cabo este experimento generamos muestras
-con etiquetas intercambiadas invirtiendo las
-etiquetas del 10\% de los puntos de datos de entrenamiento.
-A la hora de la evaluación de esta tarea, un punto de
-datos se considera incorrectamente etiquetado si su
-\textit{data value} se encuentra por debajo del percentil
-10 en relacióncon todas las puntuaciones de valoración de datos.
 
-\
-
-Utilizaremos un perceptrón multicapa como modelo, que cuenta
-con una única capa oculta compuesta por 100 neuronas. La
-función de activación será ReLU, y el \textit{learning rate}
+Al igual que en \cite{dataBanzhaf}, utilizaremos como modelo a lo
+largo de todo el experimento un perceptrón multicapa, con una única
+capa oculta compuesta por 100 neuronas. La función de activación
+será ReLU, y el \textit{learning rate}
 inicial se establece en $10^{-2}$. Se usará el optimizador
 Adam durante el proceso de entrenamiento. El tamaño de los
-\textit{batches} es de 32 datos para todos los
+\textit{batches} es de 32 para todos los
 \textit{datasets}. Dado que el proceso de valoración de datos
 es muy costoso desde el punto de vista computacional, trabajaremos
 con subconjuntos de los \textit{datasets} originales. De cada
 conjunto, seleccionaremos 200 muestas al azar para
-llevar a cabo el experimento. En relación a los estimadores que
-se utilizarán para cada método, aplicaremos Permutation Sampling
-en todos los casos.
+llevar a cabo el experimento. Aunque nuestra intención era usar
+el estimador MSR, no fue posible debido a falta de tiempo para
+implementarlo y testearlo correctamente. Por lo que utilizaremos
+estimadores basados en muestreo permutacional,
+recomendado en la documentación de \textit{pyDVL}.
 
-\section{Entrenamiento ponderado}
+\
+
+Para la implementación de este experimento generamos muestras
+con etiquetas intercambiadas invirtiendo las
+etiquetas del 10\% de los puntos de datos de entrenamiento.
+A la hora de la evaluación del rendimiento de cada método, un punto
+se considera incorrectamente etiquetado si su
+\textit{data value} se encuentra por debajo del percentil
+10 en relación con todas las demás puntuaciones.
+Los resultados obtenidos pueden verse en la tabla
+\ref{tab:resultados}.
+
+\
+
+En la tabla \ref{tab:resultados} se muestran los resultados
+obtenidos. Se puede observar que el método $Beta(4,1)$ es el que
+presenta los mejores resultados. Este método otorga mayor peso a
+conjuntos de menor cardinalidad al calcular los \textit{data values}.
+Su eficacia ya ha sido evidenciada en otros trabajos, como se
+refleja en \cite{dataBanzhaf} y \cite{betaShapley}. De hecho, el
+método óptimo para cada uno de los \textit{datasets} concuerda con
+los resultados presentados en \cite{dataBanzhaf}.
+Considerando el factor de mejora y teniendo en cuenta que un detector
+aleatorio solo conseguiría un $F1 = 0.1$, se puede observar que, a
+excepción de LOO, todos los métodos logran, en promedio, triplicar
+el rendimiento de un detector aleatorio. El método $Beta(4,1)$
+llega a multiplicar por 5 el rendimiento de un detector aleatorio.
+
+
+\renewcommand{\arraystretch}{2}
+\begin{table}[ht!]
+    \centering
+    \captionsetup{width=\linewidth,justification=justified}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{cccccccc}
+    \hline
+    \textbf{Dataset} & \textbf{Data Banzhaf} & \textbf{LOO} & \textbf{Beta(16,1)} & \textbf{Beta(4,1)} & \textbf{Data Shapley} & \textbf{Beta(1,4)} & \textbf{Beta(1,16)} \\ \hline
+    \cellcolor[HTML]{FFFFFF}Click   & \cellcolor[HTML]{FFFFFF}0.25 & 0.20 & 0.3  & 0.20 & 0.10 & 0.3  & \textbf{0.35} \\
+    \cellcolor[HTML]{FFFFFF}Phoneme & \cellcolor[HTML]{FFFFFF}0.20 & 0.20 & 0.35 & 0.55 & \textbf{0.6}  & 0.25 & 0.20 \\
+    Wind                            & 0.25                         & 0.05 & 0.40 & \textbf{0.45} & \textbf{0.45} & 0.40 & 0.25 \\
+    CPU                             & 0.5                          & 0.05 & 0.5  & \textbf{0.65} & 0.45 & 0.6  & 0.35 \\
+    2DPlanes                        & 0.45                         & 0.15 & 0.55 & \textbf{0.65} & 0.45 & 0.55 & 0.35
+    \end{tabular}%
+    }
+    \caption{Comparación de los valores de $F1$ de los modelos
+    relacionada con su habilidad para detectar datos mal etiquetados.
+    Se comparan los siete métodos de valoración en los cinco datasets
+    de clasificación.}
+    \label{tab:resultados}
+\end{table}
+
+
+\subsection{Entrenamiento ponderado}
 
 Estudiamos ahora cómo se puede aplicar un sistema de
 ponderación basado en \textit{data values} para realizar
-una suerte de submuestreo de puntos de datos.
-\href{https://acortar.link/bclshR}{SGDClassifier} de
-\href{https://scikit-learn.org/stable/index.html}{scikit-learn},
-en su modalidad de regresión logística.
+una suerte de submuestreo de los datos.
 
-Como parámetros usaremos regularización estándar $L_2$,
-con coeficiente $\alpha= 10^{-4}$. El número máximo
-de épocas de entrenamiento será de $10^3$, y tolerancia
-de $10^{-3}$ para el criterio de parada.
+\
 
-Para la ponderación, normalizaremos el \textit{data value}
-asociado a cada punto de entrenamiento en el rango $[0,1]$.
-Durante el proceso de entrenamiento, cada muestra se multiplicará por
-su peso correspondiente. Esto significa que los puntos con
-valores más altos tendrán una mayor influencia en la regresión
-logística. Finalmente, entrenaremos los clasificadores
-utilizando los conjuntos de entrenamiento y evaluaremos la
-precisión en los conjuntos de test.
+Utilizaremos como modelo la regresión logística con
+descenso del gradiente estocástico
+(\href{https://acortar.link/bclshR}{SGDClassifier}) de la librería
+\href{https://scikit-learn.org/stable/index.html}{scikit-learn}.
+Adoptaremos regularización estándar $L_2$ con un coeficiente
+$\alpha = 10^{-4}$. Estableceremos un máximo de $10^3$ épocas
+de entrenamiento y una tolerancia de $10^{-3}$ para el criterio
+de parada.
+
+Optamos por la regresión logística debido
+principalmente a la limitada capacidad de cómputo para entrenar
+modelos más sofisticados. El empleo del método de descenso del
+gradiente estocástico nos facilitará la incorporación de ruido a
+la función de utilidad. Al igual que en el experimento anterior,
+trabajaremos con subconjuntos de 200 puntos y destinaremos
+el resto de puntos para el conjunto de test, con el que
+hemos calculado los valores de $F1$ que se muestran en la
+tabla \ref{tab:resultado2}. Los valores se corresponden con
+la media tras 5 repeteciones del experimento.
+
+\
+
+Para la ponderación, normalizaremos los \textit{data values}
+al intervalo $[0,1]$. Durante el proceso de
+entrenamiento, cada muestra se multiplicará por su respectivo
+peso, lo que significa que los puntos con mayores valores
+ejercerán una influencia más significativa en la regresión
+logística. Finalmente, entrenaremos los clasificadores con
+los conjuntos de entrenamiento ponderados y evaluaremos su
+precisión en los conjuntos de test. Adoptaremos la métrica
+$F1$ como criterio de evaluación, en línea con lo realizado en
+\cite{dataBanzhaf}.
+
+\clearpage
+
+Podemos observar que
+\textit{Data Banzhaf} no presenta el mejor desempeño.
+No obstante, este hecho no es sorprendente; en el experimento
+original, los valores de $F1$ obtenidos eran semejantes entre
+varios de los métodos estudiados. En nuestro experimento,
+existen diversos factores que difieren del original, tales
+como el tamaño de los conjuntos, el empleo de un modelo
+diferente y no usar MSR como estimador.
+
+Al analizar el resultado global y dejando de lado casos
+específicos, como el observado con el \textit{dataset}
+\textit{2DPlanes}, se constata que el entrenamiento ponderado
+según los \textit{data values} obtenidos mejora el
+rendimiento del modelo. Incluso el LOO suele ofrecer una
+mejora, aunque sea leve.
+
+
+\renewcommand{\arraystretch}{2}
+\begin{table}[ht!]
+    \centering
+    \captionsetup{width=\linewidth,justification=justified}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{ccccccccc}
+    \hline
+    \textbf{Dataset} &
+      \textbf{Data Banzhaf} &
+      \textbf{LOO} &
+      \textbf{Beta(16,1)} &
+      \textbf{Beta(4,1)} &
+      \textbf{Data Shapley} &
+      \textbf{Beta(1,4)} &
+      \textbf{Beta(1,16)} &
+      \textbf{Uniform} \\ \hline
+    \cellcolor[HTML]{FFFFFF}Click &
+      \cellcolor[HTML]{FFFFFF}0.599(0.020) &
+      0.558(0.053) &
+      0.543(0.056) &
+      \textbf{0.608(0.014)} &
+      0.541(0.029) &
+      0.564(0.072) &
+      0.585(0.045) &
+      0.555 \\
+    \cellcolor[HTML]{FFFFFF}Phoneme &
+      \cellcolor[HTML]{FFFFFF}0.665(0.082) &
+      0.657(0.088) &
+      \textbf{0.728(0.013)} &
+      0.660(0.070) &
+      0.718(0.035) &
+      0.698(0.085) &
+      0.616(0.162) &
+      0.635 \\
+    Wind &
+      0.815(0.017) &
+      0.813(0.033) &
+      0.822(0.007) &
+      \textbf{0.832(0.019)} &
+      0.824(0.009) &
+      0.820(0.008) &
+      0.808(0.015) &
+      0.804 \\
+    CPU &
+      0.893(0.006) &
+      0.899(0.006) &
+      0.893(0.010) &
+      0.898(0.005) &
+      \textbf{0.903(0.001)} &
+      0.890(0.010) &
+      0.894(0.015) &
+      0.893 \\
+    2DPlanes &
+      0.819(0.01) &
+      0.818(0.012) &
+      0.813(0.010) &
+      0.811(0.019) &
+      0.810(0.012) &
+      \textbf{0.820(0.016)} &
+      0.816(0.015) &
+      0.820
+    \end{tabular}%
+    }
+    \caption{Comparación de los valores de $F1$ de los modelos entrenados
+    con pesos ponderados. Se comparan los siete métodos de valoración
+    en los cinco datasets de clasificación. Se muestra la media y la
+    desviación estándar en formato 'avg(std)'.}
+    \label{tab:resultado2}
+\end{table}
+
+
+
+
 
 
 

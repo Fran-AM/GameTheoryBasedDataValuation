@@ -19,6 +19,68 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
+    \entry{dataBanzhaf}{article}{}
+      \name{author}{2}{}{%
+        {{hash=e769a876b005fabe92dcd7819bc6611e}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Jiachen\bibnamedelima T.},
+           giveni={J\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=047fd30cb23973caae3e3b6d51c4e51a}{%
+           family={Jia},
+           familyi={J\bibinitperiod},
+           given={Ruoxi},
+           giveni={R\bibinitperiod}}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=b7c1baed3d2d60a6cdb3d34bf37cd379}{%
+           family={Ruiz},
+           familyi={R\bibinitperiod},
+           given={Francisco\bibnamedelimb J.\bibnamedelimi R.},
+           giveni={F\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=514ab2435e89f0bb66473564e713f95e}{%
+           family={Dy},
+           familyi={D\bibinitperiod},
+           given={Jennifer\bibnamedelima G.},
+           giveni={J\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=cc7a452cec23908dfda4793cf2d43d1a}{%
+           family={Meent},
+           familyi={M\bibinitperiod},
+           given={Jan-Willem},
+           giveni={J\bibinithyphendelim W\bibinitperiod},
+           prefix={van\bibnamedelima de},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {PMLR}%
+      }
+      \strng{namehash}{b3eaffda94c913c66fdfec46182391bc}
+      \strng{fullhash}{b3eaffda94c913c66fdfec46182391bc}
+      \strng{bibnamehash}{b3eaffda94c913c66fdfec46182391bc}
+      \strng{authorbibnamehash}{b3eaffda94c913c66fdfec46182391bc}
+      \strng{authornamehash}{b3eaffda94c913c66fdfec46182391bc}
+      \strng{authorfullhash}{b3eaffda94c913c66fdfec46182391bc}
+      \strng{editorbibnamehash}{cbfe5437d3af6e9bad1f1a2ec4f1e3b7}
+      \strng{editornamehash}{cbfe5437d3af6e9bad1f1a2ec4f1e3b7}
+      \strng{editorfullhash}{cbfe5437d3af6e9bad1f1a2ec4f1e3b7}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International Conference on Artificial Intelligence and Statistics, 25-27 April 2023, Palau de Congressos, Valencia, Spain}
+      \field{series}{Proceedings of Machine Learning Research}
+      \field{title}{Data Banzhaf: {A} Robust Data Valuation Framework for Machine Learning}
+      \field{volume}{206}
+      \field{year}{2023}
+      \field{pages}{6388\bibrangedash 6421}
+      \range{pages}{34}
+      \verb{urlraw}
+      \verb https://proceedings.mlr.press/v206/wang23e.html
+      \endverb
+      \verb{url}
+      \verb https://proceedings.mlr.press/v206/wang23e.html
+      \endverb
+    \endentry
     \entry{shapleyValue}{article}{}
       \name{author}{1}{}{%
         {{hash=aa2b96ffd25f090ad898c0022f7efa12}{%
@@ -54,8 +116,8 @@
       \strng{editorbibnamehash}{c29e91e8b1f722b7e90beb853cd7a118}
       \strng{editornamehash}{c29e91e8b1f722b7e90beb853cd7a118}
       \strng{editorfullhash}{c29e91e8b1f722b7e90beb853cd7a118}
-      \field{sortinit}{1}
-      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Contributions to the Theory of Games II}
@@ -81,8 +143,8 @@
       \strng{authorbibnamehash}{320ab47af0997a7a69af46760b320783}
       \strng{authornamehash}{320ab47af0997a7a69af46760b320783}
       \strng{authorfullhash}{320ab47af0997a7a69af46760b320783}
-      \field{sortinit}{2}
-      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{sortinit}{3}
+      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{The Shapley value: essays in honor of Lloyd S. Shapley}
@@ -112,8 +174,8 @@
       \strng{authorbibnamehash}{24d236dde3d806602d81e3385313e104}
       \strng{authornamehash}{24d236dde3d806602d81e3385313e104}
       \strng{authorfullhash}{24d236dde3d806602d81e3385313e104}
-      \field{sortinit}{3}
-      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
+      \field{sortinit}{4}
+      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0004-3702}
@@ -155,8 +217,8 @@
       \strng{authorbibnamehash}{a20eb98fcfbaf6256ca32d8ec1491fee}
       \strng{authornamehash}{49e9097b64d9daa79cfd45c714d4917b}
       \strng{authorfullhash}{a20eb98fcfbaf6256ca32d8ec1491fee}
-      \field{sortinit}{4}
-      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Bioinformatics (Oxford, England)}
@@ -189,8 +251,8 @@
       \strng{authorbibnamehash}{7d47bda800faa45b0d07f5af293649c0}
       \strng{authornamehash}{7d47bda800faa45b0d07f5af293649c0}
       \strng{authorfullhash}{7d47bda800faa45b0d07f5af293649c0}
-      \field{sortinit}{5}
-      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{sortinit}{6}
+      \field{sortinithash}{7851c86048328b027313775d8fbd2131}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{No abstract is available for this item.}
@@ -226,8 +288,8 @@
       \strng{authorbibnamehash}{a598233fe69af3db9653c1cc6ed0e013}
       \strng{authornamehash}{a598233fe69af3db9653c1cc6ed0e013}
       \strng{authorfullhash}{a598233fe69af3db9653c1cc6ed0e013}
-      \field{sortinit}{5}
-      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{sortinit}{6}
+      \field{sortinithash}{7851c86048328b027313775d8fbd2131}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{A semivalue is a symmetric positive linear operator on a space of games, which leaves the additive games fixed. Such an operator satisfies all of the axioms defining the Shapley value, with the possible exception of the efficiency axiom. The class of semivalues is completely characterized for the space of finite-player games, and for the space pNA of nonatomic games.}
@@ -258,8 +320,8 @@
       \strng{authorbibnamehash}{a0c6464320a9fc455f24821dc24b8b50}
       \strng{authornamehash}{a0c6464320a9fc455f24821dc24b8b50}
       \strng{authorfullhash}{a0c6464320a9fc455f24821dc24b8b50}
-      \field{sortinit}{6}
-      \field{sortinithash}{7851c86048328b027313775d8fbd2131}
+      \field{sortinit}{7}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Rutgers Law Review}
@@ -292,8 +354,8 @@
       \strng{authorbibnamehash}{11226ca1bd0fbf3c452329bcef8f2500}
       \strng{authornamehash}{11226ca1bd0fbf3c452329bcef8f2500}
       \strng{authorfullhash}{11226ca1bd0fbf3c452329bcef8f2500}
-      \field{sortinit}{7}
-      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{sortinit}{8}
+      \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Values of Large Games, IV: Evaluating the Electoral College by Montecarlo Techniques}
@@ -316,8 +378,8 @@
       \strng{authorbibnamehash}{a19895953a126cbbd312cacfc56cb8bf}
       \strng{authornamehash}{a19895953a126cbbd312cacfc56cb8bf}
       \strng{authorfullhash}{a19895953a126cbbd312cacfc56cb8bf}
-      \field{sortinit}{8}
-      \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
+      \field{sortinit}{9}
+      \field{sortinithash}{54047ffb55bdefa0694bbd554c1b11a0}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{8}
@@ -349,8 +411,8 @@
       \strng{authorbibnamehash}{8b586292c9e36a69e9278e8368863e15}
       \strng{authornamehash}{8b586292c9e36a69e9278e8368863e15}
       \strng{authorfullhash}{8b586292c9e36a69e9278e8368863e15}
-      \field{sortinit}{9}
-      \field{sortinithash}{54047ffb55bdefa0694bbd554c1b11a0}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Transactions on Information Theory}
@@ -757,68 +819,6 @@
       \endverb
       \verb{url}
       \verb https://proceedings.mlr.press/v151/kwon22a.html
-      \endverb
-    \endentry
-    \entry{dataBanzhaf}{article}{}
-      \name{author}{2}{}{%
-        {{hash=e769a876b005fabe92dcd7819bc6611e}{%
-           family={Wang},
-           familyi={W\bibinitperiod},
-           given={Jiachen\bibnamedelima T.},
-           giveni={J\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
-        {{hash=047fd30cb23973caae3e3b6d51c4e51a}{%
-           family={Jia},
-           familyi={J\bibinitperiod},
-           given={Ruoxi},
-           giveni={R\bibinitperiod}}}%
-      }
-      \name{editor}{3}{}{%
-        {{hash=b7c1baed3d2d60a6cdb3d34bf37cd379}{%
-           family={Ruiz},
-           familyi={R\bibinitperiod},
-           given={Francisco\bibnamedelimb J.\bibnamedelimi R.},
-           giveni={F\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
-        {{hash=514ab2435e89f0bb66473564e713f95e}{%
-           family={Dy},
-           familyi={D\bibinitperiod},
-           given={Jennifer\bibnamedelima G.},
-           giveni={J\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
-        {{hash=cc7a452cec23908dfda4793cf2d43d1a}{%
-           family={Meent},
-           familyi={M\bibinitperiod},
-           given={Jan-Willem},
-           giveni={J\bibinithyphendelim W\bibinitperiod},
-           prefix={van\bibnamedelima de},
-           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {PMLR}%
-      }
-      \strng{namehash}{b3eaffda94c913c66fdfec46182391bc}
-      \strng{fullhash}{b3eaffda94c913c66fdfec46182391bc}
-      \strng{bibnamehash}{b3eaffda94c913c66fdfec46182391bc}
-      \strng{authorbibnamehash}{b3eaffda94c913c66fdfec46182391bc}
-      \strng{authornamehash}{b3eaffda94c913c66fdfec46182391bc}
-      \strng{authorfullhash}{b3eaffda94c913c66fdfec46182391bc}
-      \strng{editorbibnamehash}{cbfe5437d3af6e9bad1f1a2ec4f1e3b7}
-      \strng{editornamehash}{cbfe5437d3af6e9bad1f1a2ec4f1e3b7}
-      \strng{editorfullhash}{cbfe5437d3af6e9bad1f1a2ec4f1e3b7}
-      \field{sortinit}{1}
-      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{International Conference on Artificial Intelligence and Statistics, 25-27 April 2023, Palau de Congressos, Valencia, Spain}
-      \field{series}{Proceedings of Machine Learning Research}
-      \field{title}{Data Banzhaf: {A} Robust Data Valuation Framework for Machine Learning}
-      \field{volume}{206}
-      \field{year}{2023}
-      \field{pages}{6388\bibrangedash 6421}
-      \range{pages}{34}
-      \verb{urlraw}
-      \verb https://proceedings.mlr.press/v206/wang23e.html
-      \endverb
-      \verb{url}
-      \verb https://proceedings.mlr.press/v206/wang23e.html
       \endverb
     \endentry
     \entry{tay}{article}{}

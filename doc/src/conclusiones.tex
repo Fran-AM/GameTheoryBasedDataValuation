@@ -1,4 +1,44 @@
-\chapter{Conclusiones}
+\chapter{Conclusiones y Trabajo Futuro}
 \justifying
-.
+\section*{Conclusiones}
+Como se discutió en el capítulo anterior, los resultados obtenidos
+concuerdan con lo anticipado tras revisar la literatura. No obstante,
+se esperaban mejores resultados por parte de \textit{Data Banzhaf}.
+Este ligero decremento en el rendimiento del método seguramente
+esté influenciado por dos factores principales: el primero
+es la falta de capacidad de cómputo, que impidió utilizar tamaños
+de muestra mayores y obtener un mayor número de muestras para
+construir los estimadores. El segundo factor es la ausencia de
+la implementación del estimador MSR, que ha demostrado ser
+más eficaz en términos de convergencia. Estas limitaciones afectan
+a los resultados de todos los métodos en general, pero en especial
+al \textit{Data Banzhaf}, siendo una de sus principales ventajas
+respecto al resto de métodos basados en semivalores la posibilidad
+de utilizar el estimador MSR.
 
+\
+
+Considerando una perspectiva general, se observa que los métodos
+de valoración de datos proporcionan buenos resultados en las
+tareas evaluadas. Sin embargo, aún no se consideran una
+solución realista debido a la alta carga computacional que implican.
+
+\section*{Trabajo Futuro}
+Respecto al trabajo futuro, se identifican varias áreas de
+mejora potencial para el proyecto:
+\begin{itemize}
+    \item Implementación del estimador MSR y posterior integración
+    en \textit{pyDVL}.
+    \item Uso de todos los \textit{datasets}
+    citados en \cite{dataBanzhaf}. Aunque ya se han
+    desarrollado funciones de lectura y preprocesado
+    para estos conjuntos de datos, no se han empleado
+    en este trabajo. Dichas funciones están disponibles
+    en \href{https://github.com/Fran-AM/TFM}{Fran-AM/TFM}.
+    \item Integración de los modelos de \textit{pyTorch}
+    mencionados en \cite{dataBanzhaf} en \textit{pyDVL}.
+    Para lograr esto, será necesario implementar el
+    protocolo SupervisedModel, en todos estos modelos.
+    \item Desarrollo de test unitarios para la mejora
+    de la calidad del código.
+\end{itemize}

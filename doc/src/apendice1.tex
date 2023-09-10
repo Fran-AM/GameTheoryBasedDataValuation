@@ -18,11 +18,11 @@
 \end{theorem}
 
 \begin{proof}
-    Integramos por partes.
+    Integrando por partes tenemos
     \[
         \Gamma(p+1)=\int_{0}^{+\infty}e^{-t}t^{p}\,dt
         =\left[-e^{-t}t^{p}\right]_{0}^{+\infty}
-        +p\cdot\int_{0}^{+\infty}e^{-t}t^{p-1}\,dt
+        +p\cdot\int_{0}^{+\infty}e^{-t}t^{p-1}\,dt.
     \]
     Como $\left[-e^{-t}t^{p}\right]_{0}^{+\infty}=0$ al ser
     $p > 0$, tenemos que $\Gamma(p+1) = p\Gamma(p)$.
@@ -140,7 +140,7 @@
         e^{-t} \frac{\Gamma(p)}{t^p}\,dt.
     \end{align*}
         
-    Y utilizando la expresión de la función gamma, se concluye
+    Y utilizando la expresión de la función $\Gamma$, se concluye
     el resultado buscado
     \begin{align*}
         Beta(p, q)&=\frac{1}{\Gamma(p+q)} \int_0^{+\infty} e^{-t}

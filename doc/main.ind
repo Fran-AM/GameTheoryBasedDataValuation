@@ -1,102 +1,102 @@
 \begin{theindex}
 {\large\sffamily\bfseries S\'imbolos}\nopagebreak
 
-  \item $(\epsilon,\delta)$-aproximación \dotfill \hyperpage{21}
-  \item $2^N$ \dotfill \hyperpage{12}
-  \item $D_{i,j}$ \dotfill \hyperpage{19}
-  \item $N$ \dotfill \hyperpage{12}
-  \item $S$ \dotfill \hyperpage{12}
-  \item $\Delta_{i,j}^k$ \dotfill \hyperpage{19}
-  \item $\hat{\phi}$ \dotfill \hyperpage{21}
-  \item $\hat{\phi}_{MC}$ \dotfill \hyperpage{21}
-  \item $\hat{\phi}_{MSR}$ \dotfill \hyperpage{22}
-  \item $\hat{v}$ \dotfill \hyperpage{19}
-  \item $\mathbb{E}$ \dotfill \hyperpage{21}
-  \item $\mathcal{A}$ \dotfill \hyperpage{16}
-  \item $\mathcal{S}$ \dotfill \hyperpage{21}
-  \item $\phi$ \dotfill \hyperpage{14}
-    \subitem $\phi_{Banzhaf}$ \dotfill \hyperpage{18}
-    \subitem $\phi_{Beta}$ \dotfill \hyperpage{18}
-    \subitem $\phi_{Shapley}$ \dotfill \hyperpage{13}
-    \subitem $\phi_{loo}$ \dotfill \hyperpage{17}
-  \item $\text{Safe}$ \dotfill \hyperpage{20}
-  \item $\text{Safe}_{i,j}$ \dotfill \hyperpage{20}
-  \item $f$ \dotfill \hyperpage{16}
-  \item $n$ \dotfill \hyperpage{13}
-  \item $s$ \dotfill \hyperpage{13}
-  \item $v$ \dotfill \hyperpage{12}
-  \item $w$ \dotfill \hyperpage{14}
-    \subitem $w_{Banzhaf}$ \dotfill \hyperpage{15}
-    \subitem $w_{Shapley}$ \dotfill \hyperpage{14}
-    \subitem $w_{\alpha, \beta}$ \dotfill \hyperpage{17}
+  \item $(\epsilon,\delta)$-aproximación \dotfill \hyperpage{25}
+  \item $2^N$ \dotfill \hyperpage{16}
+  \item $D_{i,j}$ \dotfill \hyperpage{23}
+  \item $N$ \dotfill \hyperpage{16}
+  \item $S$ \dotfill \hyperpage{16}
+  \item $\Delta_{i,j}^k$ \dotfill \hyperpage{23}
+  \item $\hat{\phi}$ \dotfill \hyperpage{25}
+  \item $\hat{\phi}_{MC}$ \dotfill \hyperpage{25}
+  \item $\hat{\phi}_{MSR}$ \dotfill \hyperpage{26}
+  \item $\hat{v}$ \dotfill \hyperpage{23}
+  \item $\mathbb{E}$ \dotfill \hyperpage{25}
+  \item $\mathcal{A}$ \dotfill \hyperpage{20}
+  \item $\mathcal{S}$ \dotfill \hyperpage{25}
+  \item $\phi$ \dotfill \hyperpage{18}
+    \subitem $\phi_{Banzhaf}$ \dotfill \hyperpage{22}
+    \subitem $\phi_{Beta}$ \dotfill \hyperpage{22}
+    \subitem $\phi_{Shapley}$ \dotfill \hyperpage{17}
+    \subitem $\phi_{loo}$ \dotfill \hyperpage{21}
+  \item $\text{Safe}$ \dotfill \hyperpage{24}
+  \item $\text{Safe}_{i,j}$ \dotfill \hyperpage{24}
+  \item $f$ \dotfill \hyperpage{20}
+  \item $n$ \dotfill \hyperpage{17}
+  \item $s$ \dotfill \hyperpage{17}
+  \item $v$ \dotfill \hyperpage{16}
+  \item $w$ \dotfill \hyperpage{18}
+    \subitem $w_{Banzhaf}$ \dotfill \hyperpage{19}
+    \subitem $w_{Shapley}$ \dotfill \hyperpage{18}
+    \subitem $w_{\alpha, \beta}$ \dotfill \hyperpage{21}
 
   \indexspace
 {\large\sffamily\bfseries C}\nopagebreak
 
-  \item Coalición \dotfill \hyperpage{12}
+  \item Coalición \dotfill \hyperpage{16}
 
   \indexspace
 {\large\sffamily\bfseries D}\nopagebreak
 
-  \item Data Banzhaf \dotfill \hyperpage{18}
-  \item Data Shapley \dotfill \hyperpage{17}
-  \item Data values \dotfill \hyperpage{17}
-  \item Diferencia escalada \dotfill \hyperpage{19}
+  \item Data Banzhaf \dotfill \hyperpage{22}
+  \item Data Shapley \dotfill \hyperpage{21}
+  \item Data values \dotfill \hyperpage{21}
+  \item Diferencia escalada \dotfill \hyperpage{23}
 
   \indexspace
 {\large\sffamily\bfseries E}\nopagebreak
 
-  \item Eficiencia \dotfill \hyperpage{12}
-  \item Estimador de máxima reutilización \dotfill \hyperpage{22}
-  \item Estrategia \dotfill \hyperpage{11}
+  \item Eficiencia \dotfill \hyperpage{16}
+  \item Estimador de máxima reutilización \dotfill \hyperpage{26}
+  \item Estrategia \dotfill \hyperpage{15}
 
   \indexspace
 {\large\sffamily\bfseries F}\nopagebreak
 
-  \item Función de utilidad \dotfill \hyperpage{16}
-  \item Función peso \dotfill \hyperpage{14}
+  \item Función de utilidad \dotfill \hyperpage{20}
+  \item Función peso \dotfill \hyperpage{18}
 
   \indexspace
 {\large\sffamily\bfseries G}\nopagebreak
 
-  \item Ganancia \dotfill \hyperpage{11}
+  \item Ganancia \dotfill \hyperpage{15}
 
   \indexspace
 {\large\sffamily\bfseries J}\nopagebreak
 
-  \item Juego \dotfill \hyperpage{11}
-    \subitem cooperativo \dotfill \hyperpage{11}
-  \item Jugador \dotfill \hyperpage{11}
-    \subitem nulo \dotfill \hyperpage{13}
+  \item Juego \dotfill \hyperpage{15}
+    \subitem cooperativo \dotfill \hyperpage{15}
+  \item Jugador \dotfill \hyperpage{15}
+    \subitem nulo \dotfill \hyperpage{17}
 
   \indexspace
 {\large\sffamily\bfseries L}\nopagebreak
 
-  \item Linealidad \dotfill \hyperpage{12}
-  \item LOO \dotfill \hyperpage{17}
+  \item Linealidad \dotfill \hyperpage{16}
+  \item LOO \dotfill \hyperpage{21}
 
   \indexspace
 {\large\sffamily\bfseries M}\nopagebreak
 
-  \item ML \dotfill \hyperpage{6}
-  \item MRS \dotfill \hyperpage{21}
+  \item ML \dotfill \hyperpage{9}
+  \item MRS \dotfill \hyperpage{25}
 
   \indexspace
 {\large\sffamily\bfseries S}\nopagebreak
 
-  \item Safety margin \dotfill \hyperpage{20}
-  \item Semivalor \dotfill \hyperpage{14}
-  \item Simetría \dotfill \hyperpage{12}
+  \item Safety margin \dotfill \hyperpage{24}
+  \item Semivalor \dotfill \hyperpage{18}
+  \item Simetría \dotfill \hyperpage{16}
 
   \indexspace
 {\large\sffamily\bfseries T}\nopagebreak
 
-  \item Teoría de juegos \dotfill \hyperpage{11}
+  \item Teoría de juegos \dotfill \hyperpage{15}
 
   \indexspace
 {\large\sffamily\bfseries V}\nopagebreak
 
-  \item Valor de Banzhaf \dotfill \hyperpage{14}
-  \item Valor de Shapley \dotfill \hyperpage{12}
+  \item Valor de Banzhaf \dotfill \hyperpage{18}
+  \item Valor de Shapley \dotfill \hyperpage{16}
 
 \end{theindex}
